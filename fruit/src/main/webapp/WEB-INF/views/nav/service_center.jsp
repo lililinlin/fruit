@@ -234,7 +234,7 @@
     </div>
     <footer>
         <table id="footer_table">
-            <tr>
+            <tr> 
                 <td><img src="images/logocol.jpg"></td>
                 <td style="width: 300px;"><h3><b>고객센터</b></h3>
                     <h3><b>1600 - 1111</b></h3><br>

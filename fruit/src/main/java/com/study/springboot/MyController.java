@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MyController {
-
+ 
 	@RequestMapping("/")
 	public String root1() throws Exception {
 		return "main";
