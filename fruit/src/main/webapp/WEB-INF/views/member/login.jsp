@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
@@ -119,17 +119,19 @@
          }
          #nav_wrapper{
              width:100%;
+             padding-bottom: 2px;
+             box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
          }
          #nav_wrapper.fixed{
              position: fixed;
-             padding-top:15px;
+             padding-top:18px;
              left: 0; 
              top: 0; 
              width: 100%; 
              height:60px;
              background-color: white; 
              z-index:100; 
-             border-bottom: 1px solid #4eac87;
+             /* border-bottom: 1px solid #4eac87; */
         }
         
          #nav{
@@ -145,7 +147,42 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+/* main */
+        #main_wrapper{
+            width:1200px;
+            text-align: center;
+            margin:0 auto;
+            margin-bottom: 200px;
+        }
+        #main_wrapper h2{
+            margin-top:100px;
+            margin-bottom: 50px;
+        }
+        #login_form{
+            margin:0 auto;
+            
+            margin-bottom: 50px;
+            width:400px;
+            
+        }
+        #login_form input[type=text], input[type=password]{
+           margin-bottom: 10px;
+           width:400px;
+           height:50px;
+        }
+        #id_pw_search{
+            float:right;
+            margin-bottom:30px;
+        }
+        #login_form input[type=submit]{
+            width:400px;
+            height:50px;
+            margin-bottom: 10px;
+        }
+        #login_form button{
+            width:400px;
+            height:50px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -175,38 +212,33 @@
         <div id="wrapp">
         
             <div id="head1">
-            	<%
-				if (session.getAttribute("sessionID") == null) {
-				%>
-				<td><a href="login">로그인<h> |&nbsp;</h></a>
-					<a href="join_agree">회원가입</a></td>
-				<%
-					} else {
-				%>
-				<td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-					<a href="mypage">&nbsp;마이페이지</a></td>
-				<%
-					}
-				%>
+               <%
+            if (session.getAttribute("sessionID") == null) {
+            %>
+            <td><a href="login">로그인<h> |&nbsp;</h></a>
+               <a href="join_agree">회원가입</a></td>
+            <%
+               } else {
+            %>
+            <td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+               <a href="mypage">&nbsp;마이페이지</a></td>
+            <%
+               }
+            %>
             </div>
 
             <div>
                 <table id="head_table">
                     <tr>
-                        <td><a href="home"><img src="images/fruitrow.jpg" alt=""></a></td>
-                        <td><div class="container">
-                            <div class="row">
-                                <div class="span12">
-                                    <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                                        <div class="input-append span12">
-                                            <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
-                                            <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
-                                        </div>
-                                    </form>
+                        <td><img src="images/fruitrow.jpg" alt="" onclick="location.href='home'" style="cursor: pointer;"></td>
+                        <td>
+                            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                                <div class="input-append span12">
+                                    <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
+                                    <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
                                 </div>
-                            </div>
-                         </div>
-                      </td>
+                            </form>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -232,6 +264,20 @@
             </tr>
         </table>
     </div>
+    <main>
+        <div id ="main_wrapper">
+            <h2>로그인</h2>
+            <form action="" method="POST" id="login_form">
+                <input type="text" id="id" name="name" size="20" placeholder="아이디를 입력해주세요"><br>
+                <input type="password" id="password" name="password" size="20" placeholder="비밀번호를 입력해주세요"><br>
+                <div id="id_pw_search">
+                    <a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a>
+                </div><br>
+                <input type="submit" class="btn btn-success" value="로그인">
+                <button type="button" class="btn btn-warning">회원가입</button>
+            </form> 
+        </div>
+    </main>
     <footer>
         <table id="footer_table">
             <tr>

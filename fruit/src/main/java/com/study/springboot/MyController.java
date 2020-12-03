@@ -10,6 +10,11 @@ public class MyController {
 	public String root1() throws Exception {
 		return "main";
 	}
+	
+	@RequestMapping("home")
+	public String home() throws Exception {
+		return "main";
+	}
 //------------------[   member   ]------------------
 	
 	@RequestMapping("login")

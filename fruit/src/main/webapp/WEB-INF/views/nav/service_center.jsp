@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,17 +119,19 @@
          }
          #nav_wrapper{
              width:100%;
+             padding-bottom: 2px;
+             box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
          }
          #nav_wrapper.fixed{
              position: fixed;
-             padding-top:15px;
+             padding-top:18px;
              left: 0; 
              top: 0; 
              width: 100%; 
              height:60px;
              background-color: white; 
              z-index:100; 
-             border-bottom: 1px solid #4eac87;
+             /* border-bottom: 1px solid #4eac87; */
         }
         
          #nav{
@@ -169,7 +171,7 @@
     </style>
    
 </head>
-<body> 
+<body>
     <div id="head0"></div>
 
         <div id="wrapp">
@@ -193,20 +195,15 @@
             <div>
                 <table id="head_table">
                     <tr>
-                        <td><a href="home"><img src="images/fruitrow.jpg" alt=""></a></td>
-                        <td><div class="container">
-                            <div class="row">
-                                <div class="span12">
-                                    <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                                        <div class="input-append span12">
-                                            <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
-                                            <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                         </div>
-                      </td>
+                        <td><img src="images/fruitrow.jpg" alt="" onclick="location.href='home'" style="cursor: pointer;"></td>
+                        <td>
+                            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                                  <div class="input-append span12">
+                                        <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
+                                        <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
+                                   </div>
+                            </form>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -234,7 +231,7 @@
     </div>
     <footer>
         <table id="footer_table">
-            <tr> 
+            <tr>
                 <td><img src="images/fruitcol.jpg"></td>
                 <td style="width: 300px;"><h3><b>고객센터</b></h3>
                     <h3><b>1600 - 1111</b></h3><br>

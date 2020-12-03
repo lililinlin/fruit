@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head> 
+<html lang="en"> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>개인정보처리방침이용안내</title>
+    <title>개인정보처리이용방침안내</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -119,17 +119,19 @@
          }
          #nav_wrapper{
              width:100%;
+             padding-bottom: 2px;
+             box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
          }
          #nav_wrapper.fixed{
              position: fixed;
-             padding-top:15px;
+             padding-top:18px;
              left: 0; 
              top: 0; 
              width: 100%; 
              height:60px;
              background-color: white; 
              z-index:100; 
-             border-bottom: 1px solid #4eac87;
+             /* border-bottom: 1px solid #4eac87; */
         }
         
          #nav{
@@ -193,20 +195,15 @@
             <div>
                 <table id="head_table">
                     <tr>
-                        <td><a href="home"><img src="images/fruitrow.jpg" alt=""></a></td>
-                        <td><div class="container">
-                            <div class="row">
-                                <div class="span12">
-                                    <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                                        <div class="input-append span12">
-                                            <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
-                                            <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                         </div>
-                      </td>
+                        <td><img src="images/fruitrow.jpg" alt="" onclick="location.href='home'" style="cursor: pointer;"></td>
+                        <td>
+                            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                                  <div class="input-append span12">
+                                        <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
+                                        <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
+                                   </div>
+                            </form>
+                        </td>
                     </tr>
                 </table>
             </div>
