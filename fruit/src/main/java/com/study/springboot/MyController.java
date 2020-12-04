@@ -43,6 +43,22 @@ public class MyController {
 		return "main";
 	}
 	
+//------------------[   board    ]-------------------
+	@RequestMapping("fruit_view")
+	public String fruit_view() throws Exception {
+		return "board/fruit_view";
+	}
+	
+	@RequestMapping("buy")
+	public String buy() throws Exception {
+		return "board/buy";
+	}
+	
+	@RequestMapping("basket")
+	public String basket() throws Exception {
+		return "board/basket";
+	}
+	
 //------------------[   nav    ]--------------------
 	
 	@RequestMapping("/aboard_fruit")

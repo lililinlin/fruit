@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>제철과일</title>
+    <title>상품보기</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +28,17 @@
              })
           });
     </script>
+    <script>
+            function btn_click(str){                             
+                if(str=="buy"){                                 
+                    form.action="buy";      
+                } else if(str=="basket"){      
+                	form.action="basket";      
+                }  else {
+                    //...
+                }
+            }
+        </script>
     <style>
 
 /* 전체 적용 */
@@ -147,61 +158,32 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-        
-/* main */
-		 #content{ /* 메인을 감싼 div */
-            width: 1000px;
-            margin: 0 auto;
-            padding-top: 50px;
-        } 
-        #content td{ 
-            width: 300px;
-            padding-right: 30px;
-            padding-bottom: 10px;
-        }
-        .scale { /* 과일 이미지 감싼 div */
-            width:300px; 
-            height:400px; 
-            overflow:hidden; 
-            margin:0 auto
+ /* main */
+            #content{ /* 메인을 감싼 div */
+                width: 1200px;
+                margin: 0 auto;
+                margin-top: 50px;
             }
-        .scale img { 
-            width:300px; 
-            height:400px;
-            transform:scale(1); 
-            transition:transform 0.5s linear;
-        }
-        .scale:hover img { 
-            transform:scale(1.1); 
+            
+            #main_img{
+                float: left;
+                width: 400px;
+                height: 470px;
+                margin: 0 100px 0 50px;
             }
-        .img_bottom_font{ /* 사진 밑 과일 이름 */
-            color: rgb(63, 63, 63); 
-            padding-left: 15px;
-            text-align: left;
-        }
-
-        .img_bottom_price{  /* 사진 밑 가격 */
-            color:  rgb(1, 114, 18);
-            padding: 0 0 100px 15px;
-            text-align: left;
-
-        }
-        #price_nav{ /* 가격낮은순 | 높은순 */
-            padding-left: 480px;
-            cursor: pointer;
-            color: rgb(99, 99, 99); 
-        }
-        #price_nav a:hover{
-            color:  #4eac87;
-        }
-        #main_name h6{ /* 페이지 이름 */
-            color: rgb(1, 114, 18);
-            padding-left: 10px;
-        }
-        #main_name{
-            height: 100px;
-        }
-        
+            .table_tr{
+                height: 70px;
+                border-bottom: 1px solid rgb(211, 211, 211);
+            }
+            .count input{
+                border:none;
+                background-color: white;
+                width: 120px;
+                text-align: center;
+                font-size: 20px;
+                color:  #4eac87;
+            }
+            
 /* footer */
         #footer_table{
             width: 1200px;
@@ -225,7 +207,7 @@
     </style>
    
 </head>
-<body>
+ <body onload="init();">
     <div id="head0"></div>
 
         <div id="wrapp">
@@ -283,47 +265,94 @@
             </tr>
         </table>
     </div>
-    
-    <div id="content">
-        <table>
-            <tr>
-                <td id="main_name"><div style="border-bottom: 1px solid rgb(1, 114, 18); width: 85px;"><h6><b>제철과일</b></h6></div></td>
-                <td id="price_nav" colspan="2"><small><a style="padding-right: 10px;">가격낮은순</a>|<a style="padding-left: 10px;">가격높은순</a></small></td>
-                
-            </tr>
-            <tr>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-            </tr>
-            <tr>
-                <td class="img_bottom_font"><h4><b>귤</b></h4></td>
-                <td class="img_bottom_font"><h4><b>레몬</b></h4></td>
-                <td class="img_bottom_font"><h4><b>용과</b></h4></td>
-            </tr>
-            <tr>
-                <td class="img_bottom_price"><h5><b>23000원</b></h5><br><br></td>
-                <td class="img_bottom_price"><h5><b>10000원</b></h5><br></td>
-                <td class="img_bottom_price"><h5><b>15000원</b></h5><br></td>
-            </tr>
-            <tr>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='fruit_view'" style="cursor: pointer;" ></div></td>
-            </tr>
-            <tr>
-                <td class="img_bottom_font"><h4><b>귤</b></h4></td>
-                <td class="img_bottom_font"><h4><b>레몬</b></h4></td>
-                <td class="img_bottom_font"><h4><b>용과</b></h4></td>
-            </tr>
-            <tr>
-                <td class="img_bottom_price"><h5><b>23000원</b></h5><br><br></td>
-                <td class="img_bottom_price"><h5><b>10000원</b></h5><br></td>
-                <td class="img_bottom_price"><h5><b>15000원</b></h5><br></td>
-            </tr>
-        </table>
-    </div>
-    
+ 	<script language="JavaScript">
+
+        var sell_price;
+        var amount;
+        
+        function init () {
+            sell_price = document.form.sell_price.value;
+            amount = document.form.amount.value;
+            document.form.sum.value = sell_price;
+            change();
+        }
+        
+        function add () {
+            hm = document.form.amount;
+            sum = document.form.sum;
+            hm.value ++ ;
+        
+            sum.value = parseInt(hm.value) * sell_price;
+        }
+        
+        function del () {
+            hm = document.form.amount;
+            sum = document.form.sum;
+                if (hm.value > 1) {
+                    hm.value -- ;
+                    sum.value = parseInt(hm.value) * sell_price;
+                }
+        }
+        
+        function change () {
+            hm = document.form.amount;
+            sum = document.form.sum;
+        
+                if (hm.value < 0) {
+                    hm.value = 0;
+                }
+            sum.value = parseInt(hm.value) * sell_price;
+        }  
+  
+        </script>
+        <div id="content">
+            <img id="main_img" src="https://via.placeholder.com/150x200">
+            <h3>단호박 1입</h3><br>
+            <h3>4490원</h3><br>
+            <table>
+                <tr class="table_tr">
+                    <td>판매단위</td>
+                    <td>통</td>
+                </tr>
+                <tr class="table_tr">
+                    <td>원산지</td>
+                    <td>국내산</td>
+                </tr>
+                <tr class="table_tr">
+                    <td>택배배송</td>
+                    <td>2500원</td>
+                </tr>
+                <tr class="table_tr">
+                    <td>유통기한</td>
+                    <td>신선식품으로 별도의 유통기한은 없으나 가급적 빠른 시일내에 드시길 바랍니다. </td>
+                </tr>
+                <tr class="table_tr">
+                    <td>안내사항</td>
+                    <td>-식품 특성상 중량은 3% 내외의 차이가 발생할 수 있습니다.<br>
+                        -수확한지 얼마 안된 단호박으로 과육색이 다소 밝은 색일 수 있습니다.
+                    </td>
+                </tr>
+            <form name="form" method="post">
+                <tr class="table_tr">
+                    <td>판매수량</td>
+                    <td class="count">
+                        <input  type="button" value=" + " onclick="add();" style="width: 30px;">
+                        <input  type=hidden name="sell_price" value="4490">
+                        <input  type="text" name="amount" value="1" size="3" onchange="change();">
+                        <input  type="button" value=" - " onclick="del();" style="width: 30px;">
+                    </td>
+                </tr>
+                <tr class="table_tr">
+                    <td class="count" colspan="2" style="text-align: right;">총 상품금액<input type="text" name="sum" size="11" readonly>원</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-success" value="구매하기" onclick='btn_click("buy");'></td>
+                    <td><input type="submit" class="btn btn-warning" value="장바구니담기" style="color: white" onclick='btn_click("basket");'></td>
+                </tr> 
+            </form>  
+        </table>         
+        </div>
+
     <footer>
         <table id="footer_table">
             <tr>
