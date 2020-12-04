@@ -147,7 +147,61 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
+        
+/* main */
+		 #content{ /* 메인을 감싼 div */
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 50px;
+        } 
+        #content td{ 
+            width: 300px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+        .scale { /* 과일 이미지 감싼 div */
+            width:300px; 
+            height:400px; 
+            overflow:hidden; 
+            margin:0 auto
+            }
+        .scale img { 
+            width:300px; 
+            height:400px;
+            transform:scale(1); 
+            transition:transform 0.5s linear;
+        }
+        .scale:hover img { 
+            transform:scale(1.1); 
+            }
+        .img_bottom_font{ /* 사진 밑 과일 이름 */
+            color: rgb(63, 63, 63); 
+            padding-left: 15px;
+            text-align: left;
+        }
 
+        .img_bottom_price{  /* 사진 밑 가격 */
+            color:  rgb(1, 114, 18);
+            padding: 0 0 100px 15px;
+            text-align: left;
+
+        }
+        #price_nav{ /* 가격낮은순 | 높은순 */
+            padding-left: 480px;
+            cursor: pointer;
+            color: rgb(99, 99, 99); 
+        }
+        #price_nav a:hover{
+            color:  #4eac87;
+        }
+        #main_name h6{ /* 페이지 이름 */
+            color: rgb(1, 114, 18);
+            padding-left: 10px;
+        }
+        #main_name{
+            height: 100px;
+        }
+        
 /* footer */
         #footer_table{
             width: 1200px;
@@ -229,6 +283,47 @@
             </tr>
         </table>
     </div>
+    
+    <div id="content">
+        <table>
+            <tr>
+                <td id="main_name"><div style="border-bottom: 1px solid rgb(1, 114, 18); width: 85px;"><h6><b>제철과일</b></h6></div></td>
+                <td id="price_nav" colspan="2"><small><a style="padding-right: 10px;">가격낮은순</a>|<a style="padding-left: 10px;">가격높은순</a></small></td>
+                
+            </tr>
+            <tr>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+            </tr>
+            <tr>
+                <td class="img_bottom_font"><h4><b>귤</b></h4></td>
+                <td class="img_bottom_font"><h4><b>레몬</b></h4></td>
+                <td class="img_bottom_font"><h4><b>용과</b></h4></td>
+            </tr>
+            <tr>
+                <td class="img_bottom_price"><h5><b>23000원</b></h5><br><br></td>
+                <td class="img_bottom_price"><h5><b>10000원</b></h5><br></td>
+                <td class="img_bottom_price"><h5><b>15000원</b></h5><br></td>
+            </tr>
+            <tr>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+                <td><div class="scale"><img src="https://via.placeholder.com/300X400"  onclick="location.href='#'" style="cursor: pointer;" ></div></td>
+            </tr>
+            <tr>
+                <td class="img_bottom_font"><h4><b>귤</b></h4></td>
+                <td class="img_bottom_font"><h4><b>레몬</b></h4></td>
+                <td class="img_bottom_font"><h4><b>용과</b></h4></td>
+            </tr>
+            <tr>
+                <td class="img_bottom_price"><h5><b>23000원</b></h5><br><br></td>
+                <td class="img_bottom_price"><h5><b>10000원</b></h5><br></td>
+                <td class="img_bottom_price"><h5><b>15000원</b></h5><br></td>
+            </tr>
+        </table>
+    </div>
+    
     <footer>
         <table id="footer_table">
             <tr>
