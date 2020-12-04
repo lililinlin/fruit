@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>아이디 찾기</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -273,7 +273,7 @@
     </div>
     <main>
         <div id ="main_wrapper">
-            <h2>로그인</h2>
+            <h2>아이디 찾기</h2>
             <form action="" method="POST" id="login_form">
             	<label for="name" id="name_label">이름</label>
                 <input type="text" id="name" name="name" size="20" placeholder="이름을 입력해주세요"><br>
