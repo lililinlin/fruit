@@ -160,7 +160,7 @@
             height:20px;
         }
         input[type="submit"],input[type="reset"]{
-            width:100px;
+            width:150px;
             height:50px;
         }
         #all_choice{

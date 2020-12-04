@@ -274,7 +274,7 @@
                     <a href="">아이디 찾기</a>&nbsp;|&nbsp;<a href="">비밀번호 찾기</a>
                 </div><br>
                 <input type="submit" class="btn btn-success" value="로그인">
-                <button type="button" class="btn btn-warning">회원가입</button>
+                <button type="button" class="btn btn-warning" style="color: white">회원가입</button>
             </form> 
         </div>
     </main>
