@@ -23,10 +23,13 @@ public class MyController {
 	}
 	
 	@RequestMapping("join_agree")
-	public String join() throws Exception {
+	public String join_agree() throws Exception {
 		return "member/join_agree";
 	}
-	
+	@RequestMapping("join")
+	public String join() throws Exception {
+		return "member/join";
+	}
 	@RequestMapping("MemberLogoutAction")
 	public String MemberLogoutAction() throws Exception {
 		return "main";

@@ -13,6 +13,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <title>회원가입</title>
     <script>
         $(function() {
@@ -147,7 +149,38 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+        #login_form{
+            margin:0 auto;
+            margin-bottom: 50px;
+            width:400px;
+        }
+/* main */
+        #main_wrapper{
+            width:1200px;
+            text-align: center;
+            margin:0 auto;
+            margin-bottom: 200px;
+        }
+        #main_wrapper td{
+        	width:120px;
+        }
+        
+        #main_wrapper h2{
+            margin-top:100px;
+        }
+        #main_wrapper table{
+        	width:700px;
+        	
+            text-align: left;
+            margin:20px 100px 100px 290px
+        }
+        #main_wrapper input[type=text],input[type=password]{
+        	width:400px;
+        	height:40px;
+        }
+        #sample6_detailAddress{
+            width:205px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -229,6 +262,215 @@
             </tr>
         </table>
     </div>
+    <main>
+        <div id ="main_wrapper">
+            <h2>회원가입</h2>
+            <form action="" method="POST" id="join_us" name="userInfo" onsubmit="return checkValue()">
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td>
+                        	<input id="input_userId" type="text" name="id" size="46">
+                        	&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-success"  value="중복확인" onclick="idCheck()">
+                            <input id="check_hidden" type="hidden"	value="no" />
+                        </td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="password"name="password" size="46"></td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    
+                    <tr>
+                        <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                    	<td><br><h6 id="chkNotice" size="2"></h6></td></tr>
+                    
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" name="name" size="46"></td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    
+                    <tr>
+                        <td>전화번호</td>
+                        <td><input type="text" name="phone" size="46"></td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    
+                    <tr>
+                        <td>생년월일</td>
+                        <td>
+                            <input type="text" name="birth_year" size="10" placeholder="4자리">&nbsp;년&nbsp;
+                            <select name="birth_month">
+                                <option value=""> </option>
+                                <option value="01" >1</option>
+                                <option value="02" >2</option>
+                                <option value="03" >3</option>
+                                <option value="04" >4</option>
+                                <option value="05" >5</option>
+                                <option value="06" >6</option>
+                                <option value="07" >7</option>
+                                <option value="08" >8</option>
+                                <option value="09" >9</option>
+                                <option value="10" >10</option>
+                                <option value="11" >11</option>
+                                <option value="12" >12</option>
+                            </select>&nbsp;월&nbsp;<br><br>
+                            <input type="text" name="birth_day" size="8">&nbsp;일	
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>주소</td>
+                        <td>
+                         <input name="add1" type="text" id="sample6_postcode" placeholder="우편번호"><br>
+                         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+                         <input name="add2" type="text" id="sample6_address" placeholder="주소"><br>
+                         <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
+                         <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목">
+                        </td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    <tr><td></td><td><input type="submit" class="btn btn-success"  value="확인" style="width: 400px;"></td></tr>
+                 </table>
+            </form> 
+        </div>
+    </main>
+    <!-- 아이디,비밀번호 체크 -->
+    <script>
+	    function checkValue()
+		{
+			if(!document.userInfo.id.value){
+				alert("아이디를 입력하세요.");
+				return false; //submit 취소
+			}
+			
+			var idChecked = $('#check_hidden').val();
+			if( idChecked != "yes") {
+				alert("아이디 중복확인을 해주세요.");
+				return false;
+			}
+			
+			if(!document.userInfo.password.value){
+				alert("비밀번호를 입력하세요.");
+				return false;
+			}
+			
+			// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+			if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+				alert("비밀번호를 동일하게 입력하세요.");
+				return false;
+			}
+		}
+
+        // 주소 입력 함수
+	    function sample6_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	    
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+	    
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+	    
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+	                if(data.userSelectedType === 'R'){
+	                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    // 건물명이 있고, 공동주택일 경우 추가한다.
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                        // 조합된 참고항목을 해당 필드에 넣는다.
+	                    document.getElementById("sample6_extraAddress").value = extraAddr;
+	                    
+	                    } 
+                    else {
+	                    document.getElementById("sample6_extraAddress").value = '';
+	                }
+	    
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('sample6_postcode').value = data.zonecode;
+	                document.getElementById("sample6_address").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("sample6_detailAddress").focus();
+	            }
+	        }).open();
+	    }
+        // 비밀번호 일치,불일치 확인
+	    $(function(){
+	        $('#password').keyup(function(){
+	            $('#chkNotice').html('');
+	        });
+	
+	        $('#passwordcherk').keyup(function(){
+	
+	            if($('#password').val() != $('#passwordcherk').val()){
+	            $('#chkNotice').html('<b>비밀번호 일치하지 않음</b><br><br>');
+	            $('#chkNotice').css('color', '#f82a2aa3');
+	            } else{
+	                $('#chkNotice').html('<b>비밀번호 일치함</b><br><br>');
+	                $('#chkNotice').css('color', '#199894b3');
+	            }
+	        });
+	    });
+
+        // 아이디 중복 확인
+	    function idCheck() {
+			var user_id = $('#input_userId').val();
+				
+			if(!user_id){
+				alert("아이디를 입력하세요.");
+				return false;
+			}
+			// ajax 용도 : 화면 갱신(reload,redirect)가 없이
+			//            부분화면 갱신(통신)을 js에서 한다.
+			//           예)네이버 - 실시간검색어, 실시간날씨
+				
+			// 아이디 유효성 검사(1 = 중복 / 0 != 중복)
+			$.ajax({
+				/* url : 'http://localhost:8080/servlet3_LoginJoinDB/IdCheckAction.do?id='+ user_id, */
+				url : '${pageContext.request.contextPath}/IdCheckAction?id='+ user_id,
+				type : 'get',
+				success : function(data) {
+					console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
+						
+					if (data == 1) {
+						// 1 : 아이디가 중복되는 문구
+						alert("아이디가 중복됩니다.");
+						$('#check_hidden').val("no");
+					} else {
+						// 0 : 아이디가 안됨.
+						alert("아이디가 사용가능합니다.");
+						$('#check_hidden').val("yes");
+					}
+				}, 
+				error : function() {
+						console.log("실패");
+				}
+			});
+		}
+	    </script>
     <footer>
         <table id="footer_table">
             <tr>
