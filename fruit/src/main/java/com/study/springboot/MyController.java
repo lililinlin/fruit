@@ -41,7 +41,7 @@ public class MyController {
 	@RequestMapping("MemberLogoutAction")
 	public String MemberLogoutAction() throws Exception {
 		return "main";
-	}
+	} 
 	
 //------------------[   board    ]-------------------
 	@RequestMapping("fruit_view")
