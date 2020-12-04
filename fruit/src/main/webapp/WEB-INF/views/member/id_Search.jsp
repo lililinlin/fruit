@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>아이디 찾기</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -161,10 +161,15 @@
         }
         #login_form{
             margin:0 auto;
-            
             margin-bottom: 50px;
             width:400px;
             
+        }
+        #name_label{
+        	float:left;
+        }
+        #phone_label{
+        	float:left;
         }
         #login_form input[type=text], input[type=password]{
            margin-bottom: 10px;
@@ -268,14 +273,13 @@
     </div>
     <main>
         <div id ="main_wrapper">
-            <h2>로그인</h2>
+            <h2>아이디 찾기</h2>
             <form action="" method="POST" id="login_form">
-            	<label for="id">이름</label>
-                <input type="text" id="id" name="id" size="20" placeholder="아이디를 입력해주세요"><br>
-                <input type="password" id="password" name="password" size="20" placeholder="비밀번호를 입력해주세요"><br>
-                
-                <input type="submit" class="btn btn-success" value="로그인">
-                <button type="button" class="btn btn-warning" style="color: white">회원가입</button>
+            	<label for="name" id="name_label">이름</label>
+                <input type="text" id="name" name="name" size="20" placeholder="이름을 입력해주세요"><br>
+                <label for="phone" id="phone_label">전화번호</label>
+                <input type="text" id="phone" name="phone" size="20" placeholder="전화번호를 입력해주세요"><br><br>
+                <input type="submit" class="btn btn-success" value="확인">
             </form> 
         </div>
     </main>

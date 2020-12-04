@@ -163,6 +163,7 @@
         }
         #main_wrapper td{
         	width:120px;
+        	margin-bottom: 12px;
         }
         
         #main_wrapper h2{
@@ -177,6 +178,11 @@
         #main_wrapper input[type=text],input[type=password]{
         	width:400px;
         	height:40px;
+        }
+        #birth_month_choice{
+        	width:110px;
+        	height:40px;
+        	margin-bottom:12px;
         }
         #sample6_detailAddress{
             width:205px;
@@ -306,8 +312,8 @@
                     <tr>
                         <td>생년월일</td>
                         <td>
-                            <input type="text" name="birth_year" size="10" placeholder="4자리">&nbsp;년&nbsp;
-                            <select name="birth_month">
+                            <input type="text" name="birth_year" size="10" placeholder="4자리" style="width:110px;">&nbsp;년&nbsp;
+                            <select name="birth_month" id="birth_month_choice">
                                 <option value=""> </option>
                                 <option value="01" >1</option>
                                 <option value="02" >2</option>
@@ -321,8 +327,8 @@
                                 <option value="10" >10</option>
                                 <option value="11" >11</option>
                                 <option value="12" >12</option>
-                            </select>&nbsp;월&nbsp;<br><br>
-                            <input type="text" name="birth_day" size="8">&nbsp;일	
+                            </select>&nbsp;월&nbsp;
+                            <input type="text" name="birth_day" size="8" style="width:110px;">&nbsp;일	
                         </td>
                     </tr>
                     <tr>
