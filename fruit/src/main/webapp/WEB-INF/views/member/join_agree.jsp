@@ -29,7 +29,6 @@
           });
     </script>
     <style>
-
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
@@ -150,7 +149,6 @@
 /* main */
 		#main_content{
             font-family: 'Noto Sans KR';
-            border:1px solid red;
             width:1200px;
             margin:0 auto;
         }
@@ -187,9 +185,7 @@
         #footer_table strong:nth-child(n):hover{
             color: #4eac87;
         }
-          
     </style>
-   
 </head>
 <body>
     <div id="head0"></div>
@@ -200,13 +196,13 @@
             	<%
 				if (session.getAttribute("sessionID") == null) {
 				%>
-				<td><a href="login">로그인<h> |&nbsp;</h></a>
-					<a href="join_agree">회원가입</a></td>
+				<a href="login">로그인 |&nbsp;</a>
+					<a href="join_agree">회원가입</a>
 				<%
 					} else {
 				%>
-				<td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-					<a href="mypage">&nbsp;마이페이지</a></td>
+				<a href="MemberLogoutAction" >로그아웃 |</a>
+					<a href="mypage">&nbsp;마이페이지</a>
 				<%
 					}
 				%>
@@ -258,7 +254,7 @@
                 <hr><br>
                 
                 <h5>푸릇츠 이용약관 동의(필수)&nbsp;<input type="checkbox" name="c1" id="c1"/></h5>
-                <textarea readonly="readonly" rows="5" cols="145">
+                <textarea readonly="readonly" rows="5" style="width: 1200px">
 제 1 조 (목적)
                     
 이 약관은 푸릇츠가 제공하는 푸릇츠 및 푸릇츠 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
@@ -275,7 +271,7 @@
 ⑦"게시물"이라 함은 "회원"이 "서비스"를 이용함에 있어 "서비스상"에 게시한 부호ㆍ문자ㆍ음성ㆍ음향ㆍ화상ㆍ동영상 등의 정보 형태의 글, 사진, 동영상 및 각종 파일과 링크 등을 의미합니다. 
                 </textarea><br><br><br>
                 <h5>개인정보 수집 및 이용에 대한 안내(필수)&nbsp;<input type="checkbox" name="c2" id="c2"/></h5>
-                <textarea readonly="readonly" rows="5" cols="145">
+                <textarea readonly="readonly" rows="5" style="width: 1200px">
 
 정보통신망법 규정에 따라 푸릇츠에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
                                   
@@ -284,7 +280,7 @@
 이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 푸릇츠 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 푸릇츠는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
                  </textarea><br><br><br>
                  <h5>위치정보 이용약관 동의(선택)&nbsp;<input type="checkbox" name="c3" id="c3"/></h5>
-                 <textarea readonly="readonly" rows="5" cols="145">
+                 <textarea readonly="readonly" rows="5" style="width: 1200px">
 위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 푸릇츠 위치기반 서비스를 이용할 수 있습니다.
                                 
 제 1 조 (목적)
@@ -305,7 +301,7 @@
                 </textarea><br><br>
                 <div id="all_choice">
                 <h5>모두 동의합니다.&nbsp;<input type="checkbox" name="all" id="all"></h5><br>
-                <input class="btn btn-dark"  type="submit" value="동의">&nbsp;<input class="btn btn-dark"  type="reset" value="비동의"><br><br>
+                <input class="btn btn-success" type="submit" value="동의">&nbsp;<input class="btn btn-warning" style="color: white" type="reset" value="비동의"><br><br>
             </div> </div>      
         </form>
         <script>
