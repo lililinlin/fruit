@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>로그인</title>
+    <title>메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -147,6 +147,7 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
+        
 /* main */
         #main_wrapper{
             width:1200px;
@@ -183,6 +184,7 @@
             width:400px;
             height:50px;
         }
+        
 /* footer */
         #footer_table{
             width: 1200px;
@@ -212,19 +214,19 @@
         <div id="wrapp">
         
             <div id="head1">
-               <%
-            if (session.getAttribute("sessionID") == null) {
-            %>
-            <td><a href="login">로그인<h> |&nbsp;</h></a>
-               <a href="join_agree">회원가입</a></td>
-            <%
-               } else {
-            %>
-            <td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-               <a href="mypage">&nbsp;마이페이지</a></td>
-            <%
-               }
-            %>
+            	<%
+				if (session.getAttribute("sessionID") == null) {
+				%>
+				<td><a href="login">로그인<h> |&nbsp;</h></a>
+					<a href="join_agree">회원가입</a></td>
+				<%
+					} else {
+				%>
+				<td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+					<a href="mypage">&nbsp;마이페이지</a></td>
+				<%
+					}
+				%>
             </div>
 
             <div>
@@ -233,10 +235,10 @@
                         <td><img src="images/fruitrow.jpg" alt="" onclick="location.href='home'" style="cursor: pointer;"></td>
                         <td>
                             <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                                <div class="input-append span12">
-                                    <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
-                                    <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
-                                </div>
+                                  <div class="input-append span12">
+                                        <input type="text" class="search-query" placeholder="   과일검색" style="height: 35px; width: 300px;">
+                                        <button type="submit" class="btn" style="height: 35px;"><i class="icon-search"></i></button>
+                                   </div>
                             </form>
                         </td>
                     </tr>
@@ -268,11 +270,10 @@
         <div id ="main_wrapper">
             <h2>로그인</h2>
             <form action="" method="POST" id="login_form">
-                <input type="text" id="id" name="name" size="20" placeholder="아이디를 입력해주세요"><br>
+            	<label for="id">이름</label>
+                <input type="text" id="id" name="id" size="20" placeholder="아이디를 입력해주세요"><br>
                 <input type="password" id="password" name="password" size="20" placeholder="비밀번호를 입력해주세요"><br>
-                <div id="id_pw_search">
-                    <a href="id_Search">아이디 찾기</a>&nbsp;|&nbsp;<a href="pw_Search">비밀번호 찾기</a>
-                </div><br>
+                
                 <input type="submit" class="btn btn-success" value="로그인">
                 <button type="button" class="btn btn-warning" style="color: white">회원가입</button>
             </form> 

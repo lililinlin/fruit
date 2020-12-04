@@ -21,6 +21,14 @@ public class MyController {
 	public String login() throws Exception {
 		return "member/login";
 	}
+	@RequestMapping("id_Search")
+	public String id_Search() throws Exception {
+		return "member/id_Search";
+	}
+	@RequestMapping("pw_Search")
+	public String pw_Search() throws Exception {
+		return "member/pw_Search";
+	}
 	
 	@RequestMapping("join_agree")
 	public String join_agree() throws Exception {
