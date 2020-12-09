@@ -89,7 +89,14 @@ public class MyController {
 	public String service_center() throws Exception {
 		return "nav/service_center";
 	}
-	
+	@RequestMapping("/common_question")
+	public String common_question() throws Exception {
+		return "nav/common_question";
+	}
+	@RequestMapping("/onetoone_question")
+	public String onetoone_question() throws Exception {
+		return "nav/onetoone_question";
+	}
 //------------------[  footer  ]--------------------	
 	
 	@RequestMapping("/footer_fruit")

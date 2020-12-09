@@ -290,7 +290,7 @@
     			</ul>
     		</div>
     		<div id="content">
-    			<h5>공지사항</h5>
+    			<h5>1:1문의하기</h5>
     			<table class="table" id="content_table">
 				  <thead>
 				    <tr>

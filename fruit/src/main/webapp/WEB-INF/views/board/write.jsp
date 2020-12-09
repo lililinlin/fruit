@@ -13,6 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "js/ckeditor/ckeditor.js"></script>
     <title>메인</title>
     <script>
         $(function() {
@@ -228,6 +229,29 @@
                     </td> 
             </tr>
         </table>
+    </div>
+    <div id="main_wrapper">
+	    <div id = "site">
+	    	<br>
+	    	<h1>글쓰기</h1><hr>
+	    	<form action="writeAction" method="post">
+	    		작성자 :&nbsp;&nbsp;강이린 | 이정현
+	    		<input type="hidden" id="id" name="id" value="">
+	    		<input type="hidden" id="name" name="name" value=""><hr>
+	   			제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
+				<textarea id = "editor4" name = "editor4" ></textarea>
+				<input type="hidden" name="idx" value="1" id="bidx">
+	    		<script>
+	    			CKEDITOR.replace('editor4',{width:800,height:400,
+	    			filebrowserUploadUrl:'/images/imageUpload.do'});
+	    		</script>
+	    		<hr>
+	    		<div id = "footer_button">
+		    		<input type="submit" class="btn btn-primary" value = "등록"/>
+		    		<input type="button" class="btn btn-secondary" value = "취소" onclick="location.href='nav4-1_QnA.html'"/>
+	    		</div>
+	    	</form>
+	    </div>
     </div>
     <footer>
         <table id="footer_table">
