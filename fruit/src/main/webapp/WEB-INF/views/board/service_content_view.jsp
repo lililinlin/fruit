@@ -147,7 +147,47 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+/* main */
+		main{
+			margin-bottom:100px;
+		}
+		#main_wrapper{
+			width:1200px;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		#main_wrapper hr{
+			width:1050px;
+			margin:0 auto;
+		}
+		#main_wrapper h3,h6{
+			text-align: center;
+		}
+		#contents_table{
+			
+			margin:0 auto;
+			margin-top:70px;
+			font-size:15px;
+			width:1050px;
+			border-top:2px solid black;
+		}
+		#contents_table td,th{
+			height:50px;
+			border:1px solid #efefef;
+			padding-left:20px;
+		}
+		#contents_table th{
+			background-color: #f5f5f5;
+		}
+		#main_contents{
+			width:1000px;
+			margin-left:100px;
+			margin-top:20px;
+		}
+		#backbutton{
+			width:140px;
+			margin-left:980px;
+		}
 /* footer */
         #footer_table{
             width: 1200px;
@@ -229,6 +269,37 @@
             </tr>
         </table>
     </div>
+    <main>
+    	<div id="main_wrapper">
+    		<h3>공지사항</h3>
+    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
+    		<table id="contents_table">
+    			<tr>
+    				<th>제목</th>
+    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+    			</tr>
+    			<tr>
+    				<th>작성자</th>
+    				<td colspan="3">강이린</td>
+    			</tr>
+    			<tr>
+    				<th width="10%">작성일</th>
+    				<td width="20%">2020-12-08</td>
+    				<th width="10%">조회수</th>
+    				<td width="60%">400</td>
+    			</tr>
+    		</table>
+    		<div id="main_contents">
+    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
+    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
+    			   a reiciendis nostrum vel debitis.</p>
+    		</div><br><br>
+    		<hr><br>
+    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
+    	</div>
+    </main>
     <footer>
         <table id="footer_table">
             <tr>
