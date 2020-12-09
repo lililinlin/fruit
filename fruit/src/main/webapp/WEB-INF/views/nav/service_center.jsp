@@ -147,7 +147,57 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+/* main */
+		main{
+			margin-top:30px;
+			margin-left:30px;
+		}
+		#main_wrapper{
+			width:1060px;
+			display:flex;
+			margin:0 auto;
+		}
+		#left_menu{
+			height:205px;
+			width:600px;
+			
+		}
+		#left_menu ul{
+			width:100%;
+			margin-top:-16px;
+			margin-left:0;
+			height:152px;
+			
+		}
+		#left_menu li{
+			border:1px solid #e3e3e3;
+			font-size:12px;
+			padding-left:20px;
+			height:50px;
+			line-height:50px;
+			list-style-type:none;
+			vertical-align: middle;
+		}
+		#left_menu li:hover{
+			background-color:#f7f7f7;
+			/* color: #4eac87; */
+			color:rgb(1, 114, 18);
+			cursor: pointer;
+		}
+		#content{
+			margin-left:30px;
+		}
+		#content h5{
+		padding-bottom:20px;
+		border-bottom:1px solid rgb(1, 114, 18);
+		}
+		#content_table{
+			font-size:13px;
+		}
+		#content_table td{
+			width:800px;
+			height:50px;
+		}
 /* footer */
         #footer_table{
             width: 1200px;
@@ -229,6 +279,43 @@
             </tr>
         </table>
     </div>
+    <main>
+    	<div id="main_wrapper">
+    		<div id=left_menu>
+    			<h4>고객센터</h4><br>
+    			<ul>
+    				<li onclick="location.href='service_center'">공지사항</li>
+    				<li onclick="location.href=''">자주하는질문</li>
+    				<li onclick="location.href=''">1:1문의하기</li>
+    			</ul>
+    		</div>
+    		<div id="content">
+    			<h5>공지사항</h5>
+    			<table class="table" id="content_table">
+				  <thead>
+				    <tr>
+				      <th scope="col" width="10%">번호</th>
+				      <th scope="col" width="50%">제목</th>
+				      <th scope="col" width="10%">작성자</th>
+				      <th scope="col" width="20%">작성일</th>
+				      <th scope="col" width="10%">조회수</th>
+				    </tr>
+				  </thead>
+				  <%for(int i=0; i<3; i++){ %>
+					  <tbody>
+					    <tr>
+					    	<td>공지</td>
+	    					<td>[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+	    					<td>강이린</td>
+	    					<td>2020-12-08</td>
+	    					<td>400</td>
+					    </tr>
+					  </tbody>
+				  <%} %>
+				</table>
+    		</div>
+    	</div>
+    </main>
     <footer>
         <table id="footer_table">
             <tr>
