@@ -62,6 +62,10 @@ public class MyController {
 	public String write() throws Exception {
 		return "board/write";
 	}
+	@RequestMapping("service_content_view")
+	public String service_content_view() throws Exception {
+		return "board/service_content_view";
+	}
 	
 //------------------[   nav    ]--------------------
 	
