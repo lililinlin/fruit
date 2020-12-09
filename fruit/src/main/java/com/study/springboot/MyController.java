@@ -58,6 +58,10 @@ public class MyController {
 	public String basket() throws Exception {
 		return "board/basket";
 	}
+	@RequestMapping("write")
+	public String write() throws Exception {
+		return "board/write";
+	}
 	
 //------------------[   nav    ]--------------------
 	
