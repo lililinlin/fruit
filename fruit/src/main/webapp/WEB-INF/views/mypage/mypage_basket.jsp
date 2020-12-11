@@ -314,7 +314,7 @@
                     </td> 
             </tr>
         </table>
-    </div>
+    </div> 
     
     
     <div id="head_wrapper">

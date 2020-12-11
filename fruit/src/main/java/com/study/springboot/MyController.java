@@ -42,7 +42,7 @@ public class MyController {
 	public String MemberLogoutAction() throws Exception {
 		return "main";
 	} 
-	
+	 
 //------------------[   board    ]-------------------
 	@RequestMapping("fruit_view")
 	public String fruit_view() throws Exception {

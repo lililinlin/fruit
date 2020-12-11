@@ -337,7 +337,7 @@
             </tr>
         </table>
     </div>
-
+ 
     <div id="head_wrapper">
         <div id="head_content">
             <table>

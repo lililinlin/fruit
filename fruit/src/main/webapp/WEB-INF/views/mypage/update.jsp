@@ -501,7 +501,7 @@
 			                           <tr><td><br></td></tr>
 			                   </tr>
 			                   <tr>
-			                       <td>주소</td>
+			                       <td>주소</td> 
 			                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호" >
 			                        <input type="button" class="button" style="color:white; width:200px" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
 			                        <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>

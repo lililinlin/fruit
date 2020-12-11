@@ -314,7 +314,7 @@
                         <a href="event"><h5><b>이벤트</b></h5></a>
                     </td> 
             </tr>
-        </table>
+        </table> 
     </div>
     
     

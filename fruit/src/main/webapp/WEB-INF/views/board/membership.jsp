@@ -209,7 +209,7 @@
             </div>
         </div>
     <div id = "nav_wrapper">
-        <table id = "nav">
+        <table id = "nav"> 
             <tr>
                     <td class="main_menu_td">
                         <a href="season_fruit"><h5><b>제철과일</b></h5></a>
@@ -219,7 +219,7 @@
                     </td>
                     <td class="main_menu_td">
                         <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
-                    </td>
+                    </td> 
                     <td class="main_menu_td">
                         <a href="service_center" ><h5><b>고객센터</b></h5></a>
                     </td>
