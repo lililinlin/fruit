@@ -13,6 +13,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <title>회원정보수정</title>
     <script>
         $(function() {
@@ -28,12 +30,91 @@
              })
           });
     </script>
+    <script>
+    function checkValue()
+	{
+		if(!document.userInfo.password.value){
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+		
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+	}
+        function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+    
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+    
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+    
+                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                    if(data.userSelectedType === 'R'){
+                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있고, 공동주택일 경우 추가한다.
+                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                        if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                        }
+                        // 조합된 참고항목을 해당 필드에 넣는다.
+                        document.getElementById("sample6_extraAddress").value = extraAddr;
+                    
+                    } else {
+                        document.getElementById("sample6_extraAddress").value = '';
+                    }
+    
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('sample6_postcode').value = data.zonecode;
+                    document.getElementById("sample6_address").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("sample6_detailAddress").focus();
+                }
+            }).open();
+        }
+        $(function(){
+            $('#password').keyup(function(){
+            $('#chkNotice').html('');
+            });
+
+            $('#passwordcherk').keyup(function(){
+
+                if($('#password').val() != $('#passwordcherk').val()){
+                $('#chkNotice').html('<b>비밀번호 일치하지 않음</b><br><br>');
+                $('#chkNotice').css('color', '#f82a2aa3');
+                } else{
+                $('#chkNotice').html('<b>비밀번호 일치함</b><br><br>');
+                $('#chkNotice').css('color', '#199894b3');
+                }
+
+            });
+        });
+        </script>
     <style>
 
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+             /*  border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -180,13 +261,14 @@
             height: 30px;
         }
         #membership{ /* 멤버쉽 네모 박스 */
-            border: 1px solid green; 
+            border: 1px solid #00af85; 
             width: 70px; 
             height: 70px; 
             padding-top: 20px;
             text-align: center;
             float: left;
             margin: 20px 40px 0 10px;
+            color:#00af85;
         }
         #membership_right{ /* 멤버쉽 박스 옆 글씨부분 */
         	display: inline-block; 
@@ -219,7 +301,7 @@
         #main_left tr:hover{
             background-color: rgb(251, 249, 249);            
             cursor: pointer;
-            color: rgb(1, 114, 18);
+            color: #00af85;
         }
         
         /* 오른쪽 */
@@ -227,9 +309,42 @@
             margin-left: 20px;
             float: right;
             width: 750px;
-            height: 600px;
+            height: 900px;
         }
+        #main_right input{
+        	width:250px;
+        	height:40px;
+        }
+        #right_div{
+         border-top: 1px solid rgb(1, 114, 18);
+         border-bottom: 1px solid rgb(1, 114, 18);
+         padding: 20px 20px 20px 70px ;
+         margin-bottom: 50px;
+        }
+        #button_box{
+        text-align: center;
+        width: 450px;
+        margin-left: 100px;
+        }
+        .button{
+        border: 1px solid #00af85;
+        background-color: #00af85;
+        color: #fff;
+		margin-left:20px
+        }
+        .button_cancel{
+        color: #00af85;
+        font-weight: 400;
+        border: 1px solid #00af85;
+        background: #fff;
+        cursor: pointer;
+        }
+        	
 /* footer */
+        footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -311,7 +426,7 @@
         </table>
     </div>
     
-    
+
     <div id="head_wrapper">
         <div id="head_content">
             <table>
@@ -321,11 +436,11 @@
                         <div id="membership_right">
                             <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
                             <small>적립 0.5%</small><br>
-                            <input type="button" value="전체등급보기">
+                            <input type="button" onClick="location.href='membership'"  value="전체등급보기">
                         </div>
                     </td>
                     <td>적립금<br><br>
-                        <h3 style="color: green;"><b>3634원 &nbsp;&nbsp; ></b></h3>
+                        <h3 style="color: #00af85;"><b>3634원 &nbsp;&nbsp; ></b></h3>
                     </td>
                 </tr>
                 <tr>   
@@ -349,9 +464,63 @@
             </div>
 
             <div id="main_right">
-            
+             <h4>개인 정보 수정</h4><br>
+                  <form method="post" action="MypageModifyAction" name="userInfo" onsubmit="return checkValue()">
+	            	<div id="right_div">
+			                <table>
+			                   <tr>
+			                       <td>아이디</td>
+			                       <td><%-- <%=member.getId() %> --%></td>
+			                       <td></td>
+			                       <tr><td><br></td></tr>
+			                   </tr>
+			                   <tr>
+			                       <td>비밀번호</td>
+			                       <td><input type="password" id="password"name="password" size="46"></td>
+			                       <tr><td><br></td></tr>
+			                   </tr>
+			                   <tr>
+			                       <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			                       <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+			                       <tr><td><td><br><h6 id="chkNotice" size="2"></h6></td></td></tr>
+			                   </tr>
+			                   <tr>
+			                    <td>이름</td>
+			                    <td><%-- <%=member.getName() %> --%></td>
+			                    <td></td>
+			                    <tr><td><br></td></tr>
+			                   </tr>
+			                   <tr>
+			                       <td>전화번호</td>
+			                       <td><input type="text" name="phone" size="46" <%-- <%=member.getPhone() %> --%>></td>
+			                       <tr><td><br></td></tr>
+			                   </tr>
+			                   <tr>
+			                       <td>생년월일</td>
+			                       <td><%-- <%=birthYear %> --%>년 <%-- <%=birthMonth %> --%>월 <%-- <%=birthDay %> --%>일</td>
+			                           <tr><td><br></td></tr>
+			                   </tr>
+			                   <tr>
+			                       <td>주소</td>
+			                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호" >
+			                        <input type="button" class="button" style="color:white; width:200px" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+			                        <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>
+			                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
+			                        <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
+			                   </tr>
+			                   <tr><td><br></td></tr> 
+			   
+			                </table>        
+                        </div>
+                        <div id="button_box">
+	                        <input type="button" onClick="location.href='mypage'" class=button_cancel  value="취소" style="width: 200px;">
+	                        <input type="submit" class=button id="modify" name="modify"  value="수정" style="width: 200px;">
+                        </div>
+               	</form>
             </div>
-    </div>
+		</div>
+        
+
             
     <footer>
         <table id="footer_table">

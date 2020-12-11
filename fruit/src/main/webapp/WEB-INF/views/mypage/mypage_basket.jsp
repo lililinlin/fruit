@@ -179,14 +179,15 @@
             width: 110px;
             height: 30px;
         }
-        #membership{ /* 멤버쉽 네모 박스 */
-            border: 1px solid green; 
+       #membership{ /* 멤버쉽 네모 박스 */
+            border: 1px solid #00af85; 
             width: 70px; 
             height: 70px; 
             padding-top: 20px;
             text-align: center;
             float: left;
             margin: 20px 40px 0 10px;
+            color:#00af85;
         }
         #membership_right{ /* 멤버쉽 박스 옆 글씨부분 */
         	display: inline-block; 
@@ -219,7 +220,7 @@
         #main_left tr:hover{
             background-color: rgb(251, 249, 249);            
             cursor: pointer;
-            color: rgb(1, 114, 18);
+            color: #00af85;
         }
         
         /* 오른쪽 */
@@ -230,6 +231,10 @@
             height: 600px;
         }
 /* footer */
+ 		footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -321,11 +326,11 @@
                         <div id="membership_right">
                             <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
                             <small>적립 0.5%</small><br>
-                            <input type="button" value="전체등급보기">
+                            <input type="button" onClick="location.href='membership'" value="전체등급보기">
                         </div>
                     </td>
                     <td>적립금<br><br>
-                        <h3 style="color: green;"><b>3634원 &nbsp;&nbsp; ></b></h3>
+                        <h3 style="color: #00af85;"><b>3634원 &nbsp;&nbsp; ></b></h3>
                     </td>
                 </tr>
                 <tr>   

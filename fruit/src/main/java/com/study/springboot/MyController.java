@@ -66,6 +66,10 @@ public class MyController {
 	public String service_content_view() throws Exception {
 		return "board/service_content_view";
 	}
+	@RequestMapping("membership")
+	public String membership() throws Exception {
+		return "board/membership";
+	}
 	
 //------------------[   nav    ]--------------------
 	

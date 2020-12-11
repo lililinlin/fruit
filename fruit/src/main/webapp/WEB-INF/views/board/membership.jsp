@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>마이페이지 주문내역</title>
+    <title>멤버쉽</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -147,95 +147,8 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-/* main */
-		/* 회색박스 안에 내용 */
-        #head_wrapper{ /* 회색 영역 */
-            width: 100%;
-            background-color:rgb(248, 248, 248);
-            height: 350px;
-        }
-        #head_content{ /* 테이블담은 DIV */
-            width: 1000px;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
-        #head_content table{
-            width: 1000px;
-            border-spacing: 15px;
-            border-collapse: separate;
-        }
-        #head_content table td{
-            background-color: white;
-            margin-right: 100px;
-            width: 200px;
-        }
-        #head_top td{
-            padding: 20px 0 20px 60px;
-        }
-        #head_top input{
-            border: none;
-            margin-top: 15px;
-            font-size: 12px;
-            width: 110px;
-            height: 30px;
-        }
-        #membership{ /* 멤버쉽 네모 박스 */
-            border: 1px solid #00af85; 
-            width: 70px; 
-            height: 70px; 
-            padding-top: 20px;
-            text-align: center;
-            float: left;
-            margin: 20px 40px 0 10px;
-            color:#00af85;
-        }
-        #membership_right{ /* 멤버쉽 박스 옆 글씨부분 */
-        	display: inline-block; 
-        	padding-top: 20px;
-        }
-        /* 왼쪽 오른쪽 담은 div */
-        #main_wrapper{ 
-            padding: 50px 40px 0 50px;
-            width: 1100px;
-            margin: 0 auto;
-        }
-        /* 왼쪽 카테고리 */
-        #main_left{
-            float: left;
-            width: 200px;
-            height: 600px;
-        }
-        #main_left table{
-            margin: 30px 0px 0px 10px;
-            width: 200px;
-            height: 80px;
-        }
-        #main_left table td{
-            height: 50px;
-            padding-left: 20px;
-        }
-        #main_left table tr{
-            border: 1px solid rgb(231, 231, 231);
-        }
-        #main_left tr:hover{
-            background-color: rgb(251, 249, 249);            
-            cursor: pointer;
-            color: #00af85;
-        }
-        
-        /* 오른쪽 */
-        #main_right{
-            margin-left: 20px;
-            float: right;
-            width: 750px;
-            height: 600px;
-        }
 
 /* footer */
- 		footer{
-            width: 1200px;
-            margin: 0 auto;
-        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -317,48 +230,7 @@
         </table>
     </div>
     
-    
-    <div id="head_wrapper">
-        <div id="head_content">
-            <table>
-                <tr id="head_top">
-                    <td>
-                        <div id="membership">일반</div>
-                        <div id="membership_right">
-                            <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
-                            <small>적립 0.5%</small><br>
-                            <input type="button" onClick="location.href='membership'" value="전체등급보기">
-                        </div>
-                    </td>
-                    <td>적립금<br><br>
-                        <h3 style="color: #00af85;"><b>3634원 &nbsp;&nbsp; ></b></h3>
-                    </td>
-                </tr>
-                <tr>   
-                    <td colspan="2"><img src="https://via.placeholder.com/1000x70"></td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
-    
-    <div id="main_wrapper">
-        
-            <div id="main_left">
-                <h3><b>마이 푸룻츠</b></h3>
-                <table>
-                    <tr onClick="location.href='mypage_order'"><td><small>주문 내역</small></td><td>></td></tr>
-                    <tr onClick="location.href='mypage_basket'"><td><small>장바 구니</small></td><td>></td></tr>
-                    <tr onClick="location.href='mypage_update_check'"><td><small>내 정보</small></td><td>></td></tr>
-                    
-                </table>
-            </div>
-
-            <div id="main_right">
-            
-            </div>
-    </div>
-    
+    <h1>멤버쉽 소개</h1>
     
     <footer>
         <table id="footer_table">

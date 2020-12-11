@@ -179,14 +179,15 @@
             width: 110px;
             height: 30px;
         }
-        #membership{ /* 멤버쉽 네모 박스 */
-            border: 1px solid green; 
+       #membership{ /* 멤버쉽 네모 박스 */
+            border: 1px solid #00af85; 
             width: 70px; 
             height: 70px; 
             padding-top: 20px;
             text-align: center;
             float: left;
             margin: 20px 40px 0 10px;
+            color:#00af85;
         }
         #membership_right{ /* 멤버쉽 박스 옆 글씨부분 */
         	display: inline-block; 
@@ -219,7 +220,7 @@
         #main_left tr:hover{
             background-color: rgb(251, 249, 249);            
             cursor: pointer;
-            color: rgb(1, 114, 18);
+            color: #00af85;
         }
         
         /* 오른쪽 */
@@ -243,12 +244,19 @@
             width: 300px;
         }
         #button{ /* 확인버튼 */
-            margin-left: 280px;
+            margin-left: 255px;
             width: 230px;
             height: 60px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
         }
 
 /* footer */
+ 		footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -339,11 +347,11 @@
                         <div id="membership_right">
                             <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
                             <small>적립 0.5%</small><br>
-                            <input type="button" value="전체등급보기">
+                            <input type="button" onClick="location.href='membership'" value="전체등급보기">
                         </div>
                     </td>
                     <td>적립금<br><br>
-                        <h3 style="color: green;"><b>3634원 &nbsp;&nbsp; ></b></h3>
+                        <h3 style="color: #00af85;"><b>3634원 &nbsp;&nbsp; ></b></h3>
                     </td>
                 </tr>
                 <tr>   
@@ -369,7 +377,7 @@
             <div id="main_right">
                 <h4>개인 정보 수정</h4><br>
 
-                <h5>비밀번호 재확인</h5>
+                 <h6 style="color: rgb(78, 78, 78);">비밀번호 재확인</h6>
                 <small>회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해주세요.</small><br><br>
                 
 				<form action="MypagePasswordAction" method="POST" id="password_check">
@@ -385,7 +393,7 @@
 	                            </tr>
 	                        </table>
 	                </div><br>
-                	<input id="button" type="submit"  class="btn btn-success" value="확인">
+                	<input id="button" type="submit" value="확인">
                 </form>
             </div>
     </div>
