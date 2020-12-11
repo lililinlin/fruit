@@ -101,6 +101,31 @@ public class MyController {
 	public String onetoone_question() throws Exception {
 		return "nav/onetoone_question";
 	}
+//------------------[   mypage    ]--------------------
+	@RequestMapping("/mypage")
+	public String mypage() throws Exception {
+		return "mypage/update_check";
+	}
+	
+	@RequestMapping("/mypage_update_check")
+	public String mypage_update_check() throws Exception {
+		return "mypage/update_check";
+	}
+	
+	@RequestMapping("/MypagePasswordAction")
+	public String update() throws Exception {
+		return "mypage/update";
+	}
+	
+	@RequestMapping("/mypage_order")
+	public String mypage_order() throws Exception {
+		return "mypage/mypage_order";
+	}
+	
+	@RequestMapping("/mypage_basket")
+	public String mypage_basket() throws Exception {
+		return "mypage/mypage_basket";
+	}
 //------------------[  footer  ]--------------------	
 	
 	@RequestMapping("/footer_fruit")
