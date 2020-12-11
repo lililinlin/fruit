@@ -13,6 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <title>고객센터</title>
     <script>
         $(function() {
@@ -198,6 +199,11 @@
 			width:800px;
 			height:50px;
 		}
+		
+		#hideTr1{
+			display:;
+			border:1px solid red;
+		}
 /* footer */
         #footer_table{
             width: 1200px;
@@ -219,7 +225,16 @@
         }
           
     </style>
-   
+   	<script>
+		/* function showTr(){
+				if($('#hideTr').css('display','none')){
+					$('#hideTr').css('display','block');
+				} else{
+					$('#hideTr').css('display','none');
+				}
+				
+			} */
+   	</script>
 </head>
 <body>
     <div id="head0"></div>
@@ -289,6 +304,23 @@
     				<li onclick="location.href='onetoone_question'">1:1문의하기</li>
     			</ul>
     		</div>
+    		<script type="text/javascript"> $(document).ready(function () {
+        		// 페이지 document 로딩 완료 후 스크립트 실행
+        		<%for(int i = 1; i<4; i++){
+        			String viewhidden = "viewhidden" + i;
+				  	String hideTr = "hideTr" + i;
+        		%>
+		        	$("#<%=viewhidden%>").click(function () { 
+		            	status = $("#<%=hideTr%>").css("display"); 
+		            	if (status == "none") { 
+		                	$("#<%=hideTr%>").css("display", ""); 
+		            	} else { 
+		                	$("#<%=hideTr%>").css("display", "none"); 
+		                } 
+		            });
+        		<%}%>
+        	}); 
+    		</script>
     		<div id="content">
     			<h5>자주하는질문</h5>
     			<table class="table" id="content_table">
@@ -301,14 +333,20 @@
 				      <th scope="col" width="10%">조회수</th>
 				    </tr>
 				  </thead>
-				  <%for(int i=0; i<3; i++){ %>
+				  <%for(int i=1; i<4; i++){ 
+				  	String viewhidden = "viewhidden" + i;
+				  	String hideTr = "hideTr" + i;
+				  %>
 					  <tbody>
 					    <tr>
 					    	<td>공지</td>
-	    					<td>[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
 	    					<td>강이린</td>
 	    					<td>2020-12-08</td>
 	    					<td>400</td>
+					    </tr>
+					    <tr id="<%=hideTr%>">
+					    	<td colspan="5"><%=viewhidden %></td>
 					    </tr>
 					  </tbody>
 				  <%} %>
