@@ -242,7 +242,7 @@
 						<a href="login">로그인<h> |&nbsp;</h></a>
 						<a href="join_agree">회원가입<h> |&nbsp;</h></a>
 						<a href="mypage">마이페이지<h> |&nbsp;</h></a>
-						<a href="manager_main">관리자메인</a>
+						<a href="manager_main">관리자메인</a> 
 					</td>
 				<%}else{ %>
 					<td>
