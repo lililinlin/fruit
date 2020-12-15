@@ -191,7 +191,7 @@
 		}
 		#site_info_bottom1{
 			text-align:center;
-			
+			margin-bottom:100px;
 			width:580px;
 			height:400px;
 		}
