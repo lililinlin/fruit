@@ -249,7 +249,7 @@
 				%>
 					<td>
 						<a href="login">로그인<h> |&nbsp;</h></a>
-						<a href="join_agree">회원가입<h> |&nbsp;</h></a>
+						<a href="join_agree">회원가입</a>
 					</td>
 				<%
 					} else if(session.getAttribute("sessionID") == "admin"){
