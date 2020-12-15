@@ -323,7 +323,6 @@
  
 
     <div id="main_wrapper">
-        
             <div id="main_left">
                 <h3><b>회원관리</b></h3>
                 <table>
@@ -334,7 +333,7 @@
             </div>
 
             <div id="main_right">
-                <h4>회원 목록</h4><br>
+                <h4><b>회원 목록</b></h4><br>
                 <div id="member_option">
                     <form method="post" name="form">
                         <table>

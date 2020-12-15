@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>게시판관리</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -147,7 +147,44 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+/* main */
+        /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{ 
+            padding: 50px 40px 0 50px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        /* 왼쪽 카테고리 */
+        #main_left{
+            float: left;
+            width: 200px;
+            height: 600px;
+        }
+        #main_left table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
+        }
+        #main_left table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #main_left table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #main_left tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #00af85;
+        }
+        
+        /* 오른쪽 */
+        #main_right{ /*오른쪽 전체 감싼 div*/
+            margin-left: 20px;
+            float: right;
+            width: 850px;
+            height: 600px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -215,7 +252,7 @@
 	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
-	            	<a href="Member_management" ><h5><b>회원관리</b></h5></a>
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
 	            	<a href="goods_management"><h5><b>상품관리</b></h5></a>
@@ -226,7 +263,22 @@
             </tr>
         </table>
     </div>
+    
+	<div id="main_wrapper">
+            <div id="main_left">
+                <h3><b>게시판관리</b></h3>
+                <table>
+                    <tr onClick="location.href='manager_member'"><td><small>게시판</small></td><td>></td></tr>
+                    <tr onClick="location.href='manager_secession'"><td><small>게시판</small></td><td>></td></tr>
+                    
+                </table>
+            </div>
 
+            <div id="main_right">
+            <h4><b>게시판관리</b></h4>
+            </div>
+            
+    </div>
     <footer>
         <table id="footer_table">
             <tr>

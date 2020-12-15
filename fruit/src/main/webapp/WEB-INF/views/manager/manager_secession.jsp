@@ -286,7 +286,6 @@
  
 
     <div id="main_wrapper">
-        
             <div id="main_left">
                 <h3><b>회원관리</b></h3>
                 <table>
@@ -325,7 +324,7 @@
                    </table>
                </div>
     		</div>
-
+        </div>
     <footer>
         <table id="footer_table">
             <tr>
@@ -349,4 +348,4 @@
     </footer>
 </body>
 
-</html>l>
+</html>
