@@ -147,5 +147,9 @@ public class MyController {
 		return "footer/footer_personal";
 	}
 	
-	
+//------------------[  manager  ]--------------------
+	@RequestMapping("/manager_main")
+	public String manager_main() throws Exception {
+		return "manager/manager_main";
+	}
 }
