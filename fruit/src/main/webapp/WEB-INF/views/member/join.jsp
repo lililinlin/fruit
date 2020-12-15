@@ -227,7 +227,7 @@
 					} else if(session.getAttribute("sessionID") == "admin"){
 				%>
 					<td>
-						<a href="mypage">마이페이지<h> |&nbsp;</h></a>
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
 						<a href="manager_main">관리자메인</a>
 					</td>
 				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>

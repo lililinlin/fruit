@@ -234,7 +234,7 @@
 				<%
 					}
 				%>
-            </div>
+            </div> 
 
             <div>
                 <table id="head_table">
