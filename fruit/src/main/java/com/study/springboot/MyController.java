@@ -9,7 +9,7 @@ public class MyController {
 	@RequestMapping("/")
 	public String root1() throws Exception {
 		return "main";
-	}
+	} 
 	
 	@RequestMapping("home")
 	public String home() throws Exception {
