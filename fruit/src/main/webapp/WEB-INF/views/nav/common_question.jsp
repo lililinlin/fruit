@@ -200,7 +200,6 @@
 			height:50px;
 		}
 		<%for(int i = 1; i<4; i++){
-        	String viewhidden = "viewhidden" + i;
 			String hideTr = "hideTr" + i;
         %>
         	#<%=hideTr%>{
