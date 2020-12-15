@@ -152,6 +152,10 @@ public class MyController {
 	public String manager_main() throws Exception {
 		return "manager/manager_main";
 	}
+	@RequestMapping("/manager_modify")
+	public String manager_modify() throws Exception {
+		return "manager/manager_modify";
+	}
 	@RequestMapping("/goods_management")
 	public String goods_management() throws Exception {
 		return "manager/goods_management";
