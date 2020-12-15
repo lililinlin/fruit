@@ -29,7 +29,6 @@
           });
     </script>
     <style>
-
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
@@ -212,22 +211,10 @@
     <div id="head0"></div>
 
         <div id="wrapp">
-        
-            <div id="head1">
-            	<%
-				if (session.getAttribute("sessionID") == null) {
-				%>
-				<td><a href="login">로그인<h> |&nbsp;</h></a>
-					<a href="join_agree">회원가입</a></td>
-				<%
-					} else {
-				%>
-				<td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-					<a href="mypage">&nbsp;마이페이지</a></td>
-				<%
-					}
-				%>
-            </div>
+            	<div id="head1">
+				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
+					<a href="home">사용자페이지</a></td>
+            	</div>
 
             <div>
                 <table id="head_table">
@@ -252,7 +239,7 @@
 	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
-	            	<a href="manager_member" ><h5><b>회원관리</b></h5></a>
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
 	            	<a href="goods_management"><h5><b>상품관리</b></h5></a>
@@ -263,7 +250,7 @@
             </tr>
         </table>
     </div>
-
+    
 	<div id="main_wrapper">
             <div id="main_left">
                 <h3><b>상품관리</b></h3>
@@ -275,11 +262,10 @@
             </div>
 
             <div id="main_right">
-            <h4><b>상품관리</b></h4>
+            <h4><b>상품</b></h4>
             </div>
             
     </div>
-    
     <footer>
         <table id="footer_table">
             <tr>

@@ -229,25 +229,13 @@
    
 </head>
 <body>
-    <div id="head0"></div>
+   <div id="head0"></div>
 
         <div id="wrapp">
-        
-            <div id="head1">
-            	<%
-				if (session.getAttribute("sessionID") == null) {
-				%>
-				<td><a href="login">로그인<h> |&nbsp;</h></a>
-					<a href="join_agree">회원가입</a></td>
-				<%
-					} else {
-				%>
-				<td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-					<a href="mypage">&nbsp;마이페이지</a></td>
-				<%
-					}
-				%>
-            </div>
+            	<div id="head1">
+				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
+					<a href="home">사용자페이지</a></td>
+            	</div>
 
             <div>
                 <table id="head_table">
