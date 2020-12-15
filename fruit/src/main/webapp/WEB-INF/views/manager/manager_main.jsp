@@ -274,7 +274,7 @@
 	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
-	            	<a href="Member_management" ><h5><b>회원관리</b></h5></a>
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
 	            	<a href="goods_management"><h5><b>상품관리</b></h5></a>

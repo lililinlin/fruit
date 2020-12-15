@@ -152,10 +152,6 @@ public class MyController {
 	public String manager_main() throws Exception {
 		return "manager/manager_main";
 	}
-	@RequestMapping("/Member_management")
-	public String Member_management() throws Exception {
-		return "manager/Member_management";
-	}
 	
 	@RequestMapping("/goods_management")
 	public String goods_management() throws Exception {
@@ -165,7 +161,10 @@ public class MyController {
 	public String notice_management() throws Exception {
 		return "manager/notice_management";
 	}
-	
+	@RequestMapping("/manager_member")
+	public String manager_member() throws Exception {
+		return "manager/manager_member";
+	}
 	@RequestMapping("/OptionsearchAction")
 	public String OptionsearchAction() throws Exception {
 		return "manager/manager_member";
