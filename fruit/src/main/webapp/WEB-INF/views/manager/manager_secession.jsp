@@ -185,8 +185,22 @@
             width: 850px;
             height: 600px;
         }
-       
-
+        #main_table{
+            width: 800px;
+            margin-top: 30px;
+            border-top: 2px solid  #00af85;
+            border-bottom: 2px solid  #00af85;
+        }
+        #main_table table{
+            width: 800px;
+        }
+        #main_table table td, th{
+            height: 50px;
+            text-align: center;
+        }
+        #main_table table tr:nth-child(2n+1){
+            background-color:   rgb(247, 247, 247);
+        }
 /* footer */
  		footer{
             width: 1200px;
@@ -283,7 +297,33 @@
             </div>
 
             <div id="main_right">
-               
+               <h4><b>탈퇴 회원</b></h4>
+               <div id="main_table">
+                   <table>
+                       <th>번호</th>
+                       <th>아이디</th>
+                       <th>이름</th>
+                       <th>탈퇴 날짜</th>
+                       <tr>
+                           <td>1</td>
+                           <td>lililinlin</td>
+                           <td>강이린</td>
+                           <td>2020.11.29</td>
+                       </tr>
+                       <tr>
+                            <td>2</td>
+                            <td>hong</td>
+                            <td>홍길동</td>
+                            <td>2020.11.30</td>
+                       </tr>
+                       <tr>
+                            <td>3</td>
+                            <td>hong2</td>
+                            <td>홍길동2</td>
+                            <td>2020.11.30</td>
+                   </tr>
+                   </table>
+               </div>
     		</div>
 
     <footer>
