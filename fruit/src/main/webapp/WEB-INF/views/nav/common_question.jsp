@@ -199,11 +199,13 @@
 			width:800px;
 			height:50px;
 		}
-		
-		#hideTr1{
-			display:;
-			border:1px solid red;
-		}
+		<%for(int i = 1; i<4; i++){
+			String hideTr = "hideTr" + i;
+        %>
+        	#<%=hideTr%>{
+        		display:none;
+        	}     	
+        <%}%>
 /* footer */
         #footer_table{
             width: 1200px;
@@ -313,9 +315,9 @@
 		        	$("#<%=viewhidden%>").click(function () { 
 		            	status = $("#<%=hideTr%>").css("display"); 
 		            	if (status == "none") { 
-		                	$("#<%=hideTr%>").css("display", ""); 
+		                	$("#<%=hideTr%>").show(); 
 		            	} else { 
-		                	$("#<%=hideTr%>").css("display", "none"); 
+		                	$("#<%=hideTr%>").hide(); 
 		                } 
 		            });
         		<%}%>
