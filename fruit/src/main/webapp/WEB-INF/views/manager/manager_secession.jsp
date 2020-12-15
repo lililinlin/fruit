@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>마이페이지 개인 정보 수정</title>
+    <title>탈퇴 회원</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -185,58 +185,7 @@
             width: 850px;
             height: 600px;
         }
-        /* 검색창 */
-        #member_option input[type=text]{
-            width: 100px;
-            height: 30px;
-        }
-        #member_option select{
-            width: 100px;
-            height: 30px;
-            margin-bottom: 10px;
-        }
-        #member_option input[type=submit]{
-            width: 68px;
-            height: 35px;
-            margin-bottom: 10px;
-            border: 1px solid #00af85;
-	        background-color: #00af85;
-	        color: #fff;
-        }
-        #member_option td{
-            padding-right: 20px;
-            padding-bottom: 10px;
-        }
-        /* 조회해온 테이블만 감싼 div*/
-        #main_content{
-            border-top: 1px solid  #00af85;
-            border-bottom: 1px solid  #00af85;
-            margin-bottom: 30px;
-        } 
-        #member{  /*테이블 넓이*/
-            width: 850px;
-        }
-        #member th{ /*테이블 헤더*/
-            border-bottom:1px solid rgb(220, 220, 220);
-            height: 60px;
-            text-align: center;
-        }
-        #member td{
-            height: 60px;
-            text-align: center;
-        }
-        #member tr:nth-child(2n+1){
-            background-color:  rgb(247, 247, 247);
-        }
-        /* 탈퇴버튼 속성 */
-        #button{ 
-            margin-left: 300px;
-            width: 230px;
-            height: 60px;
-            border: 1px solid #00af85;
-	        background-color: #00af85;
-	        color: #fff;
-        }
+       
 
 /* footer */
  		footer{
@@ -306,10 +255,10 @@
         <table id = "nav">
             <tr>
                     <td class="main_menu_td">
-                        <a href="season_fruit"><h5><b>관리자메인</b></h5></a>
+                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
                     </td>
                     <td class="main_menu_td">
-                        <a href="hot_fruit" ><h5><b>회원관리</b></h5></a>
+                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
                     </td>
                     <td class="main_menu_td">
                         <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
@@ -337,82 +286,8 @@
             </div>
 
             <div id="main_right">
-                <h4>회원 목록</h4><br>
-                <div id="member_option">
-                    <form method="post" name="form">
-                        <table>
-                            <tr>
-                                <td><input type="text" name="birth_year">&nbsp;년&nbsp;</td>
-                                <td><select name="birth_month">
-                                    <option value=""> </option>
-                                    <option value="01" >1</option>
-                                    <option value="02" >2</option>
-                                    <option value="03" >3</option>
-                                    <option value="04" >4</option>
-                                    <option value="05" >5</option>
-                                    <option value="06" >6</option>
-                                    <option value="07" >7</option>
-                                    <option value="08" >8</option>
-                                    <option value="09" >9</option>
-                                    <option value="10" >10</option>
-                                    <option value="11" >11</option>
-                                    <option value="12" >12</option>
-                                    </select>&nbsp;월&nbsp;
-                                </td>
-                                <td><input type="text" name="birth_day">&nbsp;일</td>
-                                <td>아이디 &nbsp;<input type="text" name="id"></td>
-                                <td>이름 &nbsp;<input type="text" name="name"></td>
-                                <td><input type="submit" value="검색" onclick="javascript: form.action='OptionsearchAction';"/></td>
-                            </tr>
-                        </table>
-                </div>         
-                        
-	                <div id="main_content">
-	                        <table id="member">
-                                <th style="width: 40px;">선택</th>
-                                <th style="width: 75px;">가입일</th>
-                                <th style="width: 80px;">아이디</th>
-                                <th style="width: 75px;">이름</th>
-                                <th style="width: 75px;">휴대폰</th>
-                                <th style="width: 210px;">주소</th>
-                                <th style="width: 80px;">생년월일</th>
-	                            <tr>
-                                    <!-- <%
-                                    if (session.getAttribute("sessionID") == null) {
-                                    %>
-                                    <td><a href="login">로그인<h> |&nbsp;</h></a>
-                                        <a href="join_agree">회원가입</a></td>
-                                    <%
-                                        } else {
-                                    %>
-                                    <td><a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-                                        <a href="mypage">&nbsp;마이페이지</a></td>
-                                    <%
-                                        }
-                                    %> -->
-                                    <td><input type="checkbox"></td>
-                                    <td><small>2020.12.15</small></td>
-                                    <td><small>lililinlin</small></td>
-                                    <td><small>강이린</small></td>
-                                    <td><small>010-2222-2222</small></td>
-                                    <td><small>서울시 노원구 상계동 상계아파트 101동</small></td>
-                                    <td><small>1994.08.19</small></td>
-	                            </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td><small>2020.12.20</small></td>
-                                    <td><small>hong</small></td>
-                                    <td><small>홍길동</small></td>
-                                    <td><small>010-9999-9999</small></td>
-                                    <td><small>서울시 노원구 중계동 불암아파트 109동 101호</small></td>
-                                    <td><small>1002.08.22</small></td>
-	                            </tr>
-	                        </table>
-	                </div><br>
-                	<input id="button" type="submit" value="탈퇴" onclick="javascript: form.action='SecessionAction';"/>
-                </form>
-            </div>
-    </div>
+               
+    		</div>
 
     <footer>
         <table id="footer_table">
@@ -437,4 +312,4 @@
     </footer>
 </body>
 
-</html>
+</html>l>

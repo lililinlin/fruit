@@ -152,4 +152,24 @@ public class MyController {
 	public String manager_main() throws Exception {
 		return "manager/manager_main";
 	}
+	
+	@RequestMapping("/manager_member")
+	public String manager_list() throws Exception {
+		return "manager/manager_member";
+	}
+	
+	@RequestMapping("/OptionsearchAction")
+	public String OptionsearchAction() throws Exception {
+		return "manager/manager_member";
+	}
+	
+	@RequestMapping("/SecessionAction")
+	public String SecessionAction() throws Exception {
+		return "manager/manager_member";
+	}	
+	
+	@RequestMapping("/manager_secession")
+	public String manager_secession() throws Exception {
+		return "manager/manager_secession";
+	}
 }
