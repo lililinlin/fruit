@@ -186,7 +186,11 @@
 		}
 		#backbutton{
 			width:140px;
+			height:50px;
 			margin-left:980px;
+			background-color: #00af85;
+			color:white;
+			border:1px solid #00af85;
 		}
 		#subcontent{
 			width:1050px;
@@ -322,7 +326,7 @@
     			<input type="submit"value="등록">
     		</div>
     		<br><br>
-    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='review_management'">
+    		<input id="backbutton" type="button" value="목록" onclick="location.href='review_management'">
     	</div>
     </main>
     <footer>
