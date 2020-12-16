@@ -154,28 +154,28 @@
 			display:flex;
 			margin-top:50px;
 		}
-		#manager_profile{
+		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */
 			border:1px solid gray;
 			margin-right:20px;
 			width:200px;
 			height:100px;
 			text-align: center;
 		}
-		#manager_profile #button1{
+		#manager_profile #button1{/* admin관리자 내정보 버튼 */
 			width:100px;
 			height:40px;
 			background-color:#00af85;
 			color:white;
 			border:1px solid #00af85;
 		}
-		#manager_profile #button2{
+		#manager_profile #button2{/* admin관리자 로그아웃 버튼 */
 			width:100px;
 			height:40px;
 			background-color:white;
 			color:#00af85;
 			border:1px solid #00af85;
 		}
-		.site_info_top{
+		.site_info_top{/* 상단에 있는 테이블(today현황, 미처리 항목) */
 			text-align:center;
 			width:450px;
 			height:300px;
@@ -189,7 +189,7 @@
 			background-color:#f0f0f0;
 			color:black;
 		}
-		#site_info_bottom1{
+		#site_info_bottom1{/* 하단에 있는 테이블(최근 후기) */
 			text-align:center;
 			margin-bottom:100px;
 			width:580px;
@@ -198,7 +198,7 @@
 		#site_info_bottom1 tr:nth-child(2n){
 			background-color:#f0f0f0;
 		}
-		#site_info_bottom2{
+		#site_info_bottom2{/* 하단에 있는 테이블(최근주문목록) */
 			text-align:center;
 			margin-left:30px;
 			width:580px;
@@ -281,7 +281,7 @@
     			</tr>
     			<tr>
     				<td><input type="button" id="button1" value="내정보"></td>
-    				<td><input type="button" id="button2" value="로그아웃"></td>
+    				<td><input type="button" id="button2" value="로그아웃" onclick="location.href='home'" ></td>
     			</tr>
     		</table>
     		<table class="site_info_top">

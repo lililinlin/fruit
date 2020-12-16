@@ -157,7 +157,7 @@
 			display:flex;
 			margin:0 auto;
 		}
-		#left_menu{
+		#left_menu{/* 왼쪽 서브메뉴들 */
 			height:205px;
 			width:600px;
 			
@@ -183,22 +183,22 @@
 			color:rgb(1, 114, 18);
 			cursor: pointer;
 		}
-		#content{
+		#content{ /* 테이블 리스트를 감싸고 있는 div */
 			margin-left:30px;
 		}
 		#content h3{
 		margin-top:30px;
 		margin-bottom:50px;
 		}
-		#content_table{	
-			table-layout:fixed;
+		#content_table{	/* 테이블리스트 */
+			table-layout:fixed;/* 테이블의 크기	지정 및 고정시켜서  td에서 문자열을 자르거나 숨길 수 있게 한다. */
 			font-size:15px;
 			border-top:1px solid #00af85;
 			border-bottom:1px solid #00af85;
 		}
 		#content_table th{
 			height:70px;
-			vertical-align:middle;
+			vertical-align:middle;/* 상하좌우 사이즈를 중앙으로 맞춘다. */
 			text-align: center;
 			
 		}
@@ -206,9 +206,9 @@
 			width:800px;
 			text-align: center;
 			vertical-align:middle;
-			text-overflow:ellipsis;
-			overflow:hidden;
-			white-space:nowrap;
+			text-overflow:ellipsis;/* 글자가 넘어갈 경우 생략부호를 표시한다(...) */
+			overflow:hidden;/* 글자가 넘어가는것은 숨긴다. */
+			white-space:nowrap;/* 공백 문자가 있는 경우 자동 줄바꿈을 하지 않고 한줄로 표시하게 한다. */
 			font-size:17px;
 			height:70px;
 		}

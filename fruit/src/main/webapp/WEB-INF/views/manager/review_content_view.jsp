@@ -156,15 +156,14 @@
 			margin:0 auto;
 			margin-top:50px;
 		}
-		#main_wrapper hr{
+		#main_wrapper hr{/* 후기 내용과 댓글 사이 경계선을 나타냄 */
 			width:1050px;
 			margin:0 auto;
 		}
 		#main_wrapper h3,h6{
 			text-align: center;
 		}
-		#contents_table{
-			
+		#contents_table{/* 제목, 작성자, 작성일을 나타내는 테이블 */
 			margin:0 auto;
 			margin-top:70px;
 			font-size:15px;
@@ -179,12 +178,12 @@
 		#contents_table th{
 			background-color: #f5f5f5;
 		}
-		#main_contents{
+		#main_contents{/* 후기 내용을 보여주는 div */
 			width:1000px;
 			margin-left:100px;
 			margin-top:20px;
 		}
-		#backbutton{
+		#backbutton{/* 목록버튼 */
 			width:140px;
 			height:50px;
 			margin-left:980px;
@@ -192,11 +191,11 @@
 			color:white;
 			border:1px solid #00af85;
 		}
-		#subcontent{
+		#subcontent{/* 댓글 div*/
 			width:1050px;
 			margin:0 auto;
 		}
-		#subcontent input[type=submit]{
+		#subcontent input[type=submit]{/* 댓글 등록버튼 */
 			background-color: #00af85;
 			color:white;
 			border:1px solid #00af85;
