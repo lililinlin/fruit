@@ -337,17 +337,17 @@
     			</tr>
     			<tr>
     				<td>사과</td>
-    				<td>아주 맛있군요</td>
+    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
     				<td>2020.12.15</td>
     			</tr>
     			<tr>
     				<td>사과</td>
-    				<td>아주 맛있군요</td>
+    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
     				<td>2020.12.15</td>
     			</tr>
     			<tr>
     				<td>사과</td>
-    				<td>아주 맛있군요</td>
+    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
     				<td>2020.12.15</td>
     			</tr>
     			<tr>

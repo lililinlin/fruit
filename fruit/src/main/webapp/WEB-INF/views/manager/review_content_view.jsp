@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>고객센터</title>
+    <title>메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -149,54 +149,44 @@
         }
 /* main */
 		main{
-			margin-top:30px;
-			margin-left:30px;
+			margin-bottom:100px;
 		}
 		#main_wrapper{
-			width:1060px;
-			display:flex;
+			width:1200px;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		#main_wrapper hr{
+			width:1050px;
 			margin:0 auto;
 		}
-		#left_menu{
-			height:205px;
-			width:600px;
-			
+		#main_wrapper h3,h6{
+			text-align: center;
 		}
-		#left_menu ul{
-			width:100%;
-			margin-top:-16px;
-			margin-left:0;
-			height:152px;
+		#contents_table{
 			
+			margin:0 auto;
+			margin-top:70px;
+			font-size:15px;
+			width:1050px;
+			border-top:2px solid black;
 		}
-		#left_menu li{
-			border:1px solid #e3e3e3;
-			font-size:12px;
+		#contents_table td,th{
+			height:50px;
+			border:1px solid #efefef;
 			padding-left:20px;
-			height:50px;
-			line-height:50px;
-			list-style-type:none;
-			vertical-align: middle;
 		}
-		#left_menu li:hover{
-			background-color:#f7f7f7;
-			/* color: #4eac87; */
-			color:rgb(1, 114, 18);
-			cursor: pointer;
+		#contents_table th{
+			background-color: #f5f5f5;
 		}
-		#content{
-			margin-left:30px;
+		#main_contents{
+			width:1000px;
+			margin-left:100px;
+			margin-top:20px;
 		}
-		#content h5{
-		padding-bottom:20px;
-		border-bottom:1px solid rgb(1, 114, 18);
-		}
-		#content_table{
-			font-size:13px;
-		}
-		#content_table td{
-			width:800px;
-			height:50px;
+		#backbutton{
+			width:140px;
+			margin-left:980px;
 		}
 /* footer */
         #footer_table{
@@ -232,7 +222,7 @@
 				%>
 					<td>
 						<a href="login">로그인<h> |&nbsp;</h></a>
-						<a href="join_agree">회원가입</a> 
+						<a href="join_agree">회원가입</a>
 					</td>
 				<%
 					} else if(session.getAttribute("sessionID") == "admin"){
@@ -290,29 +280,33 @@
     </div>
     <main>
     	<div id="main_wrapper">
-    		<div id="content">
-    			<h5>사용자 후기</h5>
-    			<table class="table" id="content_table">
-				  <thead>
-				    <tr>
-				      <th scope="col" width="15%">번호</th>
-				      <th scope="col" width="50%">제목</th>
-				      <th scope="col" width="15%">작성자</th>
-				      <th scope="col" width="20%">작성일</th>
-				    </tr>
-				  </thead>
-				  <%for(int i=0; i<3; i++){ %>
-					  <tbody>
-					    <tr>
-					    	<td>1</td>
-	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
-	    					<td>이정현</td>
-	    					<td>2020-12-08</td>
-					    </tr>
-					  </tbody>
-				  <%} %>
-				</table>
-    		</div>
+    		<h3>공지사항</h3>
+    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
+    		<table id="contents_table">
+    			<tr>
+    				<th>제목</th>
+    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+    			</tr>
+    			<tr>
+    				<th>작성자</th>
+    				<td colspan="3">강이린</td>
+    			</tr>
+    			<tr>
+    				<th width="10%">작성일</th>
+    				<td width="20%">2020-12-08</td>
+    				<th width="10%">조회수</th>
+    				<td width="60%">400</td>
+    			</tr>
+    		</table>
+    		<div id="main_contents">
+    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
+    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
+    			   a reiciendis nostrum vel debitis.</p>
+    		</div><br><br>
+    		<hr><br>
+    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
     	</div>
     </main>
     <footer>

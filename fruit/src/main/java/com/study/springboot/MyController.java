@@ -190,4 +190,8 @@ public class MyController {
 	public String review_management() throws Exception {
 		return "manager/review_management";
 	}
+	@RequestMapping("/review_content_view")
+	public String review_content_view() throws Exception {
+		return "manager/review_content_view";
+	}
 }
