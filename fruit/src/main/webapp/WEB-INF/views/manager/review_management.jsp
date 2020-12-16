@@ -186,15 +186,19 @@
 		#content{
 			margin-left:30px;
 		}
-		#content h5{
-		padding-bottom:20px;
-		border-bottom:1px solid rgb(1, 114, 18);
+		#content h3{
+		margin-top:30px;
+		margin-bottom:50px;
 		}
 		#content_table{	
 			table-layout:fixed;
 			font-size:15px;
+			border-top:1px solid #00af85;
+			border-bottom:1px solid #00af85;
 		}
-		#content_table th{	
+		#content_table th{
+			height:70px;
+			vertical-align:middle;
 			text-align: center;
 			
 		}
@@ -207,6 +211,9 @@
 			white-space:nowrap;
 			font-size:17px;
 			height:70px;
+		}
+		#content_table tr:nth-child(2n + 1){
+			background-color:#f0f0f0;
 		}
 /* footer */
         #footer_table{
@@ -280,55 +287,46 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-                    <td class="main_menu_td">
-                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
-                    </td> 
+	            <td class="main_menu_td">
+	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
+	            </td> 
             </tr>
         </table>
     </div>
     <main>
     	<div id="main_wrapper">
     		<div id="content">
-    			<h5>사용자 후기</h5>
-    			<table class="table" id="content_table">
-				  <thead>
+    			<h3><b>사용자 후기</b></h3>
+    			<table id="content_table">
 				    <tr>
 				      <th scope="col" width="15%">번호</th>
 				      <th scope="col" width="50%">제목</th>
 				      <th scope="col" width="15%">작성자</th>
 				      <th scope="col" width="20%">작성일</th>
 				    </tr>
-				  </thead>
 				  <%for(int i=0; i<3; i++){ %>
-					  <tbody>
-					    <tr>
-					    	<td>1</td>
-	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
-	    					<td>이정현</td>
-	    					<td>2020-12-08</td>
-					    </tr>
-					  </tbody>
+					  <tr>
+					  	<td>1</td>
+	    			  	<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
+	    				<td>이정현</td>
+	    				<td>2020-12-08</td>
+					  </tr>
 				  <%} %>
-				  		<tbody>
-					    <tr>
-					    	<td>1</td>
-	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
-	    					<td>이정현</td>
-	    					<td>2020-12-08</td>
-					    </tr>
-					  </tbody>
+					  <tr>
+					    <td>1</td>
+	    				<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+	    				<td>이정현</td>
+	    				<td>2020-12-08</td>
+					  </tr>
 				</table>
     		</div>
     	</div>
