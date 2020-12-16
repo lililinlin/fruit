@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>사용자 후기</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -186,7 +186,22 @@
 		}
 		#backbutton{
 			width:140px;
+			height:50px;
 			margin-left:980px;
+			background-color: #00af85;
+			color:white;
+			border:1px solid #00af85;
+		}
+		#subcontent{
+			width:1050px;
+			margin:0 auto;
+		}
+		#subcontent input[type=submit]{
+			background-color: #00af85;
+			color:white;
+			border:1px solid #00af85;
+			width:90px;
+			height:80px;
 		}
 /* footer */
         #footer_table{
@@ -281,32 +296,37 @@
     <main>
     	<div id="main_wrapper">
     		<h3>공지사항</h3>
-    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
+    		<h6 style="color: gray;">고객님의 관심과 사랑에 푸릇츠는 한단계 성장합니다.</h6>
     		<table id="contents_table">
     			<tr>
     				<th>제목</th>
-    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+    				<td colspan="3">아주 맛있군요</td>
     			</tr>
     			<tr>
     				<th>작성자</th>
-    				<td colspan="3">강이린</td>
+    				<td colspan="3">이정현</td>
     			</tr>
     			<tr>
     				<th width="10%">작성일</th>
     				<td width="20%">2020-12-08</td>
-    				<th width="10%">조회수</th>
-    				<td width="60%">400</td>
+    				
     			</tr>
     		</table>
     		<div id="main_contents">
-    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    			<p>후기 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
     			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
     			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
     			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
     			   a reiciendis nostrum vel debitis.</p>
     		</div><br><br>
     		<hr><br>
-    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
+    		<div id="subcontent">
+    			<h4>댓글</h4>
+    			<textarea rows="3" cols="50" style="width: 950px;  placeholder="댓글을 남겨보세요."></textarea>
+    			<input type="submit"value="등록">
+    		</div>
+    		<br><br>
+    		<input id="backbutton" type="button" value="목록" onclick="location.href='review_management'">
     	</div>
     </main>
     <footer>
