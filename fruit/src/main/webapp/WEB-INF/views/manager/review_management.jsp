@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>고객센터</title>
+    <title>사용자후기 게시판</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -190,12 +190,23 @@
 		padding-bottom:20px;
 		border-bottom:1px solid rgb(1, 114, 18);
 		}
-		#content_table{
-			font-size:13px;
+		#content_table{	
+			table-layout:fixed;
+			font-size:15px;
+		}
+		#content_table th{	
+			text-align: center;
+			
 		}
 		#content_table td{
 			width:800px;
-			height:50px;
+			text-align: center;
+			vertical-align:middle;
+			text-overflow:ellipsis;
+			overflow:hidden;
+			white-space:nowrap;
+			font-size:17px;
+			height:70px;
 		}
 /* footer */
         #footer_table{
@@ -310,6 +321,14 @@
 					    </tr>
 					  </tbody>
 				  <%} %>
+				  		<tbody>
+					    <tr>
+					    	<td>1</td>
+	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+	    					<td>이정현</td>
+	    					<td>2020-12-08</td>
+					    </tr>
+					  </tbody>
 				</table>
     		</div>
     	</div>

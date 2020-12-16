@@ -295,7 +295,7 @@
     </div>
     <main>
     	<div id="main_wrapper">
-    		<h3>공지사항</h3>
+    		<h3>사용자 후기</h3>
     		<h6 style="color: gray;">고객님의 관심과 사랑에 푸릇츠는 한단계 성장합니다.</h6>
     		<table id="contents_table">
     			<tr>
