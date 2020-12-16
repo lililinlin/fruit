@@ -166,8 +166,7 @@
 			width:100%;
 			margin-top:-16px;
 			margin-left:0;
-			height:152px;
-			
+			height:152px;	
 		}
 		#left_menu li{
 			border:1px solid #e3e3e3;
