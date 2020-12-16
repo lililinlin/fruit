@@ -147,23 +147,23 @@
             text-align: center;
         }
 /* main */
-		#main_content{
+		#main_content{/* 메인내용을 감싸고 있는 틀 */
             font-family: 'Noto Sans KR';
             width:1200px;
             margin:0 auto;
         }
-        #form1{
+        #form1{/* 약관동의를 감싸고 있는 from태그 */
             margin:20px 0px 20px 0px;
         }
         input[type="checkbox"]{
             width:20px;
             height:20px;
         }
-        input[type="submit"],input[type="reset"]{
+        input[type="submit"],input[type="reset"]{/* 동의,비동의 버튼 */
             width:150px;
             height:50px;
         }
-        #all_choice{
+        #all_choice{/* 모두 동의하기 체크박스 */
             text-align: center;
         }
 /* footer */

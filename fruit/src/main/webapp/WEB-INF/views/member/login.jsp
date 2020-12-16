@@ -158,9 +158,8 @@
             margin-top:100px;
             margin-bottom: 50px;
         }
-        #login_form{
+        #login_form{/* 로그인폼 태그 */
             margin:0 auto;
-            
             margin-bottom: 50px;
             width:400px;
             

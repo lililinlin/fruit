@@ -163,8 +163,7 @@
 		#main_wrapper h3,h6{
 			text-align: center;
 		}
-		#contents_table{
-			
+		#contents_table{/* 상단 테이블(제목,작성자,작성일,조회수) */
 			margin:0 auto;
 			margin-top:70px;
 			font-size:15px;
@@ -179,12 +178,12 @@
 		#contents_table th{
 			background-color: #f5f5f5;
 		}
-		#main_contents{
+		#main_contents{/* 컨텐츠 내용 */
 			width:1000px;
 			margin-left:100px;
 			margin-top:20px;
 		}
-		#backbutton{
+		#backbutton{/* 목록버튼 */
 			width:140px;
 			margin-left:980px;
 		}
