@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,64 +148,45 @@
             text-align: center;
         }
 /* main */
-		.main_wrapper{
+		main{
+			margin-bottom:100px;
+		}
+		#main_wrapper{
 			width:1200px;
 			margin:0 auto;
-			display:flex;
 			margin-top:50px;
 		}
-		#manager_profile{
-			border:1px solid gray;
-			margin-right:20px;
-			width:200px;
-			height:100px;
+		#main_wrapper hr{
+			width:1050px;
+			margin:0 auto;
+		}
+		#main_wrapper h3,h6{
 			text-align: center;
 		}
-		#manager_profile #button1{
-			width:100px;
-			height:40px;
-			background-color:#00af85;
-			color:white;
-			border:1px solid #00af85;
+		#contents_table{
+			
+			margin:0 auto;
+			margin-top:70px;
+			font-size:15px;
+			width:1050px;
+			border-top:2px solid black;
 		}
-		#manager_profile #button2{
-			width:100px;
-			height:40px;
-			background-color:white;
-			color:#00af85;
-			border:1px solid #00af85;
+		#contents_table td,th{
+			height:50px;
+			border:1px solid #efefef;
+			padding-left:20px;
 		}
-		.site_info_top{
-			text-align:center;
-			width:450px;
-			height:300px;
-			border-spacing:4px;
-			border-collapse: separate;
+		#contents_table th{
+			background-color: #f5f5f5;
 		}
-		.site_info_top tr, .site_info_top td, .site_info_top th{
-			border:1px solid gray;
+		#main_contents{
+			width:1000px;
+			margin-left:100px;
+			margin-top:20px;
 		}
-		.site_info_top th{
-			background-color:#f0f0f0;
-			color:black;
-		}
-		#site_info_bottom1{
-			text-align:center;
-			margin-bottom:100px;
-			width:580px;
-			height:400px;
-		}
-		#site_info_bottom1 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-		#site_info_bottom2{
-			text-align:center;
-			margin-left:30px;
-			width:580px;
-			height:400px;
-		}
-		#site_info_bottom2 tr:nth-child(2n){
-			background-color:#f0f0f0;
+		#backbutton{
+			width:140px;
+			margin-left:980px;
 		}
 /* footer */
         #footer_table{
@@ -231,13 +212,34 @@
    
 </head>
 <body>
-   <div id="head0"></div>
+    <div id="head0"></div>
 
         <div id="wrapp">
-            	<div id="head1">
-				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
-					<a href="home">사용자페이지</a></td>
-            	</div>
+        
+             <div id="head1">
+                <%
+				if (session.getAttribute("sessionID") == null) {
+				%>
+					<td>
+						<a href="login">로그인<h> |&nbsp;</h></a>
+						<a href="join_agree">회원가입</a>
+					</td>
+				<%
+					} else if(session.getAttribute("sessionID") == "admin"){
+				%>
+					<td>
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
+						<a href="manager_main">관리자메인</a>
+					</td>
+				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
+					<td>
+						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+						<a href="mypage">&nbsp;마이페이지</a>
+					</td>
+				<%
+					}
+				%>
+            </div>
 
             <div>
                 <table id="head_table">
@@ -258,139 +260,53 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-	            <td class="main_menu_td">
-	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
-	            </td> 
+                    <td class="main_menu_td">
+                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="event"><h5><b>이벤트</b></h5></a>
+                    </td> 
             </tr>
         </table>
     </div>
     <main>
-    	<div class="main_wrapper">
-    		<table id="manager_profile">
+    	<div id="main_wrapper">
+    		<h3>공지사항</h3>
+    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
+    		<table id="contents_table">
     			<tr>
-    				<td colspan="2" style="height: 60px"><h3>강이린님</h3></td>
+    				<th>제목</th>
+    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
     			</tr>
     			<tr>
-    				<td><input type="button" id="button1" value="내정보"></td>
-    				<td><input type="button" id="button2" value="로그아웃"></td>
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>today현황</h3></td>
+    				<th>작성자</th>
+    				<td colspan="3">강이린</td>
     			</tr>
     			<tr>
-    				<th>회원가입 수</th>
-    				<th>탈퇴회원 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품등록 수</th>
-    				<th>삼품주문 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
+    				<th width="10%">작성일</th>
+    				<td width="20%">2020-12-08</td>
+    				<th width="10%">조회수</th>
+    				<td width="60%">400</td>
     			</tr>
     		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>미처리항목</h3></td>
-    			</tr>
-    			<tr>
-    				<th>1:1문의</th>
-    				<th>교환/환불신청</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품문의</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    			</tr>
-    		</table>
-    	</div>
-    	<div class="main_wrapper">
-    		<table id="site_info_bottom1">
-    			<tr>
-    				<th colspan="3"><h3>최근후기</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="20%">상품명</th>
-    				<th width="60%">제목</th>
-    				<th width="20%">날짜</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    		</table>
-    		<table id="site_info_bottom2">
-    			<tr>
-    				<th colspan="4"><h3>최근주문목록</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="25%">상품명</th>
-    				<th width="25%">금액</th>
-    				<th width="25%">날짜</th>
-    				<th width="25%">결제내역</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    		</table>
+    		<div id="main_contents">
+    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
+    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
+    			   a reiciendis nostrum vel debitis.</p>
+    		</div><br><br>
+    		<hr><br>
+    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
     	</div>
     </main>
     <footer>

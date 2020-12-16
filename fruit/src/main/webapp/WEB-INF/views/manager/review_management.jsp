@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>고객센터</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,64 +148,55 @@
             text-align: center;
         }
 /* main */
-		.main_wrapper{
-			width:1200px;
-			margin:0 auto;
-			display:flex;
-			margin-top:50px;
-		}
-		#manager_profile{
-			border:1px solid gray;
-			margin-right:20px;
-			width:200px;
-			height:100px;
-			text-align: center;
-		}
-		#manager_profile #button1{
-			width:100px;
-			height:40px;
-			background-color:#00af85;
-			color:white;
-			border:1px solid #00af85;
-		}
-		#manager_profile #button2{
-			width:100px;
-			height:40px;
-			background-color:white;
-			color:#00af85;
-			border:1px solid #00af85;
-		}
-		.site_info_top{
-			text-align:center;
-			width:450px;
-			height:300px;
-			border-spacing:4px;
-			border-collapse: separate;
-		}
-		.site_info_top tr, .site_info_top td, .site_info_top th{
-			border:1px solid gray;
-		}
-		.site_info_top th{
-			background-color:#f0f0f0;
-			color:black;
-		}
-		#site_info_bottom1{
-			text-align:center;
-			margin-bottom:100px;
-			width:580px;
-			height:400px;
-		}
-		#site_info_bottom1 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-		#site_info_bottom2{
-			text-align:center;
+		main{
+			margin-top:30px;
 			margin-left:30px;
-			width:580px;
-			height:400px;
 		}
-		#site_info_bottom2 tr:nth-child(2n){
-			background-color:#f0f0f0;
+		#main_wrapper{
+			width:1060px;
+			display:flex;
+			margin:0 auto;
+		}
+		#left_menu{
+			height:205px;
+			width:600px;
+			
+		}
+		#left_menu ul{
+			width:100%;
+			margin-top:-16px;
+			margin-left:0;
+			height:152px;
+			
+		}
+		#left_menu li{
+			border:1px solid #e3e3e3;
+			font-size:12px;
+			padding-left:20px;
+			height:50px;
+			line-height:50px;
+			list-style-type:none;
+			vertical-align: middle;
+		}
+		#left_menu li:hover{
+			background-color:#f7f7f7;
+			/* color: #4eac87; */
+			color:rgb(1, 114, 18);
+			cursor: pointer;
+		}
+		#content{
+			margin-left:30px;
+		}
+		#content h5{
+		padding-bottom:20px;
+		border-bottom:1px solid rgb(1, 114, 18);
+		}
+		#content_table{
+			font-size:13px;
+		}
+		#content_table td{
+			width:800px;
+			height:50px;
 		}
 /* footer */
         #footer_table{
@@ -231,13 +222,34 @@
    
 </head>
 <body>
-   <div id="head0"></div>
+    <div id="head0"></div>
 
         <div id="wrapp">
-            	<div id="head1">
-				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
-					<a href="home">사용자페이지</a></td>
-            	</div>
+        
+             <div id="head1">
+                <%
+				if (session.getAttribute("sessionID") == null) {
+				%>
+					<td>
+						<a href="login">로그인<h> |&nbsp;</h></a>
+						<a href="join_agree">회원가입</a> 
+					</td>
+				<%
+					} else if(session.getAttribute("sessionID") == "admin"){
+				%>
+					<td>
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
+						<a href="manager_main">관리자메인</a>
+					</td>
+				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
+					<td>
+						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+						<a href="mypage">&nbsp;마이페이지</a>
+					</td>
+				<%
+					}
+				%>
+            </div>
 
             <div>
                 <table id="head_table">
@@ -258,139 +270,49 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-	            <td class="main_menu_td">
-	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
-	            </td> 
+                    <td class="main_menu_td">
+                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="event"><h5><b>이벤트</b></h5></a>
+                    </td> 
             </tr>
         </table>
     </div>
     <main>
-    	<div class="main_wrapper">
-    		<table id="manager_profile">
-    			<tr>
-    				<td colspan="2" style="height: 60px"><h3>강이린님</h3></td>
-    			</tr>
-    			<tr>
-    				<td><input type="button" id="button1" value="내정보"></td>
-    				<td><input type="button" id="button2" value="로그아웃"></td>
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>today현황</h3></td>
-    			</tr>
-    			<tr>
-    				<th>회원가입 수</th>
-    				<th>탈퇴회원 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품등록 수</th>
-    				<th>삼품주문 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>미처리항목</h3></td>
-    			</tr>
-    			<tr>
-    				<th>1:1문의</th>
-    				<th>교환/환불신청</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품문의</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    			</tr>
-    		</table>
-    	</div>
-    	<div class="main_wrapper">
-    		<table id="site_info_bottom1">
-    			<tr>
-    				<th colspan="3"><h3>최근후기</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="20%">상품명</th>
-    				<th width="60%">제목</th>
-    				<th width="20%">날짜</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td onClick="location.href='review_management'" style="cursor: pointer;">아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>아주 맛있군요</td>
-    				<td>2020.12.15</td>
-    			</tr>
-    		</table>
-    		<table id="site_info_bottom2">
-    			<tr>
-    				<th colspan="4"><h3>최근주문목록</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="25%">상품명</th>
-    				<th width="25%">금액</th>
-    				<th width="25%">날짜</th>
-    				<th width="25%">결제내역</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td>5,000원</td>
-    				<td>2020.12.15</td>
-    				<td>결제 완료</td>
-    			</tr>
-    		</table>
+    	<div id="main_wrapper">
+    		<div id="content">
+    			<h5>사용자 후기</h5>
+    			<table class="table" id="content_table">
+				  <thead>
+				    <tr>
+				      <th scope="col" width="15%">번호</th>
+				      <th scope="col" width="50%">제목</th>
+				      <th scope="col" width="15%">작성자</th>
+				      <th scope="col" width="20%">작성일</th>
+				    </tr>
+				  </thead>
+				  <%for(int i=0; i<3; i++){ %>
+					  <tbody>
+					    <tr>
+					    	<td>1</td>
+	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
+	    					<td>이정현</td>
+	    					<td>2020-12-08</td>
+					    </tr>
+					  </tbody>
+				  <%} %>
+				</table>
+    		</div>
     	</div>
     </main>
     <footer>
