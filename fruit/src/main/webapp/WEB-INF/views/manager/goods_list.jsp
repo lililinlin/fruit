@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>상품관리</title>
+    <title>상품 목록</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -255,8 +255,8 @@
             <div id="main_left">
                 <h3><b>상품관리</b></h3>
                 <table>
-                    <tr onClick="location.href='manager_member'"><td><small>상품</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>상품</small></td><td>></td></tr>
+                    <tr onClick="location.href='goods_list'"><td><small>상품 목록</small></td><td>></td></tr>
+                    <tr onClick="location.href='goods_register'"><td><small>상품 등록</small></td><td>></td></tr>
                     
                 </table>
             </div>

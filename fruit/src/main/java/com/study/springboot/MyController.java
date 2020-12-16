@@ -156,9 +156,13 @@ public class MyController {
 	public String manager_modify() throws Exception {
 		return "manager/manager_modify";
 	}
-	@RequestMapping("/goods_management")
-	public String goods_management() throws Exception {
-		return "manager/goods_management";
+	@RequestMapping("/goods_list")
+	public String goods_list() throws Exception {
+		return "manager/goods_list";
+	}
+	@RequestMapping("/goods_register")
+	public String goods_register() throws Exception {
+		return "manager/goods_register";
 	}
 	@RequestMapping("/notice_management")
 	public String notice_management() throws Exception {

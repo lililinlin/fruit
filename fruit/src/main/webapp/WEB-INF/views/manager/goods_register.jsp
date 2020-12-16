@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>탈퇴 회원</title>
+    <title>상품등록</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -29,7 +29,6 @@
           });
     </script>
     <style>
-
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
@@ -185,27 +184,7 @@
             width: 850px;
             height: 600px;
         }
-        #main_table{
-            width: 800px;
-            margin-top: 30px;
-            border-top: 2px solid  #00af85;
-            border-bottom: 2px solid  #00af85;
-        }
-        #main_table table{
-            width: 800px;
-        }
-        #main_table table td, th{
-            height: 50px;
-            text-align: center;
-        }
-        #main_table table tr:nth-child(2n+1){
-            background-color:   rgb(247, 247, 247);
-        }
 /* footer */
- 		footer{
-            width: 1200px;
-            margin: 0 auto;
-        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -229,7 +208,7 @@
    
 </head>
 <body>
-   <div id="head0"></div>
+    <div id="head0"></div>
 
         <div id="wrapp">
             	<div id="head1">
@@ -263,7 +242,7 @@
 	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
-	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
+	            	<a href="goods_management"><h5><b>상품관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
 	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
@@ -271,48 +250,22 @@
             </tr>
         </table>
     </div>
- 
-
-    <div id="main_wrapper">
+    
+	<div id="main_wrapper">
             <div id="main_left">
-                <h3><b>회원관리</b></h3>
+                <h3><b>상품관리</b></h3>
                 <table>
-                    <tr onClick="location.href='manager_member'"><td><small>회원 목록</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>탈퇴 회원</small></td><td>></td></tr>
+                    <tr onClick="location.href='goods_list'"><td><small>상품 목록</small></td><td>></td></tr>
+                    <tr onClick="location.href='goods_register'"><td><small>상품 등록</small></td><td>></td></tr>
                     
                 </table>
             </div>
 
             <div id="main_right">
-               <h4><b>탈퇴 회원</b></h4>
-               <div id="main_table">
-                   <table>
-                       <th>번호</th>
-                       <th>아이디</th>
-                       <th>이름</th>
-                       <th>탈퇴 날짜</th>
-                       <tr>
-                           <td>1</td>
-                           <td>lililinlin</td>
-                           <td>강이린</td>
-                           <td>2020.11.29</td>
-                       </tr>
-                       <tr>
-                            <td>2</td>
-                            <td>hong</td>
-                            <td>홍길동</td>
-                            <td>2020.11.30</td>
-                       </tr>
-                       <tr>
-                            <td>3</td>
-                            <td>hong2</td>
-                            <td>홍길동2</td>
-                            <td>2020.11.30</td>
-                   </tr>
-                   </table>
-               </div>
-    		</div>
-        </div>
+            <h4><b>상품</b></h4>
+            </div>
+            
+    </div>
     <footer>
         <table id="footer_table">
             <tr>
@@ -335,5 +288,4 @@
         </table>
     </footer>
 </body>
-
 </html>
