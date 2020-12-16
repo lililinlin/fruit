@@ -186,4 +186,8 @@ public class MyController {
 	public String manager_secession() throws Exception {
 		return "manager/manager_secession";
 	}
+	@RequestMapping("/review_management")
+	public String review_management() throws Exception {
+		return "manager/review_management";
+	}
 }
