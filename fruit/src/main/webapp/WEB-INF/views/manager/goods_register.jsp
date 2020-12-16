@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>상품등록</title>
+    <title>상품 목록</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -182,7 +182,49 @@
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 600px;
+            height: 1000px;
+        }
+        /* 메인 테이블 */
+        #main_table{ 
+            width: 820px;
+            text-align: center;
+            margin: 30px 0 30px 0;
+            border-top: 1px solid #00af85;
+            border-bottom: 1px solid #00af85;
+        }
+        #main_table tr:nth-child(2n+1){ 
+            background-color: rgb(246, 246, 246);
+        }
+        #main_table td{ 
+            height: 75px;
+        }
+        #main_table input[type=button]{  /* 중복확인 버튼 속성 */
+            width: 85px;
+            height: 35px;
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+        #button_box{  /* 취소 등록 버튼 묶은 div*/
+            width: 800px;
+            text-align: center;
+        }
+        #button_box input[type=submit]{  /* 등록 버튼 */
+            width: 200px;
+            height: 40px;
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+        #button_box input[type=button]{  /* 취소 버튼 */
+            width: 200px;
+            height: 40px;
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
         }
 /* footer */
         #footer_table{
@@ -262,7 +304,72 @@
             </div>
 
             <div id="main_right">
-            <h4><b>상품</b></h4>
+                <h4><b>상품 등록</b></h4>
+                    <form action="" method="POST" id="goods_us" name="goodsInfo" onsubmit="return checkValue()">
+                        <table id="main_table">
+                            <tr>
+                                <td>상품 번호</td>
+                                <td><input id="input_register" type="text" name="id" size="46" placeholder="ex) 2450451234">
+                                    <input type="button"  value="중복확인" onclick="Check()">
+                                    <input id="check_hidden" type="hidden"	value="no" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>상품명</td>
+                                <td><input type="text" id="goodsname" name="goodsname"></td>
+                            </tr>
+                            <tr>
+                                <td>판매가</td>
+                                <td><input type="text" id="price" name="price"> 원</td>
+                            </tr>
+                            <tr>
+                                <td>할인율</td>
+                                <td><input type="text" id="discount" name="discount">
+                                    <button onclick="ShowPrice()">계산</button>
+                                    <div id="showResult"></div></td>
+                            </tr>
+                            <tr>
+                                <td>포인트</td>
+                                <td><input type="text" id="point" name="point">포인트</td>
+                            </tr>
+                            <tr>
+                                <td>카테고리</td>
+                                <td>
+                                    <select name="categories" id="categories">
+                                        <option value="season">제철과일</option>
+                                        <option value="hot">인기과일</option>
+                                        <option value="aboard">수입과일</option>
+                                        <option value="event">이벤트</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>배송비</td>
+                                <td>
+                                    <select name="delivery" id="delivery">
+                                        <option value="0">없음</option>
+                                        <option value="1">2500원</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>재고수량</td>
+                                <td><input type="text" id="stock" name="stock"> 개</td>
+                            </tr>
+                            <tr>
+                                <td>상품 대표 이미지 등록</td>
+                                <td><input type="" id="main_img" name="main_img"></td>
+                            </tr>
+                            <tr>
+                                <td>상품 소개 이미지 등록</td>
+                                <td><input type="" id="sub_img" name="sub_img"></td>
+                            </tr>
+                        </table>
+                        <div id="button_box">
+                            <input type="button" value="취소">
+                            <input type="submit" value="등록">
+                        </div>
+                    </form>
             </div>
             
     </div>
@@ -288,4 +395,67 @@
         </table>
     </footer>
 </body>
+
+<script>
+    
+function ShowPrice(){
+  var originPrice = document.querySelector("#price").value;
+  var rate = document.querySelector("#discount").value;
+  var savePrice = originPrice *(rate / 100);
+var resultPrice = originPrice - savePrice;
+  
+
+ document.querySelector("#showResult").innerHTML = resultPrice;
+;
+
+}
+
+    //  function checkValue()
+	// 	{
+	// 		if(!document.goodsInfo.id.value){
+	// 			alert("상품번호를 입력하세요.");
+	// 			return false; //submit 취소
+	// 		}
+			
+	// 		var idChecked = $('#check_hidden').val();
+	// 		if( idChecked != "yes") {
+	// 			alert("상품번호 중복확인을 해주세요.");
+	// 			return false;
+	// 		}
+	// 	}
+    //  function Check() {
+	// 		var goods_id = $('#input_register').val();
+				
+	// 		if(!goods_id){
+	// 			alert("상품번호를 입력하세요.");
+	// 			return false;
+	// 		}
+	// 		// ajax 용도 : 화면 갱신(reload,redirect)가 없이
+	// 		//            부분화면 갱신(통신)을 js에서 한다.
+	// 		//           예)네이버 - 실시간검색어, 실시간날씨
+				
+	// 		// 아이디 유효성 검사(1 = 중복 / 0 != 중복)
+	// 		$.ajax({
+	// 			/* url : 'http://localhost:8080/servlet3_LoginJoinDB/IdCheckAction.do?id='+ user_id, */
+	// 			url : '${pageContext.request.contextPath}/IdCheckAction?id='+ goods_id,
+	// 			type : 'get',
+	// 			success : function(data) {
+	// 				console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
+						
+	// 				if (data == 1) {
+	// 					// 1 : 아이디가 중복되는 문구
+	// 					alert("상품번호가 중복됩니다.");
+	// 					$('#check_hidden').val("no");
+	// 				} else {
+	// 					// 0 : 아이디가 안됨.
+	// 					alert("해당 상품번호는 사용가능합니다.");
+	// 					$('#check_hidden').val("yes");
+	// 				}
+	// 			}, 
+	// 			error : function() {
+	// 					console.log("실패");
+	// 			}
+	// 		});
+	// 	}
+</script>
 </html>
