@@ -153,7 +153,8 @@
             width: 1200px;
             margin: 0 auto;
         }
-        /* 왼쪽 카테고리 */
+
+        /* --- 왼쪽 카테고리 ---*/
         #main_left{
             float: left;
             width: 200px;
@@ -177,14 +178,15 @@
             color: #00af85;
         }
         
-        /* 오른쪽 */
+        /* ----- 오른쪽 -----*/
         #main_right{ /*오른쪽 전체 감싼 div*/
             margin-left: 20px;
             float: right;
             width: 850px;
             height: 1000px;
         }
-        /* 메인 테이블 */
+
+        /* ----- 메인 테이블 ------- */
         #main_table{ 
             width: 820px;
             text-align: center;
@@ -198,6 +200,19 @@
         #main_table td{ 
             height: 75px;
         }
+        #main_table input,select{   /* 메인테이블 전체 input select */
+            height: 40px;
+        }
+        #dis_rate{           /* [할인율] % input  */
+            width: 100px;
+        }
+        #dis_price, #point{  /* [할인율] 원 input & [적립금] input */
+            width: 130px;
+            margin-left: 20px;
+        }
+        #stock{              /* [재고수량] input */
+            width: 70px;
+        }
         #main_table input[type=button]{  /* 중복확인 버튼 속성 */
             width: 85px;
             height: 35px;
@@ -206,26 +221,31 @@
 	        background-color: #00af85;
 	        color: #fff;
         }
-        #button_box{  /* 취소 등록 버튼 묶은 div*/
+        /* ---------------------------- */
+
+        /* 취소 등록 버튼 묶은 div*/
+        #button_box{  
             width: 800px;
             text-align: center;
         }
         #button_box input[type=submit]{  /* 등록 버튼 */
-            width: 200px;
-            height: 40px;
+            width: 250px;
+            height: 50px;
             margin-bottom: 10px;
             border: 1px solid #00af85;
 	        background-color: #00af85;
 	        color: #fff;
         }
         #button_box input[type=button]{  /* 취소 버튼 */
-            width: 200px;
-            height: 40px;
+            width: 250px;
+            height: 50px;
             margin-bottom: 10px;
             border: 1px solid #00af85;
 	        background-color:  #fff;
 	        color:  #00af85;
+            margin-right: 20px;
         }
+
 /* footer */
         #footer_table{
             width: 1200px;
@@ -305,7 +325,7 @@
 
             <div id="main_right">
                 <h4><b>상품 등록</b></h4>
-                    <form action="" method="POST" id="goods_us" name="goodsInfo" onsubmit="return checkValue()">
+                    <form action="form" method="POST" id="goods_us" name="goodsInfo" onsubmit="return checkValue()">
                         <table id="main_table">
                             <tr>
                                 <td>상품 번호</td>
@@ -316,22 +336,23 @@
                             </tr>
                             <tr>
                                 <td>상품명</td>
-                                <td><input type="text" id="goodsname" name="goodsname"></td>
+                                <td><input type="text" id="goodsname" name="goodsname" placeholder="ex) 딸기"></td>
                             </tr>
                             <tr>
                                 <td>판매가</td>
-                                <td><input type="text" id="price" name="price"> 원</td>
+                                <td><input type="text" id="price" name="PRICE"  placeholder="ex) 10000" onkeyup="disRate();"/> 원</td>
                             </tr>
                             <tr>
                                 <td>할인율</td>
-                                <td><input type="text" id="discount" name="discount">
-                                    <button onclick="ShowPrice()">계산</button>
-                                    <div id="showResult"></div></td>
+                                <td> <input type="text" id="dis_rate" name="DIS_RATE" onkeyup="disRate();"/> %
+                                     <input type="text" id="dis_price" name="DIS_PRICE" readonly/> 원</td>
+                                </td>
                             </tr>
                             <tr>
-                                <td>포인트</td>
-                                <td><input type="text" id="point" name="point">포인트</td>
+                                <td>적립금 <small>(구매금액의 3%)</small></td>
+                                <td><input type="text" id="point" name="point"  readonly/> 포인트</td>
                             </tr>
+                            <!-- readonly/ -->
                             <tr>
                                 <td>카테고리</td>
                                 <td>
@@ -354,19 +375,19 @@
                             </tr>
                             <tr>
                                 <td>재고수량</td>
-                                <td><input type="text" id="stock" name="stock"> 개</td>
+                                <td><input type="text" id="stock" name="stock"  placeholder="ex) 100"> 개</td>
                             </tr>
                             <tr>
                                 <td>상품 대표 이미지 등록</td>
-                                <td><input type="" id="main_img" name="main_img"></td>
+                                <td><input type="file" id="main_img" name="main_img" value="Fi"></td>
                             </tr>
                             <tr>
                                 <td>상품 소개 이미지 등록</td>
-                                <td><input type="" id="sub_img" name="sub_img"></td>
+                                <td><input type="file" id="sub_img" name="sub_img"></td>
                             </tr>
                         </table>
                         <div id="button_box">
-                            <input type="button" value="취소">
+                            <input type="button" value="취소" onClick="location.href='goods_list'">
                             <input type="submit" value="등록">
                         </div>
                     </form>
@@ -397,19 +418,25 @@
 </body>
 
 <script>
+
+
+    function disRate() {
+
+        var dis_rate = $("#dis_rate").val(); //할인퍼센트
+        var price = $("#price").val(); //정상가
+
+        if ($("#price").val().trim() == "" || $("#dis_rate").val().trim() == "") {
+            result = 0;
     
-function ShowPrice(){
-  var originPrice = document.querySelector("#price").value;
-  var rate = document.querySelector("#discount").value;
-  var savePrice = originPrice *(rate / 100);
-var resultPrice = originPrice - savePrice;
-  
-
- document.querySelector("#showResult").innerHTML = resultPrice;
-;
-
-}
-
+        } else {
+            result1 = price*(dis_rate/100);
+            result_price = price-result1;
+            result_point = result_price*(3/100)
+        }
+        $("#dis_price").val(Math.round(result_price));
+        $("#point").val(Math.round(result_point));
+    }
+    
     //  function checkValue()
 	// 	{
 	// 		if(!document.goodsInfo.id.value){
