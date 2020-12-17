@@ -194,4 +194,8 @@ public class MyController {
 	public String review_content_view() throws Exception {
 		return "manager/review_content_view";
 	}
+	@RequestMapping("/manager_info")
+	public String manager_info() throws Exception {
+		return "manager/manager_info";
+	}
 }

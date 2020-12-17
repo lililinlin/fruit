@@ -157,7 +157,7 @@
 			display:flex;
 			margin:0 auto;
 		}
-		#left_menu{
+		#left_menu{/* 왼쪽 서브메뉴들 */
 			height:205px;
 			width:600px;
 			
@@ -183,18 +183,22 @@
 			color:rgb(1, 114, 18);
 			cursor: pointer;
 		}
-		#content{
+		#content{ /* 테이블 리스트를 감싸고 있는 div */
 			margin-left:30px;
 		}
-		#content h5{
-		padding-bottom:20px;
-		border-bottom:1px solid rgb(1, 114, 18);
+		#content h3{
+		margin-top:30px;
+		margin-bottom:50px;
 		}
-		#content_table{	
-			table-layout:fixed;
+		#content_table{	/* 테이블리스트 */
+			table-layout:fixed;/* 테이블의 크기	지정 및 고정시켜서  td에서 문자열을 자르거나 숨길 수 있게 한다. */
 			font-size:15px;
+			border-top:1px solid #00af85;
+			border-bottom:1px solid #00af85;
 		}
-		#content_table th{	
+		#content_table th{
+			height:70px;
+			vertical-align:middle;/* 상하좌우 사이즈를 중앙으로 맞춘다. */
 			text-align: center;
 			
 		}
@@ -202,11 +206,14 @@
 			width:800px;
 			text-align: center;
 			vertical-align:middle;
-			text-overflow:ellipsis;
-			overflow:hidden;
-			white-space:nowrap;
+			text-overflow:ellipsis;/* 글자가 넘어갈 경우 생략부호를 표시한다(...) */
+			overflow:hidden;/* 글자가 넘어가는것은 숨긴다. */
+			white-space:nowrap;/* 공백 문자가 있는 경우 자동 줄바꿈을 하지 않고 한줄로 표시하게 한다. */
 			font-size:17px;
 			height:70px;
+		}
+		#content_table tr:nth-child(2n + 1){
+			background-color:#f0f0f0;
 		}
 /* footer */
         #footer_table{
@@ -280,55 +287,46 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-                    <td class="main_menu_td">
-                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
-                    </td> 
+	            <td class="main_menu_td">
+	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
+	            </td> 
             </tr>
         </table>
     </div>
     <main>
     	<div id="main_wrapper">
     		<div id="content">
-    			<h5>사용자 후기</h5>
-    			<table class="table" id="content_table">
-				  <thead>
+    			<h3><b>사용자 후기</b></h3>
+    			<table id="content_table">
 				    <tr>
 				      <th scope="col" width="15%">번호</th>
 				      <th scope="col" width="50%">제목</th>
 				      <th scope="col" width="15%">작성자</th>
 				      <th scope="col" width="20%">작성일</th>
 				    </tr>
-				  </thead>
 				  <%for(int i=0; i<3; i++){ %>
-					  <tbody>
-					    <tr>
-					    	<td>1</td>
-	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
-	    					<td>이정현</td>
-	    					<td>2020-12-08</td>
-					    </tr>
-					  </tbody>
+					  <tr>
+					  	<td>1</td>
+	    			  	<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
+	    				<td>이정현</td>
+	    				<td>2020-12-08</td>
+					  </tr>
 				  <%} %>
-				  		<tbody>
-					    <tr>
-					    	<td>1</td>
-	    					<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
-	    					<td>이정현</td>
-	    					<td>2020-12-08</td>
-					    </tr>
-					  </tbody>
+					  <tr>
+					    <td>1</td>
+	    				<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+	    				<td>이정현</td>
+	    				<td>2020-12-08</td>
+					  </tr>
 				</table>
     		</div>
     	</div>

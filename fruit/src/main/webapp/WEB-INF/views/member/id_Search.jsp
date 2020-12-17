@@ -159,7 +159,7 @@
             margin-top:100px;
             margin-bottom: 50px;
         }
-        #login_form{
+        #login_form{/* 아이디 찾기(필요한 정보)를 감싸고 있는 form태그 */
             margin:0 auto;
             margin-bottom: 50px;
             width:400px;

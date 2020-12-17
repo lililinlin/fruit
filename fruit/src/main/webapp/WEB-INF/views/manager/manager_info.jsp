@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>사용자 후기</title>
+    <title>관리자메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,60 +148,7 @@
             text-align: center;
         }
 /* main */
-		main{
-			margin-bottom:100px;
-		}
-		#main_wrapper{
-			width:1200px;
-			margin:0 auto;
-			margin-top:50px;
-		}
-		#main_wrapper hr{/* 후기 내용과 댓글 사이 경계선을 나타냄 */
-			width:1050px;
-			margin:0 auto;
-		}
-		#main_wrapper h3,h6{
-			text-align: center;
-		}
-		#contents_table{/* 제목, 작성자, 작성일을 나타내는 테이블 */
-			margin:0 auto;
-			margin-top:70px;
-			font-size:15px;
-			width:1050px;
-			border-top:2px solid black;
-		}
-		#contents_table td,th{
-			height:50px;
-			border:1px solid #efefef;
-			padding-left:20px;
-		}
-		#contents_table th{
-			background-color: #f5f5f5;
-		}
-		#main_contents{/* 후기 내용을 보여주는 div */
-			width:1000px;
-			margin-left:100px;
-			margin-top:20px;
-		}
-		#backbutton{/* 목록버튼 */
-			width:140px;
-			height:50px;
-			margin-left:980px;
-			background-color: #00af85;
-			color:white;
-			border:1px solid #00af85;
-		}
-		#subcontent{/* 댓글 div*/
-			width:1050px;
-			margin:0 auto;
-		}
-		#subcontent input[type=submit]{/* 댓글 등록버튼 */
-			background-color: #00af85;
-			color:white;
-			border:1px solid #00af85;
-			width:90px;
-			height:80px;
-		}
+		
 /* footer */
         #footer_table{
             width: 1200px;
@@ -226,34 +173,13 @@
    
 </head>
 <body>
-    <div id="head0"></div>
+   <div id="head0"></div>
 
         <div id="wrapp">
-        
-             <div id="head1">
-                <%
-				if (session.getAttribute("sessionID") == null) {
-				%>
-					<td>
-						<a href="login">로그인<h> |&nbsp;</h></a>
-						<a href="join_agree">회원가입</a>
-					</td>
-				<%
-					} else if(session.getAttribute("sessionID") == "admin"){
-				%>
-					<td>
-						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
-						<a href="manager_main">관리자메인</a>
-					</td>
-				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
-					<td>
-						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
-						<a href="mypage">&nbsp;마이페이지</a>
-					</td>
-				<%
-					}
-				%>
-            </div>
+            	<div id="head1">
+				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
+					<a href="home">사용자페이지</a></td>
+            	</div>
 
             <div>
                 <table id="head_table">
@@ -289,42 +215,34 @@
             </tr>
         </table>
     </div>
-    <main>
-    	<div id="main_wrapper">
-    		<h3>사용자 후기</h3>
-    		<h6 style="color: gray;">고객님의 관심과 사랑에 푸릇츠는 한단계 성장합니다.</h6>
-    		<table id="contents_table">
-    			<tr>
-    				<th>제목</th>
-    				<td colspan="3">아주 맛있군요</td>
-    			</tr>
-    			<tr>
-    				<th>작성자</th>
-    				<td colspan="3">이정현</td>
-    			</tr>
-    			<tr>
-    				<th width="10%">작성일</th>
-    				<td width="20%">2020-12-08</td>
-    				
-    			</tr>
-    		</table>
-    		<div id="main_contents">
-    			<p>후기 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
-    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
-    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
-    			   a reiciendis nostrum vel debitis.</p>
-    		</div><br><br>
-    		<hr><br>
-    		<div id="subcontent">
-    			<h4>댓글</h4>
-    			<textarea rows="3" cols="50" style="width: 950px;  placeholder="댓글을 남겨보세요."></textarea>
-    			<input type="submit"value="등록">
-    		</div>
-    		<br><br>
-    		<input id="backbutton" type="button" value="목록" onclick="location.href='review_management'">
-    	</div>
-    </main>
+	<main>
+		<div id="main_wrapper">
+			<h3>내 정보</h3>
+			<table id="my_info">
+				<tr>
+					<td>아이디</td>
+					<td>admin</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>강이린</td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>010-1111-2222</td>
+				</tr>
+				<tr>
+					<td>생년월일</td>
+					<td>강이린</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>강이린</td>
+				</tr>
+			</table>
+		</div>
+		
+	</main>
     <footer>
         <table id="footer_table">
             <tr>
