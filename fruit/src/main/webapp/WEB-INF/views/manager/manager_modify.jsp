@@ -200,9 +200,14 @@
         }
         #my_info th:nth-child(n){
         	background-color: #f0f0f0;
-        	font-weight: bold;
+        	font-weight: normal;
         }
-        #my_info input[type=password]{
+        #password{
+        	margin-top:14px;
+        	height:30px;
+        }
+        #passwordcherk{
+        	margin-top:18px;
         	height:30px;
         }
         #join_us{
@@ -312,12 +317,10 @@
 	                        <td><input type="password" id="password"name="password" size="46"></td>
 	                    </tr>
 	                    <tr>
-	                        <th rowspan="2">비밀번호확인</td>
-	                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+	                        <th>비밀번호확인</th>
+	                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"><h6 id="chkNotice" size="2"></td>
 	                    </tr>
-	                    <tr>
-	                    	<td><h6 id="chkNotice" size="2"></td>
-	                    </tr>
+	                    
 	                    <tr>
 	                        <th>이름</td>
 	                        <td>강이린</td>

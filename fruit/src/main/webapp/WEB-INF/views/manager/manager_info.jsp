@@ -202,7 +202,6 @@
         }
         #my_info td:nth-child(2n + 1){
         	background-color: #f0f0f0;
-        	font-weight: bold;
         }
         #main_right input[type=button]{
         	width:200px;
