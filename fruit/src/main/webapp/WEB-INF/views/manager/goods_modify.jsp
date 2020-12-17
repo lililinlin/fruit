@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>상품 목록</title>
+    <title>상품 수정</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -303,54 +303,15 @@
             </div>
 
             <div id="main_right">
-                <h4><b>상품 상세 내용</b></h4>
+                <h4><b>상품 수정</b></h4>
                     <form method="POST" id="goods_list" name="goodslist">
                         
                         <table id="main_table">
-                           <tr>
-                               <td>상품번호</td>
-                               <td>2020281523</td>
-                           </tr>
-                           <tr>
-                                <td>상품명</td>
-                                <td>코코넛</td>
-                            </tr>
-                             <tr>
-                                <td>판매가</td>
-                                <td>8900 원</td>
-                            </tr>
-                            <tr>
-                                <td>할인율</td>
-                                <td>0 %</td>
-                            </tr>
-                            <tr>
-                                <td>원산지</td>
-                                <td>인도</td>
-                            </tr>
-                            <tr>
-                                <td>판매단위</td>
-                                <td>통</td>
-                            </tr>
-                            <tr>
-                                <td>카테고리</td>
-                                <td>수입과일</td>
-                            </tr>
-                            <tr>
-                                <td>배송비</td>
-                                <td>2500</td>
-                            </tr>
-                            <tr>
-                                <td>재고수량</td>
-                                <td>99</td>
-                            </tr>
-                            <tr>
-                                <td>대표 이미지</td>
-                                <td><img src="https://via.placeholder.com/350x420"></td>
-                            </tr>
+                          
                         </table>
                         <div id="button_box">
                             <input type="button" id="cancle" value="목록 으로" onClick="location.href='goods_list'">
-                            <input type="button" id="modify" value="상품 수정" onClick="location.href='goods_modify'">
+                            <input type="button" id="modify" value="수정 하기" onClick="location.href='goods_modifyAction'">
                         </div>
                     </form>
             </div>

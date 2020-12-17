@@ -325,7 +325,7 @@
 
             <div id="main_right">
                 <h4><b>상품 등록</b></h4>
-                    <form action="form" method="POST" id="goods_us" name="goodsInfo" onsubmit="return checkValue()">
+                    <form action="registerAction" method="POST" id="goods_us" name="goodsInfo" onsubmit="return checkValue()">
                         <table id="main_table">
                             <tr>
                                 <td>상품 번호</td>

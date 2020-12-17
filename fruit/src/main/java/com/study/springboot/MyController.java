@@ -160,28 +160,51 @@ public class MyController {
 	public String goods_list() throws Exception {
 		return "manager/goods_list";
 	}
+	@RequestMapping("/GoodsDeleteAction")
+	public String GoodsDeleteAction() throws Exception {
+		return "manager/goods_list";
+	}
+	@RequestMapping("/GoodsSearchAction")
+	public String GoodsSearchAction() throws Exception {
+		return "manager/goods_list";
+	}
 	@RequestMapping("/goods_register")
 	public String goods_register() throws Exception {
 		return "manager/goods_register";
 	}
-	@RequestMapping("/notice_management")
-	public String notice_management() throws Exception {
-		return "manager/notice_management";
+	@RequestMapping("/registerAction")
+	public String registerAction() throws Exception {
+		return "manager/goods_list";
+	}
+	@RequestMapping("/goods_modify")
+	public String goods_modify() throws Exception {
+		return "manager/goods_modify";
+	}
+	@RequestMapping("/goods_modifyAction")
+	public String goods_modifyAction() throws Exception {
+		return "manager/goods_contentview";
+	}
+	@RequestMapping("/goods_contentview")
+	public String goods_contentview() throws Exception {
+		return "manager/goods_contentview";
 	}
 	@RequestMapping("/manager_member")
 	public String manager_member() throws Exception {
 		return "manager/manager_member";
 	}
-	@RequestMapping("/OptionsearchAction")
-	public String OptionsearchAction() throws Exception {
-		return "manager/manager_member";
-	}
-	
 	@RequestMapping("/SecessionAction")
 	public String SecessionAction() throws Exception {
 		return "manager/manager_member";
 	}	
 	
+	@RequestMapping("/notice_management")
+	public String notice_management() throws Exception {
+		return "manager/notice_management";
+	}
+	@RequestMapping("/OptionsearchAction")
+	public String OptionsearchAction() throws Exception {
+		return "manager/manager_member";
+	}
 	@RequestMapping("/manager_secession")
 	public String manager_secession() throws Exception {
 		return "manager/manager_secession";
@@ -198,4 +221,6 @@ public class MyController {
 	public String manager_info() throws Exception {
 		return "manager/manager_info";
 	}
+	
+	
 }
