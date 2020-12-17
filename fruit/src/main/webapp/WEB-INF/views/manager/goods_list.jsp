@@ -153,7 +153,8 @@
             width: 1200px;
             margin: 0 auto;
         }
-        /* 왼쪽 카테고리 */
+
+        /* --- 왼쪽 카테고리 ---*/
         #main_left{
             float: left;
             width: 200px;
@@ -170,6 +171,7 @@
         }
         #main_left table tr{
             border: 1px solid rgb(231, 231, 231);
+            padding-top: 100px;
         }
         #main_left tr:hover{
             background-color: rgb(251, 249, 249);            
@@ -177,13 +179,69 @@
             color: #00af85;
         }
         
-        /* 오른쪽 */
+        /* ----- 오른쪽 -----*/
         #main_right{ /*오른쪽 전체 감싼 div*/
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 600px;
+            height: 1000px;
         }
+        #search_box{ /*input 검색 묶은 div*/
+            height: 40px;
+        }
+        #search_input{ /* 검색 input */
+            height: 30px;
+            margin-top: 10px;
+            /* text-align: center; */
+        }
+        #search{ /* 검색 */
+            height: 30px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+        /* ----- 메인 테이블 ------- */
+        #main_table{
+            width: 800px;
+            text-align: center;
+            margin: 30px 0 30px 0;
+            border-top: 1px solid #00af85;
+            border-bottom: 1px solid #00af85;
+        }
+        #main_table a:hover{
+            color: #00af85;
+        }
+        #main_table th{
+            height: 50px;
+        }
+        #main_table td{
+            padding: 15px 0 15px 0;
+        }
+        #main_table tr:nth-child(2n+1){ 
+            background-color: rgb(246, 246, 246);
+        }
+        #main_table input[type=submit]{ /* 삭제 버튼 */
+            width: 60px;
+            height: 40px;
+            border: 1px solid #00af85;
+	        background-color: #fff;
+	        color: #00af85;
+        }      
+        /* ---------------------------- */
+
+        /* 상품 등록 버튼 묶은 div*/
+        #button_box{  
+            width: 800px;
+            text-align: center;
+        }
+        #button_box input[type=button]{  /* 상품등록 버튼 */
+            width: 250px;
+            height: 50px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+
 /* footer */
         #footer_table{
             width: 1200px;
@@ -262,7 +320,49 @@
             </div>
 
             <div id="main_right">
-            <h4><b>상품</b></h4>
+                <h4><b>상품 목록</b></h4>
+                    <form method="POST" id="goods_list" name="goodslist">
+                        <div id="search_box">
+                            <input type="text" id="search_input" name="search_input" placeholder="상품 이름" >
+                            <!-- 검색버튼 인라인에서 자바스크립트로 submit -->
+                            <input type="submit" id="search" name="search" value="검색" onclick="javascript: form.action='GoodsSearchAction';"/>
+                        </div>
+                        <table id="main_table">
+                            <th>상품번호</th>
+                            <th>이미지</th>
+                            <th>카테고리</th>
+                            <th>상품이름</th>
+                            <th>판매가</th>
+                            <th></th>
+                            <tr>
+                                <td><a href="goods_contentview">2012154531</a></td>
+                                <td><img src="https://via.placeholder.com/100x120"></td>
+                                <td>인기과일</td>
+                                <td>딸기</td>
+                                <td>4500원</td>
+                                <td><input type="submit" id="delete" name="delete" value="삭제" onclick="javascript: form.action='GoodsDeleteAction';"/></td>
+                            </tr>
+                            <tr>
+                                <td><a href="goods_contentview">254814541</a></td>
+                                <td><img src="https://via.placeholder.com/100x120"></td>
+                                <td>제철과일</td>
+                                <td>토마토</td>
+                                <td>9000원</td>
+                                <td><input type="submit" id="delete" name="delete" value="삭제" onclick="javascript: form.action='GoodsDeleteAction';"/></td>
+                            </tr>
+                            <tr>
+                                <td><a href="goods_contentview">2554641172</a></td>
+                                <td><img src="https://via.placeholder.com/100x120"></td>
+                                <td>이벤트</td>
+                                <td>멜론</td>
+                                <td>6000원</td>
+                                <td><input type="submit" id="delete" name="delete" value="삭제" onclick="javascript: form.action='GoodsDeleteAction';"/></td>
+                            </tr>
+                        </table>
+                        <div id="button_box">
+                            <input type="button" value="상품 등록" onClick="location.href='goods_register'">
+                        </div>
+                    </form>
             </div>
             
     </div>
@@ -288,4 +388,5 @@
         </table>
     </footer>
 </body>
+    
 </html>
