@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>관리자 정보</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,7 +148,64 @@
             text-align: center;
         }
 /* main */
-		
+        /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{ 
+            padding: 50px 40px 0 50px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        /* 왼쪽 카테고리 */
+        #main_left{
+            float: left;
+            width: 200px;
+            height: 600px;
+        }
+        #main_left table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
+        }
+        #main_left table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #main_left table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #main_left tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #00af85;
+        }
+        
+        /* 오른쪽 */
+        #main_right{ /*오른쪽 전체 감싼 div*/
+            margin-left: 20px;
+            float: right;
+            width: 850px;
+            height: 600px;
+        }
+        #my_info{
+        	border:1px solid #f0f0f0;
+        	width:800px;
+        	height:500px;
+        	text-align: center;
+        }
+        #my_info td{
+        	border:1px solid #f0f0f0;
+        }
+        #my_info td:nth-child(2n + 1){
+        	background-color: #f0f0f0;
+        	font-weight: bold;
+        }
+        #main_right input[type=button]{
+        	width:200px;
+        	height:50px;
+        	margin-left:300px;
+        	background-color:#00af85;
+			color:white;
+			border:1px solid #00af85;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -173,7 +230,7 @@
    
 </head>
 <body>
-   <div id="head0"></div>
+  <div id="head0"></div>
 
         <div id="wrapp">
             	<div id="head1">
@@ -214,35 +271,46 @@
 	            </td> 
             </tr>
         </table>
+    </div> 
+	<div id="main_wrapper">
+            <div id="main_left">
+                <h3><b>관리자페이지</b></h3>
+                <table>
+                    <tr onClick="location.href='manager_main'"><td><small>메인페이지</small></td><td>></td></tr>
+                    <tr onClick="location.href='manager_secession'"><td><small>회원관리</small></td><td>></td></tr>
+                    <tr onClick="location.href='manager_secession'"><td><small>상품관리</small></td><td>></td></tr>
+                    <tr onClick="location.href='manager_secession'"><td><small>게시판관리</small></td><td>></td></tr>
+                </table>
+            </div>
+
+            <div id="main_right">
+            	<h4><b>관리자 정보</b></h4>
+            	<table id="my_info">
+            		<tr>
+            			<td>아이디</td>
+            			<td>admin</td>
+            		</tr>
+            		<tr>
+            			<td>이름</td>
+            			<td>강이린</td>
+            		</tr>
+            		<tr>
+            			<td>전화번호</td>
+            			<td>010-1111-2222</td>
+            		</tr>
+            		<tr>
+            			<td>생년월일</td>
+            			<td>1994년</td>
+            		</tr>
+            		<tr>
+            			<td>주소</td>
+            			<td>당고개역</td>
+            		</tr>
+            	</table><br>
+            	<input type="button" value="수정하기" onClick="location.href='manager_modify'">
+            </div>
+            
     </div>
-	<main>
-		<div id="main_wrapper">
-			<h3>내 정보</h3>
-			<table id="my_info">
-				<tr>
-					<td>아이디</td>
-					<td>admin</td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td>강이린</td>
-				</tr>
-				<tr>
-					<td>전화번호</td>
-					<td>010-1111-2222</td>
-				</tr>
-				<tr>
-					<td>생년월일</td>
-					<td>강이린</td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td>강이린</td>
-				</tr>
-			</table>
-		</div>
-		
-	</main>
     <footer>
         <table id="footer_table">
             <tr>
