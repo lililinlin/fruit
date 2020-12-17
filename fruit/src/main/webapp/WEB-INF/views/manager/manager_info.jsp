@@ -152,7 +152,10 @@
         #main_wrapper{ 
             padding: 50px 40px 0 50px;
             width: 1200px;
+            height:800px;
             margin: 0 auto;
+            
+            
         }
         /* 왼쪽 카테고리 */
         #main_left{
@@ -184,6 +187,9 @@
             float: right;
             width: 850px;
             height: 600px;
+        }
+        #main_right h4{
+        	margin-bottom:35px;
         }
         #my_info{/* 관리자 정보 테이블 */
         	border:1px solid #f0f0f0;
@@ -282,7 +288,6 @@
                     <tr onClick="location.href='manager_secession'"><td><small>게시판관리</small></td><td>></td></tr>
                 </table>
             </div>
-
             <div id="main_right">
             	<h4><b>관리자 정보</b></h4>
             	<table id="my_info">
@@ -308,8 +313,7 @@
             		</tr>
             	</table><br>
             	<input type="button" value="수정하기" onClick="location.href='manager_modify'">
-            </div>
-            
+            </div> 
     </div>
     <footer>
         <table id="footer_table">

@@ -185,15 +185,20 @@
             width: 850px;
             height: 600px;
         }
+        #main_right h4{
+        	margin-bottom:35px;
+        }
         #my_info{
         	border:1px solid #f0f0f0;
         	width:800px;
         	text-align: center;
+        	
         }
         #my_info td{
         	height:50px;
+        	vertical-align: middle;
         }
-        #my_info td:nth-child(2n+1){
+        #my_info th:nth-child(n){
         	background-color: #f0f0f0;
         	font-weight: bold;
         }
@@ -203,13 +208,20 @@
         #join_us{
         	text-align: center;
         }
-        #main_right input[type=button],#main_right input[type=submit]{
+       #main_right input[type=submit]{
         	width:200px;
         	height:50px;
         	background-color:#00af85;
 			color:white;
 			border:1px solid #00af85;
         }
+       #main_right input[type=button]{
+       		width:200px;
+        	height:50px;
+        	background-color:white;
+			color:#00af85;
+			border:1px solid #00af85;
+       }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -292,27 +304,50 @@
             	<form action="" method="POST" id="join_us" name="userInfo" onsubmit="return checkValue()">
 	                <table id="my_info">
 	                    <tr>
-	                        <td width="30%">아이디</td>
+	                        <th width="30%">아이디</td>
 	                        <td width="70%" colspan="2">admin</td>
 	                    </tr>        
 	                    <tr>
-	                        <td>비밀번호</td>
-	                        <td colspan="2"><input type="password" id="password"name="password" size="46"></td>
+	                        <th>비밀번호</td>
+	                        <td><input type="password" id="password"name="password" size="46"></td>
 	                    </tr>
 	                    <tr>
-	                        <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
-	                        <td colspan="2"><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+	                        <th rowspan="2">비밀번호확인</td>
+	                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
 	                    </tr>
-	                        <td>이름</td>
-	                        <td colspan="2">강이린</td>
+	                    <tr>
+	                    	<td><h6 id="chkNotice" size="2"></td>
+	                    </tr>
+	                    <tr>
+	                        <th>이름</td>
+	                        <td>강이린</td>
 	                    </tr>
 	                 </table><br>
-	                 <input type="submit" value="확인">
+	                 
 	                 <input type="button" onClick="location.href='manager_info'" value="취소하기">
+	                 <input type="submit" value="확인">
             	</form> 
             </div>
-            
     </div>
+    <script type="text/javascript">
+	    $(function(){
+	        $('#password').keyup(function(){
+	            $('#chkNotice').html('');
+	        });
+	
+	        $('#passwordcherk').keyup(function(){
+	
+	            if($('#password').val() != $('#passwordcherk').val()){
+	            $('#chkNotice').html('<b>비밀번호 일치하지 않음</b><br><br>');
+	            $('#chkNotice').css('color', '#f82a2aa3');
+	            } else{
+	                $('#chkNotice').html('<b>비밀번호 일치함</b><br><br>');
+	                $('#chkNotice').css('color', '#199894b3');
+	            }
+	        });
+	    });
+	
+    </script>
     <footer>
         <table id="footer_table">
             <tr>
