@@ -280,7 +280,7 @@
     				<td colspan="2" style="height: 60px"><h3>강이린님</h3></td>
     			</tr>
     			<tr>
-    				<td><input type="button" id="button1" value="내정보"></td>
+    				<td><input type="button" id="button1" value="내정보" onclick="location.href='manager_info'"></td>
     				<td><input type="button" id="button2" value="로그아웃" onclick="location.href='home'" ></td>
     			</tr>
     		</table>
