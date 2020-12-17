@@ -247,6 +247,10 @@
         }
 
 /* footer */
+		footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;

@@ -32,7 +32,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+             /*  border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -243,6 +243,10 @@
         }
 
 /* footer */
+		footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -364,8 +368,8 @@
                         </div>
                     </form>
             </div>
-            
-    </div>
+  </div>          
+    
     <footer>
         <table id="footer_table">
             <tr>
@@ -387,6 +391,7 @@
             </tr>
         </table>
     </footer>
+
 </body>
     
 </html>
