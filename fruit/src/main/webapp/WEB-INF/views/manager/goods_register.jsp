@@ -233,7 +233,7 @@
             height: 50px;
             margin-bottom: 10px;
             border: 1px solid #00af85;
-	        background-color: #00af85;
+	        background-color: #00af85; 
 	        color: #fff;
         }
         #button_box input[type=button]{  /* 취소 버튼 */

@@ -223,7 +223,7 @@
 	        background-color:  #fff;
 	        color:  #00af85;
             margin-right: 20px;
-        }
+        } 
 
 /* footer */
 		footer{

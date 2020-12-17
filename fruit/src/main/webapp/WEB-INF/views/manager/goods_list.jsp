@@ -201,7 +201,7 @@
 	        color: #fff;
         }
         /* ----- 메인 테이블 ------- */
-        #main_table{
+        #main_table{ 
             width: 800px;
             text-align: center;
             margin: 30px 0 30px 0;
