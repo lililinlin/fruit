@@ -185,7 +185,7 @@
             width: 850px;
             height: 600px;
         }
-        #my_info{
+        #my_info{/* 관리자 정보 테이블 */
         	border:1px solid #f0f0f0;
         	width:800px;
         	height:500px;
