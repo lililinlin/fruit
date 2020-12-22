@@ -347,22 +347,22 @@
     			</tr>
     			<tr>
     				<td>사과</td>
-    				<td><a href="review_management_view">아주 맛있군요</a></td>
+    				<td><a href="review_content_view">아주 맛있군요</a></td>
     				<td>2020.12.10</td>
     			</tr>
     			<tr>
     				<td>딸기</td>
-    				<td><a href="review_management_view">겨울 딸기 달아요 ^^</a></td>
+    				<td><a href="review_content_view">겨울 딸기 달아요 ^^</a></td>
     				<td>2020.12.9</td>
     			</tr>
     			<tr>
     				<td>복숭아</td>
-    				<td><a href="review_management_view">굿굿</a></td>
+    				<td><a href="review_content_view">굿굿</a></td>
     				<td>2020.12.9</td>
     			</tr>
     			<tr>
     				<td>두리안</td>
-    				<td><a href="review_management_view">배송빨라서 좋아요~</a></td>
+    				<td><a href="review_content_view">배송빨라서 좋아요~</a></td>
     				<td>2020.12.8</td>
     			</tr>
     		</table>
