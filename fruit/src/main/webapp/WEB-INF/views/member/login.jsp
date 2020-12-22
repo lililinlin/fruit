@@ -173,14 +173,20 @@
             float:right;
             margin-bottom:30px;
         }
-        #login_form input[type=submit]{
+        #login_form input[type=button]{
+            width:400px;
+            height:50px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+        }
+        #login_form input[type=submit]{ /*로그인*/
             width:400px;
             height:50px;
             margin-bottom: 10px;
-        }
-        #login_form button{
-            width:400px;
-            height:50px;
+            border: 1px solid #00af85;
+	        background-color: #00af85; 
+	        color: #fff;
         }
 /* footer */
         #footer_table{
@@ -279,10 +285,10 @@
                 <input type="text" id="id" name="name" size="20" placeholder="아이디를 입력해주세요"><br>
                 <input type="password" id="password" name="password" size="20" placeholder="비밀번호를 입력해주세요"><br>
                 <div id="id_pw_search">
-                    <a href="id_Search">아이디 찾기</a>&nbsp;|&nbsp;<a href="pw_Search">비밀번호 찾기</a>
+                    <a href="id_Search"><small>아이디 찾기</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="pw_Search">비밀번호 찾기</small></a>
                 </div><br>
-                <input type="submit" class="btn btn-success" value="로그인">
-                <button type="button" class="btn btn-warning" style="color: white" onclick="location.href='join_agree'">회원가입</button>
+                <input type="submit"  value="로그인">
+                <input type="button"  value="회원가입" onclick="location.href='join_agree'">
             </form> 
         </div>
     </main>

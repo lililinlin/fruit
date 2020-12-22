@@ -184,6 +184,9 @@
             width:400px;
             height:50px;
             margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color: #00af85; 
+	        color: #fff;
         }
         #login_form button{
             width:400px;
@@ -288,7 +291,7 @@
                 <input type="text" id="name" name="name" size="20" placeholder="이름을 입력해주세요"><br>
                 <label for="phone" id="phone_label">전화번호</label>
                 <input type="text" id="phone" name="phone" size="20" placeholder="전화번호를 입력해주세요"><br><br>
-                <input type="submit" class="btn btn-success" value="확인">
+                <input type="submit" value="확인">
             </form> 
         </div>
     </main>

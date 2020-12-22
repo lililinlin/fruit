@@ -159,6 +159,23 @@
             width: 100%;
             height: 400px;
         }
+        .main_discount-img:hover,.main_best-img:hover{
+            transform:scale(1.1); 
+        }
+        .scale { /* 과일 이미지 감싼 div */
+            width:300px; 
+            height:400px; 
+            overflow:hidden; 
+            margin:0 auto;
+            margin: 35px 0px 20px 65px;
+            }
+        .scale img { 
+            width:300px; 
+            height:400px;
+            cursor: pointer;
+            transform:scale(1); 
+            transition:transform 0.5s linear;
+        }
 
 /* 메인 베스트상품 */
         #main_best{
@@ -167,10 +184,8 @@
             width: 1200px;
             margin-bottom: 70px;
         }
-        .main_best-img{
-            margin: 40px 46px 15px 46px;
-            width: 300px;
-            height: 350px;
+        #main_best h5{
+            color: #4eac87;
         }
         #main_best a{
             font-size: 28px;
@@ -178,7 +193,7 @@
             color: rgb(72, 72, 72);
         }
         .img_bottom_font, .img_bottom_price{ /* [베스트 ,이벤트]  이름과 가격 글씨 속성*/
-            padding-left: 50px;
+            padding-left: 75px;
             text-align: left;
         }
         
@@ -195,10 +210,8 @@
             text-align: center;
             width: 1200px;
         }
-        .main_discount-img{
-            margin: 40px 46px 15px 46px;
-            width: 300px;
-            height: 350px;
+        #main_discount h5{
+            color: #4eac87;
         }
         #main_discount a{
             font-size: 28px;
@@ -329,44 +342,44 @@
     </script>
 
     <div id="main_best">
-        <a href="#">인기 과일&nbsp;&nbsp;&nbsp;&nbsp;> </a>
+        <a href="hot_fruit">인기 과일&nbsp;&nbsp;&nbsp;&nbsp;> </a>
         <table>
             <tr>
-                <td><img class="main_best-img" src="https://via.placeholder.com/150x200" title="베스트상품1" onclick="location.href='#'" style="cursor: pointer;" ></td>
-                <td><img class="main_best-img" src="https://via.placeholder.com/150x200" title="베스트상품2" onclick="location.href='#'" style="cursor: pointer;" ></td>
-                <td><img class="main_best-img" src="https://via.placeholder.com/150x200" title="베스트상품3" onclick="location.href='#'" style="cursor: pointer;" ></td>
+                <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품1" onclick="location.href='fruit_view'" ></div></td>
+                <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품2" onclick="location.href='fruit_view'" ></div></td>
+                <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품3" onclick="location.href='fruit_view'" ></div></td>
             </tr>
             <tr>
-                <td class="img_bottom_font"><h4>체리</h4></td>
-                <td class="img_bottom_font"><h4>키위</h4></td>
-                <td class="img_bottom_font"><h4>토마토</h4></td>
+                <td class="img_bottom_font"><a href="fruit_view"><h4>체리</h4></a></td>
+                <td class="img_bottom_font"><a href="fruit_view"><h4>키위</h4></a></td>
+                <td class="img_bottom_font"><a href="fruit_view"><h4>토마토</h4></a></td>
             </tr>
             <tr>
-                <td class="img_bottom_price"><h6>23000원</h6></td>
-                <td class="img_bottom_price"><h6>10000원</h6></td>
-                <td class="img_bottom_price"><h6>15000원</h6></td>
+                <td class="img_bottom_price"><h5>12000원</h5></td>
+                <td class="img_bottom_price"><h5>7000원</h5></td>
+                <td class="img_bottom_price"><h5>9000원</h5></td>
             </tr>
         </table>
     </div>
 
     <div id="discount_wrapper">
         <div id="main_discount">
-            <a href="#">이벤트&nbsp;&nbsp;&nbsp;&nbsp;> </a>
+            <a href="event">이벤트&nbsp;&nbsp;&nbsp;&nbsp;> </a>
             <table>
                 <tr>
-                    <td><img class="main_discount-img" src="https://via.placeholder.com/150x200" title="이벤트상품1" onclick="location.href='#'" style="cursor: pointer;" ></td>
-                    <td><img class="main_discount-img" src="https://via.placeholder.com/150x200" title="이벤트상품2" onclick="location.href='#'" style="cursor: pointer;" ></td>
-                    <td><img class="main_discount-img" src="https://via.placeholder.com/150x200" title="이벤트상품3" onclick="location.href='#'" style="cursor: pointer;" ></td>
+                    <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품1" onclick="location.href='fruit_view'" ></div></td>
+                    <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품2" onclick="location.href='fruit_view'" ></div></td>
+                    <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품3" onclick="location.href='fruit_view'" ></div></td>
                 </tr>
                 <tr>
-                    <td class="img_bottom_font"><h4>귤</h4></td>
-                    <td class="img_bottom_font"><h4>레몬</h4></td>
-                    <td class="img_bottom_font"><h4>용과</h4></td>
+                    <td class="img_bottom_font"><a href="fruit_view"><h4>체리</h4></a></td>
+                    <td class="img_bottom_font"><a href="fruit_view"><h4>키위</h4></a></td>
+                    <td class="img_bottom_font"><a href="fruit_view"><h4>토마토</h4></a></td>
                 </tr>
                 <tr>
-                    <td class="img_bottom_price"><h6>12000원</h6></td>
-                    <td class="img_bottom_price"><h6>7000원</h6></td>
-                    <td class="img_bottom_price"><h6>9000원</h6></td>
+                    <td class="img_bottom_price"><h5>12000원</h5></td>
+                    <td class="img_bottom_price"><h5>7000원</h5></td>
+                    <td class="img_bottom_price"><h5>9000원</h5></td>
                 </tr>
             </table>
         </div>

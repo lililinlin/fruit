@@ -50,7 +50,7 @@
          a{ 
              color:black;
          }
-         a:hover { text-decoration: none; color:#4eac87}
+         a:hover { text-decoration: none; color:#00af85}
          a:link { text-decoration: none;}
 
 /* 헤더 */
@@ -190,7 +190,7 @@
                 height: 40px;
                 text-align: center;
                 font-size: 25px;
-                color:  #4eac87;
+                color:  #00af85;
             }
             #count2{
             	font-size: 25px;
@@ -204,7 +204,7 @@
                 text-align: center;
                 font-size: 30px;
                 font-weight:bold;
-                color:  #4eac87;
+                color:  #00af85;
             }
             .bottom_content{ /* 상품상세정보 테이블 */
                 width: 500px;
@@ -248,7 +248,27 @@
             	margin:40px 0 50px 50px;
             	display: none;
             }
-                        
+            #btn_basket{  /* 장바구니 버튼 */
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color: #00af85; 
+	        color: #fff;
+           }          
+           #btn_buy{  /* 구매하기 버튼 */
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+           }
+            #myDIV3 input[type=button], #myDIV4 input[type=button]{
+                border: 1px solid #00af85;
+                background-color: #00af85; 
+                color: #fff;
+                float: right; 
+                margin-right: 50px;
+                width: 150px;
+                height: 50px;
+            }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -387,7 +407,7 @@
         <div id="content">
             <img id="main_img" src="https://via.placeholder.com/150x200">
             <h3><b>단호박 1입</b></h3><br>
-            <h3 style="color:#4eac87"><b>4490원</b></h3><br>
+            <h3 style="color: #00af85"><b>4490원</b></h3><br>
             <table>
                 <tr class="table_tr">
                     <td class="table_menu">판매단위</td>
@@ -425,8 +445,10 @@
                     <td id="count2" colspan="2" style="text-align: right;">총 상품금액<input type="text" name="sum" size="11" readonly>원</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" class="btn btn-success" value="구매하기" onclick='btn_click("buy");' style="width: 320px; height: 60px;">
-                    <input type="submit" class="btn btn-warning" value="장바구니담기" style=" width: 320px; height: 60px; color: white;"  onclick='btn_click("basket");'></td>
+                    <td colspan="2">
+                        <input id="btn_buy" type="submit" value="구매하기" onclick='btn_click("buy");' style="width: 320px; height: 60px;">
+                        <input id="btn_basket" type="submit" value="장바구니담기"  style=" width: 320px; height: 60px;"  onclick='btn_click("basket");'>
+                    </td>
                 </tr> 
             </form>  
         </table><br><br>
@@ -504,7 +526,7 @@
                             </div> 
                     </div>
                         <br>
-                        <input type="button" class="btn btn-success" value="후기 쓰기" onClick="location.href='write_review'" style="float: right; margin-right: 50px; width: 130px;">
+                        <input type="button" value="후기 쓰기" onClick="location.href='write_review'">
             </div>
           
 
@@ -542,7 +564,7 @@
                     </div> 
             </div>
                 <br>
-                <input type="button" class="btn btn-success" value="문의 하기" onClick="location.href='write_question'" style="float: right; margin-right: 50px; width: 130px;">
+                <input type="button"  value="문의 하기" onClick="location.href='write_question'">
     </div>
             
         

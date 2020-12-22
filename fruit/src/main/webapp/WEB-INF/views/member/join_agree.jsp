@@ -159,9 +159,20 @@
             width:20px;
             height:20px;
         }
-        input[type="submit"],input[type="reset"]{/* 동의,비동의 버튼 */
-            width:150px;
+        input[type="reset"]{ /* 비동의 버튼 */
+        	width:200px;
             height:50px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+        	margin-right: 20px;
+        }
+        input[type="submit"]{ /*동의 버튼*/
+            width:200px;
+            height:50px;
+            border: 1px solid #00af85;
+	        background-color: #00af85; 
+	        color: #fff;
         }
         #all_choice{/* 모두 동의하기 체크박스 */
             text-align: center;
@@ -310,7 +321,7 @@
                 </textarea><br><br>
                 <div id="all_choice">
                 <h5>모두 동의합니다.&nbsp;<input type="checkbox" name="all" id="all"></h5><br>
-                <input class="btn btn-success" type="submit" value="동의">&nbsp;<input class="btn btn-warning" style="color: white" type="reset" value="비동의"><br><br>
+                <input type="reset" value="비동의">&nbsp;<input type="submit" value="동의"><br><br>
             </div> </div>      
         </form>
         <script>

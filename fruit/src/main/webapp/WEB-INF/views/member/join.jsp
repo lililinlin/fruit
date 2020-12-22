@@ -156,7 +156,7 @@
         }
 /* main */
         #main_wrapper{
-            width:1200px;
+            width:700px;
             text-align: center;
             margin:0 auto;
             margin-bottom: 200px;
@@ -164,6 +164,7 @@
         #main_wrapper td{
         	width:120px;
         	margin-bottom: 12px;
+            padding-left: 20px;
         }
         
         #main_wrapper h2{
@@ -171,9 +172,7 @@
         }
         #main_wrapper table{
         	width:700px;
-        	
             text-align: left;
-            margin:20px 100px 100px 290px
         }
         #main_wrapper input[type=text],input[type=password]{
         	width:400px;
@@ -186,6 +185,29 @@
         }
         #sample6_detailAddress{
             width:205px;
+        }
+        input[type=submit]{
+        	width:400px;
+        	height:50px;
+        	border: 1px solid #00af85;
+	        background-color: #00af85; 
+	        color: #fff;
+        }
+        input[type=button]{
+        	border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+	        height:40px;
+	        width:100px;
+            margin-bottom: 10px;
+        }
+        #main_box{
+            width: 700px;
+            border-top:2px solid #00af85;
+            margin-top: 50px;
+        }
+        #main_box table{
+            margin-top: 30px;
         }
 /* footer */
         #footer_table{
@@ -279,14 +301,15 @@
     </div>
     <main>
         <div id ="main_wrapper">
-            <h2>회원가입</h2>
+            <h2><b>회원가입</b></h2>
+            <div id="main_box">
             <form action="" method="POST" id="join_us" name="userInfo" onsubmit="return checkValue()">
                 <table>
                     <tr>
                         <td>아이디</td>
                         <td>
                         	<input id="input_userId" type="text" name="id" size="46">
-                        	&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-success"  value="중복확인" onclick="idCheck()">
+                        	&nbsp;&nbsp;&nbsp;<input type="button"  value="중복확인" onclick="idCheck()">
                             <input id="check_hidden" type="hidden"	value="no" />
                         </td>
                     </tr>
@@ -344,16 +367,17 @@
                         <td>주소</td>
                         <td>
                          <input name="add1" type="text" id="sample6_postcode" placeholder="우편번호"><br>
-                         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+                         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="width:150px"><br><br>
                          <input name="add2" type="text" id="sample6_address" placeholder="주소"><br>
                          <input name="add3" type="text" id="sample6_extraAddress" placeholder="참고항목">
                          <input name="add4" type="text" id="sample6_detailAddress" placeholder="상세주소">
                         </td>
                     </tr>
                     <tr><td><br></td></tr>
-                    <tr><td></td><td><input type="submit" class="btn btn-success"  value="확인" style="width: 400px;"></td></tr>
+                    <tr><td></td><td><input type="submit" value="확인"></td></tr>
                  </table>
             </form> 
+            </div>
         </div>
     </main>
     <!-- 아이디,비밀번호 체크 -->
