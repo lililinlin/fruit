@@ -195,7 +195,7 @@
 			font-size:13px;
 		}
 		#content_table td{
-			width:800px;
+			width:1000px;
 			height:50px;
 		}
 /* footer */
