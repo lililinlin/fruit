@@ -160,13 +160,13 @@
             float: right;
             width: 850px;
         }
-        #main_table_box{
+        #main_table_box{ /* 상품내역 테이블 감싼 div*/
             border-top: 3px solid #4eac87;
         }
-        #orderlist{
+        #orderlist{ /* 상품내역 테이블 */
             margin: 0 0 50px 10px;
         }
-        #orderlist th{
+        #orderlist th{ /* th = 과일이름 */
             padding-left: 30px;
             height: 50px;
             font-weight: normal;
@@ -176,21 +176,21 @@
             border-top: 1px solid rgb(195, 195, 195);
             border-bottom: 1px solid rgb(195, 195, 195);
         }
-        .second_td{
+        .second_td{ /* 2번째 td (과일,가격,구매숫자) */
             text-align: left;
             width: 500px;
             padding-left: 20px;
         }
-        .delevery{
+        .delevery{ /* 배송상태 */
             width: 200px;
             text-align: center;
             color: #4eac87;
             font-weight: 600;
         }
-       small{
+       small{ 
            color: gray;
        }
-       .mid_box{
+       .mid_box{ /* 결제정보 , 주문정보 , 배송정보 각각 div*/
         padding: 10px 0 10px 0;
          width: 800px;
          border-top: 2px solid gray;
