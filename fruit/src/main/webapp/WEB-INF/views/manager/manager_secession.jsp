@@ -177,6 +177,20 @@
             cursor: pointer;
             color: #00af85;
         }
+        .submenu1{
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu2{
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu3{
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
         
         /* 오른쪽 */
         #main_right{ /*오른쪽 전체 감싼 div*/
@@ -226,7 +240,47 @@
         }
           
     </style>
-   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+			  $("#mainmenu1").click(function(){
+				  status=$(".submenu1").css("display");
+				  if(status == "none"){
+					  $(".submenu1").show();
+					  $(".submenu2").hide();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu1").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu2").click(function(){
+				  status=$(".submenu2").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").show();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu2").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu3").click(function(){
+				  status=$(".submenu3").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").hide();
+					  $(".submenu3").show();
+				  }
+				  else{
+					  $(".submenu3").hide();
+				  }
+			    
+			  });
+			});
+	</script>
 </head>
 <body>
    <div id="head0"></div>
@@ -277,9 +331,33 @@
             <div id="main_left">
                 <h3><b>회원관리</b></h3>
                 <table>
-                    <tr onClick="location.href='manager_member'"><td><small>회원 목록</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>탈퇴 회원</small></td><td>></td></tr>
-                    
+                    <tr onClick="location.href='manager_main'">
+                    	<td><small>메인페이지</small></td><td>></td>
+                    </tr>
+                    <tr id="mainmenu1">
+                    	<td><small>회원관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr id="mainmenu2">
+                    	<td><small>상품관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr id="mainmenu3">
+                    	<td><small>게시판관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu3" onClick="location.href='notice_management'"><small>게시판</small></td><td class="submenu3"></td>
+                    </tr>
                 </table>
             </div>
 

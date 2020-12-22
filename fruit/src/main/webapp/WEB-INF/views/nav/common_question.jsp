@@ -324,7 +324,8 @@
 		        	$("#<%=viewhidden%>").click(function () { 
 		            	status = $("#<%=hideTr%>").css("display"); 
 		            	if (status == "none") { 
-		                	$("#<%=hideTr%>").show(); 
+		                	$("#<%=hideTr%>").show();
+		                
 		            	} else { 
 		                	$("#<%=hideTr%>").hide(); 
 		                } 
