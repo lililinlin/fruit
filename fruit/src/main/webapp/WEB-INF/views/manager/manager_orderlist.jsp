@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>관리자 정보</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,74 +148,67 @@
             text-align: center;
         }
 /* main */
-		.main_wrapper{
-			width:1200px;
-			margin:0 auto;
-			display:flex;
-			margin-top:50px;
-		}
-		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */
-			border:1px solid gray;
-			margin-right:20px;
-			width:200px;
-			height:100px;
-			text-align: center;
-		}
-		#manager_profile #button1{/* admin관리자 내정보 버튼 */
-			width:100px;
-			height:40px;
-			background-color:#00af85;
-			color:white;
-			border:1px solid #00af85;
-		}
-		#manager_profile #button2{/* admin관리자 로그아웃 버튼 */
-			width:100px;
-			height:40px;
-			background-color:white;
-			color:#00af85;
-			border:1px solid #00af85;
-		}
-		.site_info_top{/* 상단에 있는 테이블(today현황, 미처리 항목) */
-			text-align:center;
-			width:450px;
-			height:300px;
-			border-spacing:4px;
-			border-collapse: separate;
-		}
-        .site_info_top td{ /* today , 미처리 전체 td 넓이*/
+        /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{ 
+            padding: 50px 160px 0 0;
+            width: 1200px;
+            height:800px;
+            margin: 0 auto;   
+        }
+        /* 오른쪽 */
+        #main_right{ /*오른쪽 전체 감싼 div*/
+            float: right;
+            width: 850px;
+        }
+        #main_table_box{
+            border-top: 3px solid #4eac87;
+        }
+        #orderlist{
+            margin: 0 0 50px 10px;
+        }
+        #orderlist th{
+            padding-left: 30px;
+            height: 50px;
+            font-weight: normal;
+        }
+        #orderlist td{
+            padding: 15px 0 15px 30px;
+            border-top: 1px solid rgb(195, 195, 195);
+            border-bottom: 1px solid rgb(195, 195, 195);
+        }
+        .second_td{
+            text-align: left;
+            width: 500px;
+            padding-left: 20px;
+        }
+        .delevery{
             width: 200px;
+            text-align: center;
+            color: #4eac87;
+            font-weight: 600;
         }
-		.site_info_top tr, .site_info_top td, .site_info_top th{
-			border:1px solid gray;
-		}
-		.site_info_top th{
-			background-color:#f0f0f0;
-			color:black;
-		}
-		#site_info_bottom1{/* 하단에 있는 테이블(최근 후기) */
-			text-align:center;
-			margin-bottom:100px;
-			width:580px;
-			height:400px;
-		}
-		#site_info_bottom1 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-		#site_info_bottom2{/* 하단에 있는 테이블(최근주문목록) */
-			text-align:center;
-			margin-left:30px;
-			width:580px;
-			height:400px;
-		}
-		#site_info_bottom2 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-        #site_info_bottom1 a:hover{ /* 최근 후기 a 태그 hover */
-            color: #00af85;
-        }
-        #site_info_bottom2 a:hover{ /* 최근 주문 목록 a 태그 hover */
-            color: #00af85;
-        }
+       small{
+           color: gray;
+       }
+       .mid_box{
+        padding: 10px 0 10px 0;
+         width: 800px;
+         border-top: 2px solid gray;
+         border-bottom: 1px solid rgb(243, 243, 243);
+         margin: 20px 0 40px 0;
+       }
+       .mid_box table{
+           margin-left: 15px;
+           width: 400px;
+       }
+       .mid_box td{
+           width: 200px;
+           height: 40px;
+           font-size: 13px;
+       }
+       #main_right h5{
+           color: rgb(90, 90, 90);
+       }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -240,7 +233,7 @@
    
 </head>
 <body>
-   <div id="head0"></div>
+  <div id="head0"></div>
 
         <div id="wrapp">
             	<div id="head1">
@@ -281,127 +274,124 @@
 	            </td> 
             </tr>
         </table>
+    </div> 
+	<div id="main_wrapper">
+            <div id="main_right">
+                <h4><b>주문 내역 상세</b></h4><br>
+                <h5>주문번호 165456412154 </h5><br>
+                <div id="main_table_box">
+                    <table id="orderlist">
+                        <th>딸기</th>
+                        <tr>
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>딸기 1팩</h5></a> 
+                                <b>4,400원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
+                        </tr>
+                        <th>두리안</th>
+                        <tr> 
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>방울토마토 500g</h5></a> 
+                                <b>7,800원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
+                        </tr>
+                        <th>사과</th>
+                        <tr> 
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>사과 1박스</h5></a> 
+                                <b>25,000원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
+                        </tr>
+                    </table>
+                </div>
+                <h5>결제 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>총주문금액</td>
+                                <td>35,420원</td>
+                            </tr>
+                            <tr>
+                                <td>상품할인</td>
+                                <td>0원</td>
+                            </tr>
+                            <tr>
+                                <td>적립금 사용</td>
+                                <td>- 3,364원</td>
+                            </tr>
+                            <tr>
+                                <td>배송비</td>
+                                <td>2500원</td>
+                            </tr>
+                            <tr>
+                                <td>결제금액</td>
+                                <td>31,408원</td>
+                            </tr>
+                            <tr>
+                                <td>적립금액</td>
+                                <td>159원</td>
+                            </tr>
+                            <tr>
+                                <td>결제방법</td>
+                                <td>네이버페이</td>
+                            </tr>
+                        </table>
+                    </div>
+                <h5>주문 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>주문번호</td>
+                                <td>165456412154</td>
+                            </tr>
+                            <tr>
+                                <td>주문자명</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>보내시는분</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>결제일시</td>
+                                <td>2020-12-22</td>
+                            </tr>
+                            <tr>
+                                <td>주문 처리상태</td>
+                                <td>배송완료</td>
+                            </tr>
+                        </table>
+                    </div>
+                <h5>배송 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>받는 분</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>받는 분 핸드폰</td>
+                                <td>010-2222-4444</td>
+                            </tr>
+                            <tr>
+                                <td>우편번호</td>
+                                <td>01515</td>
+                            </tr>
+                            <tr>
+                                <td>주소</td>
+                                <td>서울시 노원구 상계동</td>
+                            </tr>
+                        </table>
+                    </div>
+               
+            </div> 
     </div>
-    <main>
-    	<div class="main_wrapper">
-    		<table id="manager_profile">
-    			<tr>
-    				<td colspan="2" style="height: 60px"><h3>강이린님</h3></td>
-    			</tr>
-    			<tr>
-    				<td><input type="button" id="button1" value="내정보" onclick="location.href='manager_info'"></td>
-    				<td><input type="button" id="button2" value="로그아웃" onclick="location.href='home'" ></td>
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>today현황</h3></td>
-    			</tr>
-    			<tr>
-    				<th>회원가입 수</th>
-    				<th>탈퇴회원 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품등록 수</th>
-    				<th>삼품주문 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>미처리항목</h3></td>
-    			</tr>
-    			<tr>
-    				<th>1:1문의</th>
-    				<th>교환/환불신청</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-                    <th>상품문의</th>
-    			</tr>
-    			<tr>
-                    <td>0</td>
-    			</tr>
-    		</table>
-    	</div>
-    	<div class="main_wrapper">
-    		<table id="site_info_bottom1">
-    			<tr>
-    				<th colspan="3"><h3>최근후기</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="20%">상품명</th>
-    				<th width="60%">제목</th>
-    				<th width="20%">날짜</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td><a href="review_management">아주 맛있군요</a></td>
-    				<td>2020.12.10</td>
-    			</tr>
-    			<tr>
-    				<td>딸기</td>
-    				<td><a href="review_management">겨울 딸기 달아요 ^^</a></td>
-    				<td>2020.12.9</td>
-    			</tr>
-    			<tr>
-    				<td>복숭아</td>
-    				<td><a href="review_management">굿굿</a></td>
-    				<td>2020.12.9</td>
-    			</tr>
-    			<tr>
-    				<td>두리안</td>
-    				<td><a href="review_management">배송빨라서 좋아요~</a></td>
-    				<td>2020.12.8</td>
-    			</tr>
-    		</table>
-    		<table id="site_info_bottom2">
-    			<tr>
-    				<th colspan="4"><h3>최근주문목록</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="25%">주문번호</th>
-    				<th width="25%">금액</th>
-    				<th width="25%">날짜</th>
-    				<th width="25%">결제내역</th>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245654</a></td>
-    				<td>15,000원</td>
-    				<td>2020.12.16</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245653</a></td>
-    				<td>3,000원</td>
-    				<td>2020.12.15</td>
-    				<td>미 결제</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245652</a></td>
-    				<td>6,000원</td>
-    				<td>2020.12.14</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245651</a></td>
-    				<td>28,000원</td>
-    				<td>2020.12.14</td>
-    				<td>결제 완료</td>
-    			</tr>
-    		</table>
-    	</div>
-    </main>
     <footer>
         <table id="footer_table">
             <tr>
