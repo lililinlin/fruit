@@ -200,9 +200,56 @@ public class MyController {
 	public String SecessionAction() throws Exception {
 		return "manager/manager_member";
 	}	
-	
+	@RequestMapping("/notice_onetoone_question")
+	public String notice_onetoone_question() throws Exception {
+		return "manager/notice_onetoone_question";
+	}
+	@RequestMapping("/manager_common_write")
+	public String manager_common_write() throws Exception {
+		return "manager/manager_common_write";
+	}
+	@RequestMapping("/manager_common_deleteAction")
+	public String manager_common_deleteAction() throws Exception {
+		return "manager/notice_common_question";
+	}
+	@RequestMapping("/notice_management_modify")
+	public String notice_management_modify() throws Exception {
+		return "manager/notice_management_modify";
+	}
+	@RequestMapping("/notice_common_question")
+	public String notice_common_question() throws Exception {
+		return "manager/notice_common_question";
+	}
+	@RequestMapping("/notice_management_writeAction")
+	public String notice_management_writeAction() throws Exception {
+		return "manager/notice_management";
+	}
 	@RequestMapping("/notice_management")
 	public String notice_management() throws Exception {
+		return "manager/notice_management";
+	}
+	@RequestMapping("/notice_management_write")
+	public String notice_management_write() throws Exception {
+		return "manager/notice_management_write";
+	}
+	@RequestMapping("/manager_notice_view")
+	public String manager_notice_view() throws Exception {
+		return "manager/manager_notice_view";
+	}
+	@RequestMapping("/manager_common_modify")
+	public String manager_common_modify() throws Exception {
+		return "manager/manager_common_modify";
+	}
+	@RequestMapping("/notice_common_writeAction")
+	public String notice_common_writeAction() throws Exception {
+		return "manager/manager_common_question";
+	}
+	@RequestMapping("/notice_common_modifyAction")
+	public String notice_common_modifyAction() throws Exception {
+		return "manager/manager_common_question";
+	}
+	@RequestMapping("/notice_management_deleteAction")
+	public String notice_management_deleteAction() throws Exception {
 		return "manager/notice_management";
 	}
 	@RequestMapping("/OptionsearchAction")

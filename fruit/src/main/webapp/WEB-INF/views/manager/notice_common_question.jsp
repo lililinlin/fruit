@@ -33,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+            /* border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -212,18 +212,14 @@
             font-weight: normal;
             text-align: center;
             height: 50px;
-            padding-bottom: 6px;
+            padding-bottom: 20px;
             border-bottom: 1px solid rgb(1, 114, 18);
         }
         #main_table td{
+        	text-align:center;
             height: 50px;
             border-bottom: 1px solid rgb(224, 224, 224);
             font-size: small;
-        }
-        .main_title{
-            text-align: left;
-            width: 500px;
-            padding-left: 20px;
         }
         .main_hit,.main_day{
             color: gray;
@@ -231,15 +227,39 @@
         #btn_box{
         	text-align: right;
         }
-        input[type=button]{
-            width: 100px;
+        input[type=button]{ /* 수정 버튼 */
+            width: 50px;
             height: 40px;
             margin-right: 10px;
-            margin-top: 20px;
             border: 1px solid #00af85;
+	        background-color: #fff;
+	        color: #00af85;
+        }
+        #delete{/* 삭제 버튼 */
+       	    width: 50px;
+            height: 40px;
+        	border: 1px solid #00af85;
             background-color: #00af85; 
             color: #fff;
         }
+        #btn_box{ /* 글작성 버튼 묶은 div*/
+        	text-align:right;
+        }
+        #btn_write{ /* 글작성 버튼 */
+        	width: 100px;
+            height: 40px;
+        	border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
+		
+		<%for(int i = 1; i<4; i++){
+			String hideTr = "hideTr" + i;
+        %>
+        	#<%=hideTr%>{
+        		display:none;
+        	}     	
+        <%}%>
 /* footer */
         #footer_table{
             width: 1200px;
@@ -382,40 +402,61 @@
             </div>
 
             <div id="main_right">
-            <h4><b>공지사항 관리</b></h4>
-                <div id="main_table">
-                    <table>
-                        <th>구분</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회</th>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[배송관련공지] 연휴기간 배송 일정 공지 ( 2020.12.23 ~ )</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-23</td>
-                            <td class="main_hit">266</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[주문관련공지] 적립금 사용시 중복적용 주문관련 공지 ( 2020.12.20 ~ ) </a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-20</td>
-                            <td class="main_hit">346</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[첫 주문 공지] 첫 구매시 적립금 5000원 지급 관련 공지</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-11</td>
-                            <td class="main_hit">1504</td>
-                        </tr>
-                    </table>
-                    <div id="btn_box">
-                    	<input type="button" value="글작성" onclick="location.href='notice_management_write'">
-                    </div>
-                </div>
+	            <h4><b>자주 묻는 질문</b></h4>
+	                <script type="text/javascript"> $(document).ready(function () {
+	        		// 페이지 document 로딩 완료 후 스크립트 실행
+	        		<%for(int i = 1; i<4; i++){
+	        			String viewhidden = "viewhidden" + i;
+					  	String hideTr = "hideTr" + i;
+	        		%>
+			        	$("#<%=viewhidden%>").click(function () { 
+			            	status = $("#<%=hideTr%>").css("display"); 
+			            	if (status == "none") { 
+			                	$("#<%=hideTr%>").show();
+			                
+			            	} else { 
+			                	$("#<%=hideTr%>").hide(); 
+			                } 
+			            });
+	        		<%}%>
+	        	}); 
+	    		</script>
+	    		<div id="main_table">
+	    			<table class="table" id="content_table">
+					  <thead>
+					    <tr>
+					      <th>번호</th>
+					      <th>제목</th>
+					      <th>작성자</th>
+					      <th>작성일</th>
+					      <th>조회</th>
+					    </tr>
+					  </thead>
+					  <%for(int i=1; i<4; i++){ 
+					  	String viewhidden = "viewhidden" + i;
+					  	String hideTr = "hideTr" + i;
+					  %>
+						  <tbody>
+						    <tr>
+						    	<td>공지</td>
+		    					<td id="<%=viewhidden%>" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+		    					<td>강이린</td>
+		    					<td class="main_day">2020-12-08</td>
+		    					<td class="main_hit">400</td>
+						    </tr>
+						    <tr id="<%=hideTr%>">
+						    	<td colspan="3" style="text-align:left;"><%=viewhidden %></td>
+						    	<td colspan="2"><input type="button" value="수정" onClick="location.href='manager_common_modify'">
+						    		<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+						    	</td>
+						    </tr>
+						  </tbody>
+					  <%} %>
+					</table>
+					<div id="btn_box">
+						<input id="btn_write" type="button" value="글작성"  onClick="location.href='manager_common_write'">
+					</div>
+	    		</div>
             </div>
             
     </div>

@@ -13,6 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "js/ckeditor/ckeditor.js"></script> 
     <title>게시판관리</title>
     <script>
         $(function() {
@@ -196,43 +197,23 @@
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 600px;
-        }
-        #main_table{ /* 메인 테이블 감싼 div */
-            border-top: 2px solid  rgb(1, 114, 18);
-            margin-top: 30px;
-            padding-top: 10px;
-        }
-        #main_table table{
-            width: 850px;
-            text-align: center;
-        }
-        #main_table th{
-            font-size: smaller;
-            font-weight: normal;
-            text-align: center;
-            height: 50px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgb(1, 114, 18);
-        }
-        #main_table td{
-            height: 50px;
-            border-bottom: 1px solid rgb(224, 224, 224);
-            font-size: small;
-        }
-        .main_title{
-            text-align: left;
-            width: 500px;
-            padding-left: 20px;
-        }
-        .main_hit,.main_day{
-            color: gray;
+            height: 900px;
         }
         #btn_box{
         	text-align: right;
+        	margin-right:50px;
         }
         input[type=button]{
-            width: 100px;
+            width: 110px;
+            height: 40px;
+            margin-right: 10px;
+            margin-top: 20px;
+            border: 1px solid #00af85;
+	        background-color: #fff;
+	        color: #00af85;
+        }
+        input[type=submit]{
+            width: 110px;
             height: 40px;
             margin-right: 10px;
             margin-top: 20px;
@@ -382,40 +363,24 @@
             </div>
 
             <div id="main_right">
-            <h4><b>공지사항 관리</b></h4>
-                <div id="main_table">
-                    <table>
-                        <th>구분</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회</th>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[배송관련공지] 연휴기간 배송 일정 공지 ( 2020.12.23 ~ )</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-23</td>
-                            <td class="main_hit">266</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[주문관련공지] 적립금 사용시 중복적용 주문관련 공지 ( 2020.12.20 ~ ) </a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-20</td>
-                            <td class="main_hit">346</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[첫 주문 공지] 첫 구매시 적립금 5000원 지급 관련 공지</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-11</td>
-                            <td class="main_hit">1504</td>
-                        </tr>
-                    </table>
-                    <div id="btn_box">
-                    	<input type="button" value="글작성" onclick="location.href='notice_management_write'">
-                    </div>
+            <h4><b>공지사항 글 수정</b></h4>
+            <div id = "site">
+                <br>
+                 <form action="notice_management_modify" method="post">
+                    제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
+                    <textarea id = "editor4" name = "editor4" ></textarea>
+                <script>
+                    CKEDITOR.replace('editor4',{width:800,height:400,
+                    filebrowserUploadUrl:'/images/imageUpload.do'});
+                </script>
+                 <hr>
+                 <div id = "btn_box">
+                    <input type="button" value = "취소" onclick="location.href='notice_management'"/>
+                    <input type="submit" value = "등록" onclick="location.href='notice_management_modify'"/>
                 </div>
+                </form>
+             
+            </div>
             </div>
             
     </div>
