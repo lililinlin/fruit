@@ -366,7 +366,7 @@
             <h4><b>공지사항 글 수정</b></h4>
             <div id = "site">
                 <br>
-                 <form action="notice_management_modify" method="post">
+                 <form action="" method="post">
                     제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                     <textarea id = "editor4" name = "editor4" ></textarea>
                 <script>
@@ -376,7 +376,7 @@
                  <hr>
                  <div id = "btn_box">
                     <input type="button" value = "취소" onclick="location.href='notice_management'"/>
-                    <input type="submit" value = "등록" onclick="location.href='notice_management_modify'"/>
+                    <input type="submit" value = "등록"/>
                 </div>
                 </form>
              

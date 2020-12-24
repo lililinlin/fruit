@@ -438,9 +438,9 @@
 					  %>
 						  <tbody>
 						    <tr>
-						    	<td>공지</td>
+						    	<td><%=i%></td>
 		    					<td id="<%=viewhidden%>" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-		    					<td>강이린</td>
+		    					<td>푸릇츠</td>
 		    					<td class="main_day">2020-12-08</td>
 		    					<td class="main_hit">400</td>
 						    </tr>
