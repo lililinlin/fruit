@@ -152,7 +152,7 @@ public class MyController {
 		}
 	
 //------------------------[  MANAGER  ]-----------------------------------------
-// 관리자메인
+// 관리자메인 
 		@RequestMapping("/manager_main")
 		public String manager_main() throws Exception {
 			return "manager/manager_main";

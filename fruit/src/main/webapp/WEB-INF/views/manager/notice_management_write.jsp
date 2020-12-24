@@ -354,7 +354,7 @@
                     	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
                     </tr>
                     <tr id="mainmenu3">
-                    	<td><small>게시판관리</small></td><td>></td>
+                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>

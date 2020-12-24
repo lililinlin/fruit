@@ -220,7 +220,7 @@
             border-bottom: 1px solid rgb(224, 224, 224);
             font-size: small;
         }
-        .main_title{
+        .main_title{ 
             text-align: left;
             width: 500px;
             padding-left: 20px;

@@ -419,7 +419,7 @@
 			                } 
 			            });
 	        		<%}%>
-	        	}); 
+	        	});  
 	    		</script>
 	    		<div id="main_table">
 	    			<table class="table" id="content_table">

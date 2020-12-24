@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src = "js/ckeditor/ckeditor.js"></script> 
     <title>게시판관리</title>
-    <script>
+    <script> 
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
              $(window).scroll(function() {
