@@ -34,7 +34,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+             /*  border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -150,25 +150,26 @@
         }
 /* main */
 		main{
+		width:1200px;
 			margin-top:30px;
-			margin-left:30px;
+			margin:0 auto;
+
 		}
-		#main_wrapper{
-			width:1060px;
+		#main_wrapper{ /*왼쪽 오른쪽 묶은 div*/
+			width:1200px;
 			display:flex;
 			margin:0 auto;
+			margin: 40px 0 0 50px;
 		}
-		#left_menu{
+		#left_menu{ /*왼쪽 div*/
 			height:205px;
-			width:600px;
-			
+			width:200px;
 		}
 		#left_menu ul{
 			width:100%;
 			margin-top:-16px;
 			margin-left:0;
 			height:152px;
-			
 		}
 		#left_menu li{
 			border:1px solid #e3e3e3;
@@ -181,15 +182,18 @@
 		}
 		#left_menu li:hover{
 			background-color:#f7f7f7;
-			/* color: #4eac87; */
 			color:rgb(1, 114, 18);
 			cursor: pointer;
 		}
-		#content{
-			margin-left:30px;
+		#content{ /*메인 div*/
+			margin-left:40px;
+            width: 900px;
 		}
-		#content h5{
-		padding-bottom:20px;
+		#content h4{
+		padding-bottom:30px;
+		border-bottom:2px solid rgb(1, 114, 18);
+		}
+		#content_table th{
 		border-bottom:1px solid rgb(1, 114, 18);
 		}
 		#content_table{
@@ -197,7 +201,7 @@
 		}
 		#content_table td{
 			width:800px;
-			height:50px;
+			height:55px;
 		}
 		<%for(int i = 1; i<4; i++){
 			String hideTr = "hideTr" + i;
@@ -207,6 +211,10 @@
         	}     	
         <%}%>
 /* footer */
+        footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -308,11 +316,11 @@
     <main>
     	<div id="main_wrapper">
     		<div id=left_menu>
-    			<h4>고객센터</h4><br>
+    			<h3><b>고객센터</b></h3><br><br>
     			<ul>
-    				<li onclick="location.href='service_center'">공지사항</li>
-    				<li onclick="location.href='common_question'">자주하는질문</li>
-    				<li onclick="location.href='onetoone_question'">1:1문의하기</li>
+    				<li onclick="location.href='service_center'">공지사항 </li>
+    				<li onclick="location.href='common_question'">자주하는질문 </li>
+    				<li onclick="location.href='onetoone_question'">1:1문의하기 </li>
     			</ul>
     		</div>
     		<script type="text/javascript"> $(document).ready(function () {
@@ -334,15 +342,15 @@
         	}); 
     		</script>
     		<div id="content">
-    			<h5>자주하는질문</h5>
+    			<h4><b>자주 묻는 질문</b></h4>
     			<table class="table" id="content_table">
 				  <thead>
 				    <tr>
-				      <th scope="col" width="10%">번호</th>
-				      <th scope="col" width="50%">제목</th>
-				      <th scope="col" width="10%">작성자</th>
-				      <th scope="col" width="20%">작성일</th>
-				      <th scope="col" width="10%">조회수</th>
+				      <th scope="col" width="10%" style="padding-left: 20px;">번호</th>
+				      <th scope="col" width="55%" style="padding-left: 200px;">제목</th>
+				      <th scope="col" width="10%" style="padding-left: 12px;">작성자</th>
+				      <th scope="col" width="15%" style="padding-left: 28px;">작성일</th>
+				      <th scope="col" width="10%" style="padding-left: 5px;">조회수</th>
 				    </tr>
 				  </thead>
 				  <%for(int i=1; i<4; i++){ 
@@ -351,7 +359,7 @@
 				  %>
 					  <tbody>
 					    <tr>
-					    	<td>공지</td>
+					    	<td>&nbsp;&nbsp;&nbsp;&nbsp;<%=i %></td>
 	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
 	    					<td>강이린</td>
 	    					<td>2020-12-08</td>

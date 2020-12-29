@@ -13,8 +13,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "js/ckeditor/ckeditor.js"></script> 
-    <title>게시판관리</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <title>고객센터</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -34,12 +34,12 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+              border: 1px solid red;
          }
          a{ 
              color:black;
          }
-         a:hover { text-decoration: none; color: black;}
+         a:hover { text-decoration: none;}
          a:link { text-decoration: none;}
 
 /* 헤더 */
@@ -149,78 +149,62 @@
             text-align: center;
         }
 /* main */
-        /* 왼쪽 오른쪽 담은 div */
-        #main_wrapper{ 
-            padding: 50px 40px 0 50px;
-            width: 1200px;
-            margin: 0 auto;
-        }
-        /* 왼쪽 카테고리 */
-        #main_left{
-            float: left;
-            width: 200px;
-            height: 600px;
-        }
-        #main_left table{
-            margin: 30px 0px 0px 10px;
-            width: 200px;
-            height: 80px;
-        }
-        #main_left table td{
-            height: 50px;
-            padding-left: 20px;
-        }
-        #main_left table tr{
-            border: 1px solid rgb(231, 231, 231);
-        }
-        #main_left tr:hover{
-            background-color: rgb(251, 249, 249);            
-            cursor: pointer;
-            color: #00af85;
-        }
-        .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
-     		display:none;
-     		text-align: center;
-     		padding-right:20px;
-     	}
-     	.submenu2{/* 두번째 서브메뉴 숨김으로 표시 */
-     		display:none;
-     		text-align: center;
-     		padding-right:20px;
-     	}
-     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
-     		padding-left:30px;
-     	}
-
-        /* 오른쪽 */
-        #main_right{ /*오른쪽 전체 감싼 div*/
-            margin-left: 20px;
-            float: right;
-            width: 850px;
-            height: 900px;
-        }
-        #btn_box{
-        	text-align: right;
-        	margin-right:50px;
-        }
-        input[type=button]{
-            width: 110px;
-            height: 40px;
-            margin-right: 10px;
-            margin-top: 20px;
-            border: 1px solid #00af85;
-	        background-color: #fff;
-	        color: #00af85;
-        }
-        input[type=submit]{
-            width: 110px;
-            height: 40px;
-            margin-right: 10px;
-            margin-top: 20px;
-            border: 1px solid #00af85;
-            background-color: #00af85; 
-            color: #fff;
-        }
+		main{
+			margin-top:30px;
+		}
+		#main_wrapper{
+			width:1060px;
+			display:flex;
+			margin:0 auto;
+		}
+		#left_menu{
+			height:205px;
+			width:600px;
+			
+		}
+		#left_menu ul{
+			width:100%;
+			margin-top:-16px;
+			margin-left:0;
+			height:152px;
+			
+		}
+		#left_menu li{
+			border:1px solid #e3e3e3;
+			font-size:12px;
+			padding-left:20px;
+			height:50px;
+			line-height:50px;
+			list-style-type:none;
+			vertical-align: middle;
+		}
+		#left_menu li:hover{
+			background-color:#f7f7f7;
+			/* color: #4eac87; */
+			color:rgb(1, 114, 18);
+			cursor: pointer;
+		}
+		#content{
+			margin-left:30px;
+		}
+		#content h5{
+		padding-bottom:20px;
+		border-bottom:1px solid rgb(1, 114, 18);
+		}
+		#content_table{
+			font-size:13px;
+		}
+		#content_table td{
+			width:800px;
+			height:50px;
+		}
+		<%for(int i = 1; i<4; i++){
+			String hideTr = "hideTr" + i;
+        %>
+        	#<%=hideTr%>{
+        		display:none;
+        	}     	
+        <%}%>
 /* footer */
         #footer_table{
             width: 1200px;
@@ -242,56 +226,46 @@
         }
           
     </style>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-		<script type="text/javascript">
-			$(function(){
-			  $("#mainmenu1").click(function(){
-				  status=$(".submenu1").css("display");
-				  if(status == "none"){
-					  $(".submenu1").show();
-					  $(".submenu2").hide();
-					  $(".submenu3").hide();
-				  }
-				  else{
-					  $(".submenu1").hide();
-				  }
-			    
-			  });
-			  $("#mainmenu2").click(function(){
-				  status=$(".submenu2").css("display");
-				  if(status == "none"){
-					  $(".submenu1").hide();
-					  $(".submenu2").show();
-					  $(".submenu3").hide();
-				  }
-				  else{
-					  $(".submenu2").hide();
-				  }
-			    
-			  });
-			  $("#mainmenu3").click(function(){
-				  status=$(".submenu3").css("display");
-				  if(status == "none"){
-					  $(".submenu1").hide();
-					  $(".submenu2").hide();
-					  $(".submenu3").show();
-				  }
-				  else{
-					  $(".submenu3").hide();
-				  }
-			    
-			  });
-			});
-	</script>
+   	<script>
+		/* function showTr(){
+				if($('#hideTr').css('display','none')){
+					$('#hideTr').css('display','block');
+				} else{
+					$('#hideTr').css('display','none');
+				}
+				
+			} */
+   	</script>
 </head>
 <body>
-  <div id="head0"></div>
+    <div id="head0"></div>
 
         <div id="wrapp">
-            	<div id="head1">
-				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
-					<a href="home">사용자페이지</a></td>
-            	</div>
+        
+             <div id="head1">
+                <%
+				if (session.getAttribute("sessionID") == null) {
+				%>
+					<td>
+						<a href="login">로그인<h> |&nbsp;</h></a>
+						<a href="join_agree">회원가입</a>
+					</td>
+				<%
+					} else if(session.getAttribute("sessionID") == "admin"){
+				%>
+					<td>
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
+						<a href="manager_main">관리자메인</a>
+					</td>
+				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
+					<td>
+						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+						<a href="mypage">&nbsp;마이페이지</a>
+					</td>
+				<%
+					}
+				%>
+            </div>
 
             <div>
                 <table id="head_table">
@@ -312,78 +286,85 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-	            <td class="main_menu_td">
-	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
-	            </td>
-	            <td class="main_menu_td">
-	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
-	            </td> 
+                    <td class="main_menu_td">
+                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
+                    </td>
+                    <td class="main_menu_td">
+                        <a href="event"><h5><b>이벤트</b></h5></a>
+                    </td> 
             </tr>
         </table>
     </div>
-    
-	<div id="main_wrapper">
-            <div id="main_left">
-                <h3><b>게시판관리</b></h3>
-                <table>
-                    <tr onClick="location.href='manager_main'">
-                    	<td><small>메인페이지</small></td><td>></td>
-                    </tr>
-                    <tr id="mainmenu1">
-                    	<td><small>회원관리</small></td><td>></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
-                    </tr>
-                    <tr id="mainmenu2">
-                    	<td><small>상품관리</small></td><td>></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
-                    </tr> 
-                    <tr id="mainmenu3">
-                    	<td><small>게시판관리</small></td><td>></td>
-                    </tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
-                </table>
-            </div> 
-
-            <div id="main_right">
-            <h4><b>공지사항 글 수정</b></h4>
-            <div id = "site">
-                <br>
-                 <form action="" method="post">
-                    제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
-                    <textarea id = "editor4" name = "editor4" ></textarea>
-                <script>
-                    CKEDITOR.replace('editor4',{width:800,height:400,
-                    filebrowserUploadUrl:'/images/imageUpload.do'});
-                </script>
-                 <hr>
-                 <div id = "btn_box">
-                    <input type="button" value = "취소" onclick="location.href='notice_management'"/>
-                    <input type="submit" value = "등록"/>
-                </div>
-                </form>
-             				
-            </div>
-            </div>
-            
-    </div>
+    <main>
+    	<div id="main_wrapper">
+    		<div id=left_menu>
+    			<h3><b>고객센터</b></h3><br>
+    			<ul>
+    				<li onclick="location.href='service_center'">공지사항 </li>
+    				<li onclick="location.href='common_question'">자주하는질문 </li>
+    				<li onclick="location.href='onetoone_question'">1:1문의하기 </li>
+    			</ul>
+    		</div>
+    		<script type="text/javascript"> $(document).ready(function () {
+        		// 페이지 document 로딩 완료 후 스크립트 실행
+        		<%for(int i = 1; i<4; i++){
+        			String viewhidden = "viewhidden" + i;
+				  	String hideTr = "hideTr" + i;
+        		%>
+		        	$("#<%=viewhidden%>").click(function () { 
+		            	status = $("#<%=hideTr%>").css("display"); 
+		            	if (status == "none") { 
+		                	$("#<%=hideTr%>").show();
+		                
+		            	} else { 
+		                	$("#<%=hideTr%>").hide(); 
+		                } 
+		            });
+        		<%}%>
+        	}); 
+    		</script>
+    		<div id="content">
+    			<h5>자주하는질문</h5>
+    			<table class="table" id="content_table">
+				  <thead>
+				    <tr>
+				      <th scope="col" width="10%">번호</th>
+				      <th scope="col" width="50%">제목</th>
+				      <th scope="col" width="10%">작성자</th>
+				      <th scope="col" width="20%">작성일</th>
+				      <th scope="col" width="10%">조회수</th>
+				    </tr>
+				  </thead>
+				  <%for(int i=1; i<4; i++){ 
+				  	String viewhidden = "viewhidden" + i;
+				  	String hideTr = "hideTr" + i;
+				  %>
+					  <tbody>
+					    <tr>
+					    	<td>공지</td>
+	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+	    					<td>강이린</td>
+	    					<td>2020-12-08</td>
+	    					<td>400</td>
+					    </tr>
+					    <tr id="<%=hideTr%>">
+					    	<td colspan="5"><%=viewhidden %></td>
+					    </tr>
+					  </tbody>
+				  <%} %>
+				</table>
+    		</div>
+    	</div>
+    </main>
     <footer>
         <table id="footer_table">
             <tr>

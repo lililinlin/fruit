@@ -27,15 +27,6 @@
                 }
              })
           });
-        $(function(){
-                var x =$('.test').val()
-	            if($('.test').val()=='미등록'){
-	            $('.test').css('color', '#f82a2aa3');
-                }
-                else if($('.test').val()=='등록완료'){
-	            $('.test').css('color', '#199894b3');
-	            }
-	        });
         </script>
     <style>
 
@@ -205,8 +196,16 @@
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 600px;
+            height: 800px;
         }
+        #main_right table input{
+        	border:none;
+        	width: 75px;
+            text-align: center;
+            background-color:transparent;
+            font-weight: bold;
+        }
+        
         #main_table{ /* 메인 테이블 감싼 div */
             border-top: 2px solid  #00af85;
             margin-top: 30px;
@@ -405,20 +404,79 @@
                         <th>작성자</th>
                         <th>답변상태</th>
                         <th>작성일</th>
-                        <tr>
-                            <td>3</td>
+                        <tr><!-- 스크립트문은 body 끝나는 부분에 작성 / 가져올땐 for문으로 가져오기   -->
+                            <td>10</td>
                             <td>배송문의</td>
                             <td class="main_title"><a href="notice_onetoone_view">연휴기간 배송관련 문의 남깁니다.</a></td>
                             <td>강이린</td>
-                            <td><input type="text" name="test" class="test"  value="미등록"></td>
+                            <%
+                            	String str="test"+1;
+                            %>
+                            <td><input type="text" name="test" id="<%= str %>"  value="미등록" ></td>
                             <td class="main_day">2020-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>배송문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">연휴기간 배송관련 문의 남깁니다.</a></td>
+                            <td>강이린</td>
+                            <td><input type="text" name="test"  id="test2"   value="등록완료"></td>
+                            <td class="main_day">2020-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>배송문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">연휴기간 배송관련 문의 남깁니다.</a></td>
+                            <td>강이린</td>
+                            <td><input type="text" name="test"  id="test3"  value="미등록"></td>
+                            <td class="main_day">2020-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>배송문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">연휴기간 배송관련 문의 남깁니다.</a></td>
+                            <td>강이린</td>
+                            <td><input type="text" name="test" id="test4"   value="미등록"></td>
+                            <td class="main_day">2020-12-23</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>상품문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">두리안 언제 입고 되나요?</a></td>
+                            <td>이정현</td>
+                            <td><input type="text" name="test" id="test5"   value="등록완료" ></td>
+                            <td class="main_day">2020-12-20</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>상품문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">두리안 언제 입고 되나요?</a></td>
+                            <td>이정현</td>
+                            <td><input type="text" name="test"  id="test6"  value="등록완료"  ></td>
+                            <td class="main_day">2020-12-20</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>상품문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">두리안 언제 입고 되나요?</a></td>
+                            <td>이정현</td>
+                            <td><input type="text" name="test"  id="test7"   value="등록완료" ></td>
+                            <td class="main_day">2020-12-20</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>상품문의</td>
+                            <td class="main_title"><a href="notice_onetoone_view">두리안 언제 입고 되나요?</a></td>
+                            <td>이정현</td>
+                            <td><input type="text" name="test" id="test8"  value="미등록" ></td>
+                            <td class="main_day">2020-12-20</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>상품문의</td>
                             <td class="main_title"><a href="notice_onetoone_view">두리안 언제 입고 되나요?</a></td>
                             <td>이정현</td>
-                            <td><input type="text" name="test" class="test" value="등록완료"></td>
+                            <td><input type="text" name="test" id="test9"  value="등록완료" ></td>
                             <td class="main_day">2020-12-20</td>
                         </tr>
                         <tr>
@@ -426,9 +484,10 @@
                             <td>주문/결제문의</td>
                             <td class="main_title"><a href="notice_onetoone_view">중복결제가 된 것 같습니다. 취소 부탁드려요</a></td>
                             <td>사용자</td>
-                            <td >미등록</td>
+                           <td><input type="text" name="test" id="test10"  value="등록완료" ></td>
                             <td class="main_day">2020-12-11</td>
                         </tr>
+
                     </table>
     
                 </div>
@@ -457,4 +516,86 @@
         </table>
     </footer>
 </body>
+<script>
+	$(function(){    
+	    if($('#test1').val()=='미등록'){
+	     $('#test1').css('color', '#f82a2aa3');
+	    } 
+	    else if($('#test2').val()=='등록완료'){
+	        $('#test2').css('color', '#199894b3');
+		}
+	});
+	$(function(){ 
+		if($('#test2').val()=='미등록'){
+		    $('#test2').css('color', '#f82a2aa3');
+		}
+		 else if($('#test2').val()=='등록완료'){
+		$('#test2').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test3').val()=='미등록'){
+		    $('#test3').css('color', '#f82a2aa3');
+		}
+		 else if($('#test3').val()=='등록완료'){
+		$('#test3').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test4').val()=='미등록'){
+		    $('#test4').css('color', '#f82a2aa3');
+		}
+		 else if($('#test4').val()=='등록완료'){
+		$('#test4').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test5').val()=='미등록'){
+		    $('#test5').css('color', '#f82a2aa3');
+		}
+		 else if($('#test5').val()=='등록완료'){
+		$('#test5').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test6').val()=='미등록'){
+		    $('#test6').css('color', '#f82a2aa3');
+		}
+		 else if($('#test6').val()=='등록완료'){
+		$('#test6').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test7').val()=='미등록'){
+		    $('#test7').css('color', '#f82a2aa3');
+		}
+		 else if($('#test7').val()=='등록완료'){
+		$('#test7').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test8').val()=='미등록'){
+		    $('#test8').css('color', '#f82a2aa3');
+		}
+		 else if($('#test8').val()=='등록완료'){
+		$('#test8').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test9').val()=='미등록'){
+		    $('#test9').css('color', '#f82a2aa3');
+		}
+		 else if($('#test9').val()=='등록완료'){
+		$('#test9').css('color', '#199894b3');
+		 }
+		});
+	$(function(){ 
+		if($('#test10').val()=='미등록'){
+		    $('#test10').css('color', '#f82a2aa3');
+		}
+		 else if($('#test10').val()=='등록완료'){
+		$('#test10').css('color', '#199894b3');
+		 }
+		});
+</script>
 </html>
