@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>주문서</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -293,6 +293,12 @@
 			color:#cccccc;
 			
 		}
+		.payment_td1{
+			padding-top:30px;
+		}
+		#payment_td2{
+			padding-bottom:30px;
+		}
 		#payment_money_table .first_td{
 			text-align: left;
 			padding-left: 10px;
@@ -348,15 +354,12 @@
 				document.coupon_form.sum.value = parseInt(0);
 			}
 		}
-		function save_price(){
-			init();
-			document.write(use_price);
-			document.getElementById('savemoney').innerHTML="100";
-			
+		function printmoney(){
+			 var fmoney = 29400;
+			 var money = document.getElementById('sum').value;
+		     document.getElementById('sale_money').innerHTML = money + "원";
+		     document.getElementById('final_money').innerHTML = fmoney - money + "원";
 		}
-		$("#sum").on("change keyup paste", function(){
-			alert("change");
-		});
    </script>
 </head>
 <body>
@@ -493,12 +496,12 @@
 		    			<table id="coupon_info_table">
 		    				<tr>
 		    					<td>적립금 적용 <input  type=hidden name="buy_price" value="3000"></td>
-		    					<td><input type="number" id="sum" name="sum" value="0" min="0"max="3000">원 <input type="checkbox" id="all_chbox" onclick="use_all()">모두사용<br>보유적립금 : 3000원</td>
+		    					<td><input type="number" id="sum" name="sum" value="0" min="0"max="3000" onkeyup='printmoney()'>원 <input type="checkbox" id="all_chbox" onclick="use_all()">모두사용<br>보유적립금 : 3000원</td>
 		    				</tr>
 		    			</table>
 	    			</form>
 	    		</div>
-	    		<div id="payment_money">
+	    		<div id="payment_money" class ="float_sidebar">
     				<form name="payment_money_form">
 				    	<table id="payment_money_table">
 				    		<h5>결제금액</h5>
@@ -520,14 +523,14 @@
 				    		</tr>
 				    		<tr>
 				    			<td class="first_td">적립금 사용</td>
-				    			<td class="second_td" id="savemoney"><script type="text/javascript">save_price()</script></td>
+				    			<td class="second_td" id ="sale_money">0원</td>
 				    		</tr>
 				    		<tr>
 				    			<td colspan="2"><hr style="width: 270px; margin-left: 10px;" ></td>
 				    		</tr>
 				    		<tr>
 				    			<td class="first_td">최종결제 금액</td>
-				    			<td class="second_td"><h4>29,400원</h4></td>
+				    			<td class="second_td"><h4 id ="final_money">29,400원</h4></td>
 				    		</tr>
 				    		<tr>
 				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 5%적립</td>
@@ -539,10 +542,10 @@
 	    			<h5>결제 수단</h5>
 	    			<table id="payment_info_table">
 	    				<tr>
-	    					<td width="30%">일반결제</td>
+	    					<td width="30%" class="payment_td1">일반결제</td>
 	    					<td width="70%">
-	    						<input type="radio" id="card" name="payment" value="card" checked>
-	    						<label for="card">신용카드</label>
+	    						<input type="radio" id="card"  name="payment" value="card" checked>
+	    						<label for="card" class="payment_td1">신용카드</label>
 	    					</td>
 	    				<tr>
 	    				<tr>
@@ -594,7 +597,7 @@
 	    					<td colspan="2" class="payment_notice">※고객님은 안전거래를 위ㅐ해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 토스페이먼츠의 구매안전(에스크로)서비스를 이용하실 수 있습니다.</td>
 	    				</tr>
 	    				<tr>
-	    					<td colspan="2" class="payment_notice">※보안강화로 Internet Explorer8미만 사용 시 결제창이 뜨지 않을 수 있습니다.</td>
+	    					<td colspan="2" id="payment_td2" class="payment_notice">※보안강화로 Internet Explorer8미만 사용 시 결제창이 뜨지 않을 수 있습니다.</td>
 	    				</tr>
 	    			</table>
 	    		</div>
@@ -625,5 +628,30 @@
             </tr>
         </table>
     </footer>
+     <script>
+      $(function(){ 
+         var $win = $(window); 
+         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+         /*사용자 설정 값 시작*/ 
+         var speed = 500; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+         $layer.css('position', 'relative').css('z-index', '1'); 
+         /*사용자 설정 값 끝*/ 
+         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+         if (top > 0 ) 
+            $win.scrollTop(layerTopOffset+top); 
+            else $win.scrollTop(0); 
+            //스크롤이벤트가 발생하면 
+            $(window).scroll(function(){ 
+               yPosition = $win.scrollTop() - 1550; //이부분을 조정해서 화면에 보이도록 맞추세요 
+               if (yPosition < 0) { 
+                  yPosition = 0; 
+               } 
+               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+         }); 
+      }); 
+   </script>
 </body>
 </html>
