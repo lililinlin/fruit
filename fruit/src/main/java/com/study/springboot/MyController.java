@@ -49,7 +49,6 @@ public class MyController {
 		public String fruit_view() throws Exception {
 			return "board/fruit_view";
 		}
-		
 		@RequestMapping("buy")
 		public String buy() throws Exception {
 			return "board/buy";
@@ -69,6 +68,10 @@ public class MyController {
 		@RequestMapping("service_content_view")
 		public String service_content_view() throws Exception {
 			return "board/service_content_view";
+		}
+		@RequestMapping("onetoone_content_view")
+		public String onetoone_content_view() throws Exception {
+			return "board/onetoone_content_view";
 		}
 		@RequestMapping("membership")
 		public String membership() throws Exception {
@@ -289,6 +292,18 @@ public class MyController {
 		@RequestMapping("/notice_onetoone_question")
 		public String notice_onetoone_question() throws Exception {
 			return "manager/notice_onetoone_question";
+		}
+		@RequestMapping("/notice_onetoone_view")
+		public String notice_onetoone_view() throws Exception {
+			return "manager/notice_onetoone_view";
+		}
+		@RequestMapping("/notice_onetoone_noanser")
+		public String notice_onetoone_noanser() throws Exception {
+			return "manager/notice_onetoone_question";
+		}
+		@RequestMapping("/notice_onetoone_write")
+		public String notice_onetoone_write() throws Exception {
+			return "manager/notice_onetoone_write";
 		}
 		@RequestMapping("/manager_common_write")
 		public String manager_common_write() throws Exception {
