@@ -152,7 +152,6 @@
 			width:1200px;
 			margin-top:30px;
 			margin:0 auto;
-
 		}
 		#main_wrapper{ /*왼쪽 오른쪽 묶은 div*/
 			width:1200px;
@@ -195,6 +194,7 @@
 		}
 		#content_table{
 			font-size:13px;
+            border-bottom: 2px solid  rgb(214, 214, 214);
 		}
 		#content_table th{
 			border-bottom:1px solid rgb(1, 114, 18);
@@ -203,6 +203,17 @@
 			width:800px;
 			height:55px;
 		}
+        #btn_box input[type=button]{ /*글작성버튼*/
+ 			width: 100px;
+            height: 40px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
+        #btn_box{ /*글작성 버튼 감싼 div*/
+            text-align: right;
+            margin-bottom:30px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -327,6 +338,9 @@
 					  </tbody>
 				  <%} %>
 				</table>
+				<div id="btn_box">
+					<input type="button" value="글작성" onClick="location.href='notice_onetoone_write'" >
+				</div>
     		</div>
     	</div>
     </main>

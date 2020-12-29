@@ -33,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+             /*  border: 1px solid red;  */
          }
          a{ 
              color:black;
@@ -149,18 +149,19 @@
         }
 /* main */
 		main{
+			width:1200px;
 			margin-top:30px;
-			margin-left:30px;
-		}
-		#main_wrapper{
-			width:1060px;
-			display:flex;
 			margin:0 auto;
 		}
-		#left_menu{
+		#main_wrapper{ /*왼쪽 오른쪽 묶은 div*/
+			width:1200px;
+			display:flex;
+			margin:0 auto;
+			margin: 40px 0 0 50px;
+		}
+		#left_menu{ /*왼쪽 div*/
 			height:205px;
-			width:600px;
-			
+			width:200px;
 		}
 		#left_menu ul{
 			width:100%;
@@ -184,19 +185,23 @@
 			color:rgb(1, 114, 18);
 			cursor: pointer;
 		}
-		#content{
-			margin-left:30px;
+		#content{ /*메인 div*/
+			margin-left:40px;
+            width: 900px;
 		}
-		#content h5{
-		padding-bottom:20px;
-		border-bottom:1px solid rgb(1, 114, 18);
+		#content h4{
+			padding-bottom:30px;
+			border-bottom:2px solid rgb(1, 114, 18);
+		}
+		#content_table th{
+			border-bottom:1px solid rgb(1, 114, 18);
 		}
 		#content_table{
 			font-size:13px;
 		}
 		#content_table td{
 			width:800px;
-			height:50px;
+			height:55px;
 		}
 /* footer */
         #footer_table{
@@ -291,7 +296,7 @@
     <main>
     	<div id="main_wrapper">
     		<div id=left_menu>
-    			<h4>고객센터</h4><br>
+    			<h3><b>고객센터</b></h3><br><br>
     			<ul>
     				<li onclick="location.href='service_center'">공지사항</li>
     				<li onclick="location.href='common_question'">자주하는질문</li>
@@ -299,15 +304,15 @@
     			</ul>
     		</div>
     		<div id="content">
-    			<h5>공지사항</h5>
+			<h4><b>공지 사항</b></h4>
     			<table class="table" id="content_table">
 				  <thead>
 				    <tr>
-				      <th scope="col" width="10%">번호</th>
-				      <th scope="col" width="50%">제목</th>
+				      <th scope="col" width="10%">구분</th>
+				      <th scope="col" width="50%" style="padding-left: 180px;">제목</th>
 				      <th scope="col" width="10%">작성자</th>
-				      <th scope="col" width="20%">작성일</th>
-				      <th scope="col" width="10%">조회수</th>
+				      <th scope="col" width="18%" style="padding-left: 30px;">작성일</th>
+				      <th scope="col" width="12%" style="padding-left: 8px;">조회수</th>
 				    </tr>
 				  </thead>
 				  <%for(int i=0; i<3; i++){ %>

@@ -77,6 +77,10 @@ public class MyController {
 		public String membership() throws Exception {
 			return "board/membership";
 		}
+		@RequestMapping("/notice_onetoone_write")
+		public String notice_onetoone_write() throws Exception {
+			return "board/notice_onetoone_write";
+		}
 	
 //----------------------[  NAV  ]---------------------------------------
 	
@@ -300,10 +304,6 @@ public class MyController {
 		@RequestMapping("/notice_onetoone_noanser")
 		public String notice_onetoone_noanser() throws Exception {
 			return "manager/notice_onetoone_question";
-		}
-		@RequestMapping("/notice_onetoone_write")
-		public String notice_onetoone_write() throws Exception {
-			return "manager/notice_onetoone_write";
 		}
 		@RequestMapping("/manager_common_write")
 		public String manager_common_write() throws Exception {

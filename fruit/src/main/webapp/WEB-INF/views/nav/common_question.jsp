@@ -346,7 +346,7 @@
 				  <thead>
 				    <tr>
 				      <th scope="col" width="10%" style="padding-left: 20px;">번호</th>
-				      <th scope="col" width="55%" style="padding-left: 200px;">제목</th>
+				      <th scope="col" width="55%" style="padding-left: 180px;">제목</th>
 				      <th scope="col" width="10%" style="padding-left: 12px;">작성자</th>
 				      <th scope="col" width="15%" style="padding-left: 28px;">작성일</th>
 				      <th scope="col" width="10%" style="padding-left: 5px;">조회수</th>

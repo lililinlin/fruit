@@ -13,8 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <title>고객센터</title>
+    <title>메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -34,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              border: 1px solid red;
+              /* border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -148,63 +147,7 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-/* main */
-		main{
-			margin-top:30px;
-		}
-		#main_wrapper{
-			width:1060px;
-			display:flex;
-			margin:0 auto;
-		}
-		#left_menu{
-			height:205px;
-			width:600px;
-			
-		}
-		#left_menu ul{
-			width:100%;
-			margin-top:-16px;
-			margin-left:0;
-			height:152px;
-			
-		}
-		#left_menu li{
-			border:1px solid #e3e3e3;
-			font-size:12px;
-			padding-left:20px;
-			height:50px;
-			line-height:50px;
-			list-style-type:none;
-			vertical-align: middle;
-		}
-		#left_menu li:hover{
-			background-color:#f7f7f7;
-			/* color: #4eac87; */
-			color:rgb(1, 114, 18);
-			cursor: pointer;
-		}
-		#content{
-			margin-left:30px;
-		}
-		#content h5{
-		padding-bottom:20px;
-		border-bottom:1px solid rgb(1, 114, 18);
-		}
-		#content_table{
-			font-size:13px;
-		}
-		#content_table td{
-			width:800px;
-			height:50px;
-		}
-		<%for(int i = 1; i<4; i++){
-			String hideTr = "hideTr" + i;
-        %>
-        	#<%=hideTr%>{
-        		display:none;
-        	}     	
-        <%}%>
+
 /* footer */
         #footer_table{
             width: 1200px;
@@ -226,16 +169,7 @@
         }
           
     </style>
-   	<script>
-		/* function showTr(){
-				if($('#hideTr').css('display','none')){
-					$('#hideTr').css('display','block');
-				} else{
-					$('#hideTr').css('display','none');
-				}
-				
-			} */
-   	</script>
+   
 </head>
 <body>
     <div id="head0"></div>
@@ -304,67 +238,7 @@
             </tr>
         </table>
     </div>
-    <main>
-    	<div id="main_wrapper">
-    		<div id=left_menu>
-    			<h3><b>고객센터</b></h3><br>
-    			<ul>
-    				<li onclick="location.href='service_center'">공지사항 </li>
-    				<li onclick="location.href='common_question'">자주하는질문 </li>
-    				<li onclick="location.href='onetoone_question'">1:1문의하기 </li>
-    			</ul>
-    		</div>
-    		<script type="text/javascript"> $(document).ready(function () {
-        		// 페이지 document 로딩 완료 후 스크립트 실행
-        		<%for(int i = 1; i<4; i++){
-        			String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-        		%>
-		        	$("#<%=viewhidden%>").click(function () { 
-		            	status = $("#<%=hideTr%>").css("display"); 
-		            	if (status == "none") { 
-		                	$("#<%=hideTr%>").show();
-		                
-		            	} else { 
-		                	$("#<%=hideTr%>").hide(); 
-		                } 
-		            });
-        		<%}%>
-        	}); 
-    		</script>
-    		<div id="content">
-    			<h5>자주하는질문</h5>
-    			<table class="table" id="content_table">
-				  <thead>
-				    <tr>
-				      <th scope="col" width="10%">번호</th>
-				      <th scope="col" width="50%">제목</th>
-				      <th scope="col" width="10%">작성자</th>
-				      <th scope="col" width="20%">작성일</th>
-				      <th scope="col" width="10%">조회수</th>
-				    </tr>
-				  </thead>
-				  <%for(int i=1; i<4; i++){ 
-				  	String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-				  %>
-					  <tbody>
-					    <tr>
-					    	<td>공지</td>
-	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-	    					<td>강이린</td>
-	    					<td>2020-12-08</td>
-	    					<td>400</td>
-					    </tr>
-					    <tr id="<%=hideTr%>">
-					    	<td colspan="5"><%=viewhidden %></td>
-					    </tr>
-					  </tbody>
-				  <%} %>
-				</table>
-    		</div>
-    	</div>
-    </main>
+    
     <footer>
         <table id="footer_table">
             <tr>
