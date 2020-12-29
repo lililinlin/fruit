@@ -13,8 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <title>고객센터</title>
+    <title>메인</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -34,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-             /*  border: 1px solid red; */
+              /* border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -150,70 +149,45 @@
         }
 /* main */
 		main{
+			margin-bottom:100px;
+		}
+		#main_wrapper{
 			width:1200px;
-			margin-top:30px;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		#main_wrapper hr{
+			width:1050px;
 			margin:0 auto;
 		}
-		#main_wrapper{ /*왼쪽 오른쪽 묶은 div*/
-			width:1200px;
-			display:flex;
+		#main_wrapper h3,h6{
+			text-align: center;
+		}
+		#contents_table{/* 상단 테이블(제목,작성자,작성일,조회수) */
 			margin:0 auto;
-			margin: 40px 0 0 50px;
+			margin-top:70px;
+			font-size:15px;
+			width:1050px;
+			border-top:2px solid black;
 		}
-		#left_menu{ /*왼쪽 div*/
-			height:205px;
-			width:200px;
-		}
-		#left_menu ul{
-			width:100%;
-			margin-top:-16px;
-			margin-left:0;
-			height:152px;
-		}
-		#left_menu li{
-			border:1px solid #e3e3e3;
-			font-size:12px;
-			padding-left:20px;
+		#contents_table td,th{
 			height:50px;
-			line-height:50px;
-			list-style-type:none;
-			vertical-align: middle;
+			border:1px solid #efefef;
+			padding-left:20px;
 		}
-		#left_menu li:hover{
-			background-color:#f7f7f7;
-			color:rgb(1, 114, 18);
-			cursor: pointer;
+		#contents_table th{
+			background-color: #f5f5f5;
 		}
-		#content{ /*메인 div*/
-			margin-left:40px;
-            width: 900px;
+		#main_contents{/* 컨텐츠 내용 */
+			width:1000px;
+			margin-left:100px;
+			margin-top:20px;
 		}
-		#content h4{
-			padding-bottom:30px;
-			border-bottom:2px solid rgb(1, 114, 18);
+		#backbutton{/* 목록버튼 */
+			width:140px;
+			margin-left:980px;
 		}
-		#content_table th{
-			border-bottom:1px solid rgb(1, 114, 18);
-		}
-		#content_table{
-			font-size:13px;
-		}
-		#content_table td{
-			width:800px;
-			height:55px;
-		}
-		<%for(int i = 1; i<4; i++){
-			String hideTr = "hideTr" + i;
-        %>
-        	#<%=hideTr%>{
-        		display:none;
-        	}     	
-        <%}%>
 /* footer */
-        footer{
-            width: 1200px;
-            margin: 0 auto;
-        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -234,16 +208,7 @@
         }
           
     </style>
-   	<script>
-		/* function showTr(){
-				if($('#hideTr').css('display','none')){
-					$('#hideTr').css('display','block');
-				} else{
-					$('#hideTr').css('display','none');
-				}
-				
-			} */
-   	</script>
+   
 </head>
 <body>
     <div id="head0"></div>
@@ -314,63 +279,33 @@
     </div>
     <main>
     	<div id="main_wrapper">
-    		<div id=left_menu>
-    			<h3><b>고객센터</b></h3><br><br>
-    			<ul>
-    				<li onclick="location.href='service_center'">공지사항 </li>
-    				<li onclick="location.href='common_question'">자주하는질문 </li>
-    				<li onclick="location.href='onetoone_question'">1:1문의하기 </li>
-    			</ul>
-    		</div>
-    		<script type="text/javascript"> $(document).ready(function () {
-        		// 페이지 document 로딩 완료 후 스크립트 실행
-        		<%for(int i = 1; i<4; i++){
-        			String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-        		%>
-		        	$("#<%=viewhidden%>").click(function () { 
-		            	status = $("#<%=hideTr%>").css("display"); 
-		            	if (status == "none") { 
-		                	$("#<%=hideTr%>").show();
-		                
-		            	} else { 
-		                	$("#<%=hideTr%>").hide(); 
-		                } 
-		            });
-        		<%}%>
-        	}); 
-    		</script>
-    		<div id="content">
-    			<h4><b>자주 묻는 질문</b></h4>
-    			<table class="table" id="content_table">
-				  <thead>
-				    <tr>
-				      <th scope="col" width="10%" style="padding-left: 20px;">번호</th>
-				      <th scope="col" width="55%" style="padding-left: 200px;">제목</th>
-				      <th scope="col" width="10%" style="padding-left: 12px;">작성자</th>
-				      <th scope="col" width="15%" style="padding-left: 28px;">작성일</th>
-				      <th scope="col" width="10%" style="padding-left: 5px;">조회수</th>
-				    </tr>
-				  </thead>
-				  <%for(int i=1; i<4; i++){ 
-				  	String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-				  %>
-					  <tbody>
-					    <tr>
-					    	<td>&nbsp;&nbsp;&nbsp;&nbsp;<%=i %></td>
-	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-	    					<td>강이린</td>
-	    					<td>2020-12-08</td>
-	    					<td>400</td>
-					    </tr>
-					    <tr id="<%=hideTr%>">
-					    	<td colspan="5"><%=viewhidden %></td>
-					    </tr>
-					  </tbody>
-				  <%} %>
-				</table>
-    		</div>
+    		<h3>1:1문의하기</h3>
+    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
+    		<table id="contents_table">
+    			<tr>
+    				<th>제목</th>
+    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+    			</tr>
+    			<tr>
+    				<th>작성자</th>
+    				<td colspan="3">강이린</td>
+    			</tr>
+    			<tr>
+    				<th width="10%">작성일</th>
+    				<td width="20%">2020-12-08</td>
+    				<th width="10%">조회수</th>
+    				<td width="60%">400</td>
+    			</tr>
+    		</table>
+    		<div id="main_contents">
+    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
+    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
+    			   a reiciendis nostrum vel debitis.</p>
+    		</div><br><br>
+    		<hr><br>
+    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
     	</div>
     </main>
     <footer>
