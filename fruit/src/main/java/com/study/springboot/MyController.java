@@ -54,7 +54,10 @@ public class MyController {
 		public String buy() throws Exception {
 			return "board/buy";
 		}
-		
+		@RequestMapping("shipping_destination")
+		public String shipping_destination() throws Exception {
+			return "board/shipping_destination";
+		}
 		@RequestMapping("basket")
 		public String basket() throws Exception {
 			return "board/basket";
