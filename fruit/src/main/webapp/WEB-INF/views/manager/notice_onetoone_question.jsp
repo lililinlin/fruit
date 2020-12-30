@@ -521,8 +521,8 @@
 	    if($('#test1').val()=='미등록'){
 	     $('#test1').css('color', '#f82a2aa3');
 	    } 
-	    else if($('#test2').val()=='등록완료'){
-	        $('#test2').css('color', '#199894b3');
+	    else if($('#test1').val()=='등록완료'){
+	        $('#test1').css('color', '#199894b3');
 		}
 	});
 	$(function(){ 
