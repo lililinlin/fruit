@@ -428,7 +428,7 @@
                             <td>배송문의</td>
                             <td class="main_title"><a href="notice_onetoone_view">연휴기간 배송관련 문의 남깁니다.</a></td>
                             <td>강이린</td>
-                            <td><input type="text" name="test"  id="test3"  value="미등록"></td>
+                            <td><input type="text" name="test"  id="test3" value="미등록"></td>
                             <td class="main_day">2020-12-23</td>
                         </tr>
                         <tr>
@@ -526,7 +526,7 @@
 		}
 	});
 	$(function(){ 
-		if($('#test2').val()=='미등록'){
+		if($('#test2').val()=='미등록'){ 
 		    $('#test2').css('color', '#f82a2aa3');
 		}
 		 else if($('#test2').val()=='등록완료'){
