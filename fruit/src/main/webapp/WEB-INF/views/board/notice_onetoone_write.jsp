@@ -13,7 +13,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <script src = "js/ckeditor/ckeditor.js"></script> 
+    <title>고객센터-1:1문의 작성</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -33,7 +34,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+              /*border: 1px solid red;*/
          }
          a{ 
              color:black;
@@ -147,7 +148,86 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-
+/* main */
+		main{
+			width:1200px;
+			margin-top:30px;
+			margin:0 auto;
+		}
+	/*왼쪽 오른쪽 묶은 div*/
+		#main_wrapper{ 
+			width:1200px;
+			display:flex;
+			margin:0 auto;
+			margin: 40px 0 0 50px;
+		}
+	/*왼쪽 div*/
+		#left_menu{ 
+			height:205px;
+			width:200px;
+		}
+		#left_menu ul{
+			width:100%;
+			margin-top:-16px;
+			margin-left:0;
+			height:152px;
+		}
+		#left_menu li{
+			border:1px solid #e3e3e3;
+			font-size:12px;
+			padding-left:20px;
+			height:50px;
+			line-height:50px;
+			list-style-type:none;
+			vertical-align: middle;
+		}
+		#left_menu li:hover{
+			background-color:#f7f7f7;
+			color:rgb(1, 114, 18);
+			cursor: pointer;
+		}
+	/* 오른쪽 */
+		#content{ /* 메인 전체 묶은 div */
+            margin:0 0 50px 40px;
+            width: 900px;
+            height:1000px;
+            border-bottom:1px solid rgb(150, 147, 147);
+		}
+		#content h4{ /* 메인 큰 글씨 */
+			padding-bottom:30px;
+			border-bottom:2px solid rgb(1, 114, 18);
+		}
+		#main_content_box{ /* 테이블 버튼 묶은 div */
+			padding-top:20px;
+			width:805px;
+			margin:0 0 100px 30px;
+		}
+		.menu{ /* 문의유형 아이디 휴대폰 제목 td */
+		 	width:100px;
+		 	height:70px;
+		}
+		#editor{ /* 글작성 폼 묶은 div  */
+			margin-top:20px;
+		}
+		#title{ /* 제목 input 속성*/
+			width:700px;
+		}
+		#main_content_box input, #main_content_box select{ /* 메안안에 input 속성*/
+            margin-top: 15px;
+			height:40px;
+		}
+        #btn_box{ /*글작성 버튼 감싼 div*/
+            text-align: right;
+            margin-bottom:30px;
+        }
+        #btn_box input[type=submit]{ /*글작성버튼*/
+ 			width: 150px;
+            height: 40px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+            margin-top:30px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -188,7 +268,7 @@
 					} else if(session.getAttribute("sessionID") == "admin"){
 				%>
 					<td>
-						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a>
 						<a href="manager_main">관리자메인</a>
 					</td>
 				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
@@ -238,6 +318,67 @@
             </tr>
         </table>
     </div>
+    
+    <main>
+    
+    	<div id="main_wrapper">
+	    		<div id=left_menu>
+	    			<h3><b>고객센터</b></h3><br><br>
+	    			<ul>
+	    				<li onclick="location.href='service_center'">공지사항</li>
+	    				<li onclick="location.href='common_question'">자주하는질문</li>
+	    				<li onclick="location.href='onetoone_question'">1:1문의하기</li>
+	    			</ul>
+	    		</div>
+	    		
+	    		<div id="content">
+	    			<h4><b>1:1 문의 하기 - 글작성</b></h4>
+	    			
+	    			<div id="main_content_box">
+			    			<form action="onetoone_writeAction" method="post">
+			    				<table>
+			                         <tr>
+			                             <td class="menu">문의유형</td>
+			                             <td>
+											<select>
+												<option>배송문의</option>
+												<option>교환/환불문의</option>
+												<option>상품문의</option>
+												<option>주문/결제문의</option>
+												<option>기타문의</option>
+											</select>
+			                             </td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">아이디</td>
+			                             <td><input type="text" value="강이린" id="id" name="id" readonly /></td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">휴대폰</td>
+			                             <td><input type="text" id="phone" name="phone"  value="010-2222-2222"/></td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">제목</td>
+			                             <td><input type="text" id="title" name="title"  value="결제가 안됩니다."/></td>
+			                         </tr>
+			                    </table>  
+			                    
+			                    <div id="editor">
+					                <textarea id = "editor4" name = "editor4" ></textarea>
+									    <script>
+									       CKEDITOR.replace('editor4',{width:800,height:400,
+									       filebrowserUploadUrl:'/images/imageUpload.do'});
+									    </script>
+								</div>   
+				                 <div id = "btn_box">
+				                    <input type="submit" value = "등록" onclick="location.href='notice_management_writeAction'"/>
+				                 </div>
+			                </form>
+	                </div>
+	    		</div>
+    	</div>
+    	
+    </main>
     
     <footer>
         <table id="footer_table">
