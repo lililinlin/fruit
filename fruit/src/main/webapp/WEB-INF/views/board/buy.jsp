@@ -480,7 +480,7 @@
     			<table id="delivery_info_table">
     				<tr>
     					<th>배송지</th>
-    					<td>서울 강북구 수유3동 166-15(한신빌라트) 401호<p>받으실 분 정보를 입력해 주세요</p><input type="button" value="변경"></td>
+    					<td>서울 강북구 수유3동 166-15(한신빌라트) 401호<p>받으실 분 정보를 입력해 주세요.</p><input type="button"  onclick="location.href='shipping_destination'"value="변경"></td>
     				</tr>
     				<tr>
     					<th>받으실 장소</th>
@@ -533,7 +533,7 @@
 				    			<td class="second_td"><h4 id ="final_money">29,400원</h4></td>
 				    		</tr>
 				    		<tr>
-				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 5%적립</td>
+				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 3%적립</td>
 				    		</tr>
 				    	</table>
 			    	</form>

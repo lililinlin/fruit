@@ -81,6 +81,10 @@ public class MyController {
 		public String notice_onetoone_write() throws Exception {
 			return "board/notice_onetoone_write";
 		}
+		@RequestMapping("/add_destination")
+		public String add_destination() throws Exception {
+			return "board/add_destination";
+		}
 	
 //----------------------[  NAV  ]---------------------------------------
 	
