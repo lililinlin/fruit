@@ -195,7 +195,7 @@
 		}
 		#content h4{ /* 메인 큰 글씨 */
 			padding-bottom:30px;
-			border-bottom:2px solid rgb(1, 114, 18);
+			border-bottom:2px solid  #00af85;
 		}
 		#main_content_box{ /* 테이블 버튼 묶은 div */
 			padding-top:20px;
@@ -215,6 +215,7 @@
 		#main_content_box input, #main_content_box select{ /* 메안안에 input 속성*/
             margin-top: 15px;
 			height:40px;
+			cursor: auto;
 		}
         #btn_box{ /*글작성 버튼 감싼 div*/
             text-align: right;
@@ -340,12 +341,12 @@
 			                         <tr>
 			                             <td class="menu">문의유형</td>
 			                             <td>
-											<select>
-												<option>배송문의</option>
-												<option>교환/환불문의</option>
-												<option>상품문의</option>
-												<option>주문/결제문의</option>
-												<option>기타문의</option>
+											<select name="option">
+												<option value="1">배송문의</option>
+												<option value="2">교환/환불문의</option>
+												<option value="3">상품문의</option>
+												<option value="4">주문/결제문의</option>
+												<option value="5">기타문의</option>
 											</select>
 			                             </td>
 			                         </tr>
@@ -371,7 +372,7 @@
 									    </script>
 								</div>   
 				                 <div id = "btn_box">
-				                    <input type="submit" value = "등록" onclick="location.href='notice_management_writeAction'"/>
+				                    <input type="submit" value = "등록"/>
 				                 </div>
 			                </form>
 	                </div>

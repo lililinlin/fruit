@@ -397,7 +397,7 @@
                         <table>
                             <tr>
                                 <td>문의유형</td>
-                                <td><input type="text" value="배송지연/불만" readonly /></td>
+                                <td><input type="text" style="cursor: auto;" value="배송지연/불만" readonly  /></td>
                             </tr>
                             <tr>
                                 <td>아이디</td>

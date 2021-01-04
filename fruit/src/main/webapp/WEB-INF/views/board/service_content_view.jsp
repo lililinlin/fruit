@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>공지사항</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -168,7 +168,7 @@
 			margin-top:70px;
 			font-size:15px;
 			width:1050px;
-			border-top:2px solid black;
+			border-top:2px solid #00af85; 
 		}
 		#contents_table td,th{
 			height:50px;
@@ -185,7 +185,11 @@
 		}
 		#backbutton{/* 목록버튼 */
 			width:140px;
+			height:40px;
 			margin-left:980px;
+			border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
 		}
 /* footer */
         #footer_table{
@@ -305,7 +309,7 @@
     			   a reiciendis nostrum vel debitis.</p>
     		</div><br><br>
     		<hr><br>
-    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
+    		<input id="backbutton" type="button" value="목록" onclick="location.href='service_center'">
     	</div>
     </main>
     <footer>

@@ -13,7 +13,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <script src = "js/ckeditor/ckeditor.js"></script> 
+    <title>고객센터-1:1문의</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -33,7 +34,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+              /*border: 1px solid red;*/
          }
          a{ 
              color:black;
@@ -149,44 +150,93 @@
         }
 /* main */
 		main{
-			margin-bottom:100px;
-		}
-		#main_wrapper{
 			width:1200px;
-			margin:0 auto;
-			margin-top:50px;
-		}
-		#main_wrapper hr{
-			width:1050px;
+			margin-top:30px;
 			margin:0 auto;
 		}
-		#main_wrapper h3,h6{
-			text-align: center;
-		}
-		#contents_table{/* 상단 테이블(제목,작성자,작성일,조회수) */
+	/*왼쪽 오른쪽 묶은 div*/
+		#main_wrapper{ 
+			width:1200px;
+			display:flex;
 			margin:0 auto;
-			margin-top:70px;
-			font-size:15px;
-			width:1050px;
-			border-top:2px solid black;
+			margin: 40px 0 0 50px;
 		}
-		#contents_table td,th{
-			height:50px;
-			border:1px solid #efefef;
+	/*왼쪽 div*/
+		#left_menu{ 
+			height:205px;
+			width:200px;
+		}
+		#left_menu ul{
+			width:100%;
+			margin-top:-16px;
+			margin-left:0;
+			height:152px;
+		}
+		#left_menu li{
+			border:1px solid #e3e3e3;
+			font-size:12px;
 			padding-left:20px;
+			height:50px;
+			line-height:50px;
+			list-style-type:none;
+			vertical-align: middle;
 		}
-		#contents_table th{
-			background-color: #f5f5f5;
+		#left_menu li:hover{
+			background-color:#f7f7f7;
+			color:rgb(1, 114, 18);
+			cursor: pointer;
 		}
-		#main_contents{/* 컨텐츠 내용 */
-			width:1000px;
-			margin-left:100px;
+	/* 오른쪽 */
+		#content{ /* 메인 전체 묶은 div */
+            margin:0 0 50px 40px;
+            width: 900px;
+            height:1000px;
+            border-bottom:1px solid rgb(150, 147, 147);
+		}
+		#content h4{ /* 메인 큰 글씨 */
+			padding-bottom:30px;
+			border-bottom:2px solid #00af85;
+		}
+		#main_content_box{ /* 테이블 버튼 묶은 div */
+			padding-top:20px;
+			width:805px;
+			margin:0 0 100px 30px;
+		}
+		.menu{ /* 문의유형 아이디 휴대폰 제목 td */
+		 	width:100px;
+		 	height:70px;
+		}
+		#editor{ /* 글작성 폼 묶은 div  */
 			margin-top:20px;
 		}
-		#backbutton{/* 목록버튼 */
-			width:140px;
-			margin-left:980px;
+		#title{ /* 제목 input 속성*/
+			width:700px;
 		}
+		#main_content_box input, #main_content_box select{ /* 메안안에 input 속성*/
+            margin-top: 15px;
+			height:40px;
+			cursor: auto;
+		}
+        #btn_box{ /*글작성 버튼 감싼 div*/
+            text-align: right;
+            margin-bottom:30px;
+        }
+        #btn_box input[type=button]{ /* 삭제버튼 */
+ 			width: 150px;
+            height: 40px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+	        margin:30px 10px 0 0;
+        }
+        #btn_box input[type=submit]{ /* 수정버튼 */
+       		width: 150px;
+            height: 40px;
+           border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+            margin-top:30px;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -227,7 +277,7 @@
 					} else if(session.getAttribute("sessionID") == "admin"){
 				%>
 					<td>
-						<a href="mypage">마이페이지<h> |&nbsp;</h></a> 
+						<a href="mypage">마이페이지<h> |&nbsp;</h></a>
 						<a href="manager_main">관리자메인</a>
 					</td>
 				<%} else if(session.getAttribute("sessionID") != null && session.getAttribute("sessionID") != "admin"){ %>
@@ -277,37 +327,69 @@
             </tr>
         </table>
     </div>
+    
     <main>
+    
     	<div id="main_wrapper">
-    		<h3>1:1문의하기</h3>
-    		<h6 style="color: gray;">푸릇츠의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</h6>
-    		<table id="contents_table">
-    			<tr>
-    				<th>제목</th>
-    				<td colspan="3">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-    			</tr>
-    			<tr>
-    				<th>작성자</th>
-    				<td colspan="3">강이린</td>
-    			</tr>
-    			<tr>
-    				<th width="10%">작성일</th>
-    				<td width="20%">2020-12-08</td>
-    				<th width="10%">조회수</th>
-    				<td width="60%">400</td>
-    			</tr>
-    		</table>
-    		<div id="main_contents">
-    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
-    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
-    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
-    			   a reiciendis nostrum vel debitis.</p>
-    		</div><br><br>
-    		<hr><br>
-    		<input id="backbutton" class="btn btn-success" type="button" value="목록" onclick="location.href='service_center'">
+	    		<div id=left_menu>
+	    			<h3><b>고객센터</b></h3><br><br>
+	    			<ul>
+	    				<li onclick="location.href='service_center'">공지사항</li>
+	    				<li onclick="location.href='common_question'">자주하는질문</li>
+	    				<li onclick="location.href='onetoone_question'">1:1문의하기</li>
+	    			</ul>
+	    		</div>
+	    		
+	    		<div id="content">
+	    			<h4><b>1:1 문의 하기</b></h4>
+	    			
+	    			<div id="main_content_box">
+			    			<form action="onetoone_modifyAction" method="post">
+			    				<table>
+			                         <tr>
+			                             <td class="menu">문의유형</td>
+			                             <td>
+											<select name="option">
+												<option value="1">배송문의</option>
+												<option value="2">교환/환불문의</option>
+												<option value="3">상품문의</option>
+												<option value="4">주문/결제문의</option>
+												<option value="5">기타문의</option>
+											</select>
+			                             </td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">아이디</td>
+			                             <td><input type="text" value="강이린" id="id" name="id" readonly /></td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">휴대폰</td>
+			                             <td><input type="text" id="phone" name="phone"  value="010-2222-2222"/></td>
+			                         </tr>
+			                         <tr>
+			                             <td  class="menu">제목</td>
+			                             <td><input type="text" id="title" name="title"  value="결제가 안됩니다."/></td>
+			                         </tr>
+			                    </table>  
+			                    
+			                    <div id="editor">
+					                <textarea id = "editor4" name = "editor4" ></textarea>
+									    <script>
+									       CKEDITOR.replace('editor4',{width:800,height:400,
+									       filebrowserUploadUrl:'/images/imageUpload.do'});
+									    </script>
+								</div>   
+				                 <div id = "btn_box">
+				                    <input type="button" value ="삭제" />
+				                    <input type="submit" value ="수정" />
+				                 </div>
+			                </form>
+	                </div>
+	    		</div>
     	</div>
+    	
     </main>
+    
     <footer>
         <table id="footer_table">
             <tr>
