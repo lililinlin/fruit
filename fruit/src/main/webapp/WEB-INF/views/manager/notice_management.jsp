@@ -255,7 +255,7 @@
         #footer_table strong{ /* footer a태그 */
             margin-right: 20px;
             font-size: 21px;
-        }
+        } 
         #footer_table strong:nth-child(n):hover{
             color: #4eac87;
         }

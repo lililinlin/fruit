@@ -167,7 +167,7 @@
 		#left_menu ul{
 			width:100%;
 			margin-top:-16px;
-			margin-left:0;
+			margin-left:0; 
 			height:152px;
 		}
 		#left_menu li{

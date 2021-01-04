@@ -19,7 +19,7 @@
              var lnb = $("#nav_wrapper").offset().top;
              $(window).scroll(function() {
                 var window = $(this).scrollTop();
- 
+  
                 if(lnb <= window) {
                    $("#nav_wrapper").addClass("fixed");
                 } else {

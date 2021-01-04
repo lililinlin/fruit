@@ -389,7 +389,7 @@
                     	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
                 </table>
             </div>
-
+ 
             <div id="main_right">
 
                 <h4><b>1:1 문의 글 보기</b></h4>

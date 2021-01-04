@@ -170,7 +170,7 @@
 			height:152px;
 		}
 		#left_menu li{
-			border:1px solid #e3e3e3;
+			border:1px solid #e3e3e3; 
 			font-size:12px;
 			padding-left:20px;
 			height:50px;

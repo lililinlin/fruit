@@ -143,7 +143,7 @@
          
          .main_menu_td{  /* nav 속성 */
             list-style-type: none;
-            text-decoration: none;
+            text-decoration: none; 
             color: rgb(150, 147, 147);
             text-align: center;
         }

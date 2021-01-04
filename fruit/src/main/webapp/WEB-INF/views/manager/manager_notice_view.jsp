@@ -145,7 +145,7 @@
             list-style-type: none;
             text-decoration: none;
             color: rgb(150, 147, 147);
-            text-align: center;
+            text-align: center; 
         }
 /* main */
 		main{

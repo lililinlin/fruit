@@ -183,7 +183,7 @@
 		}
 		#left_menu li:hover{
 			background-color:#f7f7f7;
-			color:rgb(1, 114, 18);
+			color:rgb(1, 114, 18); 
 			cursor: pointer;
 		}
 	/* 오른쪽 */

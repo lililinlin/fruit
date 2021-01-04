@@ -362,7 +362,7 @@
                 </table>
             </div>
 
-            <div id="main_right">
+            <div id="main_right"> 
             <h4><b>공지사항 글작성</b></h4>
             <div id = "site">
                 <br>

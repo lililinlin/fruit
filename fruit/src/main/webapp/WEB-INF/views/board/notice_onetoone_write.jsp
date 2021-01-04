@@ -181,7 +181,7 @@
 			list-style-type:none;
 			vertical-align: middle;
 		}
-		#left_menu li:hover{
+		#left_menu li:hover{ 
 			background-color:#f7f7f7;
 			color:rgb(1, 114, 18);
 			cursor: pointer;
