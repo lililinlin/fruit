@@ -84,7 +84,7 @@
 			</form>
 		</div>
 		<div id="bottom">
-			<h3><a href="#">새 배송지 추가</a></h3>
+			<h3><a href="add_destination">새 배송지 추가</a></h3>
 		</div>
 	</div>
 </body>
