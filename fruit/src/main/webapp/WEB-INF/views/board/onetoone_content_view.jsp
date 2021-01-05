@@ -29,6 +29,7 @@
              })
           });
     </script>
+
     <style>
 
 /* 전체 적용 */
@@ -221,7 +222,7 @@
             text-align: right;
             margin-bottom:30px;
         }
-        #btn_box input[type=button]{ /* 삭제버튼 */
+        #delete{ /* 삭제버튼 */
  			width: 150px;
             height: 40px;
             border: 1px solid #00af85;
@@ -229,7 +230,7 @@
 	        color:  #00af85;
 	        margin:30px 10px 0 0;
         }
-        #btn_box input[type=submit]{ /* 수정버튼 */
+        #modify{ /* 수정버튼 */
        		width: 150px;
             height: 40px;
            border: 1px solid #00af85;
@@ -258,7 +259,26 @@
         }
           
     </style>
-   
+   <script type="text/javascript">
+		$(document).ready(function(){
+			var formObj = $("form[name='readForm']");
+			
+			// 수정 
+			$(".update_btn").on("click", function(){
+				formObj.attr("action", "/board/onetoone_update");
+				formObj.attr("method", "get");
+				formObj.submit();				
+			})
+			
+			// 삭제
+			$(".delete_btn").on("click", function(){
+				formObj.attr("action", "/board/onetoone_delete");
+				formObj.attr("method", "post");
+				formObj.submit();
+			})
+
+		})
+	</script>
 </head>
 <body>
     <div id="head0"></div>
@@ -344,7 +364,7 @@
 	    			<h4><b>1:1 문의 하기</b></h4>
 	    			
 	    			<div id="main_content_box">
-			    			<form action="onetoone_modifyAction" method="post">
+			    			<form name="readForm" role="form" method="post">
 			    				<table>
 			                         <tr>
 			                             <td class="menu">문의유형</td>
@@ -379,9 +399,9 @@
 									       filebrowserUploadUrl:'/images/imageUpload.do'});
 									    </script>
 								</div>   
-				                 <div id = "btn_box">
-				                    <input type="button" value ="삭제" />
-				                    <input type="submit" value ="수정" />
+				                 <div id = "btn_box">				                    
+				                    <button type="submit" id="delete" class="update_btn">수정</button>
+									<button type="submit" id="modify" class="delete_btn">삭제</button>
 				                 </div>
 			                </form>
 	                </div>
