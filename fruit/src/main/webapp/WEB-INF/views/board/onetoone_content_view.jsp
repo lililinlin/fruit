@@ -265,14 +265,14 @@
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
-				formObj.attr("action", "/board/onetoone_update");
-				formObj.attr("method", "get");
-				formObj.submit();				
+				formObj.attr("action", "onetoone_update");
+				formObj.attr("method", "post");
+			
 			})
 			
 			// 삭제
 			$(".delete_btn").on("click", function(){
-				formObj.attr("action", "/board/onetoone_delete");
+				formObj.attr("action", "onetoone_delete");
 				formObj.attr("method", "post");
 				formObj.submit();
 			})

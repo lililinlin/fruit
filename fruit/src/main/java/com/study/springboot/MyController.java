@@ -73,6 +73,14 @@ public class MyController {
 		public String onetoone_content_view() throws Exception {
 			return "board/onetoone_content_view";
 		}
+		@RequestMapping("onetoone_update")
+		public String onetoone_update() throws Exception {
+			return "nav/onetoone_question";
+		}
+		@RequestMapping("onetoone_delete")
+		public String onetoone_delete() throws Exception {
+			return "nav/onetoone_question";
+		}
 		@RequestMapping("membership")
 		public String membership() throws Exception {
 			return "board/membership";
