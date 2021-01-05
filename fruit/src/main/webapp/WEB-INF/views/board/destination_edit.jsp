@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>배송지 수정</title>
@@ -72,7 +73,7 @@
 <body>
 	<div id="wrapper">
 		<h2>배송지 수정</h2>
-		<form name="reaForm" role="form" method="post">
+		<form name="readForm" role="form" method="post">
 			<h4 id="address_h4">서울 강북구 도봉로 101길 53-8(한신빌라트)</h4>
 			<input type="text" id="detail_address">
 			<h4>받으실 분</h4>

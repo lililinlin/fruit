@@ -117,6 +117,14 @@ public class MyController {
 		public String place() throws Exception {
 			return "board/place";
 		}
+		@RequestMapping("/place_update")
+		public String place_update() throws Exception {
+			return "board/buy";
+		}
+		@RequestMapping("/place_delete")
+		public String place_delete() throws Exception {
+			return "board/buy";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	

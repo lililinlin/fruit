@@ -484,7 +484,7 @@
     				</tr>
     				<tr>
     					<th>받으실 장소</th>
-    					<td><p>받으실 장소를 선택해 주세요.</p><input type="button" value="입력"></td>
+    					<td><p>받으실 장소를 선택해 주세요.</p><input type="button"onClick="location.href='place'" value="입력"></td>
     				</tr>
     			</table>
     		</div><br>
