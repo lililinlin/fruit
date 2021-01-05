@@ -97,7 +97,15 @@ public class MyController {
 		public String destination_edit() throws Exception {
 			return "board/destination_edit";
 		}
-	
+		@RequestMapping("/destination_update")
+		public String destination_update() throws Exception {
+			return "board/shipping_destination";
+		}
+		@RequestMapping("/destination_delete")
+		public String destination_delete() throws Exception {
+			return "board/shipping_destination";
+		}
+		
 //----------------------[  NAV  ]---------------------------------------
 	
 		@RequestMapping("/aboard_fruit")
