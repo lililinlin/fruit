@@ -85,6 +85,10 @@ public class MyController {
 		public String add_destination() throws Exception {
 			return "board/add_destination";
 		}
+		@RequestMapping("/destination_edit")
+		public String destination_edit() throws Exception {
+			return "board/destination_edit";
+		}
 	
 //----------------------[  NAV  ]---------------------------------------
 	
