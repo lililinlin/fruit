@@ -75,7 +75,15 @@ public class MyController {
 		}
 		@RequestMapping("onetoone_update")
 		public String onetoone_update() throws Exception {
+			return "board/onetoone_content_view";
+		}
+		@RequestMapping("onetoone_view_delete")
+		public String onetoone_view_delete() throws Exception {
 			return "nav/onetoone_question";
+		}
+		@RequestMapping("onetoone_modify")
+		public String onetoone_modify() throws Exception {
+			return "board/onetoone_modify";
 		}
 		@RequestMapping("onetoone_delete")
 		public String onetoone_delete() throws Exception {

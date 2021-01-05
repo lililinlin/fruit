@@ -13,7 +13,6 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "js/ckeditor/ckeditor.js"></script> 
     <title>고객센터-1:1문의</title>
     <script>
         $(function() {
@@ -35,7 +34,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /*border: 1px solid red;*/
+              /* border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -183,15 +182,14 @@
 			vertical-align: middle;
 		}
 		#left_menu li:hover{
-			background-color:#f7f7f7;
-			color:rgb(1, 114, 18); 
+			background-color:rgb(251, 249, 249);
+			color:#00af85;
 			cursor: pointer;
 		}
 	/* 오른쪽 */
 		#content{ /* 메인 전체 묶은 div */
             margin:0 0 50px 40px;
             width: 900px;
-            height:1000px;
             border-bottom:1px solid rgb(150, 147, 147);
 		}
 		#content h4{ /* 메인 큰 글씨 */
@@ -199,31 +197,30 @@
 			border-bottom:2px solid #00af85;
 		}
 		#main_content_box{ /* 테이블 버튼 묶은 div */
-			padding-top:20px;
+			padding-top:50px;
 			width:805px;
-			margin:0 0 100px 30px;
+			margin:0 0 80px 30px;
 		}
-		.menu{ /* 문의유형 아이디 휴대폰 제목 td */
-		 	width:100px;
-		 	height:70px;
-		}
-		#editor{ /* 글작성 폼 묶은 div  */
-			margin-top:20px;
-		}
-		#title{ /* 제목 input 속성*/
-			width:700px;
-		}
-		#main_content_box input, #main_content_box select{ /* 메안안에 input 속성*/
-            margin-top: 15px;
-			height:40px;
-			cursor: auto;
-		}
+        #content table tr:nth-child(2n+1){
+            background-color: rgb(246, 246, 246);
+        }
+        #content table td{
+            padding-left: 40px;
+            height: 70px;
+        }
+        #main_content{
+            height: 200px;
+            width: 150px;
+        }	
+        #main_content2{
+            padding: 50px 50px 50px 0;
+        }
         #btn_box{ /*글작성 버튼 감싼 div*/
-            text-align: right;
-            margin-bottom:30px;
+            text-align: center;
+            margin: 30px 0 30px 0;
         }
         #delete{ /* 삭제버튼 */
- 			width: 150px;
+ 			width: 200px;
             height: 40px;
             border: 1px solid #00af85;
 	        background-color:  #fff;
@@ -231,7 +228,7 @@
 	        margin:30px 10px 0 0;
         }
         #modify{ /* 수정버튼 */
-       		width: 150px;
+       		width: 200px;
             height: 40px;
            border: 1px solid #00af85;
             background-color: #00af85; 
@@ -259,25 +256,7 @@
         }
           
     </style>
-   <script type="text/javascript">
-		$(document).ready(function(){
-			var formObj = $("form[name='readForm']");
-			
-			// 수정 
-			$(".update_btn").on("click", function(){
-				formObj.attr("action", "onetoone_update");
-				formObj.attr("method", "post");
-			
-			})
-			
-			// 삭제
-			$(".delete_btn").on("click", function(){
-				formObj.attr("action", "onetoone_delete");
-				formObj.attr("method", "post");
-				formObj.submit();
-			})
-		})
-	</script>
+   
 </head>
 <body>
     <div id="head0"></div>
@@ -363,46 +342,50 @@
 	    			<h4><b>1:1 문의 하기</b></h4>
 	    			
 	    			<div id="main_content_box">
-			    			<form name="readForm" role="form" method="post">
 			    				<table>
-			                         <tr>
-			                             <td class="menu">문의유형</td>
-			                             <td>
-											<select name="option">
-												<option value="1">배송문의</option>
-												<option value="2">교환/환불문의</option>
-												<option value="3">상품문의</option>
-												<option value="4">주문/결제문의</option>
-												<option value="5">기타문의</option>
-											</select>
-			                             </td>
-			                         </tr>
-			                         <tr>
-			                             <td  class="menu">아이디</td>
-			                             <td><input type="text" value="강이린" id="id" name="id" readonly /></td>
-			                         </tr>
-			                         <tr>
-			                             <td  class="menu">휴대폰</td>
-			                             <td><input type="text" id="phone" name="phone"  value="010-2222-2222"/></td>
-			                         </tr>
-			                         <tr>
-			                             <td  class="menu">제목</td>
-			                             <td><input type="text" id="title" name="title"  value="결제가 안됩니다."/></td>
-			                         </tr>
-			                    </table>  
-			                    
-			                    <div id="editor">
-					                <textarea id = "editor4" name = "editor4" ></textarea>
-									    <script>
-									       CKEDITOR.replace('editor4',{width:800,height:400,
-									       filebrowserUploadUrl:'/images/imageUpload.do'});
-									    </script>
-								</div>   
+                                    <tr>
+                                        <td>문의유형</td>
+                                        <td>배송문의</td>
+                                    </tr>
+                                    <tr>
+                                        <td>아이디</td>
+                                        <td>강이린</td>
+                                    </tr>
+                                    <tr>
+                                        <td>휴대폰</td>
+                                        <td>010-2222-2222</td>
+                                    </tr>
+                                    <tr>
+                                        <td>제목</td>
+                                        <td>결제가 안됩니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="main_content">내용</td>
+                                        <td id="main_content2">
+                                            어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다. 어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다. 어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다.
+                                            어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다.
+                                            어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다.
+                                            어제부터 오늘까지 결제가 안되네요.
+                                            물건이 없는건지 시스템에 문제가 있는건지
+                                            확인부탁드립니다.
+                                        </td>
+                                    </tr>
+                                </table>
+ 
 				                 <div id = "btn_box">				                    
-				                    <button type="submit" id="delete" class="update_btn">수정</button>
-									<button type="submit" id="modify" class="delete_btn">삭제</button>
+				                    <input type="button" id="delete" onClick="location.href='onetoone_modify'" value="수정">
+									<input type="button" id="modify" onClick="location.href='onetoone_view_delete'" value="삭제">
 				                 </div>
-			                </form>
 	                </div>
 	    		</div>
     	</div>

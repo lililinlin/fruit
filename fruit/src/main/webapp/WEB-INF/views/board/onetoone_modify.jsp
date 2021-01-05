@@ -183,8 +183,8 @@
 			vertical-align: middle;
 		}
 		#left_menu li:hover{
-			background-color:#f7f7f7;
-			color:rgb(1, 114, 18); 
+			background-color:rgb(251, 249, 249);
+			color:#00af85;
 			cursor: pointer;
 		}
 	/* 오른쪽 */
