@@ -113,6 +113,10 @@ public class MyController {
 		public String destination_delete() throws Exception {
 			return "board/shipping_destination";
 		}
+		@RequestMapping("/place")
+		public String place() throws Exception {
+			return "board/place";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	
