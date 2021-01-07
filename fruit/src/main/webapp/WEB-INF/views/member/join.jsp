@@ -154,6 +154,9 @@
             margin-bottom: 50px;
             width:400px;
         }
+         #basket_img{
+        	height:35px;
+        }
 /* main */
         #main_wrapper{
             width:700px;
@@ -294,7 +297,7 @@
                         <a href="service_center" ><h5><b>고객센터</b></h5></a>
                     </td>
                     <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
+                        <a href="event"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
         </table>

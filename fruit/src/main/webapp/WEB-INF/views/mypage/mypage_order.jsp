@@ -147,6 +147,9 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
+         #basket_img{
+        	height:35px;
+        }
 /* main */
 		/* 회색박스 안에 내용 */
         #head_wrapper{ /* 회색 영역 */
@@ -320,7 +323,7 @@
                         <a href="service_center" ><h5><b>고객센터</b></h5></a>
                     </td>
                     <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
+                        <a href="event"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
         </table> 
