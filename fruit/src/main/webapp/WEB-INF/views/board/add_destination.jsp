@@ -10,10 +10,10 @@
 	<style>
 		#wrapper{
 			width:1900px;
+			margin:0 auto;
 		}
 		/* 상단 인사글 */
 		#div_top{
-			margin:0 auto;
 			text-align:center;
 			width:1800px;
 		}
@@ -75,17 +75,17 @@
 			<h4>매일 아침,문 앞까지 신선함을 전해드려요.</h4>
 		</div>
 		<div id="main_contents">
-			<form action="" method="post">
+			<form action="" method="post" name="readForm" role="form" onsubmit="return checkValue()">
 				<table id="contents_table">
 					<tr>
 						<td><input type="text" id="sample6_address" placeholder="주소" readonly></td>
-						<td><input type="button"  id="button1" value="재검색" onclick="sample6_execDaumPostcode()"></td>
+						<td><input type="button"  id="button1" value="재검색" name="address"onclick="sample6_execDaumPostcode()"></td>
 					</tr>
 					<tr>
-						<td colspan="2"><input type="text" id="sample6_extraAddress" placeholder="참고항목" readonly></td>
+						<td colspan="2"><input type="text" id="sample6_extraAddress" name="extraAddress" placeholder="참고항목" readonly></td>
 					</tr>
 					<tr>
-						<td colspan="2"><input type="text" id="sample6_detailAddress" placeholder="상세주소"></td>
+						<td colspan="2"><input type="text" id="sample6_detailAddress" name="detailAddress" placeholder="상세주소"></td>
 					</tr>
 				</table>
 				<input type="submit" value="저장">
@@ -141,6 +141,21 @@
 	            }
 	        }).open();
 	    }
+	 function checkValue()
+		{
+			if(!document.readForm.address.value){
+				alert("주소를 입력해주세요.");
+				return false; //submit 취소
+			}
+			if(!document.readForm.extraAddress.value){
+				alert("주소를 입력해주세요.");
+				return false; //submit 취소
+			}
+			if(!document.readForm.detailAddress.value){
+				alert("상세주소를 입력해주세요.");
+				return false;
+			}
+		}
 	</script>
 </body>
 </html>
