@@ -147,6 +147,9 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
+        #basket_img{
+        	height:35px;
+        }
 /* main */
 		main{
 			width:1200px;
@@ -286,7 +289,7 @@
                         <a href="service_center" ><h5><b>고객센터</b></h5></a>
                     </td>
                     <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
+                        <a href="basket"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
         </table>
