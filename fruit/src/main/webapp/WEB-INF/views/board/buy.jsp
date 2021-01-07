@@ -361,6 +361,19 @@
 		     document.getElementById('final_money').innerHTML = fmoney - money + "원";
 		}
    </script>
+   <script>
+    $(document).ready(function(){
+    $("#all_chbox").change(function(){
+        if($("#all_chbox").is(":checked")){
+            document.coupon_form.sum.value =  parseInt(amount);
+            printmoney();
+        }else{
+            printmoney();
+        }
+    });
+    });
+   </script>
+</head>
 </head>
 <body>
     <div id="head0"></div>
@@ -496,7 +509,8 @@
 		    			<table id="coupon_info_table">
 		    				<tr>
 		    					<td>적립금 적용 <input  type=hidden name="buy_price" value="3000"></td>
-		    					<td><input type="number" id="sum" name="sum" value="0" min="0"max="3000" onkeyup='printmoney()'>원 <input type="checkbox" id="all_chbox" onclick="use_all()">모두사용<br>보유적립금 : 3000원</td>
+                                <td><input type="number" id="sum" name="sum" value="0" min="0"max="3000" onkeyup='printmoney()'>원 
+                                    <input type="checkbox" id="all_chbox" onclick="use_all()">모두사용<br>보유적립금 : 3000원</td>
 		    				</tr>
 		    			</table>
 	    			</form>
