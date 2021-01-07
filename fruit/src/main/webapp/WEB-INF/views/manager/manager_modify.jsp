@@ -33,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
+             /*  border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -177,6 +177,23 @@
             cursor: pointer;
             color: #00af85;
         }
+         .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu2{/* 두번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu3{/* 세번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		padding-right:20px;
+     	}
+     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
+     		padding-left:30px;
+     	}
         
         /* 오른쪽 */
         #main_right{ /*오른쪽 전체 감싼 div*/
@@ -184,6 +201,9 @@
             float: right;
             width: 850px;
             height: 600px;
+        }
+        #main_right table{
+            width: 850px;
         }
         #main_right h4{
         	margin-bottom:35px;
@@ -226,6 +246,7 @@
         	background-color:white;
 			color:#00af85;
 			border:1px solid #00af85;
+			margin-right:20px;
        }
 /* footer */
         #footer_table{
@@ -248,7 +269,47 @@
         }
           
     </style>
-   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+			  $("#mainmenu1").click(function(){
+				  status=$(".submenu1").css("display");
+				  if(status == "none"){
+					  $(".submenu1").show();
+					  $(".submenu2").hide();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu1").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu2").click(function(){
+				  status=$(".submenu2").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").show();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu2").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu3").click(function(){
+				  status=$(".submenu3").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").hide();
+					  $(".submenu3").show();
+				  }
+				  else{
+					  $(".submenu3").hide();
+				  }
+			    
+			  });
+			});
+	</script>
 </head>
 <body>
   <div id="head0"></div>
@@ -296,11 +357,35 @@
 	<div id="main_wrapper">
             <div id="main_left">
                 <h3><b>관리자페이지</b></h3>
-                <table>
-                    <tr onClick="location.href='manager_main'"><td><small>메인페이지</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>회원관리</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>상품관리</small></td><td>></td></tr>
-                    <tr onClick="location.href='manager_secession'"><td><small>게시판관리</small></td><td>></td></tr>
+               <table>
+                    <tr onClick="location.href='manager_main'">
+                    	<td><small>메인페이지</small></td><td>></td>
+                    </tr>
+                    <tr id="mainmenu1">
+                    	<td><small>회원관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr id="mainmenu2">
+                    	<td><small>상품관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr id="mainmenu3">
+                    	<td><small>게시판관리</small></td><td>></td>
+                    </tr>
+                   <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                    </tr>
                 </table>
             </div>
 
@@ -320,7 +405,6 @@
 	                        <th>비밀번호확인</th>
 	                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"><h6 id="chkNotice" size="2"></td>
 	                    </tr>
-	                    
 	                    <tr>
 	                        <th>이름</td>
 	                        <td>강이린</td>
@@ -328,7 +412,7 @@
 	                 </table><br>
 	                 
 	                 <input type="button" onClick="location.href='manager_info'" value="취소하기">
-	                 <input type="submit" value="확인">
+	                 <input type="submit" value="수정완료">
             	</form> 
             </div>
     </div>

@@ -152,51 +152,58 @@
         #main_basket{        /* 메인 감싼 div */
             margin: 0 auto;
             width: 1200px;
-            padding-left: 50px;
         }
         #main_basket h1{     /* 장바구니 글씨 속성 */
             text-align: center;
             padding: 20px 0px 20px 0;
         }
+        #main_basket table{ /* 테이블 */
+            margin-top: 50px;
+            width: 1200px;
+            border-top: 1px solid #4eac87;
+        }
         th{
             height: 100px;
             border: none;
-            padding-left: 55px;
-        }
-        #main_basket table{
-            /* margin-left: 80px; */
-        }
+            text-align: center;
+        } 
         #main_basket tr{
             font-size: 22px;
-            border-bottom: 1px solid rgb(211, 211, 211);
+            border-bottom: 1px solid rgb(230, 230, 230);
         }
         #main_basket td{
-            padding: 30px 50px 30px 50px;
+            text-align: center;
+            padding: 30px 10px 30px 10px;
         }
-        #main_left{
-            margin-left: 500px;
-            width: 1000px;
-            float: left;
-            height: 800px;
-        }
-        .td_delete{width: 100px;}
-        .td_img{width: 250px; }
-        .td_name{width: 400px;}
-        .td_price{width: 150px;}
-        .td_count{width: 150px;}
-        #chebox_bottom{
-            padding-bottom: 20px;
-            border-bottom: 1px solid #4eac87;
-        }
-        #buy{
-            width: 150px;
-            height: 60px;
-            margin: 30px 0 100px 980px;
-        }
-        #main_basket tr:nth-child(2n+1){
-            background-color: rgb(243, 243, 243);
+        #main_basket tr:nth-child(2n+1){ 
+            background-color: rgb(245, 245, 245);
         }
        
+        .td_delete{width: 150px;}/* 주문 여부 */
+        .td_img{width: 200px;}   /* 과일 사진 */
+        .td_name{width: 300px;}  /* 과일이름 */
+        .td_price{width: 200px;} /* 가격 */
+        .td_count{width: 150px;} /* 갯수 */
+
+        #delete_btn{ /* 삭제 버튼 */
+            width: 80px;
+            height: 40px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+        }
+        #buy_div{ /* 주문하기 버튼 감싼 div*/
+            margin: 100px 0 150px 0;
+            text-align: center;
+            font-size: 22px;
+        }
+        #buy{ /* 주문하기 버튼 */
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+            width: 250px;
+            height: 70px;
+        }
 
 /* footer */
         #footer_table{
@@ -293,37 +300,46 @@
     <div id="main_basket">
         <br><br>
         <h1><b>장바구니</b></h1><br>
-                <div id="chebox_bottom"></div>
+            <form action="buy" method="POST">
                 <table> 
                        <th>이미지</th>
                        <th>과일이름</th>
-                       <th>가격</th>
                        <th>수량</th>
+                       <th>가격</th>
                        <th>주문여부</th>
                     <tr>
                         <td class="td_img"><img src="https://via.placeholder.com/100x120"></td>
-                        <td class="td_name"><h5>두리안</h5></td>
+                        <td class="td_name" id="fruit" name="fruit"><h5>두리안</h5></td>
                         <td class="td_count">2</td>
                         <td class="td_price">40000</td>
-                        <td class="td_delete"><input type="button" class="btn btn-warning" style="color: white; width: 90px; height: 50px;" value="삭제"></td>
+                        <td class="td_delete"><input type="button" id="delete_btn" value="삭제"></td>
                     </tr>
                     <tr>
                         <td class="td_img"><img src="https://via.placeholder.com/100x120"></td>
                         <td class="td_name"><h5>샤인머스켓</h5></td>
                         <td class="td_count">1</td>
                         <td class="td_price">8000</td>
-                        <td class="td_delete"><input type="button" class="btn btn-warning" style="color: white; width: 90px; height: 50px;" value="삭제"></td>
+                        <td class="td_delete"><input type="button" id="delete_btn" value="삭제"></td>
                     </tr>
                     <tr>
                         <td class="td_img"><img src="https://via.placeholder.com/100x120"></td>
                         <td class="td_name"><h5>토마토</h5></td>
                         <td class="td_count">1</td>
                         <td class="td_price">5000</td>
-                        <td class="td_delete"><input type="button" class="btn btn-warning" style="color: white; width: 90px; height: 50px;" value="삭제"></td>
+                        <td class="td_delete"><input type="button" id="delete_btn" value="삭제"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_img"><img src="https://via.placeholder.com/100x120"></td>
+                        <td class="td_name" id="fruit" name="fruit"><h5>두리안</h5></td>
+                        <td class="td_count">2</td>
+                        <td class="td_price">40000</td>
+                        <td class="td_delete"><input type="button" id="delete_btn" value="삭제"></td>
                     </tr>
                 </table>
-                <input id="buy" type="button" class="btn btn-success" onClick="location.href='buy'" value="주문하기">
-            
+                <div id="buy_div">
+                <input id="buy" type="submit" value="주문하기">
+                </div>
+            </form>
     </div>
         <div id="footer">
             <table id="footer_table">

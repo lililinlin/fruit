@@ -155,8 +155,6 @@
             width: 1200px;
             height:800px;
             margin: 0 auto;
-            
-            
         }
         /* 왼쪽 카테고리 */
         #main_left{
@@ -193,8 +191,10 @@
      	}
      	.submenu3{/* 세번째 서브메뉴 숨김으로 표시 */
      		display:none;
-     		text-align: center;
      		padding-right:20px;
+     	}
+     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
+     		padding-left:30px;
      	}
         /* 오른쪽 */
         #main_right{ /*오른쪽 전체 감싼 div*/
@@ -360,8 +360,9 @@
                     <tr id="mainmenu3">
                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
-                    <tr>
-                    	<td class="submenu3" onClick="location.href='notice_management'"><small>게시판</small></td><td class="submenu3"></td>
+                   <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
                     </tr>
                 </table>
             </div>
