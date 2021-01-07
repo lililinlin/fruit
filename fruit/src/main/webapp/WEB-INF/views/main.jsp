@@ -17,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>메인</title>
     <script>
-        $(function() {
+        $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
              $(window).scroll(function() {
                 var window = $(this).scrollTop();
