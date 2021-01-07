@@ -601,7 +601,7 @@
 	    					<td>휴대폰 결제</td>
 	    					<td>
 	    						<input type="radio" id="phone"name="payment" value="phone">
-	    						<label for="phone">휴대폰</label>
+	    						<label for="phone">휴대폰</label> 
 	    					</td>
 	    				<tr><br>
 	    				<tr>
