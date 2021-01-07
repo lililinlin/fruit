@@ -10,6 +10,7 @@
 	<style>
 		#wrapper{
 			width:1900px;
+			margin:0 auto;
 		}
 		#main_contents{
 			width:1900px;
@@ -42,8 +43,9 @@
 		}
 		/* 저장 버튼 */
 		#save_bt{
-			width:926px;
+			width:1860px;
 			height:50px;
+			margin-top:30px;
 			background-color:#00af85;
 			color:white;
 			border:1px solid #00af85;
@@ -110,7 +112,6 @@
 						<td><label for="choice3	" class="place">택배함</label></td>
 					</tr>
 				</table>
-				<input type="submit" id="cencel_bt" onclick="location.href='buy'" value="취소">
 				<input type="submit" id="save_bt" value="저장">
 			</form>
 		</div>
