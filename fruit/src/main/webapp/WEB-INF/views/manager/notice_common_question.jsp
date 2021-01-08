@@ -413,7 +413,6 @@
 			            	status = $("#<%=hideTr%>").css("display"); 
 			            	if (status == "none") { 
 			                	$("#<%=hideTr%>").show();
-			                
 			            	} else { 
 			                	$("#<%=hideTr%>").hide(); 
 			                } 
