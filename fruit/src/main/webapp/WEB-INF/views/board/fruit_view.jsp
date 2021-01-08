@@ -32,8 +32,8 @@
             function btn_click(str){                             
                 if(str=="buy"){                                 
                     form.action="buy";      
-                } else if(str=="basket"){      
-                    form.action="basket";      
+				} else if(str=="basket"){      
+					alert("장바구니에 담겼습니다.");     
                 }  else {
                     //...
                 }
