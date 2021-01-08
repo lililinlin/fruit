@@ -215,7 +215,7 @@
             }
             #myDIV1{ /*상품 상세 정보 */
             	margin-top: 50px;
-                display: none;
+                display: "";
                 width: 1200px;
                 padding-left: 50px;
             }
@@ -568,9 +568,6 @@
                 <br>
                 <input type="button"  value="문의 하기" onClick="location.href='write_question'">
     </div>
-            
-        
-
     <footer>
         <table id="footer_table">
             <tr>
@@ -593,95 +590,105 @@
         </table>
     </footer>
 </body>
- <script>
-            var bDisplay = true;
-            function doDisplay1(){
-                var con = document.getElementById("myDIV1");
-                if(con.style.display=='block'){
-                    con.style.display='none';
-                }else{
-                    con.style.display="block";
-                }
-            }
-        </script>
-        <script>
-        var bDisplay = true;
-        function doDisplay2(){
-            var con = document.getElementById("myDIV2");
-            if(con.style.display=='block'){
-                con.style.display='none';
-            }else{
-                con.style.display="block";
-            }
-        }
-        </script>
-        <script>
-        var bDisplay = true;
-        function doDisplay3(){
-            var con = document.getElementById("myDIV3");
-            if(con.style.display=='block'){
-                con.style.display='none';
-            }else{
-                con.style.display="block";
-            }
-        }
-        </script>
-        <script>
-        var bDisplay = true;
-        function doDisplay4(){
-            var con = document.getElementById("myDIV4");
-            if(con.style.display=='block'){
-                con.style.display='none';
-            }else{
-                con.style.display="block";
-            }
-        }
-        </script>
-        <script>
-            var bDisplay = true;
-            function content_display1(){
-                var con = document.getElementById("display1");
-                if(con.style.display=='block'){
-                    con.style.display='none';
-                }else{
-                    con.style.display="block";
-                }
-            }
-        </script>
-         <script>
-            var bDisplay = true;
-            function content_display2(){
-                var con = document.getElementById("display2");
-                if(con.style.display=='block'){
-                    con.style.display='none';
-                }else{
-                    con.style.display="block";
-                }
-            }
-        </script>
-        <script>
-            var bDisplay = true;
-            function content_display6(){
-                var con = document.getElementById("display6");
-                if(con.style.display=='block'){
-                    con.style.display='none';
-                }else{
-                    con.style.display="block";
-                }
-            }
-        </script>
-        <script>
-            var bDisplay = true;
-            function content_display7(){
-                var con = document.getElementById("display7");
-                if(con.style.display=='block'){
-                    con.style.display='none';
-                }else{
-                    con.style.display="block";
-                }
-            }
-        </script>
-
-    
-        
+<script>
+	var bDisplay = true;
+	function doDisplay1(){
+		var con = document.getElementById("myDIV1");
+		if(con.style.display=='block'){
+			con.style.display='none';
+			
+		}else{
+			con.style.display="block";
+			document.getElementById("myDIV2").style.display="none"
+			document.getElementById("myDIV3").style.display="none"
+			document.getElementById("myDIV4").style.display="none"
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function doDisplay2(){
+		var con = document.getElementById("myDIV2");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+			document.getElementById("myDIV1").style.display="none"
+			document.getElementById("myDIV3").style.display="none"
+			document.getElementById("myDIV4").style.display="none"
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function doDisplay3(){
+		var con = document.getElementById("myDIV3");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+			document.getElementById("myDIV1").style.display="none"
+			document.getElementById("myDIV2").style.display="none"
+			document.getElementById("myDIV4").style.display="none"
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function doDisplay4(){
+		var con = document.getElementById("myDIV4");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+			document.getElementById("myDIV1").style.display="none"
+			document.getElementById("myDIV2").style.display="none"
+			document.getElementById("myDIV3").style.display="none"
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function content_display1(){
+		var con = document.getElementById("display1");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function content_display2(){
+		var con = document.getElementById("display2");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function content_display6(){
+		var con = document.getElementById("display6");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+		}
+	}
+</script>
+<script>
+	var bDisplay = true;
+	function content_display7(){
+		var con = document.getElementById("display7");
+		if(con.style.display=='block'){
+			con.style.display='none';
+		}else{
+			con.style.display="block";
+		}
+	}
+</script>      
 </html>

@@ -252,14 +252,22 @@
             background-color: #00af85; 
             color: #fff;
         }
-		
-		<%for(int i = 1; i<4; i++){
-			String hideTr = "hideTr" + i;
-        %>
-        	#<%=hideTr%>{
-        		display:none;
-        	}     	
-        <%}%>
+        #hideTr1{
+        	display:none;
+        }
+        #hideTr2{
+        	display:none;
+        }
+        #hideTr3{
+        	display:none;
+        }
+        #hideTr4{
+        	display:none;
+        }
+        #hideTr5{
+        	display:none;
+        }    	
+       
 /* footer */
         #footer_table{
             width: 1200px;
@@ -404,54 +412,165 @@
             <div id="main_right">
 	            <h4><b>자주 묻는 질문</b></h4>
 	                <script type="text/javascript"> $(document).ready(function () {
-	        		// 페이지 document 로딩 완료 후 스크립트 실행
-	        		<%for(int i = 1; i<4; i++){
-	        			String viewhidden = "viewhidden" + i;
-					  	String hideTr = "hideTr" + i;
-	        		%>
-			        	$("#<%=viewhidden%>").click(function () { 
-			            	status = $("#<%=hideTr%>").css("display"); 
-			            	if (status == "none") { 
-			                	$("#<%=hideTr%>").show();
-			                
-			            	} else { 
-			                	$("#<%=hideTr%>").hide(); 
-			                } 
-			            });
-	        		<%}%>
-	        	});  
-	    		</script>
+        		// 페이지 document 로딩 완료 후 스크립트 실행
+		        	$("#viewhidden1").click(function () { 
+		            	status = $("#hideTr1").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr1").show();
+		                	$("#hideTr2").hide();
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr1").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden2").click(function () { 
+		            	status = $("#hideTr2").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr2").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr2").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden3").click(function () { 
+		            	status = $("#hideTr3").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr3").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr3").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden4").click(function () { 
+		            	status = $("#hideTr4").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr4").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr4").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden5").click(function () { 
+		            	status = $("#hideTr5").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr5").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr5").hide(); 
+		                } 
+		            });
+        		}); 
+    		</script>
 	    		<div id="main_table">
 	    			<table class="table" id="content_table">
-					  <thead>
-					    <tr>
-					      <th>번호</th>
-					      <th>제목</th>
-					      <th>작성자</th>
-					      <th>작성일</th>
-					      <th>조회</th>
-					    </tr>
-					  </thead>
-					  <%for(int i=1; i<4; i++){ 
-					  	String viewhidden = "viewhidden" + i;
-					  	String hideTr = "hideTr" + i;
-					  %>
-						  <tbody>
-						    <tr>
-						    	<td><%=i%></td>
-		    					<td id="<%=viewhidden%>" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-		    					<td>푸릇츠</td>
-		    					<td class="main_day">2020-12-08</td>
-		    					<td class="main_hit">400</td>
-						    </tr>
-						    <tr id="<%=hideTr%>">
-						    	<td colspan="3" style="text-align:left;"><%=viewhidden %></td>
-						    	<td colspan="2"><input type="button" value="수정" onClick="location.href='manager_common_modify'">
-						    		<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
-						    	</td>
-						    </tr>
-						  </tbody>
-					  <%} %>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>제목</th>
+								<th>작성자</th>
+								<th>작성일</th>
+								<th>조회</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+					    		<td id="viewhidden1" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+					    		<td>푸릇츠</td>
+					    		<td class="main_day">2020-12-08</td>
+					    		<td class="main_hit">400</td>
+							</tr>
+							<tr id="hideTr1">
+								<td colspan="3" style="text-align:left;">viewhidden1</td>
+								<td colspan="2">
+									<input type="button" value="수정" onClick="location.href='manager_common_modify'">
+									<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>2</td>
+					    		<td id="viewhidden2" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+					    		<td>푸릇츠</td>
+					    		<td class="main_day">2020-12-08</td>
+					    		<td class="main_hit">400</td>
+							</tr>
+							<tr id="hideTr2">
+								<td colspan="3" style="text-align:left;">viewhidden2</td>
+								<td colspan="2">
+									<input type="button" value="수정" onClick="location.href='manager_common_modify'">
+									<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>3</td>
+					    		<td id="viewhidden3" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+					    		<td>푸릇츠</td>
+					    		<td class="main_day">2020-12-08</td>
+					    		<td class="main_hit">400</td>
+							</tr>
+							<tr id="hideTr3">
+								<td colspan="3" style="text-align:left;">viewhidden3</td>
+								<td colspan="2">
+									<input type="button" value="수정" onClick="location.href='manager_common_modify'">
+									<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>4</td>
+					    		<td id="viewhidden4" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+					    		<td>푸릇츠</td>
+					    		<td class="main_day">2020-12-08</td>
+					    		<td class="main_hit">400</td>
+							</tr>
+							<tr id="hideTr4">
+								<td colspan="3" style="text-align:left;">viewhidden4</td>
+								<td colspan="2">
+									<input type="button" value="수정" onClick="location.href='manager_common_modify'">
+									<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>5</td>
+					    		<td id="viewhidden5" style="cursor: pointer; text-align: left; width: 500px;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+					    		<td>푸릇츠</td>
+					    		<td class="main_day">2020-12-08</td>
+					    		<td class="main_hit">400</td>
+							</tr>
+							<tr id="hideTr5">
+								<td colspan="3" style="text-align:left;">viewhidden5</td>
+								<td colspan="2">
+									<input type="button" value="수정" onClick="location.href='manager_common_modify'">
+									<input id="delete" type="button" value="삭제" onClick="location.href='manager_common_deleteAction'">
+								</td>
+							</tr>
+						</tbody>
 					</table>
 					<div id="btn_box">
 						<input id="btn_write" type="button" value="글작성"  onClick="location.href='manager_common_write'">
