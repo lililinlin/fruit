@@ -205,13 +205,21 @@
 			width:800px;
 			height:55px;
 		}
-		<%for(int i = 1; i<4; i++){
-			String hideTr = "hideTr" + i;
-        %>
-        	#<%=hideTr%>{
-        		display:none;
-        	}     	
-        <%}%>
+        #hideTr1{
+        	display:none;
+        }
+        #hideTr2{
+        	display:none;
+        }
+        #hideTr3{
+        	display:none;
+        }
+        #hideTr4{
+        	display:none;
+        }
+        #hideTr5{
+        	display:none;
+        }     	
 /* footer */
         footer{
             width: 1200px;
@@ -327,51 +335,145 @@
     		</div>
     		<script type="text/javascript"> $(document).ready(function () {
         		// 페이지 document 로딩 완료 후 스크립트 실행
-        		<%for(int i = 1; i<4; i++){
-        			String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-        		%>
-		        	$("#<%=viewhidden%>").click(function () { 
-		            	status = $("#<%=hideTr%>").css("display"); 
+		        	$("#viewhidden1").click(function () { 
+		            	status = $("#hideTr1").css("display"); 
 		            	if (status == "none") { 
-		                	$("#<%=hideTr%>").show();
+		                	$("#hideTr1").show();
+		                	$("#hideTr2").hide();
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
 		                
 		            	} else { 
-		                	$("#<%=hideTr%>").hide(); 
+		                	$("#hideTr1").hide(); 
 		                } 
 		            });
-        		<%}%>
-        	}); 
+		        	$("#viewhidden2").click(function () { 
+		            	status = $("#hideTr2").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr2").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr2").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden3").click(function () { 
+		            	status = $("#hideTr3").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr3").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr4").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr3").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden4").click(function () { 
+		            	status = $("#hideTr4").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr4").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr5").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr4").hide(); 
+		                } 
+		            });
+		        	$("#viewhidden5").click(function () { 
+		            	status = $("#hideTr5").css("display"); 
+		            	if (status == "none") { 
+		                	$("#hideTr5").show();
+		                	$("#hideTr1").hide();
+		                	$("#hideTr2").hide(); 
+		                	$("#hideTr3").hide(); 
+		                	$("#hideTr4").hide();  
+		                
+		            	} else { 
+		                	$("#hideTr5").hide(); 
+		                } 
+		            });
+        		}); 
     		</script>
     		<div id="content">
     			<h4><b>자주 묻는 질문</b></h4>
     			<table class="table" id="content_table">
-				  <thead>
-				    <tr>
-				      <th scope="col" width="10%" style="padding-left: 20px;">번호</th>
-				      <th scope="col" width="55%" style="padding-left: 180px;">제목</th>
-				      <th scope="col" width="10%" style="padding-left: 12px;">작성자</th>
-				      <th scope="col" width="15%" style="padding-left: 28px;">작성일</th>
-				      <th scope="col" width="10%" style="padding-left: 5px;">조회수</th>
-				    </tr>
-				  </thead>
-				  <%for(int i=1; i<4; i++){ 
-				  	String viewhidden = "viewhidden" + i;
-				  	String hideTr = "hideTr" + i;
-				  %>
-					  <tbody>
-					    <tr>
-					    	<td>&nbsp;&nbsp;&nbsp;&nbsp;<%=i %></td>
-	    					<td id="<%=viewhidden%>" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
-	    					<td>강이린</td>
-	    					<td>2020-12-08</td>
-	    					<td>400</td>
-					    </tr>
-					    <tr id="<%=hideTr%>">
-					    	<td colspan="5"><%=viewhidden %></td>
-					    </tr>
-					  </tbody>
-				  <%} %>
+					<thead>
+						<tr>
+							<th scope="col" width="10%" style="padding-left: 20px;">번호</th>
+							<th scope="col" width="55%" style="padding-left: 180px;">제목</th>
+							<th scope="col" width="10%" style="padding-left: 12px;">작성자</th>
+							<th scope="col" width="15%" style="padding-left: 28px;">작성일</th>
+							<th scope="col" width="10%" style="padding-left: 5px;">조회수</th>
+						</tr>
+					</thead>
+				    <tbody>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+				    		<td id="viewhidden1" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>
+				    		<td>강이린</td>
+				    		<td>2020-12-08</td>
+				    		<td>400</td>
+						</tr>
+						<tr id="hideTr1">
+					    	<td colspan="5">viewhidden1</td>
+						</tr>
+				    </tbody>
+				    <tbody>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+				    		<td id="viewhidden2" style="cursor: pointer;">[가격인상공지]</td>
+				    		<td>이정현</td>
+				    		<td>2020-12-08</td>
+				    		<td>400</td>
+						</tr>
+						<tr id="hideTr2">
+					    	<td colspan="5">viewhidden1</td>
+						</tr>
+				    </tbody>
+				    <tbody>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+				    		<td id="viewhidden3" style="cursor: pointer;">[라이스몬]</td>
+				    		<td>강이린</td>
+				    		<td>2020-12-08</td>
+				    		<td>400</td>
+						</tr>
+						<tr id="hideTr3">
+					    	<td colspan="5">viewhidden1</td>
+						</tr>
+				    </tbody>
+				    <tbody>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+				    		<td id="viewhidden4" style="cursor: pointer;">아침앤쌀 딸기 외 3건</td>
+				    		<td>이정현</td>
+				    		<td>2020-12-08</td>
+				    		<td>400</td>
+						</tr>
+						<tr id="hideTr4">
+					    	<td colspan="5">viewhidden1</td>
+						</tr>
+				    </tbody>
+				     <tbody>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+				    		<td id="viewhidden5" style="cursor: pointer;">(2020.12.11~)</td>
+				    		<td>이정현</td>
+				    		<td>2020-12-08</td>
+				    		<td>400</td>
+						</tr>
+						<tr id="hideTr5">
+					    	<td colspan="5">viewhidden1</td>
+						</tr>
+				    </tbody>
 				</table>
     		</div>
     	</div>
