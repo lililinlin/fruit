@@ -29,6 +29,15 @@
              })
           });
     </script>
+     <script>
+            function btn_click(str){                             
+                if(str=="write"){                                 
+                	alert("글 작성이 완료 되었습니다.");    
+				} else {
+                    //...
+                }
+            }
+        </script>
     <style>
 
 /* 전체 적용 */
@@ -151,6 +160,67 @@
 		 #basket_img{
         	height:35px;
         }
+/* main */
+        #main_wrapper{
+            margin: 0 auto;
+            width: 1200px;
+        }
+        #main{
+            padding: 80px 0 0 0;
+            width: 900px;
+            margin: 0 auto;
+        }
+        #main h3{
+            text-align: center;
+            padding-bottom: 35px;
+            border-bottom: 2px solid #00af85;
+            margin-bottom: 30px;
+        }
+        .menu{
+            width: 120px;
+            color: rgb(109, 109, 109);
+            background-color: rgb(246, 246, 246);
+        }
+        #main2{
+            border-bottom: 2px solid #00af85;
+            margin-bottom: 80px;
+            width: 900px;
+        }
+        #main td{
+            font-size: 18px;
+            height: 60px;
+            padding-left: 30px;
+            border: 1px solid rgb(230, 230, 230);
+        }
+        #title{
+            height: 40px;
+            width: 700px;
+            margin: 30px 30px 30px 0;
+        }
+        #text{
+            margin: 30px 30px 30px 0;
+            width: 700px;
+            height: 500px;
+        }
+        #btn_box{
+            margin: 50px 0 50px 0;
+            text-align: center;
+        }
+        input[type=button]{
+            margin-right: 20px;
+            width: 250px;
+            height: 50px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+        }
+        input[type=submit]{
+            width: 250px;
+            height: 50px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
 /* footer */
         #footer_table{
             width: 1200px;
@@ -242,26 +312,31 @@
         </table>
     </div>
     <div id="main_wrapper">
-	    <div id = "site">
-	    	<br>
-	    	<h1>글쓰기</h1><hr>
-	    	<form action="writeAction" method="post">
-	    		작성자 :&nbsp;&nbsp;강이린 | 이정현
-	    		<input type="hidden" id="id" name="id" value="">
-	    		<input type="hidden" id="name" name="name" value=""><hr>
-	   			제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
-				<textarea id = "editor4" name = "editor4" ></textarea>
-				<input type="hidden" name="idx" value="1" id="bidx">
-	    		<script>
-	    			CKEDITOR.replace('editor4',{width:800,height:400,
-	    			filebrowserUploadUrl:'/images/imageUpload.do'});
-	    		</script>
-	    		<hr>
-	    		<div id = "footer_button">
-		    		<input type="submit" class="btn btn-primary" value = "등록"/>
-		    		<input type="button" class="btn btn-secondary" value = "취소" onclick="location.href='nav4-1_QnA.html'"/>
-	    		</div>
-	    	</form>
+	    <div id = "main">
+            <div id="main2">
+                <h3><b>글쓰기</b></h3>
+                <form action="review_writeAction" method="post">
+                    <table>
+                        <tr>
+                            <td class="menu" style="height: 90px;">작성자 </td>
+                            <td>강이린</td>
+                        </tr>
+                        <tr>
+                            <td class="menu">제&nbsp;&nbsp;&nbsp;&nbsp;목 </td>
+                            <td><input type="text" id="title" name="title" placeholder=" 제목을 입력해주세요"></td>
+                        </tr>
+                        <tr>
+                            <td class="menu">작&nbsp;&nbsp;&nbsp;&nbsp;성</td>
+                            <td><textarea id="text" name="text">
+                                </textarea></td>
+                        </tr>
+                    </table>
+                    <div id="btn_box">
+                        <input type="button" value="취소"  onclick="location.href='fruit_view'"/>
+                        <input type="submit" value="등록" onclick='btn_click("write");'>
+                    </div>
+                </form>
+            </div>
 	    </div>
     </div>
     <footer>
