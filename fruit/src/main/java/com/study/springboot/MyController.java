@@ -125,6 +125,18 @@ public class MyController {
 		public String place_delete() throws Exception {
 			return "board/buy";
 		}
+		@RequestMapping("/write_review")
+		public String write_review() throws Exception {
+			return "board/write";
+		}
+		@RequestMapping("/write_question")
+		public String write_question() throws Exception {
+			return "board/write";
+		}
+		@RequestMapping("/review_writeAction")
+		public String review_writeAction() throws Exception {
+			return "board/fruit_view";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	
