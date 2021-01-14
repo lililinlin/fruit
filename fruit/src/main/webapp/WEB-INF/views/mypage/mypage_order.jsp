@@ -523,7 +523,7 @@
                                         <td class="right_td">
                                             <input type="submit" class="review" value="후기쓰기"> <br>
                                             <input type="submit" class="onetoone" value="1:1문의">
-                                        </td>
+                                        </td> 
                                     </tr>
                                 </table>
                         </form>
