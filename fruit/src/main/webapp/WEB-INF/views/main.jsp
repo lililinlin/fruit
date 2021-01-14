@@ -390,7 +390,7 @@
 				</tr>
 				<tr>
 					<td><p class="side_p" onclick="location.href='service_center'"style="cursor: pointer;">등급별 혜택</p></td>
-				</tr>
+				</tr> 
 				<tr>
 					<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>
 				</tr>
