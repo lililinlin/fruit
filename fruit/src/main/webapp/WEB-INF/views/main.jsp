@@ -221,10 +221,10 @@
             font-weight: bold;
             color: rgb(72, 72, 72);
         }
+        
 		#side_table td{
 			border:1px solid  #e5e5e5;
 			background-color: white;
-			padding-top:10px;
 		}
 		#side_img{
 			float:right;
@@ -233,6 +233,7 @@
 		}
 		.side_p{
 			width:156px;
+			padding-top:10px;
 			text-align: center;
 		}
 /* footer */
@@ -389,7 +390,7 @@
 					<td><img src="images/Advertising1.jpg"></td>
 				</tr>
 				<tr>
-					<td><p class="side_p" onclick="location.href='service_center'"style="cursor: pointer;">등급별 혜택</p></td>
+					<td><p class="side_p" onclick="location.href='membership'"style="cursor: pointer;">등급별 혜택</p></td>
 				</tr> 
 				<tr>
 					<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>

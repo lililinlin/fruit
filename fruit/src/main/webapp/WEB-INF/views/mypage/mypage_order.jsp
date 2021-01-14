@@ -182,7 +182,7 @@
             width: 110px;
             height: 30px;
         }
-        #membership{ /* 멤버쉽 네모 박스 */
+       #membership{ /* 멤버쉽 네모 박스 */
             border: 1px solid #00af85; 
             width: 70px; 
             height: 70px; 
@@ -233,7 +233,23 @@
             width: 750px;
             height: 600px;
         }
-
+        #side_table{
+        	margin-top:400px;
+        }
+        #side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:30px;	
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
 /* footer */
  		footer{
             width: 1200px;
@@ -259,7 +275,31 @@
         }
           
     </style>
-   
+   <script>
+      $(function(){ 
+         var $win = $(window); 
+         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+         /*사용자 설정 값 시작*/ 
+         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+         $layer.css('position', 'relative').css('z-index', '1'); 
+         /*사용자 설정 값 끝*/ 
+         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+         if (top > 0 ) 
+            $win.scrollTop(layerTopOffset+top); 
+            else $win.scrollTop(0); 
+            //스크롤이벤트가 발생하면 
+            $(window).scroll(function(){ 
+               yPosition = $win.scrollTop() - 400; //이부분을 조정해서 화면에 보이도록 맞추세요 
+               if (yPosition < 0) { 
+                  yPosition = 0; 
+               } 
+               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+         }); 
+      }); 
+   </script>
 </head>
 <body>
     <div id="head0"></div>
@@ -326,9 +366,24 @@
                         <a href="basket"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
-        </table> 
-    </div>
-    
+        </table>
+    </div> 
+    <div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/Advertising1.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='membership'"style="cursor: pointer;">등급별 혜택</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='service_center'" style="cursor: pointer;">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
     
     <div id="head_wrapper">
         <div id="head_content">
@@ -370,8 +425,6 @@
             
             </div>
     </div>
-    
-    
     <footer>
         <table id="footer_table">
             <tr>
