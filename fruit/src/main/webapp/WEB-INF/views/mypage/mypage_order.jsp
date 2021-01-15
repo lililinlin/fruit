@@ -556,6 +556,33 @@
                         </form>
                     </div>
                 </div>
+                 2020.12.28 (13시16분)
+                <div class="mid_box">
+                    <div>
+                        <form action="" method="post">
+                                <table id="right_table">
+                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
+                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
+                                        <td class="right_td"><b>></b></td>
+                                    </tr>
+                                    <tr class="tr">
+                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
+                                        <td class="content_td">
+                                            <table class="small_table">
+                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
+                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
+                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
+                                            </table>
+                                        </td>
+                                        <td class="right_td">
+                                            <input type="submit" class="review" value="후기쓰기"> <br>
+                                            <input type="submit" class="onetoone" value="1:1문의">
+                                        </td>
+                                    </tr>
+                                </table>
+                        </form>
+                    </div>
+                </div>B BN
             </div>
     </div>
     
