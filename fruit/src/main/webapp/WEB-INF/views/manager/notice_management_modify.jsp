@@ -221,6 +221,24 @@
             background-color: #00af85; 
             color: #fff;
         }
+        /* 스크롤시 자동으로 따라오는 테이블바 */
+        #side_table{
+        	margin-top:50px;
+        }
+        #side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:30px;	
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
 /* footer */
         #footer_table{
             width: 1200px;
@@ -242,6 +260,31 @@
         }
           
     </style>
+    <script>
+      $(function(){ 
+         var $win = $(window); 
+         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+         /*사용자 설정 값 시작*/ 
+         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+         $layer.css('position', 'relative').css('z-index', '1'); 
+         /*사용자 설정 값 끝*/ 
+         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+         if (top > 0 ) 
+            $win.scrollTop(layerTopOffset+top); 
+            else $win.scrollTop(0); 
+            //스크롤이벤트가 발생하면 
+            $(window).scroll(function(){ 
+               yPosition = $win.scrollTop() - 100; //이부분을 조정해서 화면에 보이도록 맞추세요 
+               if (yPosition < 0) { 
+                  yPosition = 0; 
+               } 
+               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+         }); 
+      }); 
+   </script>
    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 		<script type="text/javascript">
 			$(function(){
@@ -327,7 +370,25 @@
             </tr>
         </table>
     </div>
-    
+    <div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/Advertising1.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='goods_register'"style="cursor: pointer;">상품등록</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='review_management'"style="cursor: pointer;">최근후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='notice_management'" style="cursor: pointer;">공지사항</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='notice_onetoone_question'" style="cursor: pointer;">1:1문의</p></td>
+			</tr>
+		</table>
+	</div>
 	<div id="main_wrapper">
             <div id="main_left">
                 <h3><b>게시판관리</b></h3>
