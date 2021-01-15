@@ -398,13 +398,13 @@
 				<td><img src="images/Advertising1.jpg"></td>
 			</tr>
 			<tr>
-				<td><p class="side_p" onclick="location.href='membership'"style="cursor: pointer;">등급별 혜택</p></td>
+				<td><p class="side_p" onclick="location.href='service_center'"style="cursor: pointer;">공지사항</p></td>
 			</tr> 
 			<tr>
 				<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>
 			</tr>
 			<tr>
-				<td><p class="side_p" onclick="location.href='service_center'" style="cursor: pointer;">1600-1111</p></td>
+				<td><p class="side_p">1600-1111</p></td>
 			</tr>
 		</table>
 	</div>
