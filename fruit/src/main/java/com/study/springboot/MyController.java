@@ -137,6 +137,10 @@ public class MyController {
 		public String review_writeAction() throws Exception {
 			return "board/fruit_view";
 		}
+		@RequestMapping("/select_review")
+		public String select_review() throws Exception {
+			return "board/select_review";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	
@@ -177,7 +181,7 @@ public class MyController {
 		
 		@RequestMapping("/mypage")
 		public String mypage() throws Exception {
-			return "mypage/update_check";
+			return "mypage/mypage_order";
 		}
 		
 		@RequestMapping("/mypage_update_check")

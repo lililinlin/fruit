@@ -151,23 +151,6 @@
         	height:35px;
         }
 /* main */
-        #side_table{
-        	margin-top:400px;
-        }
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:30px;	
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
 		/* 회색박스 안에 내용 */
         #head_wrapper{ /* 회색 영역 */
             width: 100%;
@@ -199,7 +182,7 @@
             width: 110px;
             height: 30px;
         }
-        #membership{ /* 멤버쉽 네모 박스 */
+       #membership{ /* 멤버쉽 네모 박스 */
             border: 1px solid #00af85; 
             width: 70px; 
             height: 70px; 
@@ -248,77 +231,59 @@
             margin-left: 20px;
             float: right;
             width: 750px;
-            margin-bottom: 100px;
+            height: 600px;
         }
-        #top_box{ /* 주문내역 ~  select 까지 div */
-            border-bottom: 1px solid #00af85;
-            height: 70px;
-            margin-bottom: 20px;
+        #side_table{
+        	margin-top:400px;
         }
-        #top_box span{ /* 주문내역 큰 글씨 */
-            font-size: 23px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        #top_box small{ /* 주문내역 옆 작은 글씨 */
-            color: rgb(158, 158, 158);
-        }
-        #top_box select{ /* 기간설정 select*/
-            margin-left: 300px;
-            width: 150px;
-            height: 40px;
-        }
-        .title{ /* 주문 제목 */
-            padding-left: 20px;
-            height: 50PX;
-        }
-        .mid_box{
-            margin: 10px 0 30px 0;
-        }
-        .right_table{
+        #side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:30px;	
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
+        #top_div{
             width: 740px;
-            margin: 10px 0 30px 0;
-        } 
-        .tr{
-            border: 1px solid rgb(224, 224, 224);
-        }   
-        .small_table td{
-            padding-right: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #00af85;
         }
-        .small_table tr{
-            height: 25px;
-            font-size: smaller;
+        .main_table{
+            height: 140px;
+            margin: 10px 0 15px 0;
+            width: 740px;
+            border: 1px solid rgb(195, 195, 195);
         }
-        .img_td{
-            padding: 20px 10px 20px 20px;
-            width: 120px;
+        .img_td{ width: 100px; padding-left: 20px;}
+        .title_td{ width: 335px;padding-left: 20px;} 
+        .date_td{width: 140px;}
+        .btn_td{width: 125px;}
+        #main_right small{
+            color: rgb(80, 80, 80);
         }
-        .content_td{
-            width: 300px;
-        }
-        .right_td b{
-            font-size: 22px;
-            color:#00af85;
-        }
-        .right_td{
-            width: 330px;
-            text-align: right;
-            padding-right: 20px;
-        }
-        .review{ /* 후기쓰기 버튼 */
-            margin-bottom: 10px;
-            padding: 5px 20px 5px 20px;
-            height: 40px;
+        .btn_td input[type=submit]{
+            width: 100px;
+            height: 35px;
             border: 1px solid #00af85;
             background-color: #00af85; 
             color: #fff;
+            outline:none;
         }
-        .onetoone{ /* 1:1 버튼 */
-            height: 40px;
-            padding: 5px 23px 5px 23px;
-            border: 1px solid #00af85;
-	        background-color:  #fff;
-	        color:  #00af85;
+        #main_right a:hover{
+            color: black;
+        }
+        .fruit_title{
+            background-color: white;
+            border: none;
+            outline:none;
         }
 /* footer */
  		footer{
@@ -346,30 +311,30 @@
           
     </style>
    <script>
-    $(function(){ 
-       var $win = $(window); 
-       var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-       /*사용자 설정 값 시작*/ 
-       var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-       var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-       var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-       var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-       $layer.css('position', 'relative').css('z-index', '1'); 
-       /*사용자 설정 값 끝*/ 
-       // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-       if (top > 0 ) 
-          $win.scrollTop(layerTopOffset+top); 
-          else $win.scrollTop(0); 
-          //스크롤이벤트가 발생하면 
-          $(window).scroll(function(){ 
-             yPosition = $win.scrollTop() - 400; //이부분을 조정해서 화면에 보이도록 맞추세요 
-             if (yPosition < 0) { 
-                yPosition = 0; 
-             } 
-             $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
-       }); 
-    }); 
- </script>
+      $(function(){ 
+         var $win = $(window); 
+         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+         /*사용자 설정 값 시작*/ 
+         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+         $layer.css('position', 'relative').css('z-index', '1'); 
+         /*사용자 설정 값 끝*/ 
+         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+         if (top > 0 ) 
+            $win.scrollTop(layerTopOffset+top); 
+            else $win.scrollTop(0); 
+            //스크롤이벤트가 발생하면 
+            $(window).scroll(function(){ 
+               yPosition = $win.scrollTop() - 400; //이부분을 조정해서 화면에 보이도록 맞추세요 
+               if (yPosition < 0) { 
+                  yPosition = 0; 
+               } 
+               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+         }); 
+      }); 
+   </script>
 </head>
 <body>
     <div id="head0"></div>
@@ -436,25 +401,24 @@
                         <a href="basket"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
-        </table> 
-    </div>
+        </table>
+    </div> 
     <div id ="side_img" class="float_sidebar">
 		<table id ="side_table">
 			<tr>
 				<td><img src="images/Advertising1.jpg"></td>
 			</tr>
 			<tr>
-				<td><p class="side_p" onclick="location.href='service_center'"style="cursor: pointer;">공지사항</p></td>
+				<td><p class="side_p" onclick="location.href='membership'"style="cursor: pointer;">등급별 혜택</p></td>
 			</tr> 
 			<tr>
 				<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>
 			</tr>
 			<tr>
-				<td><p class="side_p" >1600-1111</p></td>
+				<td><p class="side_p" onclick="location.href='service_center'" style="cursor: pointer;">1600-1111</p></td>
 			</tr>
 		</table>
 	</div>
-    
     
     <div id="head_wrapper">
         <div id="head_content">
@@ -493,100 +457,45 @@
             </div>
 
             <div id="main_right">
-                <div id="top_box">
-                    <span>주문 내역</span> <small>지난 주문 내역 조회가 가능합니다.</small>
-                    <select onchange="myFunction(this.value)">
-                        <option>전체기간</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                    </select>
+                <div id="top_div">
+                    <h4><b>상품후기</b></h4><br>
+                    <small> - 후기는 다른 고객님들에게 큰 도움이 됩니다. </small>
                 </div>
-                020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                       <!--  <form method="POST" name="frm1"> -->
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기" onclick="location.href='select_review'"> <!-- onclick='btn_click("review");' --><br>
-                                            <input type="submit" class="onetoone" value="1:1문의" onclick='btn_click("onetoone");'>
-                                        </td>
-                                    </tr>
-                                </table>
-                 <!--        </form> -->
-                    </div>
-                </div>
-                2020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                        <form method="POST" name="form">
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기"> <br>
-                                            <input type="submit" class="onetoone" value="1:1문의">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </form>
-                    </div>
-                </div>
-                2020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                        <form method="POST" name="form">
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기"> <br>
-                                            <input type="submit" class="onetoone" value="1:1문의">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </form>
-                    </div>
-                </div>
+                <small>주문번호 1654821324</small>
+                <form method="POST" name="form">
+                    <table class="main_table">
+                        <tr>
+                            <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
+                            <td class="title_td">
+                                <input type="submit" class="fruit_title" name="" value="[제주도] 천혜향 1box" 
+                                onclick="javascript: form.action='/board/fruit_view';" >
+                                <br><br>
+                                <small>1개 구매</small>
+                            </td>
+                            <td class="date_td"><small>12월 29일 배송완료</small></td>
+                            <td class="btn_td"><input type="submit" name="" value="후기쓰기" 
+                                onclick="javascript: form.action='/board/write';" ></td>
+                        </tr>
+                    </table>
+                </form>
+                <form method="POST" name="form">
+                    <table class="main_table">
+                        <tr>
+                            <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
+                            <td class="title_td">
+                                <input type="submit" class="fruit_title" name="" value="[제주도] 천혜향 1box" 
+                                onclick="javascript: form.action='/board/fruit_view';" >
+                                <br><br>
+                                <small>1개 구매</small>
+                            </td>
+                            <td class="date_td"><small>12월 29일 배송완료</small></td>
+                            <td class="btn_td"><input type="submit" name="" value="후기쓰기" 
+                                onclick="javascript: form.action='/board/write';" ></td>
+                        </tr>
+                    </table>
+                </form>
             </div>
     </div>
-    
-    
     <footer>
         <table id="footer_table">
             <tr>
@@ -609,24 +518,4 @@
         </table>
     </footer>
 </body>
-<script>
-
-    function myFunction(str) {
-        //이곳에서 value값을 가져온 후 데이터베이스에서 해당 년도 주문내역가져오기 alert은 확인용 추후에 지우기
-        alert(+ str + " 을 선택하였습니다." );
-    
-    }
-
-    function btn_click(str){                             
-        if(str=="review"){                                 
-            frm1.action="/board/write";      
-        } else if(str=="onetoone"){      
-            frm1.action="/board/write";      
-        }  else {
-            //...
-        }
-    }
-    
-    
-    </script>
 </html>
