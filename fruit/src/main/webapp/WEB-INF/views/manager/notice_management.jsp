@@ -125,7 +125,7 @@
          }
          #nav_wrapper.fixed{
              position: fixed;
-             padding-top:18px;
+             padding-top:18px; 
              left: 0; 
              top: 0; 
              width: 100%; 

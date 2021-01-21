@@ -75,7 +75,7 @@
 /* 헤더 검색창  */
         #custom-search-form {
         margin:0;
-        margin-top: 5px;
+        margin-top: 5px; 
         padding: 0;
           }
  

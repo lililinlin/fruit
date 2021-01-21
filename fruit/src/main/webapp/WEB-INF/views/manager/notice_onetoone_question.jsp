@@ -120,7 +120,7 @@
          #nav_wrapper{
              width:100%;
              padding-bottom: 2px;
-             margin-left:210px;
+             margin-left:210px; 
              box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
          }
          #nav_wrapper.fixed{

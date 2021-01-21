@@ -352,7 +352,7 @@
         function change (num) {
         	hm= document.getElementById("amount" + num);
             sum=document.getElementById("sum" + num);
-        
+        	f_sum = doc
                 if (hm.value < 0) {
                     hm.value = 0;
                 }
@@ -397,7 +397,7 @@
             </div>
 
             <div>
-                <table id="head_table">
+                <table id="head_table"> 
                     <tr>
                         <td><img src="images/fruitrow.jpg" alt="" onclick="location.href='home'" style="cursor: pointer;"></td>
                         <td>
