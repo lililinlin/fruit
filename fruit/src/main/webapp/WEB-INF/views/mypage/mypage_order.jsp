@@ -493,6 +493,7 @@
             </div>
 
             <div id="main_right">
+            
                 <div id="top_box">
                     <span>주문 내역</span> <small>지난 주문 내역 조회가 가능합니다.</small>
                     <select onchange="myFunction(this.value)">
@@ -502,87 +503,38 @@
                         <option value="2019">2019</option>
                     </select>
                 </div>
-                020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                       <!--  <form method="POST" name="frm1"> -->
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기" onclick="location.href='select_review'"> <!-- onclick='btn_click("review");' --><br>
-                                            <input type="submit" class="onetoone" value="1:1문의" onclick='btn_click("onetoone");'>
-                                        </td>
-                                    </tr>
-                                </table>
-                 <!--        </form> -->
-                    </div>
-                </div>
-                2020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                        <form method="POST" name="form">
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기"> <br>
-                                            <input type="submit" class="onetoone" value="1:1문의">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </form>
-                    </div>
-                </div>
-                2020.12.28 (13시16분)
-                <div class="mid_box">
-                    <div>
-                        <form method="POST" name="form">
-                                <table id="right_table">
-                                    <tr class="tr"  onClick="location.href='#'" style="cursor: pointer;">
-                                        <td class="title" colspan="2">[제주도] 천혜향 1box 외 2건</td>
-                                        <td class="right_td"><b>></b></td>
-                                    </tr>
-                                    <tr class="tr">
-                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                                        <td class="content_td">
-                                            <table class="small_table">
-                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
-                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
-                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
-                                            </table>
-                                        </td>
-                                        <td class="right_td">
-                                            <input type="submit" class="review" value="후기쓰기"> <br>
-                                            <input type="submit" class="onetoone" value="1:1문의">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </form>
-                    </div>
-                </div>
+                
+                <%for(int i=1; i<6; i++){ %>
+	                2020.12.28 (13시16분)
+	                <div class="mid_box">
+	                    <div>
+	                       <form method="POST" name="frm<%=i%>">
+	                                <table id="right_table">
+	                                    <tr class="tr">
+	                                        <td class="title" colspan="2">
+	                                            <input type="submit" value="[제주도] 천혜향 1box 외 2건"
+	                                            style="border: none; background-color: white;  outline:none;" onclick='btn_click<%=i%>("view");'></td>
+	                                        <td class="right_td"><b>></b></td>
+	                                    </tr>
+	                                    <tr class="tr">
+	                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
+	                                        <td class="content_td">
+	                                            <table class="small_table">
+	                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
+	                                                <tr><td>결제금액</td> <td>17,300원</td></tr>
+	                                                <tr><td>주문상태</td> <td>배송완료</td></tr>
+	                                            </table>
+	                                        </td>
+	                                        <td class="right_td">
+	                                            <input type="submit" class="review" value="후기쓰기"  onclick='btn_click<%=i%>("select_review");'><br>
+	                                            <input type="submit" class="onetoone" value="1:1문의" onclick='btn_click<%=i%>("onetoone1");'>
+	                                        </td>
+	                                    </tr>
+	                                </table>
+	                          </form> 
+	                    </div>
+	                </div>
+                 <%} %>
             </div>
     </div>
     
@@ -617,12 +569,75 @@
     
     }
 
-    function btn_click(str){                             
-        if(str=="review"){                                 
-            frm1.action="/board/write";      
-        } else if(str=="onetoone"){      
-            frm1.action="/board/write";      
-        }  else {
+    function btn_click1(str){                             
+        if(str=="view"){                                 
+            frm1.action="/mypage_orderlist";      
+        } 
+        else if(str=="select_review"){    
+            frm1.action="/select_review";      
+        }
+        else if(str=="onetoone1"){    
+            frm1.action="/notice_onetoone_write";      
+        }
+        else {
+            //...
+        }
+    }
+    
+    function btn_click2(str){                             
+        if(str=="view"){                                 
+            frm2.action="/mypage_orderlist";      
+        } 
+        else if(str=="select_review"){    
+            frm2.action="/select_review";      
+        }
+        else if(str=="onetoone1"){    
+            frm2.action="/notice_onetoone_write";      
+        }
+        else {
+            //...
+        }
+    }
+    
+    function btn_click3(str){                             
+        if(str=="view"){                                 
+            frm3.action="/mypage_orderlist";      
+        } 
+        else if(str=="select_review"){    
+            frm3.action="/select_review";      
+        }
+        else if(str=="onetoone1"){    
+            frm3.action="/notice_onetoone_write";      
+        }
+        else {
+            //...
+        }
+    }
+    function btn_click4(str){                             
+        if(str=="view"){                                 
+            frm4.action="/mypage_orderlist";      
+        } 
+        else if(str=="select_review"){    
+            frm4.action="/select_review";      
+        }
+        else if(str=="onetoone1"){    
+            frm4.action="/notice_onetoone_write";      
+        }
+        else {
+            //...
+        }
+    }
+    function btn_click5(str){                             
+        if(str=="view"){                                 
+            frm5.action="/mypage_orderlist";      
+        } 
+        else if(str=="select_review"){    
+            frm5.action="/select_review";      
+        }
+        else if(str=="onetoone1"){    
+            frm5.action="/notice_onetoone_write";      
+        }
+        else {
             //...
         }
     }
