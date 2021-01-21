@@ -156,6 +156,8 @@
 			width:1060px;
 			display:flex;
 			margin:0 auto;
+			margin-left:400px;
+			margin-bottom:100px;
 		}
 		#left_menu{/* 왼쪽 서브메뉴들 */
 			height:205px;

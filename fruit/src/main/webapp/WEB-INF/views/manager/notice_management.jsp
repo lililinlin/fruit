@@ -121,6 +121,7 @@
              width:100%;
              padding-bottom: 2px;
              box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
+             margin-left:210px;
          }
          #nav_wrapper.fixed{
              position: fixed;

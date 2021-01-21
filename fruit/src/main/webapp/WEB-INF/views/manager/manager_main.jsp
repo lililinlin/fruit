@@ -152,6 +152,7 @@
 			width:1200px;
 			margin:0 auto;
 			display:flex;
+			margin-left:350px;
 			margin-top:50px;
 		}
 		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */

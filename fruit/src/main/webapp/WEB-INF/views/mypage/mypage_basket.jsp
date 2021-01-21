@@ -233,6 +233,22 @@
             width: 750px;
             height: 600px;
         }
+        /* 장바구니 물품내역 */
+        #goods_info{
+        	width:800px;
+        }
+        #goods_info tr{
+        	border: 1px solid rgb(231, 231, 231);
+        }
+        #sell{
+        	margin-top:50px;
+        	width:150px;
+        	height:50px;
+        	background-color:#00af85;
+			color:white;
+			border:1px solid #00af85;
+			margin-left:650px;
+        }
         #side_table{
         	margin-top:400px;
         }
@@ -298,10 +314,59 @@
                } 
                $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
          }); 
-      }); 
+      });
+    
    </script>
+   <script language="JavaScript">
+
+        var sell_price;
+        var amount;
+        var final_sell_price = 0;
+        
+        function init (num) {
+    		sell_price=document.getElementById("sell_price" + num).value;
+			amount =document.getElementById("amount" + num).value;
+			document.getElementByid("sum1").innerHTML = sell.price + "원";
+            change(num);
+        }
+        
+        function add (num) {
+            hm= document.getElementById("amount" + num);
+            sum=document.getElementById("sum" + num);
+            hm.value ++;
+            sum.innerHTML = parseInt(hm.value) * sell_price +"원";
+            final_sell_price += parseInt(hm.value) * sell_price;
+        }
+        
+        function del (num) {
+        	hm= document.getElementById("amount" + num);
+            sum=document.getElementById("sum" + num);
+
+            if (hm.value > 1){
+            	hm.value -- ;
+            	sum.innerHTML = parseInt(hm.value) * sell_price + "원";
+            	final_sell_price += parseInt(hm.value) * sell_price;
+            }
+        }
+        
+        function change (num) {
+        	hm= document.getElementById("amount" + num);
+            sum=document.getElementById("sum" + num);
+        
+                if (hm.value < 0) {
+                    hm.value = 0;
+                }
+            sum.innerHTML = parseInt(hm.value) * sell_price;
+            final_sell_price += parseInt(hm.value) * sell_price;
+        }  
+  		function delete_tr(num){
+			if (confirm("삭제하시겠습니까?")) {
+		        alert("동작을 시작합니다.");
+	        }
+  	  	}
+        </script>
 </head>
-<body>
+<body onload="init(1);">
     <div id="head0"></div>
 
         <div id="wrapp">
@@ -422,7 +487,35 @@
             </div>
 
             <div id="main_right">
-            
+            	<h3>장바구니</h3>
+            	<form name="form" method="post">
+	            	<table id="goods_info">
+	            		<%
+	            			for(int i = 1; i<3; i++){ 
+	            			String sell_price = "sell_price" + i;
+	            			String amount = "amount" + i;
+	            			String sum = "sum" + i;
+	            			String count = "count" + i;
+	            		%>
+		            		<tr id = "count">
+		            			<td width="20%"><img src="https://via.placeholder.com/80x100"></td>
+		            			<td width="20%">사과</td>
+		            			<td width="30%">
+			                        <input  type="button" value=" - " onclick="del(<%=i%>);" style="width: 30px;">
+			                        <input  type=hidden id="<%=sell_price%>" name="sell_price" value="5000">
+			                        <input  type="text" id="<%=amount%>" name="amount" value="1" size="3" style="width:40px; height: 30px; color: green; margin-top: 10px;">
+			                        <input  type="button" value=" + " onclick="add(<%=i %>);" style="width: 30px;">
+			                    </td>
+			                    <td width="20%" style="text-align: right;">총 상품금액<h4 id="<%=sum%>"> 5000원</h4></td>
+		            			<td width="10%" style="text-align: center;"><img src="images/x.png" style="cursor: pointer;"onclick="delete_tr(<%=i%>)"></td>
+		            		</tr>
+	            		<%}%>
+	            		<tr>
+	            			<td colspan="5">최종결제금액<h4></h4></td>
+	            		</tr>
+	            	</table>
+	            	<input type="submit" id ="sell" value="주문하기">
+            	</form>
             </div>
     </div>
     <footer>
@@ -434,7 +527,7 @@
                     <h6><b>고객센터 이용시간</b></h6>
                     <small><b>평일 10:00 ~ 18:00<br>
                     점심시간 13:00 ~ 14:00</b></small>
-                </td>
+                </td>	
                 <td style="width: 600px;" >
                     <strong onClick="location.href='footer_fruit'" style="cursor: pointer;">회사소개</strong>
                     <strong onClick="location.href='footer_terms'" style="cursor: pointer;">이용약관</strong>
