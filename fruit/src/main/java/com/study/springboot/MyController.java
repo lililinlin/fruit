@@ -204,6 +204,31 @@ public class MyController {
 			return "mypage/mypage_basket";
 		}
 		
+		@RequestMapping("/mypage_orderlist")
+		public String mypage_orderlist() throws Exception {
+			return "mypage/mypage_orderlist";
+		}
+		
+		@RequestMapping("/goods_review")
+		public String goods_review() throws Exception {
+			return "mypage/goods_review";
+		}
+
+		@RequestMapping("/select_review_view")
+		public String select_review_view() throws Exception {
+			return "fruit_view";
+		}
+
+		@RequestMapping("/mypage_reivewaction")
+		public String mypage_reivewaction() throws Exception {
+			return "mypage/mypage_order";
+		}
+		
+		@RequestMapping("/onetoone_writeAction")
+		public String onetoone_writeAction() throws Exception {
+			return "mypage/mypage_order";
+		}
+		
 //------------------------[  FOOTER  ]----------------------------------------	
 	
 		@RequestMapping("/footer_fruit")

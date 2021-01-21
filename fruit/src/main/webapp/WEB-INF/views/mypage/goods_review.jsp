@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>마이페이지 주문내역 - 후기선택</title>
+    <title>마이페이지 주문내역 - 후기작성</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -226,63 +226,87 @@
             color: #00af85;
         }
         
+        /* 오른쪽 NAV */
+            #side_table{
+                margin-top:400px;
+            }
+            #side_table td{
+                border:1px solid  #e5e5e5;
+                background-color: white;
+            }
+            #side_img{
+                float:right;
+                width:180px;
+                margin-right:30px;	
+            }
+            .side_p{
+                width:156px;
+                padding-top:10px;
+                text-align: center;
+            }
+        
         /* 오른쪽 */
         #main_right{
             float: right;
             width: 750px;
             margin:0 0 50px 20px;
         }
-        #side_table{
-        	margin-top:400px;
-        }
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:30px;	
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
-        #top_div{
-            width: 740px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+        #main_right h3{ /* 후기작성 글씨 */
+            padding-bottom: 30px;
             border-bottom: 1px solid #00af85;
         }
-        .main_table{
-            height: 140px;
-            margin: 10px 0 15px 0;
-            width: 740px;
-            border: 1px solid rgb(195, 195, 195);
+        #main_top{ /* 이미지 & 과일 이름 */
+            padding: 25px 20px 25px 20px;
         }
-        .img_td{ width: 100px; padding-left: 20px;}
-        .title_td{ width: 335px;padding-left: 20px;} 
-        .date_td{width: 140px;}
-        .btn_td{width: 125px;}
-        #main_right small{
-            color: rgb(80, 80, 80);
+        #main_top img{ /* 과일 이미지 */
+            margin-right: 50px;
         }
-        .btn_td input[type=submit]{
-            width: 100px;
-            height: 35px;
-            border: 1px solid #00af85;
-	        background-color:  #fff;
-	        color:  #00af85;
-            outline:none;
+        #main_table{ /* 제목 & 후기작성 테이블 */
+            width: 750px;
+            margin-bottom: 20px;
         }
-        #main_right a:hover{
-            color: black;
+        #main_table td{
+            border: 1px solid rgb(219, 219, 219);
+            padding: 20px;
         }
-        .fruit_title{
-            background-color: white;
-            border: none;
-            outline:none;
+        #main_table input{ /* 제목 옆 input */
+            padding-left: 10px;
+            width: 580px;
+            height: 30px;
+            border: 1px solid rgb(219, 219, 219);
+        }
+        #main_table textarea{ /* 내용 옆 textarea */
+            padding: 10px;
+            height: 340px;
+            width: 580px;
+            text-align: left;
+            border: 1px solid rgb(219, 219, 219);
+        }
+        .title{ /* 제목td & 후기작성td */
+            width: 130px;
+            text-align: center;
+            background-color: rgb(250, 250, 250);
+            font-size: small;
+            color: rgb(59, 59, 59);
+        }
+        /* 작성 전에 있는 글씨 속성 */
+        #main_table input::placeholder{color: rgb(207, 207, 207); font-size: 13px;}
+        textarea::placeholder{color: rgb(207, 207, 207); font-size: 13px;} 
+        #main_right a{ /* 1:1 문의하기 a 태그 */
+            margin-left: 8px;
+            color: #00af85;
+        }
+        /* 버튼 div */
+        #btn_box{
+            text-align: center;
+            margin: 50px;
+        }
+        #btn_box input{
+            width: 220px;
+            height: 55px;
+            border: 1px solid  rgb(211, 211, 211);
+	        background-color:  rgb(255, 255, 255);
+	        color:  rgb(211, 211, 211);
         }
 /* footer */
  		footer{
@@ -456,28 +480,29 @@
             </div>
 
             <div id="main_right">
-                <div id="top_div">
-                    <h4><b>상품후기</b></h4><br>
-                    <small> - 후기는 다른 고객님들에게 큰 도움이 됩니다. </small>
-                </div>
-                <small>주문번호 1654821324</small>
-                <%for(int i=1; i<10; i++){ %>
-                <form method="POST" name="frm1">
-                    <table class="main_table">
+                <h3>후기 작성</h3>
+                    <div id="main_top">
+                        <img src="https://via.placeholder.com/100x120"> 
+                        [제주도] 천혜향 1box
+                    </div>
+                    <form action="mypage_reivewaction" method="post">
+                    <table id="main_table">
                         <tr>
-                            <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                            <td class="title_td">
-                                <input type="submit" class="fruit_title"  value="[제주도] 천혜향 1box" 
-                              onclick='btn_click("view");' >
-                                <br><br>
-                                <small>1개 구매</small>
-                            </td>
-                            <td class="date_td"><small>12월 29일 배송완료</small></td>
-                            <td class="btn_td"><input type="submit"  value="후기쓰기" 
-                                onclick='btn_click("goods");'></td>
+                            <td class="title">제목</td>
+                            <td><input type="text"  placeholder="제목을 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <td class="title">후기작성</td>
+                            <td><textarea placeholder="자세한 후기는 다른 고객의 구매에 많은 도움이 되며,
+오해의 소지가 있는 내용을 작성 시 검토 후 삭제 조치 될 수 있습니다.
+반품/환불 문의는 1:1 문의로 가능합니다."
+                                ></textarea></td>
                         </tr>
                     </table>
-                   <%} %>
+                    <small>혹시 상품에 문제가 있으셨나요? <a href="onetoone_question">1:1 문의 하기 ></a></small>
+                    <div id="btn_box">
+                        <input type="submit" value="등록하기">
+                    </div>
                 </form>
             </div>
     </div>
@@ -503,17 +528,4 @@
         </table>
     </footer>
 </body>
-<script>
- function btn_click(str){                             
-        if(str=="view"){                                 
-            frm1.action="/fruit_view";      
-        } 
-        else if(str=="goods"){    
-            frm1.action="/goods_review";      
-        }
-        else {
-            //...
-        }
-    }
- </script>   
 </html>

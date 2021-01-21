@@ -225,13 +225,8 @@
             cursor: pointer;
             color: #00af85;
         }
-        
-        /* 오른쪽 */
-        #main_right{
-            float: right;
-            width: 750px;
-            margin:0 0 50px 20px;
-        }
+
+        /* 오른쪽 nav */
         #side_table{
         	margin-top:400px;
         }
@@ -249,41 +244,74 @@
 			padding-top:10px;
 			text-align: center;
 		}
-        #top_div{
-            width: 740px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #00af85;
+
+        /* 오른쪽 */
+        #main_right{
+            float: right;
+            width: 750px;
+            margin:0 0 50px 20px;
         }
-        .main_table{
-            height: 140px;
-            margin: 10px 0 15px 0;
-            width: 740px;
-            border: 1px solid rgb(195, 195, 195);
+        #main_table_box{ /* 상품내역 테이블 감싼 div*/
+            border-top: 3px solid #4eac87;
         }
-        .img_td{ width: 100px; padding-left: 20px;}
-        .title_td{ width: 335px;padding-left: 20px;} 
-        .date_td{width: 140px;}
-        .btn_td{width: 125px;}
-        #main_right small{
-            color: rgb(80, 80, 80);
+        #orderlist{ /* 상품내역 테이블 */
+            margin: 0 0 50px 10px;
         }
-        .btn_td input[type=submit]{
-            width: 100px;
-            height: 35px;
-            border: 1px solid #00af85;
-	        background-color:  #fff;
-	        color:  #00af85;
-            outline:none;
+        #orderlist th{ /* th = 과일이름 */
+            padding-left: 30px;
+            height: 50px;
+            font-weight: normal;
         }
-        #main_right a:hover{
-            color: black;
+        #orderlist td{
+            padding: 15px 0 15px 30px;
+            border-top: 1px solid rgb(195, 195, 195);
+            border-bottom: 1px solid rgb(195, 195, 195);
         }
-        .fruit_title{
-            background-color: white;
-            border: none;
-            outline:none;
+        .second_td{ /* 2번째 td (과일,가격,구매숫자) */
+            text-align: left;
+            width: 380px;
+            padding-left: 20px;
         }
+        .delevery{ /* 배송상태 */
+            width: 200px;
+            text-align: center;
+            color: #4eac87;
+            font-weight: 600;
+        }
+        small{ 
+           color: gray;
+        }
+        .mid_box{ /* 결제정보 , 주문정보 , 배송정보 각각 div*/
+         padding: 10px 0 10px 10px;
+         width: 750px;
+         border-top: 2px solid gray;
+         border-bottom: 1px solid rgb(236, 236, 236);
+         margin: 20px 0 40px 0;
+        }
+        .mid_box table{
+           margin-left: 15px;
+           width: 400px;
+        }
+        .mid_box td{
+           width: 200px;
+           height: 40px;
+           font-size: 13px;
+       }
+        #main_right h5{
+           color: rgb(90, 90, 90);
+           padding-left: 5px;
+       }
+       #btn_box{
+           text-align: center;
+           margin: 50px;
+       }
+       #btn_box input{
+           width: 250px;
+           height: 50px;
+           border: 1px solid #00af85;
+	       background-color:  #fff;
+	       color:  #00af85;
+       }
 /* footer */
  		footer{
             width: 1200px;
@@ -456,30 +484,124 @@
             </div>
 
             <div id="main_right">
-                <div id="top_div">
-                    <h4><b>상품후기</b></h4><br>
-                    <small> - 후기는 다른 고객님들에게 큰 도움이 됩니다. </small>
-                </div>
-                <small>주문번호 1654821324</small>
-                <%for(int i=1; i<10; i++){ %>
-                <form method="POST" name="frm1">
-                    <table class="main_table">
+                <h4><b>주문 내역 상세</b></h4><br>
+                <h5>주문번호 165456412154 </h5><br>
+                <div id="main_table_box">
+                    <table id="orderlist">
+                    <%for(int i=1; i<5; i++){ %>
+                        <th>딸기</th>
                         <tr>
-                            <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
-                            <td class="title_td">
-                                <input type="submit" class="fruit_title"  value="[제주도] 천혜향 1box" 
-                              onclick='btn_click("view");' >
-                                <br><br>
-                                <small>1개 구매</small>
-                            </td>
-                            <td class="date_td"><small>12월 29일 배송완료</small></td>
-                            <td class="btn_td"><input type="submit"  value="후기쓰기" 
-                                onclick='btn_click("goods");'></td>
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>딸기 1팩</h5></a> 
+                                <b>4,400원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
+                        </tr>
+                     <%} %>
+                        <th>두리안</th>
+                        <tr> 
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>방울토마토 500g</h5></a> 
+                                <b>7,800원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
+                        </tr>
+                        <th>사과</th>
+                        <tr> 
+                            <td><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>사과 1박스</h5></a> 
+                                <b>25,000원</b>&nbsp;&nbsp;
+                                <small>1개 구매</small></td>
+                            <td class="delevery">배송완료</td>
                         </tr>
                     </table>
-                   <%} %>
-                </form>
-            </div>
+                </div>
+                <h5>결제 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>총주문금액</td>
+                                <td>35,420원</td>
+                            </tr>
+                            <tr>
+                                <td>상품할인</td>
+                                <td>0원</td>
+                            </tr>
+                            <tr>
+                                <td>적립금 사용</td>
+                                <td>- 3,364원</td>
+                            </tr>
+                            <tr>
+                                <td>배송비</td>
+                                <td>2500원</td>
+                            </tr>
+                            <tr>
+                                <td>결제금액</td>
+                                <td>31,408원</td>
+                            </tr>
+                            <tr>
+                                <td>적립금액</td>
+                                <td>159원</td>
+                            </tr>
+                            <tr>
+                                <td>결제방법</td>
+                                <td>네이버페이</td>
+                            </tr>
+                        </table>
+                    </div>
+                <h5>주문 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>주문번호</td>
+                                <td>165456412154</td>
+                            </tr>
+                            <tr>
+                                <td>주문자명</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>보내시는분</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>결제일시</td>
+                                <td>2020-12-22</td>
+                            </tr>
+                            <tr>
+                                <td>주문 처리상태</td>
+                                <td>배송완료</td>
+                            </tr>
+                        </table>
+                    </div>
+                <h5>배송 정보</h5>
+                    <div class="mid_box">
+                        <table>
+                            <tr>
+                                <td>받는 분</td>
+                                <td>강이린</td>
+                            </tr>
+                            <tr>
+                                <td>받는 분 핸드폰</td>
+                                <td>010-2222-4444</td>
+                            </tr>
+                            <tr>
+                                <td>우편번호</td>
+                                <td>01515</td>
+                            </tr>
+                            <tr>
+                                <td>주소</td>
+                                <td>서울시 노원구 상계동</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="btn_box">
+                        <input type="button" value="뒤로가기" onClick="location.href='mypage_order'" >
+                    </div>
+            </div> 
     </div>
     <footer>
         <table id="footer_table">
@@ -503,17 +625,4 @@
         </table>
     </footer>
 </body>
-<script>
- function btn_click(str){                             
-        if(str=="view"){                                 
-            frm1.action="/fruit_view";      
-        } 
-        else if(str=="goods"){    
-            frm1.action="/goods_review";      
-        }
-        else {
-            //...
-        }
-    }
- </script>   
 </html>
