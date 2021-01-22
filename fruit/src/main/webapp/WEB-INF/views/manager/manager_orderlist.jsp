@@ -209,6 +209,17 @@
        #main_right h5{
            color: rgb(90, 90, 90);
        }
+       #btn_box{
+           text-align: center;
+           margin: 70px;
+       }
+       #btn_box input{
+            width: 250px;
+            height: 60px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+       }
        /* 스크롤시 자동으로 따라오는 테이블바 */
         #side_table{
         	margin-top:50px;
@@ -451,6 +462,9 @@
                         </table>
                     </div>
                
+                    <div id="btn_box">
+                            <input type="button" value="뒤로가기"  onclick="location.href='manager_main'">
+                        </div>
             </div> 
     </div>
     <footer>

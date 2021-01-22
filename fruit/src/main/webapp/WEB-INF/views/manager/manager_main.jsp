@@ -148,11 +148,14 @@
             text-align: center;
         }
 /* main */
+        #main_box{
+            width:1200px;
+            margin:0 auto;
+        }
 		.main_wrapper{
 			width:1200px;
 			margin:0 auto;
 			display:flex;
-			margin-left:350px;
 			margin-top:50px;
 		}
 		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */
@@ -347,6 +350,7 @@
 		</table>
 	</div>
     <main>
+        <div id="main_box">
     	<div class="main_wrapper">
     		<table id="manager_profile">
     			<tr>
@@ -464,7 +468,8 @@
     				<td>결제 완료</td>
     			</tr>
     		</table>
-    	</div>
+        </div>
+    </div>
     </main>
     <footer>
         <table id="footer_table">

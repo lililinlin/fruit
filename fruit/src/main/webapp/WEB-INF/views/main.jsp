@@ -423,7 +423,7 @@
 	
 	    <div id="discount_wrapper">
 	        <div id="main_discount">
-	            <a href="event">이벤트&nbsp;&nbsp;&nbsp;&nbsp;> </a>
+	            <a href="season_fruit">제철 과일&nbsp;&nbsp;&nbsp;&nbsp;> </a>
 	            <table>
 	                <tr>
 	                    <td><div class="scale"><img class="main_best-img" src="https://via.placeholder.com/300x400" title="베스트상품1" onclick="location.href='fruit_view'" ></div></td>

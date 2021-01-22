@@ -154,58 +154,30 @@
 		}
 		#main_wrapper{
 			width:1060px;
-			display:flex;
 			margin:0 auto;
-			margin-left:400px;
-			margin-bottom:100px;
-		}
-		#left_menu{/* 왼쪽 서브메뉴들 */
-			height:205px;
-			width:600px;
-		}
-		#left_menu ul{
-			width:100%;
-			margin-top:-16px;
-			margin-left:0;
-			height:152px;	
-		}
-		#left_menu li{
-			border:1px solid #e3e3e3;
-			font-size:12px;
-			padding-left:20px;
-			height:50px;
-			line-height:50px;
-			list-style-type:none;
-			vertical-align: middle;
-		}
-		#left_menu li:hover{
-			background-color:#f7f7f7;
-			/* color: #4eac87; */
-			color:rgb(1, 114, 18);
-			cursor: pointer;
+			margin-bottom:100px; 
 		}
 		#content{ /* 테이블 리스트를 감싸고 있는 div */
-			margin-left:30px;
+            margin:0 auto;
+            width: 1000px;
+            margin-top: 50px;
 		}
 		#content h3{
-		margin-top:30px;
-		margin-bottom:50px;
+		    margin-top:30px;
+		    margin-bottom:50px;
 		}
 		#content_table{	/* 테이블리스트 */
 			table-layout:fixed;/* 테이블의 크기	지정 및 고정시켜서  td에서 문자열을 자르거나 숨길 수 있게 한다. */
 			font-size:15px;
-			border-top:1px solid #00af85;
-			border-bottom:1px solid #00af85;
 		}
 		#content_table th{
 			height:70px;
 			vertical-align:middle;/* 상하좌우 사이즈를 중앙으로 맞춘다. */
 			text-align: center;
-			
 		}
 		#content_table td{
 			width:800px;
-			text-align: center;
+            padding-left: 48px;
 			vertical-align:middle;
 			text-overflow:ellipsis;/* 글자가 넘어갈 경우 생략부호를 표시한다(...) */
 			overflow:hidden;/* 글자가 넘어가는것은 숨긴다. */
@@ -213,9 +185,28 @@
 			font-size:17px;
 			height:70px;
 		}
+        #content_table tr{            
+            border-top: 1px solid rgb(226, 226, 226);
+            border-bottom: 1px solid rgb(226, 226, 226);
+            }
 		#content_table tr:nth-child(2n + 1){
-			background-color:#f0f0f0;
+			background-color:#f5f5f5;
 		}
+        #content h3{
+            padding-bottom: 40px;
+            border-bottom: 1px solid #00af85; 
+        }
+        #btn_box{
+            margin: 50px;
+            text-align: center;
+        }
+        #btn_box input{
+            width: 200px;
+            height: 50px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
 		/* 스크롤시 자동으로 따라오는 테이블바 */
         #side_table{
         	margin-top:50px;
@@ -370,26 +361,29 @@
     			<h3><b>사용자 후기</b></h3>
     			<table id="content_table">
 				    <tr>
-				      <th scope="col" width="15%">번호</th>
-				      <th scope="col" width="50%">제목</th>
-				      <th scope="col" width="15%">작성자</th>
-				      <th scope="col" width="20%">작성일</th>
+				      <th>번호</th>
+				      <th>제목</th>
+				      <th>작성자</th>
+				      <th>작성일</th>
 				    </tr>
-				  <%for(int i=0; i<3; i++){ %>
+				  <%for(int i=0; i<5; i++){ %>
 					  <tr>
 					  	<td>1</td>
-	    			  	<td onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
+	    			  	<td class="main_td" onclick="location.href='review_content_view'" style="cursor: pointer;">아주 맛있군요</td>
 	    				<td>이정현</td>
 	    				<td>2020-12-08</td>
 					  </tr>
 				  <%} %>
 					  <tr>
 					    <td>1</td>
-	    				<td onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+	    				<td class="main_td" onclick="location.href='review_content_view'" style="cursor: pointer;">가나다라마바사아자차카타파하ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
 	    				<td>이정현</td>
 	    				<td>2020-12-08</td>
 					  </tr>
-				</table>
+                </table>
+                <div id="btn_box">
+                    <input type="button" value="뒤로가기"  onclick="location.href='manager_main'">
+                </div>
     		</div>
     	</div>
     </main>

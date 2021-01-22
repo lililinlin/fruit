@@ -177,7 +177,7 @@
             cursor: pointer;
             color: #00af85;
         }
-        .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
+         .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
      		display:none;
      		text-align: center;
      		padding-right:20px;
@@ -186,10 +186,11 @@
      		text-align: center;
      		padding-right:20px;
      	}
-     	.submenu3{/* 세번째 서브메뉴 숨김으로 표시 */
+     	.submenu3{
      		display:none;
-     		text-align: center;
-     		padding-right:20px;
+     	}
+     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
+     		padding-left:30px;
      	}
         
         /* ----- 오른쪽 -----*/
@@ -327,6 +328,7 @@
          }); 
       }); 
    </script>
+		 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 		<script type="text/javascript">
 			$(function(){
 			  $("#mainmenu1").click(function(){
@@ -458,8 +460,10 @@
                     <tr id="mainmenu3">
                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
-                    <tr>
-                    	<td class="submenu3" onClick="location.href='notice_management'"><small>게시판</small></td><td class="submenu3"></td>
+                     <tr>
+                    		<tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
                     </tr>
                 </table>
             </div>
