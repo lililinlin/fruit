@@ -378,7 +378,7 @@
 				    </tr>
 				  </thead>
 				  <%for(int i=0; i<3; i++){ %>
-					  <tbody>
+					  <tbody> 
 					    <tr>
 					    	<td>공지</td>
 	    					<td onclick="location.href='service_content_view'" style="cursor: pointer;">[가격인상공지][라이스몬]아침앤쌀 딸기 외 3건(2020.12.11~)</td>

@@ -446,7 +446,7 @@
     			</tr>
     			<tr>
     				<td><a href="manager_orderlist">2015245654</a></td>
-    				<td>15,000원</td>
+    				<td>15,000원</td> 
     				<td>2020.12.16</td>
     				<td>결제 완료</td>
     			</tr>

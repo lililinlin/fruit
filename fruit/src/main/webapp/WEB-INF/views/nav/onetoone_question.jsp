@@ -405,7 +405,7 @@
 					<input type="button" value="글작성" onClick="location.href='notice_onetoone_write'" >
 				</div>
     		</div>
-    	</div>
+    	</div> 
     </main>
     <footer>
         <table id="footer_table">

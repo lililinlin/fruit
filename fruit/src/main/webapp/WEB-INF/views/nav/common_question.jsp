@@ -229,7 +229,7 @@
 		}
 		#side_img{
 			float:right;
-			width:180px;
+			width:180px; 
 			margin-right:30px;	
 		}
 		.side_p{

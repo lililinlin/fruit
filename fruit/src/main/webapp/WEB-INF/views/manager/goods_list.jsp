@@ -496,7 +496,7 @@
                                 <td><a href="goods_contentview">2554641172</a></td>
                                 <td><img src="https://via.placeholder.com/100x120"></td>
                                 <td>이벤트</td>
-                                <td>멜론</td>
+                                <td>멜론</td> 
                                 <td>6000원</td>
                                 <td><input type="submit" id="delete" name="delete" value="삭제" onclick="javascript: form.action='GoodsDeleteAction';"/></td>
                             </tr>
