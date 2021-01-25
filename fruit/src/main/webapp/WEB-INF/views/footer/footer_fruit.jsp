@@ -281,7 +281,7 @@
     </div>
     <main>
     	<div id = "main_wrapper">
-	    	<img src="https://via.placeholder.com/2000x400" class = "main_header_image">
+	    	<img src="images/footer1.png" class = "main_header_image">
 	    	<div class = "main_header">
 	    		<h3>푸릇츠의 시작</h3>
 	    		<p>이 세상에는 참 다양한 푸드마켓이 있습니다. 하지만 우리와 꼭 맞는 마음을 가진 푸드마켓을 찾기란 쉽지 않습니다. 그렇다면 우리가 직접 만들어보면<br>
@@ -293,7 +293,7 @@
 	    		묵히 장을 담그는 명인, 시들어서 버릴지언정 무농약을 고집하는 농부에게는 안정적인 판매 활로를 찾아드리고 싶었습니다. 생산자와 소비자, 판매자까<br>
 	    		지 모두 행복하고 맛있는 삶을 살 수 있도록 푸릇츠는 오늘도 열심히 발로 뛰며 고민합니다.</p>
 	    	</div>
-	    	<img src="https://via.placeholder.com/2000x400" class = "main_header_image">
+	    	<img src="images/footer22.jpg" class = "main_header_image">
 	    	<div class = "main_header">
 		    	<h3>푸릇츠의 믿음, 그리고 지켜야 할 가치</h3>
 		    	<p>시작은 단순했지만 고민은 깊었습니다. 직원이 아닌 한 사람의 고객으로서도 오래도록 사랑할 수 있는 서비스를 만들고자 했기에,상품을 컴토할 때 '잘<br>

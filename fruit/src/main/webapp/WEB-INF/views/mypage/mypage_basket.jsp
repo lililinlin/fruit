@@ -326,38 +326,54 @@
         function init (num) {
     		sell_price=document.getElementById("sell_price" + num).value;
 			amount =document.getElementById("amount" + num).value;
-			document.getElementByid("sum1").innerHTML = sell.price + "원";
+			document.getElementByid("sum" + num).innerHTML = sell.price + "원";
             change(num);
         }
         
         function add (num) {
+        	 
             hm= document.getElementById("amount" + num);
             sum=document.getElementById("sum" + num);
+            fs_price = document.getElementById("fs_price");
             hm.value ++;
+            sum.value = parseInt(hm.value) * sell_price;
             sum.innerHTML = parseInt(hm.value) * sell_price +"원";
-            final_sell_price += parseInt(hm.value) * sell_price;
+            for(var i = 1; i<=num; i++){
+              
+            	final_sell_price += sum.value;
+            }		
+         
+  			/* 값이 계속 바뀌는 sum값을 어디다가 둘까? */
+  			fs_price.innerHTML = final_sell_price;
         }
         
         function del (num) {
         	hm= document.getElementById("amount" + num);
             sum=document.getElementById("sum" + num);
-
+            fs_price = document.getElementById("fs_price");
+            
             if (hm.value > 1){
             	hm.value -- ;
+            	sum.value = parseInt(hm.value) * sell_price;
             	sum.innerHTML = parseInt(hm.value) * sell_price + "원";
-            	final_sell_price += parseInt(hm.value) * sell_price;
+            	final_sell_price = sum.value;
+            	fs_price.innerHTML = final_sell_price;
             }
         }
         
         function change (num) {
+            var i =1;
         	hm= document.getElementById("amount" + num);
             sum=document.getElementById("sum" + num);
-        	f_sum = doc
-                if (hm.value < 0) {
-                    hm.value = 0;
-                }
+            fs_price = document.getElementById("fs_price");
+            if (hm.value < 0) {
+            	hm.value = 0;
+            }
+            
+            sum.value = parseInt(hm.value) * sell_price;
             sum.innerHTML = parseInt(hm.value) * sell_price;
-            final_sell_price += parseInt(hm.value) * sell_price;
+            final_sell_price += sum.value;
+            fs_price.innerHTML = final_sell_price;
         }  
   		function delete_tr(num){
 			if (confirm("삭제하시겠습니까?")) {
@@ -511,7 +527,7 @@
 		            		</tr>
 	            		<%}%>
 	            		<tr>
-	            			<td colspan="5">최종결제금액<h4></h4></td>
+	            			<td colspan="5">최종결제금액<h4 id="fs_price"></h4></td>
 	            		</tr>
 	            	</table>
 	            	<input type="submit" id ="sell" value="주문하기">
