@@ -32,7 +32,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-             /*  border: 1px solid red; */
+              /* border: 1px solid red; */
          }
          a{ 
              color:black;
@@ -197,7 +197,7 @@
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 1000px;
+            margin-bottom: 100px;
         }
         #search_box{ /*input 검색 묶은 div*/
             height: 40px;

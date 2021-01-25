@@ -33,7 +33,7 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-             /*  border: 1px solid red;  */
+              /* border: 1px solid red;  */
          }
          a{ 
              color:black;
@@ -222,6 +222,10 @@
 			text-align: center;
 		}
 /* footer */
+        footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;

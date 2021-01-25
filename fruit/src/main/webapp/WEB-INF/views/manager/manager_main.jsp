@@ -156,7 +156,8 @@
 			width:1200px;
 			margin:0 auto;
 			display:flex;
-			margin-top:50px;
+			margin-top:80px;
+            margin-left: 40px;
 		}
 		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */
 			border:1px solid gray;
@@ -200,7 +201,7 @@
 			text-align:center;
 			margin-bottom:100px;
 			width:580px;
-			height:400px;
+			height:450px;
 		}
 		#site_info_bottom1 tr:nth-child(2n){
 			background-color:#f0f0f0;
@@ -209,7 +210,7 @@
 			text-align:center;
 			margin-left:30px;
 			width:580px;
-			height:400px;
+			height:450px;
             color: black;
 		}
 		#site_info_bottom2 tr:nth-child(2n){
