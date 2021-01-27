@@ -564,7 +564,7 @@
 		            			<td width="10%" style="text-align: center;"><img src="images/x.png" style="cursor: pointer;"onclick="delete_tr(<%=i%>)"></td>
 		            		</tr>
 	            		<%}%>
-	            		 
+	            		  
 	            	</table>
 	            		<div id="last_price">
 	            			 <table>
