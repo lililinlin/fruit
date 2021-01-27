@@ -155,7 +155,7 @@
         #head_wrapper{ /* 회색 영역 */
             width: 100%;
             background-color:rgb(248, 248, 248);
-            height: 350px;
+            height: 300px;
         }
         #head_content{ /* 테이블담은 DIV */
             width: 1000px;
@@ -196,17 +196,17 @@
         	display: inline-block; 
         	padding-top: 20px;
         }
-        /* 왼쪽 오른쪽 담은 div */
+     /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{ 
-            padding: 50px 40px 0 50px;
-            width: 1100px;
+			padding: 50px 40px 0 50px;
+            width: 1080px;
             margin: 0 auto;
+            height:1000px;
         }
-        /* 왼쪽 카테고리 */
+     /* 왼쪽 카테고리 */
         #main_left{
             float: left;
-            width: 200px;
-            height: 600px;
+            width: 210px;
         }
         #main_left table{
             margin: 30px 0px 0px 10px;
@@ -225,49 +225,105 @@
             cursor: pointer;
             color: #00af85;
         }
-        
-        /* 오른쪽 */
+        input:focus {outline:none;}
+     /* 오른쪽 */
         #main_right{
-            margin-left: 20px;
+        	margin-left:0;
             float: right;
-            width: 750px;
-            height: 600px;
+            width: 730px;
+         
+        }
+        #main_right h3{
+        	margin-bottom: 30px;
+        	padding-bottom:20px;
+        	border-bottom: 1px solid  #00af85;
         }
         /* 장바구니 물품내역 */
+        #goods_info img{
+        	margin:15px;
+        }
         #goods_info{
-        	width:800px;
+        	width:730px;
         }
         #goods_info tr{
         	border: 1px solid rgb(231, 231, 231);
         }
-        #sell{
-        	margin-top:50px;
-        	width:150px;
+        #goods_info input[type=button]{
+			background-color:rgb(241, 241, 241);
+			border:1px solid rgb(224, 224, 224);
+            color: #aaaaaa;	
+        }
+        span{
+        	font-size:28px;
+        	margin-left:10px;
+        }
+        .deco{ /* + = */
+        	margin:0 20px 0 20px;
+        	color:#00af85;
+        }
+        #fs_price,#ls_price,#delevery{ /* 금액 속성(총상품,배송비,최종) */
+        	 font-weight: 600;
+        }
+        #last_price{ /* 총상품금액 table 묶은 div*/
+        	border-top:1px solid #e0e0e0;
+        	border-bottom:1px solid #e0e0e0;
+        	margin: 30px 0 20px 0;
+        	text-align:center;
+        	padding: 20px 0 20px 0;
+        }
+        #last_price table{
+        	width:700px;
+        }
+        #last_price table td{
         	height:50px;
+        }
+        #bottom_text{ /* 적립금 설명 */
+        	text-align:right;
+        	margin-top:30px;
+        	color: rgb(109, 109, 109);
+        }
+        /* 버튼 */
+        #btn_box{ /* 버튼 묶은 div */
+        	margin-top:20px;
+        	text-align: center;
+        }
+        #sell{ /* 주문하기 버튼 */
+        	margin-top:50px;
+        	width:250px;
+        	height:60px;
         	background-color:#00af85;
 			color:white;
 			border:1px solid #00af85;
-			margin-left:650px;
         }
-        #side_table{
-        	margin-top:400px;
+        #back{ /* 쇼핑 계속 하기 버튼 */
+        	margin-top:50px;
+        	width:250px;
+        	height:60px;
+        	border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+	        margin-right:20px
         }
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:30px;	
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
+  /* 오른쪽 사이드*/
+	        #side_table{
+	        	margin-top:400px;
+	        }
+	        #side_table td{
+				border:1px solid  #e5e5e5;   
+				background-color: white;
+			}
+			#side_img{
+				float:right;
+				width:180px;
+				margin-right:30px;	
+			}
+			.side_p{
+				width:156px;
+				padding-top:10px;
+				text-align: center;
+			}
 /* footer */
- 		footer{
+ 		#footer{
             width: 1200px;
             margin: 0 auto;
         }
@@ -330,14 +386,15 @@
 				var sell_price = document.getElementById("sell_price" + i).value;
 
 				var sum = document.getElementById("sum" + i);
-				sum.innerHTML = String(parseInt(amount) * parseInt(sell_price)) + "원";
+				sum.innerHTML = String(parseInt(amount) * parseInt(sell_price));
 
 				final_sell_price += parseInt( amount ) * parseInt( sell_price );
 			}
 			
 			var fs_price = document.getElementById("fs_price");
 	        fs_price.innerHTML = final_sell_price;
-	        
+	        var ls_price = document.getElementById("ls_price");
+	        ls_price.innerHTML = final_sell_price+2500;
         }
 
 		function add(num){
@@ -452,19 +509,18 @@
             <table>
                 <tr id="head_top">
                     <td>
-                        <div id="membership">일반</div>
                         <div id="membership_right">
                             <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
                             <small>적립 0.5%</small><br>
-                            <input type="button" onClick="location.href='membership'" value="전체등급보기">
+                            
                         </div>
                     </td>
                     <td>적립금<br><br>
                         <h3 style="color: #00af85;"><b>3634원 &nbsp;&nbsp; ></b></h3>
-                    </td>
+                    </td>	
                 </tr>
                 <tr>   
-                    <td colspan="2"><img src="https://via.placeholder.com/1000x70"></td>
+                    <td colspan="2"><img src="images/fruit_b2.jpg"></td>
                 </tr>
 
             </table>
@@ -484,7 +540,7 @@
             </div>
 
             <div id="main_right">
-            	<h3>장바구니</h3>
+            	<h3><b>장바구니</b></h3>
             	<form name="form" method="post">
             		<input type=hidden id="item_count" name="item_count" value="2">
 	            	<table id="goods_info">
@@ -501,22 +557,44 @@
 		            			<td width="30%">
 			                        <input  type="button" value=" - " onclick="del(<%=i%>);" style="width: 30px;">
 			                        <input  type=hidden id="<%=sell_price%>" name="sell_price" value="5000">
-			                        <input  type="text" id="<%=amount%>" name="amount" value="1" size="3" style="width:40px; height: 30px; color: green; margin-top: 10px;">
+			                        <input  type="text" id="<%=amount%>" name="amount" value="1" size="3" style="width:50px; height: 30px; padding-left:18px; margin-top: 10px;">
 			                        <input  type="button" value=" + " onclick="add(<%=i %>);" style="width: 30px;">
 			                    </td>
-			                    <td width="20%" style="text-align: right;">총 상품금액<h4 id="<%=sum%>"> 5000원</h4></td>
+			                    <td width="20%" style="text-align: right; color:#fa4214;"><span id="<%=sum%>" style="font-weight:bold;"> 5000</span><small>&nbsp;원</small></td>
 		            			<td width="10%" style="text-align: center;"><img src="images/x.png" style="cursor: pointer;"onclick="delete_tr(<%=i%>)"></td>
 		            		</tr>
 	            		<%}%>
-	            		<tr>
-	            			<td colspan="5">최종결제금액<h4 id="fs_price"></h4></td>
-	            		</tr>
+	            		 
 	            	</table>
-	            	<input type="submit" id ="sell" value="주문하기">
+	            		<div id="last_price">
+	            			 <table>
+                                 <tr>
+                                     <td>총 상품 금액</td>
+                                     <td></td>
+                                     <td>배송비</td>
+                                     <td></td>
+                                     <td>최종결제금액</td>
+                                 </tr>
+                                 <tr>
+                                     <td><span id="fs_price"></span> 원</td>
+                                     <td><span class="deco">+</span></td>
+                                     <td><span id="delevery">2500</span> 원 </td>
+                                     <td><span class="deco"> = </span></td>
+                                     <td><span id="ls_price" ></span> 원</td>
+                                 </tr>
+                               </table>
+	            		</div>
+	            		<div id="bottom_text">
+                               적립금은 주문서 작성 단계에서 적용 하실 수 있습니다.
+	            		</div>
+	            	<div id="btn_box">
+	            		<input type="button" id="back" value="쇼핑계속하기" onClick="location.href='fruit_view'">
+	            		<input type="submit" id ="sell" value="주문하기">
+	            	</div>
             	</form>
             </div>
     </div>
-    <footer>
+    <div id="footer">
         <table id="footer_table">
             <tr>
                 <td><img src="images/fruitcol.jpg"></td>
@@ -536,6 +614,6 @@
                     주소 : 서울시 노원구 상계로로 971 개인정보관리책임자 : 강이린,이정현 <br>E-Mail : fruit@naver.com</b></h7></td>
             </tr>
         </table>
-    </footer>
+	</div> 
 </body>
 </html>
