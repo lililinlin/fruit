@@ -317,72 +317,53 @@
       });
     
    </script>
-   <script language="JavaScript">
+   <script>
+		function init(){
+			refresh();
+		}
+        function refresh(){
+			var itemCount = document.getElementById("item_count").value;
+			var final_sell_price = 0;
 
-        var sell_price;
-        var amount;
-        var final_sell_price = 0;
-        
-        function init (num) {
-    		sell_price=document.getElementById("sell_price" + num).value;
-			amount =document.getElementById("amount" + num).value;
-			document.getElementByid("sum" + num).innerHTML = sell.price + "원";
-            change(num);
+			for(var i=1; i<=Number(itemCount); i++){
+				var amount = document.getElementById("amount" + i).value;
+				var sell_price = document.getElementById("sell_price" + i).value;
+
+				var sum = document.getElementById("sum" + i);
+				sum.innerHTML = String(parseInt(amount) * parseInt(sell_price)) + "원";
+
+				final_sell_price += parseInt( amount ) * parseInt( sell_price );
+			}
+			
+			var fs_price = document.getElementById("fs_price");
+	        fs_price.innerHTML = final_sell_price;
+	        
         }
-        
-        function add (num) {
-        	 
-            hm= document.getElementById("amount" + num);
-            sum=document.getElementById("sum" + num);
-            fs_price = document.getElementById("fs_price");
-            hm.value ++;
-            sum.value = parseInt(hm.value) * sell_price;
-            sum.innerHTML = parseInt(hm.value) * sell_price +"원";
-            for(var i = 1; i<=num; i++){
-              
-            	final_sell_price += sum.value;
-            }		
-         
-  			/* 값이 계속 바뀌는 sum값을 어디다가 둘까? */
-  			fs_price.innerHTML = final_sell_price;
-        }
-        
-        function del (num) {
-        	hm= document.getElementById("amount" + num);
-            sum=document.getElementById("sum" + num);
-            fs_price = document.getElementById("fs_price");
-            
-            if (hm.value > 1){
-            	hm.value -- ;
-            	sum.value = parseInt(hm.value) * sell_price;
-            	sum.innerHTML = parseInt(hm.value) * sell_price + "원";
-            	final_sell_price = sum.value;
-            	fs_price.innerHTML = final_sell_price;
-            }
-        }
-        
-        function change (num) {
-            var i =1;
-        	hm= document.getElementById("amount" + num);
-            sum=document.getElementById("sum" + num);
-            fs_price = document.getElementById("fs_price");
-            if (hm.value < 0) {
-            	hm.value = 0;
-            }
-            
-            sum.value = parseInt(hm.value) * sell_price;
-            sum.innerHTML = parseInt(hm.value) * sell_price;
-            final_sell_price += sum.value;
-            fs_price.innerHTML = final_sell_price;
-        }  
+
+		function add(num){
+			var amount = document.getElementById("amount" + num);
+            amount.value = String( parseInt(amount.value) + 1 );
+
+            refresh();
+		}
+		function del (num) {
+		    var amount = document.getElementById("amount" + num);
+		    
+		    if( parseInt(amount.value) > 1 ) {
+		    	amount.value = String( parseInt(amount.value) - 1 );
+		    }
+		          
+		    refresh();
+
+	    }
   		function delete_tr(num){
 			if (confirm("삭제하시겠습니까?")) {
 		        alert("동작을 시작합니다.");
 	        }
   	  	}
-        </script>
+   </script>
 </head>
-<body onload="init(1);">
+<body onload="init();">
     <div id="head0"></div>
 
         <div id="wrapp">
@@ -505,6 +486,7 @@
             <div id="main_right">
             	<h3>장바구니</h3>
             	<form name="form" method="post">
+            		<input type=hidden id="item_count" name="item_count" value="2">
 	            	<table id="goods_info">
 	            		<%
 	            			for(int i = 1; i<3; i++){ 
