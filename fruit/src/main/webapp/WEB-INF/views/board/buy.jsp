@@ -608,7 +608,7 @@
 				    			<td class="second_td"><h4 id ="final_money">29400원</h4></td>
 				    		</tr>
 				    		<tr>
-				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 3%적립</td>
+				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 0.5%적립</td>
 				    		</tr>
 				    	</table>
 			    	</form>
