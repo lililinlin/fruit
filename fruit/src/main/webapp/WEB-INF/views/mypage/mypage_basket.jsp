@@ -386,15 +386,15 @@
 				var sell_price = document.getElementById("sell_price" + i).value;
 
 				var sum = document.getElementById("sum" + i);
-				sum.innerHTML = String(parseInt(amount) * parseInt(sell_price));
+				sum.innerHTML = String(parseInt(amount) * parseInt(sell_price)).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
 				final_sell_price += parseInt( amount ) * parseInt( sell_price );
 			}
 			
 			var fs_price = document.getElementById("fs_price");
-	        fs_price.innerHTML = final_sell_price;
+	        fs_price.innerHTML = (final_sell_price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 	        var ls_price = document.getElementById("ls_price");
-	        ls_price.innerHTML = final_sell_price+2500;
+	        ls_price.innerHTML = (final_sell_price+2500).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         }
 
 		function add(num){

@@ -373,9 +373,11 @@
 		}
 		function printmoney(){
 			 var fmoney = 29400;
+			 var fs_money = 0;
 			 var money = document.getElementById('sum').value;
-		     document.getElementById('sale_money').innerHTML = money + "원";
-		     document.getElementById('final_money').innerHTML = fmoney - money + "원";
+		     document.getElementById('sale_money').innerHTML = money.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + "원";
+		     fs_money = fmoney - money;
+		     document.getElementById('final_money').innerHTML = fs_money + "원";
 		}
    </script>
    <script>
@@ -603,7 +605,7 @@
 				    		</tr>
 				    		<tr>
 				    			<td class="first_td">최종결제 금액</td>
-				    			<td class="second_td"><h4 id ="final_money">29,400원</h4></td>
+				    			<td class="second_td"><h4 id ="final_money">29400원</h4></td>
 				    		</tr>
 				    		<tr>
 				    			<td colspan="2" style="padding-right:10px; text-align: right; color: #cbcbcb; font-size: 14px; padding-bottom:20px;">구매 시 3%적립</td>
