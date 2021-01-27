@@ -560,7 +560,7 @@
     				</tr>
     			</table>
     		</div><br>
-    		<img src="https://via.placeholder.com/1060x100" onClick="location.href='fruit_view'" style="cursor: pointer;">
+    		<img src="images/fruit_b.jpg" onClick="location.href='fruit_view'" style="cursor: pointer;">
     		<div id="main_bottom">
 	    		<div id="coupon_info">
 	    			<h5>쿠폰 / 적립금</h5>

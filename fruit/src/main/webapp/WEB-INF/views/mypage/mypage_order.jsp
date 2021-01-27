@@ -172,7 +172,7 @@
         #head_wrapper{ /* 회색 영역 */
             width: 100%;
             background-color:rgb(248, 248, 248);
-            height: 350px;
+            height: 300px;
         }
         #head_content{ /* 테이블담은 DIV */
             width: 1000px;
@@ -461,11 +461,9 @@
             <table>
                 <tr id="head_top">
                     <td>
-                        <div id="membership">일반</div>
                         <div id="membership_right">
                             <span style="font-size: 22px;"><b>강이린</b></span> 님<br><br>
                             <small>적립 0.5%</small><br>
-                            <input type="button" onClick="location.href='membership'" value="전체등급보기">
                         </div>
                     </td>
                     <td>적립금<br><br>
@@ -473,7 +471,7 @@
                     </td>
                 </tr>
                 <tr>   
-                    <td colspan="2"><img src="https://via.placeholder.com/1000x70"></td>
+                    <td colspan="2"><img src="images/fruit_b2.jpg"></td>
                 </tr>
 
             </table>

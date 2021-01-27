@@ -305,7 +305,7 @@
 	    	<div id="Introduce_li">
 				<ul>
 					<li>
-						<img src="images/footer_fruit_li.jpg" width="364px" height="200px">
+						<img src="images/footer_fruit_li1.jpg" width="364px" height="200px">
 						<div>
 							<h4>1. 나와 내 가족이 사고 싶은 상품을 판매합니다.</h4><br>
 							<p>푸릇츠는 미각적,심미적으로 만족감을 주면서 사람의 몸에 이로운 상품이 우리의 삶까지<br><br>
