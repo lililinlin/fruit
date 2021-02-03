@@ -325,6 +325,9 @@
 	            <td class="main_menu_td">
 	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
 	            </td>
+	             <td class="main_menu_td">
+	            	<a href="order_management"><h5><b>주문관리</b></h5></a>
+	            </td>
 	            <td class="main_menu_td">
 	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
 	            </td> 

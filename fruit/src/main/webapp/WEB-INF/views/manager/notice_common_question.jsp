@@ -411,6 +411,9 @@
 	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
 	            </td>
 	            <td class="main_menu_td">
+	            	<a href="order_management"><h5><b>주문관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
 	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
 	            </td> 
             </tr>
@@ -451,9 +454,6 @@
                     <tr>
                     	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
                     </tr>
-                    <tr>
-                    	<td class="submenu1" onClick="location.href='order_management'"><small>주문관리</small></td><td class="submenu1"></td>
-                    </tr>
                     <tr id="mainmenu2">
                     	<td><small>상품관리</small></td><td>></td>
                     </tr>
@@ -463,12 +463,17 @@
                     <tr>
                     	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
                     </tr>
+                     <tr onclick="location.href='order_management'">
+                    	<td><small>주문관리</small></td><td>></td>
+                    </tr>
                     <tr id="mainmenu3">
                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    <tr>
+                    <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                    </tr>
                 </table>
             </div>
 

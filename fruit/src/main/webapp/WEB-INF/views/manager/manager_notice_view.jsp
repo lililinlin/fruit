@@ -308,21 +308,21 @@
     <div id = "nav_wrapper">
         <table id = "nav">
             <tr>
-                    <td class="main_menu_td">
-                        <a href="season_fruit"><h5><b>제철과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="hot_fruit" ><h5><b>인기과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="aboard_fruit"><h5><b>수입과일</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="service_center" ><h5><b>고객센터</b></h5></a>
-                    </td>
-                    <td class="main_menu_td">
-                        <a href="event"><h5><b>이벤트</b></h5></a>
-                    </td> 
+	            <td class="main_menu_td">
+	            	<a href="manager_main"><h5><b>관리자메인</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="manager_member"><h5><b>회원관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="goods_list"><h5><b>상품관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="order_management"><h5><b>주문관리</b></h5></a>
+	            </td>
+	            <td class="main_menu_td">
+	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
+	            </td> 
             </tr>
         </table>
     </div>
