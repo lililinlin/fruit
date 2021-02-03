@@ -178,6 +178,7 @@
             color: #00af85;
         }
         .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
+        	display:none;
      		text-align: center;
      		padding-right:20px;
      	}
