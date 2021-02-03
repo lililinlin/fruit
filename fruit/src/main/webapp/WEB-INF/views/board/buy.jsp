@@ -669,7 +669,7 @@
 	    					<td colspan="2" class="payment_notice">※페이코,네이버페이,토스,차이 결제는 결제 시 결제하신 수단으로만 환불되는 점 양해부탁드립니다.</td>
 	    				</tr> 
 	    				<tr>
-	    					<td colspan="2" class="payment_notice">※고객님은 안전거래를 위ㅐ해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 토스페이먼츠의 구매안전(에스크로)서비스를 이용하실 수 있습니다.</td>
+	    					<td colspan="2" class="payment_notice">※고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 토스페이먼츠의 구매안전(에스크로)서비스를 이용하실 수 있습니다.</td>
 	    				</tr>
 	    				<tr>
 	    					<td colspan="2" id="payment_td2" class="payment_notice">※보안강화로 Internet Explorer8미만 사용 시 결제창이 뜨지 않을 수 있습니다.</td>

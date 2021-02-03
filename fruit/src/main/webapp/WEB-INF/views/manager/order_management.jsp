@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>관리자메인</title>
+    <title>마이페이지 개인 정보 수정</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -148,82 +148,110 @@
             text-align: center;
         }
 /* main */
-        #main_box{
-            width:1200px;
-            margin:0 auto;
+        /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{ 
+            padding: 50px 40px 0 50px;
+            width: 1200px;
+            margin: 0 auto;
         }
-		.main_wrapper{
-			width:1200px;
-			margin:0 auto;
-			display:flex;
-			margin-top:80px;
-            margin-left: 40px;
-		}
-		#manager_profile{/* 왼쪽 admin관리자 프로필 정보 */
-			border:1px solid gray;
-			margin-right:20px;
-			width:200px;
-			height:100px;
-			text-align: center;
-		}
-		#manager_profile #button1{/* admin관리자 내정보 버튼 */
-			width:100px;
-			height:40px;
-			background-color:#00af85;
-			color:white;
-			border:1px solid #00af85; 
-		}
-		#manager_profile #button2{/* admin관리자 로그아웃 버튼 */
-			width:100px;
-			height:40px;
-			background-color:white;
-			color:#00af85;
-			border:1px solid #00af85;
-		}
-		.site_info_top{/* 상단에 있는 테이블(today현황, 미처리 항목) */
-			text-align:center;
-			width:450px;
-			height:300px;
-			border-spacing:4px;
-			border-collapse: separate;
-		}
-        .site_info_top td{ /* today , 미처리 전체 td 넓이*/
+        /* 왼쪽 카테고리 */
+       #main_left{
+            float: left;
             width: 200px;
+            height: 600px;
         }
-		.site_info_top tr, .site_info_top td, .site_info_top th{
-			border:1px solid gray;
-		}
-		.site_info_top th{
-			background-color:#f0f0f0;
-			color:black;
-		}
-		#site_info_bottom1{/* 하단에 있는 테이블(최근 후기) */
-			text-align:center;
-			margin-bottom:100px;
-			width:580px;
-			height:450px;
-		}
-		#site_info_bottom1 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-		#site_info_bottom2{/* 하단에 있는 테이블(최근주문목록) */
-			text-align:center;
-			margin-left:30px;
-			width:580px;
-			height:450px;
-            color: black;
-		}
-		#site_info_bottom2 tr:nth-child(2n){
-			background-color:#f0f0f0;
-		}
-        #site_info_bottom1 a:hover{ /* 최근 후기 a 태그 hover */
+        #main_left table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
+        }
+        #main_left table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #main_left table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #main_left tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
             color: #00af85;
         }
-        #site_info_bottom2 a:hover{ /* 최근 주문 목록 a 태그 hover */
-            color: #00af85;
+        .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu2{/* 두번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu3{
+     		display:none;
+     	}
+     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
+     		padding-left:30px;
+     	}
+        /* 오른쪽 */
+        #main_right{ /*오른쪽 전체 감싼 div*/
+            margin-left: 20px;
+            float: right;
+            width: 850px;
+            height: 600px;
         }
-        
-        /* 스크롤시 자동으로 따라오는 테이블바 */
+        /* 검색창 */
+        #member_option input[type=text]{
+            width: 100px;
+            height: 30px;
+        }
+        #member_option select{
+            width: 100px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        #member_option input[type=submit]{
+            width: 68px;
+            height: 35px;
+            margin-bottom: 10px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+        #member_option td{
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+        /* 조회해온 테이블만 감싼 div*/
+        #main_content{
+            border-top: 1px solid  #00af85;
+            border-bottom: 1px solid  #00af85;
+            margin-bottom: 30px;
+        } 
+        #member{  /*테이블 넓이*/
+            width: 850px;
+        }
+        #member th{ /*테이블 헤더*/
+            border-bottom:1px solid rgb(220, 220, 220);
+            height: 60px;
+            text-align: center;
+        }
+        #member td{
+            height: 60px;
+            text-align: center;
+        }
+        #member tr:nth-child(2n+1){
+            background-color:  rgb(247, 247, 247);
+        }
+        /* 탈퇴버튼 속성 */
+        #button{ 
+            margin-left: 300px;
+            width: 230px;
+            height: 60px;
+            border: 1px solid #00af85;
+	        background-color: #00af85;
+	        color: #fff;
+        }
+		/* 스크롤시 자동으로 따라오는 테이블바 */
         #side_table{
         	margin-top:50px;
         }
@@ -242,6 +270,10 @@
 			text-align: center;
 		}
 /* footer */
+ 		footer{
+            width: 1200px;
+            margin: 0 auto;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -262,6 +294,7 @@
         }
           
     </style>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
    <script>
       $(function(){ 
          var $win = $(window); 
@@ -287,16 +320,56 @@
          }); 
       }); 
    </script>
+		<script type="text/javascript">
+			$(function(){
+			  $("#mainmenu1").click(function(){
+				  status=$(".submenu1").css("display");
+				  if(status == "none"){
+					  $(".submenu1").show();
+					  $(".submenu2").hide();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu1").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu2").click(function(){
+				  status=$(".submenu2").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").show();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu2").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu3").click(function(){
+				  status=$(".submenu3").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").hide();
+					  $(".submenu3").show();
+				  }
+				  else{
+					  $(".submenu3").hide();
+				  }
+			    
+			  });
+			});
+		</script>
 </head>
 <body>
-   <div id="head0"></div>
+    <div id="head0"></div>
 
         <div id="wrapp">
             	<div id="head1">
 				<td><a href="manager_modify">admin님</a><h> |&nbsp;</h>
 					<a href="home">사용자페이지</a></td>
             	</div>
-
+            	
             <div>
                 <table id="head_table">
                     <tr>
@@ -331,7 +404,7 @@
             </tr>
         </table>
     </div>
-    <div id ="side_img" class="float_sidebar">
+	<div id ="side_img" class="float_sidebar">
 		<table id ="side_table">
 			<tr>
 				<td><img src="images/Advertising1.jpg"></td>
@@ -350,128 +423,46 @@
 			</tr>
 		</table>
 	</div>
-    <main>
-        <div id="main_box">
-    	<div class="main_wrapper">
-    		<table id="manager_profile">
-    			<tr>
-    				<td colspan="2" style="height: 60px"><h3>강이린님</h3></td>
-    			</tr>
-    			<tr>
-    				<td><input type="button" id="button1" value="내정보" onclick="location.href='manager_info'"></td>
-    				<td><input type="button" id="button2" value="로그아웃" onclick="location.href='home'" ></td>
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>today현황</h3></td>
-    			</tr>
-    			<tr>
-    				<th>회원가입 수</th>
-    				<th>탈퇴회원 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-    				<th>상품등록 수</th>
-    				<th>상품주문 수</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    		</table>
-    		<table class="site_info_top">
-    			<tr>
-    				<td colspan="2"><h3>미처리항목</h3></td>
-    			</tr>
-    			<tr>
-    				<th>1:1문의</th>
-    				<th>교환/환불신청</th>
-    			</tr>
-    			<tr>
-    				<td>0</td>
-    				<td>0</td>	
-    			</tr>
-    			<tr>
-                    <th>상품문의</th>
-    			</tr>
-    			<tr>
-                    <td>0</td>
-    			</tr>
-    		</table>
-    	</div>
-    	<div class="main_wrapper">
-    		<table id="site_info_bottom1">
-    			<tr>
-    				<th colspan="3"><h3><a href="review_management">최근후기&nbsp; ></a></h3></th>
-    			</tr>
-    			<tr>
-    				<th width="20%">상품명</th>
-    				<th width="60%">제목</th>
-    				<th width="20%">날짜</th>
-    			</tr>
-    			<tr>
-    				<td>사과</td>
-    				<td><a href="review_content_view">아주 맛있군요</a></td>
-    				<td>2020.12.10</td>
-    			</tr>
-    			<tr>
-    				<td>딸기</td>
-    				<td><a href="review_content_view">겨울 딸기 달아요 ^^</a></td>
-    				<td>2020.12.9</td>
-    			</tr>
-    			<tr>
-    				<td>복숭아</td>
-    				<td><a href="review_content_view">굿굿</a></td>
-    				<td>2020.12.9</td>
-    			</tr>
-    			<tr>
-    				<td>두리안</td>
-    				<td><a href="review_content_view">배송빨라서 좋아요~</a></td>
-    				<td>2020.12.8</td>
-    			</tr>
-    		</table>
-    		<table id="site_info_bottom2">
-    			<tr>
-    				<th colspan="4"><h3>최근주문목록</h3></th>
-    			</tr>
-    			<tr>
-    				<th width="25%">주문번호</th>
-    				<th width="25%">금액</th>
-    				<th width="25%">날짜</th>
-    				<th width="25%">결제내역</th>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245654</a></td>
-    				<td>15,000원</td> 
-    				<td>2020.12.16</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245653</a></td>
-    				<td>3,000원</td>
-    				<td>2020.12.15</td>
-    				<td>미 결제</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245652</a></td>
-    				<td>6,000원</td>
-    				<td>2020.12.14</td>
-    				<td>결제 완료</td>
-    			</tr>
-    			<tr>
-    				<td><a href="manager_orderlist">2015245651</a></td>
-    				<td>28,000원</td>
-    				<td>2020.12.14</td>
-    				<td>결제 완료</td>
-    			</tr>
-    		</table>
-        </div>
+    <div id="main_wrapper">
+            <div id="main_left">
+                <h3><b>회원관리</b></h3>
+                <table>
+                    <tr onClick="location.href='manager_main'">
+                    	<td><small>메인페이지</small></td><td>></td>
+                    </tr>
+                    <tr id="mainmenu1">
+                    	<td><small>회원관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='order_management'"><small>주문관리</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr id="mainmenu2">
+                    	<td><small>상품관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr id="mainmenu3">
+                    	<td><small>게시판관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                    </tr>
+                </table>
+            </div>  
     </div>
-    </main>
+
     <footer>
         <table id="footer_table">
             <tr>
@@ -494,4 +485,5 @@
         </table>
     </footer>
 </body>
+
 </html>

@@ -451,6 +451,9 @@
                     <tr>
                     	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
                     </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='order_management'"><small>주문관리</small></td><td class="submenu1"></td>
+                    </tr>
                     <tr id="mainmenu2">
                     	<td><small>상품관리</small></td><td>></td>
                     </tr>
