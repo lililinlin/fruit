@@ -228,6 +228,16 @@ public class MyController {
 		public String onetoone_writeAction() throws Exception {
 			return "mypage/mypage_order";
 		}
+
+		@RequestMapping("/mypage_exchange")
+		public String mypage_exchange() throws Exception {
+			return "mypage/mypage_exchange";
+		}
+		
+		@RequestMapping("/exchange_finish")
+		public String exchange_finish() throws Exception {
+			return "mypage/exchange_finish";
+		}
 		
 //------------------------[  FOOTER  ]----------------------------------------	
 	
