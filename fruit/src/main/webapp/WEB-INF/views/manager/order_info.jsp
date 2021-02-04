@@ -16,7 +16,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>주문관리</title>
+    <title>사용자 주문 상세 정보</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -149,101 +149,7 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-/* main */
-        /* 왼쪽 오른쪽 담은 div */
-        #main_wrapper{ 
-            padding: 50px 40px 0 50px;
-            width: 1200px;
-            margin: 0 auto;
-        }
 
-        /* --- 왼쪽 카테고리 ---*/
-         #main_left{
-            float: left;
-            width: 200px;
-            height: 600px;
-        }
-        #main_left table{
-            margin: 30px 0px 0px 10px;
-            width: 200px;
-            height: 80px;
-        }
-        #main_left table td{
-            height: 50px;
-            padding-left: 20px;
-        }
-        #main_left table tr{
-            border: 1px solid rgb(231, 231, 231);
-        }
-        #main_left tr:hover{
-            background-color: rgb(251, 249, 249);            
-            cursor: pointer;
-            color: #00af85;
-        }
-        .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
-     		display:none;
-     		text-align: center;
-     		padding-right:20px;
-     	}
-     	.submenu2{/* 두번째 서브메뉴 숨김으로 표시 */
-     		text-align: center;
-     		padding-right:20px;
-     	}
-     	.submenu3{
-     		display:none;
-     	}
-     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
-     		padding-left:30px;
-     	}
-        /* ----- 오른쪽 -----*/
-        #main_right{ /*오른쪽 전체 감싼 div*/
-            width: 850px;
-            margin-left:660px;
-            margin-bottom: 100px;
-         
-        }
-        #main_right_table{
-        	width:820px;
-        	margin-top:30px;
-        	border-top: 1px solid #00af85;
-            border-bottom: 1px solid #00af85;
-            
-        }
-        #main_right_table tr:nth-child(2n+1){ 
-            background-color: rgb(246, 246, 246);
-        }
-		#main_right_table td{
-			height:40px;
-			text-align:center;
-		}
-		/* 확인버튼 */
-        #check_button{
-        	width:150px;
-        	height:50px;
-        	background-color:#00af85;
-			color:white;
-			border:1px solid #00af85;
-			margin-left:670px;
-			margin-top:30px; 
-        }
-		 /* 스크롤시 자동으로 따라오는 테이블바 */
-        #side_table{
-        	margin-top:50px;
-        }
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:30px;	
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
 /* footer */
 		footer{
             width: 1200px;
@@ -294,74 +200,8 @@
          }); 
       }); 
    </script>
-		<script type="text/javascript">
-			$(function(){
-			  $("#mainmenu1").click(function(){
-				  status=$(".submenu1").css("display");
-				  if(status == "none"){
-					  $(".submenu1").show();
-					  $(".submenu2").hide();
-					  $(".submenu3").hide();
-				  }
-				  else{
-					  $(".submenu1").hide();
-				  }
-			    
-			  });
-			  $("#mainmenu2").click(function(){
-				  status=$(".submenu2").css("display");
-				  if(status == "none"){
-					  $(".submenu1").hide();
-					  $(".submenu2").show();
-					  $(".submenu3").hide();
-				  }
-				  else{
-					  $(".submenu2").hide();
-				  }
-			    
-			  });
-			  $("#mainmenu3").click(function(){
-				  status=$(".submenu3").css("display");
-				  if(status == "none"){
-					  $(".submenu1").hide();
-					  $(".submenu2").hide();
-					  $(".submenu3").show();
-				  }
-				  else{
-					  $(".submenu3").hide();
-				  }
-			    
-			  });
-			});
-			/* 체크박스 전체 선택 */
-			$(function(){ //전체선택 체크박스 클릭 
-				$("#allCheck").click(function(){ 
-					//만약 전체 선택 체크박스가 체크된상태일경우 
-					if($("#allCheck").prop("checked")){ 
-						//해당화면에 전체 checkbox들을 체크해준다 
-						$("input[type=checkbox]").prop("checked",true); 
-						// 전체선택 체크박스가 해제된 경우 
-					} 
-					else { //해당화면에 모든 checkbox들의 체크를해제시킨다.
-						$("input[type=checkbox]").prop("checked",false); 
-					} 
-				})
-			})
-
-
-		</script>
-	<script>
-		/* 선택된 체크박스 버튼 클릭시 삭제 */
-		function delSelected() {
-			var body = document.getElementById('listBody');
-			var chkbox = document.querySelectorAll('#listBody .btn-chk');
-			for(var i in chkbox) {
-				if(chkbox[i].nodeType == 1 && chkbox[i].checked == true) {
-				body.removeChild(chkbox[i].parentNode.parentNode);
-				}
-			}
-		}
-	</script>
+		
+	
 </head>
 <body>
     <div id="head0"></div>
@@ -409,119 +249,7 @@
             </tr>
         </table>
     </div>
-	<div id ="side_img" class="float_sidebar">
-		<table id ="side_table">
-			<tr>
-				<td><img src="images/Advertising1.jpg"></td>
-			</tr>
-			<tr>
-				<td><p class="side_p" onclick="location.href='goods_register'"style="cursor: pointer;">상품등록</p></td>
-			</tr> 
-			<tr>
-				<td><p class="side_p" onclick="location.href='review_management'"style="cursor: pointer;">최근후기</p></td>
-			</tr>
-			<tr>
-				<td><p class="side_p" onclick="location.href='notice_management'" style="cursor: pointer;">공지사항</p></td>
-			</tr>
-			<tr>
-				<td><p class="side_p" onclick="location.href='notice_onetoone_question'" style="cursor: pointer;">1:1문의</p></td>
-			</tr>
-		</table>
-	</div>
-    <div id="main_wrapper">
-            <div id="main_left">
-                <h3><b>주문관리</b></h3>
-                <table>
-                    <tr onClick="location.href='manager_main'">
-                    	<td><small>메인페이지</small></td><td>></td>
-                    </tr>
-                    <tr id="mainmenu1">
-                    	<td><small>회원관리</small></td><td>></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
-                    </tr>
-                    <tr id="mainmenu2">
-                    	<td><small>상품관리</small></td><td>></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
-                    </tr>
-                    <tr>
-                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
-                    </tr>
-                     <tr onclick="location.href='order_management'">
-                    	<td><small>주문관리</small></td><td>></td>
-                    </tr>
-                    <tr id="mainmenu3">
-                    	<td><small>게시판관리</small></td><td>></td>
-                    </tr>
-                    <tr>
-                    <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
-                    </tr>
-                </table>
-            </div>  
-    </div>
-	<div id="main_right">
-        <h4><b>상품관리</b></h4>
-        <form name="select" action="/list" method="post" id="select">
-	        <select name="administration" id="administration">
-	        	<option value="option1">주문확인중</option>
-	        	<option value="option2">상품준비중</option>
-	        	<option value="option3">배송중</option>
-	        	<option value="option4">배송완료</option>
-	        </select>
-        </form>
-        <!-- <form name="user_goods_list" action="/user_goods_list" method="post"> -->
-	        <table id="main_right_table">
-	        	<thead>
-		        	<tr>
-		        		<td><input type="checkbox" name="select_All" id="allCheck" value="all"></td>
-		        		<td>주문번호</td>
-		        		<td>이름</td>
-		        		<td>주문날짜</td>
-		        		<td>주문상태</td>
-		        	</tr>
-	        	</thead>
-	        	<tbody id="listBody">
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user1"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">1234556</td>
-		        		<td>강이린</td>
-		        		<td>2020.12.4</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user2"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7568193</td>
-		        		<td>강이린</td>
-		        		<td>2020.12.22</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user3"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">6584218</td> 
-		        		<td>이정현</td>
-		        		<td>2021.1.15</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user4"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7546584</td>
-		        		<td>이정현</td>
-		        		<td>2021.2.1</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-	        	</tbody>
-	        </table>
-	        <input type="submit" id="check_button" onclick="delSelected()" value="주문확인완료">
-		<!-- </form> -->
-    </div>
+	
     
     <footer>
         <table id="footer_table">
