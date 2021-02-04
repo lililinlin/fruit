@@ -461,7 +461,7 @@
 				<td><p class="side_p" >1600-1111</p></td>
 			</tr>
 		</table>
-	</div>
+	</div> 
     
     
     <div id="head_wrapper">

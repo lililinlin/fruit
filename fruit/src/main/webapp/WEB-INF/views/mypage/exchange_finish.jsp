@@ -427,7 +427,7 @@
                     <tr onClick="location.href='mypage_update_check'"><td><small>내 정보</small></td><td>></td></tr>
                     
                 </table>
-            </div>
+            </div> 
 
             <div id="main_right">
                 <div id="content_box">
