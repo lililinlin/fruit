@@ -250,7 +250,15 @@
             width: 750px;
             margin-bottom: 100px;
         }
-       
+        #content_box{
+            width: 680px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #main_img{
+            width: 100px;
+            margin-bottom: 50px;
+        }
 /* footer */
  		footer{
             width: 1200px;
@@ -422,9 +430,12 @@
             </div>
 
             <div id="main_right">
-              완료
-                
-                
+                <div id="content_box">
+                    <img src="images/bill.png" id="main_img">
+                    <h1>교환 및 반품 접수가</h1><br>
+                    <h2>완료되었습니다.</h2><br>
+                    <p>- 영업일 기준 1~2일 소요됩니다. -</p>
+                </div>
             </div>
     </div>
     

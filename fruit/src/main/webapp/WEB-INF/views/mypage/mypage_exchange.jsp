@@ -33,12 +33,13 @@
 /* 전체 적용 */
          *{
               font-family: 'Noto Sans KR', sans-serif;
-              /* border: 1px solid red; */
-         }
+              /* border: 1px solid red; */ 
+              }
          a{ 
              color:black;
          }
-         a:hover { text-decoration: none;}
+         input:focus {outline:none;}
+         a:hover { text-decoration: none; color: black;}
          a:link { text-decoration: none;}
 
 /* 헤더 */
@@ -250,6 +251,64 @@
             width: 750px;
             margin-bottom: 100px;
         }
+        #orderlist{ /* 테이블 */
+            width: 740px;
+        }
+        .img_td{ /* 이미지 TD */
+            padding: 15px 0 15px 20px;
+            width: 180px;
+        }
+        .tr_border{ /* td 밑에 border 회색줄 */
+            border-bottom: 1px solid rgb(219, 219, 219);
+        }
+        #table_tr{ /* 테이블 헤더 부분 */
+            height: 50px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid rgb(78, 78, 78);  
+        }
+        #table_tr td{
+            padding-left: 35px;
+        }
+        #price{ /* 테이블 헤더에 금액td만 */
+            width: 200px; 
+        } 
+        .price{ /* 과일 가격*/
+            padding-left: 35px;
+        }
+        #select_table{
+            width: 750px;
+            margin-top: 50px;
+        }
+        #select_table select{
+            height: 40px;
+            width: 250px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        #select_table textarea{
+            width: 580px;
+            height: 300px;
+            margin-left: 20px;
+        }
+        #btn_box{
+            margin: 80px;
+            text-align: center;
+        }
+        #btn_cancel{
+            height: 50px;
+            width: 250px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
+            margin-right: 10px;
+        }
+        #btn_ok{
+            height: 50px;
+            width: 250px;
+            border: 1px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
        
 /* footer */
  		footer{
@@ -412,7 +471,7 @@
     <div id="main_wrapper">
         
             <div id="main_left">
-                <h3><b>마이 푸룻츠</b></h3>
+                <h3><b>마이 푸룻츠</b></h3><br>
                 <table>
                     <tr onClick="location.href='mypage_order'"><td><small>주문 내역</small></td><td>></td></tr>
                     <tr onClick="location.href='mypage_basket'"><td><small>장바 구니</small></td><td>></td></tr>
@@ -422,9 +481,71 @@
             </div>
 
             <div id="main_right">
-              완료
-                
-                
+                <h3><b>교환 / 반품</b></h3> <br>
+                <table id="orderlist">
+                    <tr id="table_tr">
+                        <td colspan="2">상품정보</td>
+                        <td id="price">상품금액</td>
+                    </tr>
+                    <%for(int i=1; i<3; i++){ %>
+                        <tr class="tr_border">
+                            <td class="img_td"><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>딸기 1팩</h5></a> 
+                                <small>1개 구매</small></td>
+                            <td class="price">25000원</td>
+                        </tr>
+                     <%} %>
+                        
+                     <tr class="tr_border">
+                            <td class="img_td"><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>방울토마토 500g</h5></a> 
+                                <small>1개 구매</small></td>
+                            <td class="price">7800원</td>
+                        </tr>
+                        
+                        <tr class="tr_border">
+                            <td class="img_td"><img src="https://via.placeholder.com/120x150"  onClick="location.href='fruit_view'" style="cursor: pointer;"></td>
+                            <td class="second_td">
+                                <a href="fruit_view"><h5>사과 1박스</h5></a> 
+                                <small>1개 구매</small></td>
+                            <td class="price">8200원</td>
+                        </tr>
+                    </table>
+            <!-- <form action="#" method="post"> -->
+                    <table id="select_table">
+                        <tr>
+                            <td>교환 및 반품선택</td>
+                            <td><select>
+                                <option>교환</option>
+                                <option>반품</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>사유선택</td>
+                            <td>
+                                <select>
+                                    <option>주문실수</option>
+                                    <option>상품누락</option>
+                                    <option>상품불량</option>
+                                    <option>기타</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>상세내역</td>
+                            <td>
+                                <textarea cols="50" role="10"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="btn_box">
+                        <input type="button" id="btn_cancel" value="취소"  onClick="location.href='mypage_order'">
+                        <input type="submit" id="btn_ok" value="확인" onClick="location.href='exchange_finish'">
+                    </div>
+               <!--  </form> -->
             </div>
     </div>
     

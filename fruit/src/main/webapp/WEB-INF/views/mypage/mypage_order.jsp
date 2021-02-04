@@ -291,7 +291,7 @@
         }
         .img_td{
             padding: 20px 10px 20px 20px;
-            width: 120px;
+            width: 140px;
         }
         .content_td{
             width: 300px;
@@ -305,17 +305,25 @@
             text-align: right;
             padding-right: 20px;
         }
+        .fruit_change{ /* 교환 환불 버튼*/
+            margin-bottom: 10px;
+            padding: 2px 13px 5px 12px;
+            height: 32px;
+            border: 2px solid #00af85;
+            background-color: #00af85; 
+            color: #fff;
+        }
         .review{ /* 후기쓰기 버튼 */
             margin-bottom: 10px;
-            padding: 5px 20px 5px 20px;
-            height: 40px;
+            padding: 2px 20px 5px 20px;
+            height: 30px;
             border: 1px solid #00af85;
             background-color: #00af85; 
             color: #fff;
         }
         .onetoone{ /* 1:1 버튼 */
-            height: 40px;
-            padding: 5px 23px 5px 23px;
+            height: 30px;
+            padding: 2px 23px 5px 23px;
             border: 1px solid #00af85;
 	        background-color:  #fff;
 	        color:  #00af85;
@@ -515,7 +523,7 @@
 	                                        <td class="right_td"><b>></b></td>
 	                                    </tr>
 	                                    <tr class="tr">
-	                                        <td class="img_td"><img src="https://via.placeholder.com/80x100"></td>
+	                                        <td class="img_td"><img src="https://via.placeholder.com/100x120"></td>
 	                                        <td class="content_td">
 	                                            <table class="small_table">
 	                                                <tr><td>주문번호</td> <td>16021546521</td> </tr>
@@ -524,6 +532,9 @@
 	                                            </table>
 	                                        </td>
 	                                        <td class="right_td">
+                                                <!-- 교환 / 환불 버튼은 구매한 날짜로부터 7일 이내만 나오게 설정  -->
+                                                <!-- 후기 / 1:1 문의는 주문상태가 배송완료 일때  나오게 설정 -->
+                                                <input type="submit" class="fruit_change" value="교환 / 환불"  onclick='btn_click<%=i%>("exchange");'><br>
 	                                            <input type="submit" class="review" value="후기쓰기"  onclick='btn_click<%=i%>("select_review");'><br>
 	                                            <input type="submit" class="onetoone" value="1:1문의" onclick='btn_click<%=i%>("onetoone1");'>
 	                                        </td>
@@ -577,6 +588,9 @@
         else if(str=="onetoone1"){    
             frm1.action="/notice_onetoone_write";      
         }
+        else if(str=="exchange"){    
+            frm1.action="/mypage_exchange";      
+        }
         else {
             //...
         }
@@ -591,6 +605,9 @@
         }
         else if(str=="onetoone1"){    
             frm2.action="/notice_onetoone_write";      
+        }
+        else if(str=="exchange"){    
+            frm2.action="/mypage_exchange";      
         }
         else {
             //...
@@ -607,6 +624,9 @@
         else if(str=="onetoone1"){    
             frm3.action="/notice_onetoone_write";      
         }
+        else if(str=="exchange"){    
+            frm3.action="/mypage_exchange";      
+        }
         else {
             //...
         }
@@ -621,6 +641,9 @@
         else if(str=="onetoone1"){    
             frm4.action="/notice_onetoone_write";      
         }
+        else if(str=="exchange"){    
+            frm4.action="/mypage_exchange";      
+        }
         else {
             //...
         }
@@ -634,6 +657,9 @@
         }
         else if(str=="onetoone1"){    
             frm5.action="/notice_onetoone_write";      
+        }
+        else if(str=="exchange"){    
+            frm5.action="/mypage_exchange";      
         }
         else {
             //...
