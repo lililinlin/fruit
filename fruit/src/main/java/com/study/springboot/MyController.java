@@ -302,10 +302,15 @@ public class MyController {
 		public String manager_secession() throws Exception {
 			return "manager/manager_secession";
 		}
-// 회원관리 - [주문 관리]
+// 주문 관리
 		@RequestMapping("/order_management")
 		public String order_management() throws Exception {
 			return "manager/order_management";
+		}
+// 주문 관리 - [사용자 주문 상세 정보]
+		@RequestMapping("/order_info")
+		public String order_info() throws Exception {
+			return "manager/order_info";
 		}
 // 상품관리 - [상품 목록]
 		@RequestMapping("/goods_list")
