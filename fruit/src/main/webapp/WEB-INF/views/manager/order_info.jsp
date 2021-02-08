@@ -201,15 +201,14 @@
             margin-left: 20px;
             float:right;
             width: 850px;
-            margin-bottom: 100px;
-     		margin-top:-80px;
+            margin-bottom: 50px;
+     		margin-top:-60px;
         }
 		/* 상단 테이블 */
 		#main_top_table{
 			margin:0 auto;
 			margin-top:50px;
 			width:800px;
-			height:300px;
 			margin-bottom:50px;
 		}
 		#main_top_table th{
@@ -227,6 +226,26 @@
 			background-color:rgb(246, 246, 246);
 		}
 		
+		/* 중간 테이블 */
+		#main_mid_table{
+			margin:0 auto;
+			width:800px;
+			height:500px;
+			margin-bottom:50px;
+		}
+		#main_mid_table th{
+			font-size:20px;
+			border-bottom:1px solid #00af85;
+			text-align: center;
+		}
+		#main_mid_table td{
+			border:1px solid #cdcdcd;
+			text-align: center;
+			
+		}
+		#main_mid_table td:nth-child(2n-1){
+			background-color:rgb(246, 246, 246);
+		}
 		/* 하단 테이블 */
 		#main_bottom_table{
 			margin:0 auto;
@@ -241,12 +260,10 @@
 		#main_bottom_table td{
 			border:1px solid #cdcdcd;
 			text-align: center;
-			
 		}
 		#main_bottom_table td:nth-child(2n-1){
 			background-color:rgb(246, 246, 246);
 		}
-		
 /* footer */
 		footer{
             width: 1200px;
@@ -272,33 +289,60 @@
         }
     </style>
    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-   <script>
-      $(function(){ 
-         var $win = $(window); 
-         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-         /*사용자 설정 값 시작*/ 
-         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-         $layer.css('position', 'relative').css('z-index', '1'); 
-         /*사용자 설정 값 끝*/ 
-         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-         if (top > 0 ) 
-            $win.scrollTop(layerTopOffset+top); 
-            else $win.scrollTop(0); 
-            //스크롤이벤트가 발생하면 
-            $(window).scroll(function(){ 
-               yPosition = $win.scrollTop() - 100; //이부분을 조정해서 화면에 보이도록 맞추세요 
-               if (yPosition < 0) { 
-                  yPosition = 0; 
-               } 
-               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
-         }); 
-      }); 
-   </script>
-		
-	
+	<script type="text/javascript">
+			$(function(){
+			  $("#mainmenu1").click(function(){
+				  status=$(".submenu1").css("display");
+				  if(status == "none"){
+					  $(".submenu1").show();
+					  $(".submenu2").hide();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu1").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu2").click(function(){
+				  status=$(".submenu2").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").show();
+					  $(".submenu3").hide();
+				  }
+				  else{
+					  $(".submenu2").hide();
+				  }
+			    
+			  });
+			  $("#mainmenu3").click(function(){
+				  status=$(".submenu3").css("display");
+				  if(status == "none"){
+					  $(".submenu1").hide();
+					  $(".submenu2").hide();
+					  $(".submenu3").show();
+				  }
+				  else{
+					  $(".submenu3").hide();
+				  }
+			    
+			  });
+			});
+			/* 체크박스 전체 선택 */
+			$(function(){ //전체선택 체크박스 클릭 
+				$("#allCheck").click(function(){ 
+					//만약 전체 선택 체크박스가 체크된상태일경우 
+					if($("#allCheck").prop("checked")){ 
+						//해당화면에 전체 checkbox들을 체크해준다 
+						$("input[type=checkbox]").prop("checked",true); 
+						// 전체선택 체크박스가 해제된 경우 
+					} 
+					else { //해당화면에 모든 checkbox들의 체크를해제시킨다.
+						$("input[type=checkbox]").prop("checked",false); 
+					} 
+				})
+			})
+		</script>
 </head>
 <body>
     <div id="head0"></div>
@@ -389,40 +433,33 @@
 					<tr>
 						<th colspan="5">결제정보</th>
 					</tr>
-					
 					<tr>
 						<td>상품번호</td>
 						<td>상품명</td>
 						<td>수량</td>
 						<td>가격</td>
-						<td>배송비</td>
 					</tr>
 					<tr>
 						<td>PD201704</td>
 						<td>사과</td>
 						<td>2</td>
 						<td>10,000원</td>
-						<td>2,500원</td>
 					</tr>
 					<tr>
 						<td>WA729426</td>
 						<td>딸기</td>
 						<td>3</td>
 						<td>15,000원</td>
-						<td>2,500원</td>
+						
 					</tr>
 				</table>
-				<table id="main_bottom_table">
+				<table id="main_mid_table">
 					<tr>
 						<th colspan="2">주문정보</th>
 					</tr>
 					<tr>
 						<td>주문번호</td>
 						<td>1234556</td>
-					</tr>
-					<tr>
-						<td>주문금액</td>
-						<td>30,000원</td>
 					</tr>
 					<tr>
 						<td>배송주소</td>
@@ -445,7 +482,31 @@
 						<td>주문확인중</td>
 					</tr>
 				</table>
-				
+				<table id="main_bottom_table">
+					<tr>
+						<th colspan="2">결제정보</th>
+					</tr>
+					<tr>
+						<td>총주문금액</td>
+						<td>27,500원</td>
+					</tr>
+					<tr>
+						<td>적립금사용</td>
+						<td>0원</td>
+					</tr>
+					<tr>
+						<td>배송비</td>
+						<td>2,500원</td>
+					</tr>
+					<tr>
+						<td>적립금액</td>
+						<td>137원</td>
+					</tr>
+					<tr>
+						<td>결제방법</td>
+						<td>네이버페이</td>
+					</tr>
+				</table>
 	    </div>
     </div>
     
