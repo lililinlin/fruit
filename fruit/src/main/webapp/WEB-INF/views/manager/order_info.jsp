@@ -199,14 +199,13 @@
         /* ----- 오른쪽 -----*/
         #main_right{ /*오른쪽 전체 감싼 div*/
             margin-left: 20px;
-            float: right;
+            float:right;
             width: 850px;
             margin-bottom: 100px;
         }
 		/* 상단 테이블 */
 		#main_top_table{
 			margin:0 auto;
-			margin-top:50px;
 			width:1000px;
 			height:500px;
 		}
@@ -382,9 +381,8 @@
                     	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
                     </tr>
                 </table>
-            </div> 
-    </div>
-    <div id="main_right">
+            </div>
+            <div id="main_right">
 			<table id="main_top_table">
 				<tr>
 					<th colspan="2">주문정보</th>
@@ -447,6 +445,8 @@
 			</table>
 		
     </div>
+    </div>
+    
     <footer>
         <table id="footer_table">
             <tr>
