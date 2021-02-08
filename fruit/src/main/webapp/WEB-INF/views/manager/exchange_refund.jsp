@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>게시판관리</title>
+    <title>게시판관리-교환/환불</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -197,50 +197,30 @@
             margin-left: 20px;
             float: right;
             width: 850px;
-            height: 600px;
         }
-        #main_table{ /* 메인 테이블 감싼 div */
-            border-top: 2px solid  rgb(1, 114, 18);
-            margin-top: 30px;
-            padding-top: 10px;
+        #main_right h4{
+            padding-bottom: 20px;
+            border-bottom: 1px solid #00af85;
+            margin-bottom: 20px;
         }
-        #main_table table{
-            width: 850px;
+        #main_table{
             text-align: center;
-        }
-        #main_table th{
-            font-size: smaller;
-            font-weight: normal;
-            text-align: center;
-            height: 50px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgb(1, 114, 18);
         }
         #main_table td{
-            height: 50px;
-            border-bottom: 1px solid rgb(224, 224, 224);
-            font-size: small;
+            border: 1px solid rgb(221, 221, 221);
         }
-        .main_title{ 
-            text-align: left;
-            width: 500px;
-            padding-left: 20px;
-        }
-        .main_hit,.main_day{
-            color: gray;
-        }
-        #btn_box{
-        	text-align: right;
-        }
-        input[type=button]{
-            width: 100px;
+        #main_table tr{
             height: 40px;
-            margin-right: 10px;
-            margin-top: 20px;
-            border: 1px solid #00af85;
-            background-color: #00af85; 
-            color: #fff;
         }
+        #main_table tr:nth-child(2n+1){
+            background-color: rgb(243, 243, 243);
+        }
+        .m_sort{width: 100px;} /* 분류 */
+        .m_line{width: 120px;} /* 문의 */
+        .m_title{width: 400px;} /* 제목 */
+        .m_name{width: 110px;} /* 사용자 */
+        .m_date{width:110px;} /* 날짜 */
+        
         /* 스크롤시 자동으로 따라오는 테이블바 */
         #side_table{
         	margin-top:100px;
@@ -259,7 +239,12 @@
 			padding-top:10px;
 			text-align: center;
 		}
+
 /* footer */
+        #footer{
+            margin: 0 auto;
+            width: 1200px;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -447,51 +432,51 @@
                     <tr>
                     <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
+                        <tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                        <tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
                     </tr>
                 </table>
             </div>
 
             <div id="main_right">
-            <h4><b>공지사항 관리</b></h4>
-                <div id="main_table">
-                    <table>
-                        <th>구분</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회</th>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[배송관련공지] 연휴기간 배송 일정 공지 ( 2020.12.23 ~ )</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-23</td>
-                            <td class="main_hit">266</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[주문관련공지] 적립금 사용시 중복적용 주문관련 공지 ( 2020.12.20 ~ ) </a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-20</td>
-                            <td class="main_hit">346</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[첫 주문 공지] 첫 구매시 적립금 5000원 지급 관련 공지</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-11</td>
-                            <td class="main_hit">1504</td>
-                        </tr>
-                    </table>
-                    <div id="btn_box">
-                    	<input type="button" value="글작성" onclick="location.href='notice_management_write'">
-                    </div>
+            
+            <h4><b>교환 / 환불 게시판</b></h4>
+                <div id="table_box">
+                   <table id="main_table">
+                       <tr>
+                           <td class="m_sort">분류</td>
+                           <td class="m_line">문의</td>
+                           <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">제목</td>
+                           <td class="m_name">사용자</td>
+                           <td class="m_date">날짜</td>
+                       </tr>
+                       <tr>
+                           <td class="m_sort">교환</td>
+                           <td class="m_line">주문실수</td>
+                           <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">수량체크를 잘못해서 5Kg가 왔어요</td>
+                           <td class="m_name">강이린</td>
+                           <td class="m_date">20.02.08</td>
+                       </tr>
+                       <tr>
+                           <td class="m_sort">환불</td>
+                           <td class="m_line">상품불량</td>
+                           <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">과일이 썪어서 왔어요</td>
+                           <td class="m_name">이정현</td>
+                           <td class="m_date">20.02.08</td>
+                       </tr>
+                       <tr>
+                            <td class="m_sort">교환</td>
+                            <td class="m_line">기타</td>
+                            <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">배송온 과일이 사이트랑 달라요</td>
+                            <td class="m_name">홍길동</td>
+                            <td class="m_date">20.02.08</td>
+                       </tr>
+                   </table>
                 </div>
             </div>
             
     </div>
-    <footer>
+    <div id="footer">
         <table id="footer_table">
             <tr>
                 <td><img src="images/fruitcol.jpg"></td>
@@ -511,6 +496,6 @@
                     주소 : 서울시 노원구 상계로로 971 개인정보관리책임자 : 강이린,이정현 <br>E-Mail : fruit@naver.com</b></h7></td>
             </tr>
         </table>
-    </footer>
+    </div>
 </body>
 </html>

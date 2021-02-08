@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>게시판관리</title>
+    <title>게시판관리-교환환불 문의내역</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -194,49 +194,59 @@
 
         /* 오른쪽 */
         #main_right{ /*오른쪽 전체 감싼 div*/
-            margin-left: 20px;
+            padding-top: 20px;
             float: right;
             width: 850px;
-            height: 600px;
+            margin-bottom: 100px;
+            padding-left: 60px;
         }
-        #main_table{ /* 메인 테이블 감싼 div */
-            border-top: 2px solid  rgb(1, 114, 18);
-            margin-top: 30px;
-            padding-top: 10px;
+        #main_right h4{
+            padding-bottom: 20px;
+            border-bottom: 1px solid #00af85;
+            margin-bottom: 25px;
         }
-        #main_table table{
-            width: 850px;
-            text-align: center;
-        }
-        #main_table th{
-            font-size: smaller;
-            font-weight: normal;
-            text-align: center;
-            height: 50px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgb(1, 114, 18);
+        #main_table{
+            margin-bottom: 50px;
         }
         #main_table td{
-            height: 50px;
-            border-bottom: 1px solid rgb(224, 224, 224);
-            font-size: small;
+            border: 1px solid rgb(221, 221, 221);
         }
-        .main_title{ 
-            text-align: left;
+        #main_table tr{
+            height: 40px;
+        }
+        #main_table td:nth-child(2n+1){
+            background-color: rgb(243, 243, 243);
+        }
+        #h4{
+            width: 660px;
+        }
+        .sort{
+            width: 150px;
+            text-align: center;
+        }
+        .line{
             width: 500px;
-            padding-left: 20px;
+            padding-left: 30px;
         }
-        .main_hit,.main_day{
-            color: gray;
+        #textarea{
+            height: 300px;
+            width:500px;
+            padding : 10px;
         }
         #btn_box{
-        	text-align: right;
+            padding-left: 120px;
         }
-        input[type=button]{
-            width: 100px;
-            height: 40px;
+        #btn_box input[type=button]{ /* 이전버튼 */
+            width: 200px;
+            height: 50px;
+            border: 1px solid #00af85;
+	        background-color:  #fff;
+	        color:  #00af85;
             margin-right: 10px;
-            margin-top: 20px;
+        }
+        #btn_box input[type=submit]{ /* 처리완료 */
+            width: 200px;
+            height: 50px;
             border: 1px solid #00af85;
             background-color: #00af85; 
             color: #fff;
@@ -259,7 +269,12 @@
 			padding-top:10px;
 			text-align: center;
 		}
+
 /* footer */
+        #footer{
+            margin: 0 auto;
+            width: 1200px;
+        }
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -415,7 +430,9 @@
     
 	<div id="main_wrapper">
             <div id="main_left">
-                <h3><b>게시판관리</b></h3>
+                 
+                    <h3><b>게시판관리</b></h3>
+                 
                 <table>
                     <tr onClick="location.href='manager_main'">
                     	<td><small>메인페이지</small></td><td>></td>
@@ -444,54 +461,50 @@
                     <tr id="mainmenu3">
                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
-                    <tr>
                     <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
-                    	<tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
-                    </tr>
+                        <tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                        <tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
                 </table>
             </div>
 
             <div id="main_right">
-            <h4><b>공지사항 관리</b></h4>
-                <div id="main_table">
-                    <table>
-                        <th>구분</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                        <th>조회</th>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[배송관련공지] 연휴기간 배송 일정 공지 ( 2020.12.23 ~ )</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-23</td>
-                            <td class="main_hit">266</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[주문관련공지] 적립금 사용시 중복적용 주문관련 공지 ( 2020.12.20 ~ ) </a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-20</td>
-                            <td class="main_hit">346</td>
-                        </tr>
-                        <tr>
-                            <td>공지</td>
-                            <td class="main_title"><a href="manager_notice_view">[첫 주문 공지] 첫 구매시 적립금 5000원 지급 관련 공지</a></td>
-                            <td>푸릇츠</td>
-                            <td class="main_day">2020-12-11</td>
-                            <td class="main_hit">1504</td>
-                        </tr>
-                    </table>
-                    <div id="btn_box">
-                    	<input type="button" value="글작성" onclick="location.href='notice_management_write'">
-                    </div>
+                <div id="h4">
+                    <h4><b>문의 내역 보기</b></h4>
+                 </div>
+                <div id="table_box">
+                   <table id="main_table">
+                      <tr>
+                          <td class="sort">분류</td>
+                          <td class="line">교환</td>
+                      </tr>
+                      <tr>
+                          <td class="sort">문의</td>
+                          <td class="line">상품누락</td>
+                      </tr>
+                      <tr>
+                          <td class="sort">사용자</td>
+                          <td class="line">강이린</td>
+                      </tr>
+                      <tr>
+                          <td class="sort">내용</td>
+                          <td id="textarea">
+                          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. 
+                          The passage is attributed to an unknown typesetter in the 15th century who is thought to have 
+                          scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
+							“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+                      </tr>
+                      
+                   </table>
+                   <div id="btn_box">
+                       <input type="button" value="이전으로" onClick="location.href='exchange_refund'">
+                       <input type="submit" value="쳐리완료">
+                   </div>
                 </div>
             </div>
             
     </div>
-    <footer>
+    <div id="footer">
         <table id="footer_table">
             <tr>
                 <td><img src="images/fruitcol.jpg"></td>
@@ -511,6 +524,6 @@
                     주소 : 서울시 노원구 상계로로 971 개인정보관리책임자 : 강이린,이정현 <br>E-Mail : fruit@naver.com</b></h7></td>
             </tr>
         </table>
-    </footer>
+    </div>
 </body>
 </html>

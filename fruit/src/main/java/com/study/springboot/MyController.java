@@ -413,5 +413,13 @@ public class MyController {
 		public String manager_common_write() throws Exception {
 			return "manager/manager_common_write";
 		}
-
+// 게시판관리 - [ 교환 환불 ]
+		@RequestMapping("/exchange_refund")
+		public String exchange_refund() throws Exception {
+			return "manager/exchange_refund";
+		}
+		@RequestMapping("/exchange_refund_content")
+		public String exchange_refund_content() throws Exception {
+			return "manager/exchange_refund_content";
+		}
 }
