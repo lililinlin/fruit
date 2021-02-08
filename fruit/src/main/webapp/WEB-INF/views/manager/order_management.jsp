@@ -203,19 +203,38 @@
             width: 850px;
             margin-bottom: 100px;
         }
+        #select_option{
+        	display:block;
+        }
+        #select_option h4{
+        	float:left;
+        }
+        #select{
+        	float:right;
+        }
+        #administration{
+        	height:40px;
+        	margin-right:30px;
+        }
         #main_right_table{
         	width:820px;
         	margin-top:30px;
         	border-top: 1px solid #00af85;
             border-bottom: 1px solid #00af85;
-            
+        }
+         #right_table_thead td{
+        	background-color:#00af85;
+			color:white;
+			border:1px solid #00af85;
         }
         #main_right_table tr:nth-child(2n+1){ 
             background-color: rgb(246, 246, 246);
         }
+       
 		#main_right_table td{
 			height:40px;
 			text-align:center;
+			border-bottom:1px solid #cdcdcd;
 		}
 		/* 확인버튼 */
         #check_button{
@@ -466,60 +485,62 @@
                 </table>
             </div>
             <div id="main_right">
-        <h4><b>상품관리</b></h4>
-        <form name="select" action="/list" method="post" id="select">
-	        <select name="administration" id="administration">
-	        	<option value="option1">주문확인중</option>
-	        	<option value="option2">상품준비중</option>
-	        	<option value="option3">배송중</option>
-	        	<option value="option4">배송완료</option>
-	        </select>
-        </form>
-        <!-- <form name="user_goods_list" action="/user_goods_list" method="post"> -->
-	        <table id="main_right_table">
-	        	<thead>
-		        	<tr>
-		        		<td><input type="checkbox" name="select_All" id="allCheck" value="all"></td>
-		        		<td>주문번호</td>
-		        		<td>이름</td>
-		        		<td>주문날짜</td>
-		        		<td>주문상태</td>
-		        	</tr>
-	        	</thead>
-	        	<tbody id="listBody">
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user1"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">1234556</td>
-		        		<td>강이린</td>
-		        		<td>2020.12.4</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user2"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7568193</td>
-		        		<td>강이린</td>
-		        		<td>2020.12.22</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user3"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">6584218</td> 
-		        		<td>이정현</td>
-		        		<td>2021.1.15</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-		        	<tr>
-		        		<td><input type="checkbox" name="chk" class="btn-chk" value="user4"></td>
-		        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7546584</td>
-		        		<td>이정현</td>
-		        		<td>2021.2.1</td>
-		        		<td>주문확인중</td>
-		        	</tr>
-	        	</tbody>
-	        </table>
-	        <input type="submit" id="check_button" onclick="delSelected()" value="주문확인완료">
-		<!-- </form> -->
-    </div> 
+            	<div id="select_option">
+			        <h4><b>상품관리</b></h4>
+			        <form name="select" action="/list" method="post" id="select">
+				        <select name="administration" id="administration">
+				        	<option value="option1">주문확인중</option>
+				        	<option value="option2">상품준비중</option>
+				        	<option value="option3">배송중</option>
+				        	<option value="option4">배송완료</option>
+				        </select>
+			        </form>
+		        </div>
+		        <!-- <form name="user_goods_list" action="/user_goods_list" method="post"> -->
+			        <table id="main_right_table">
+			        	<thead id="right_table_thead">
+				        	<tr>
+				        		<td><input type="checkbox" name="select_All" id="allCheck" value="all"></td>
+				        		<td>주문번호</td>
+				        		<td>이름</td>
+				        		<td>주문날짜</td>
+				        		<td>주문상태</td>
+				        	</tr>
+			        	</thead>
+			        	<tbody id="listBody">
+				        	<tr>
+				        		<td><input type="checkbox" name="chk" class="btn-chk" value="user1"></td>
+				        		<td onclick ="location.href='order_info'" style="cursor: pointer;">1234556</td>
+				        		<td>강이린</td>
+				        		<td>2020.12.4</td>
+				        		<td>주문확인중</td>
+				        	</tr>
+				        	<tr>
+				        		<td><input type="checkbox" name="chk" class="btn-chk" value="user2"></td>
+				        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7568193</td>
+				        		<td>강이린</td>
+				        		<td>2020.12.22</td>
+				        		<td>주문확인중</td>
+				        	</tr>
+				        	<tr>
+				        		<td><input type="checkbox" name="chk" class="btn-chk" value="user3"></td>
+				        		<td onclick ="location.href='order_info'" style="cursor: pointer;">6584218</td> 
+				        		<td>이정현</td>
+				        		<td>2021.1.15</td>
+				        		<td>주문확인중</td>
+				        	</tr>
+				        	<tr>
+				        		<td><input type="checkbox" name="chk" class="btn-chk" value="user4"></td>
+				        		<td onclick ="location.href='order_info'" style="cursor: pointer;">7546584</td>
+				        		<td>이정현</td>
+				        		<td>2021.2.1</td>
+				        		<td>주문확인중</td>
+				        	</tr>
+			        	</tbody>
+			        </table>
+			        <input type="submit" id="check_button" onclick="delSelected()" value="주문확인완료">
+				<!-- </form> -->
+		    </div> 
     </div>
 	
     

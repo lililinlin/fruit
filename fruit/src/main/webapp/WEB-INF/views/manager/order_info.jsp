@@ -202,46 +202,48 @@
             float:right;
             width: 850px;
             margin-bottom: 100px;
+     		margin-top:-80px;
         }
 		/* 상단 테이블 */
 		#main_top_table{
 			margin:0 auto;
-			width:1000px;
-			height:500px;
+			margin-top:50px;
+			width:800px;
+			height:300px;
+			margin-bottom:50px;
 		}
 		#main_top_table th{
 			font-size:20px;
-			border-bottom:2px solid #00af85;
+			height:100px;
+			border-bottom:1px solid #00af85;
 			text-align: center;
 		}
 		#main_top_table td{
-			border:1px solid #cdcdcd;
-			text-align: center;
-			
-		}
-		#main_top_table td:nth-child(2n-1){
-			background-color:rgb(246, 246, 246);
-		}
-		/* 하단 테이블 */
-		#main_bottom_table{
-			margin:0 auto;
-			margin-top:50px;
-			width:1000px;
-			height:300px;
-			margin-bottom:100px;
-		}
-		#main_bottom_table th{
-			font-size:20px;
-			height:100px;
-			border-bottom:2px solid #00af85;
-			text-align: center;
-		}
-		#main_bottom_table td{
 			height:70px;
 			border:1px solid #cdcdcd;
 			text-align: center;	
 		}
-		#main_bottom_table tr:nth-child(3){
+		#main_top_table tr:nth-child(2){
+			background-color:rgb(246, 246, 246);
+		}
+		
+		/* 하단 테이블 */
+		#main_bottom_table{
+			margin:0 auto;
+			width:800px;
+			height:500px;
+		}
+		#main_bottom_table th{
+			font-size:20px;
+			border-bottom:1px solid #00af85;
+			text-align: center;
+		}
+		#main_bottom_table td{
+			border:1px solid #cdcdcd;
+			text-align: center;
+			
+		}
+		#main_bottom_table td:nth-child(2n-1){
 			background-color:rgb(246, 246, 246);
 		}
 		
@@ -383,68 +385,68 @@
                 </table>
             </div>
             <div id="main_right">
-			<table id="main_top_table">
-				<tr>
-					<th colspan="2">주문정보</th>
-				</tr>
-				<tr>
-					<td>주문번호</td>
-					<td>1234556</td>
-				</tr>
-				<tr>
-					<td>주문금액</td>
-					<td>30,000원</td>
-				</tr>
-				<tr>
-					<td>배송주소</td>
-					<td>서울시 수유동</td>
-				</tr>
-				<tr>
-					<td>주문일자</td>
-					<td>2020.12.04</td>
-				</tr>
-				<tr>
-					<td>주문자</td>
-					<td>이정현</td>
-				</tr>
-				<tr>
-					<td>연락처</td>
-					<td>010-1111-2222</td>
-				</tr>
-				<tr>
-					<td>배송상태</td>
-					<td>주문확인중</td>
-				</tr>
-			</table>
-			<table id="main_bottom_table">
-				<tr>
-					<th colspan="5">결제정보</th>
-				</tr>
+            	<table id="main_top_table">
+					<tr>
+						<th colspan="5">결제정보</th>
+					</tr>
+					
+					<tr>
+						<td>상품번호</td>
+						<td>상품명</td>
+						<td>수량</td>
+						<td>가격</td>
+						<td>배송비</td>
+					</tr>
+					<tr>
+						<td>PD201704</td>
+						<td>사과</td>
+						<td>2</td>
+						<td>10,000원</td>
+						<td>2,500원</td>
+					</tr>
+					<tr>
+						<td>WA729426</td>
+						<td>딸기</td>
+						<td>3</td>
+						<td>15,000원</td>
+						<td>2,500원</td>
+					</tr>
+				</table>
+				<table id="main_bottom_table">
+					<tr>
+						<th colspan="2">주문정보</th>
+					</tr>
+					<tr>
+						<td>주문번호</td>
+						<td>1234556</td>
+					</tr>
+					<tr>
+						<td>주문금액</td>
+						<td>30,000원</td>
+					</tr>
+					<tr>
+						<td>배송주소</td>
+						<td>서울시 수유동</td>
+					</tr>
+					<tr>
+						<td>주문일자</td>
+						<td>2020.12.04</td>
+					</tr>
+					<tr>
+						<td>주문자</td>
+						<td>이정현</td>
+					</tr>
+					<tr>
+						<td>연락처</td>
+						<td>010-1111-2222</td>
+					</tr>
+					<tr>
+						<td>배송상태</td>
+						<td>주문확인중</td>
+					</tr>
+				</table>
 				
-				<tr>
-					<td>상품번호</td>
-					<td>상품명</td>
-					<td>수량</td>
-					<td>가격</td>
-					<td>배송비</td>
-				</tr>
-				<tr>
-					<td>PD201704</td>
-					<td>사과</td>
-					<td>2</td>
-					<td>10,000원</td>
-					<td>2,500원</td>
-				</tr>
-				<tr>
-					<td>WA729426</td>
-					<td>딸기</td>
-					<td>3</td>
-					<td>15,000원</td>
-					<td>2,500원</td>
-				</tr>
-			</table>
-		
-    </div>
+	    </div>
     </div>
     
     <footer>
