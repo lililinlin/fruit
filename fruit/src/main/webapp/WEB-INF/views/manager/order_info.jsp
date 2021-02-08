@@ -149,7 +149,103 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
+/* main */
+		 /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{ 
+            padding: 50px 40px 0 50px;
+            width: 1200px;
+            margin: 0 auto;
+        }
 
+        /* --- 왼쪽 카테고리 ---*/
+         #main_left{
+            float: left;
+            width: 200px;
+            height: 600px;
+        }
+        #main_left table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
+        }
+        #main_left table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #main_left table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #main_left tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #00af85;
+        }
+        .submenu1{/* 첫번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu2{/* 두번째 서브메뉴 숨김으로 표시 */
+     		display:none;
+     		text-align: center;
+     		padding-right:20px;
+     	}
+     	.submenu3{
+     		display:none;
+     	}
+     	.submenu3 small{/* 세번째 서브메뉴 숨김으로 표시 */
+     		padding-left:30px;
+     	}
+        /* ----- 오른쪽 -----*/
+        #main_right{ /*오른쪽 전체 감싼 div*/
+            margin-left: 20px;
+            float: right;
+            width: 850px;
+            margin-bottom: 100px;
+        }
+		/* 상단 테이블 */
+		#main_top_table{
+			margin:0 auto;
+			margin-top:50px;
+			width:1000px;
+			height:500px;
+		}
+		#main_top_table th{
+			font-size:20px;
+			border-bottom:2px solid #00af85;
+			text-align: center;
+		}
+		#main_top_table td{
+			border:1px solid #cdcdcd;
+			text-align: center;
+			
+		}
+		#main_top_table td:nth-child(2n-1){
+			background-color:rgb(246, 246, 246);
+		}
+		/* 하단 테이블 */
+		#main_bottom_table{
+			margin:0 auto;
+			margin-top:50px;
+			width:1000px;
+			height:300px;
+			margin-bottom:100px;
+		}
+		#main_bottom_table th{
+			font-size:20px;
+			height:100px;
+			border-bottom:2px solid #00af85;
+			text-align: center;
+		}
+		#main_bottom_table td{
+			height:70px;
+			border:1px solid #cdcdcd;
+			text-align: center;	
+		}
+		#main_bottom_table tr:nth-child(3){
+			background-color:rgb(246, 246, 246);
+		}
+		
 /* footer */
 		footer{
             width: 1200px;
@@ -249,8 +345,108 @@
             </tr>
         </table>
     </div>
-	
-    
+    <div id="main_wrapper">
+            <div id="main_left">
+                <h3><b>주문관리</b></h3>
+                <table>
+                    <tr onClick="location.href='manager_main'">
+                    	<td><small>메인페이지</small></td><td>></td>
+                    </tr>
+                    <tr id="mainmenu1">
+                    	<td><small>회원관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_member'"><small>회원목록</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu1" onClick="location.href='manager_secession'"><small>탈퇴회원</small></td><td class="submenu1"></td>
+                    </tr>
+                    <tr id="mainmenu2">
+                    	<td><small>상품관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
+                    </tr>
+                    <tr>
+                    	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
+                    </tr>
+                     <tr onclick="location.href='order_management'">
+                    	<td><small>주문관리</small></td><td>></td>
+                    </tr>
+                    <tr id="mainmenu3">
+                    	<td><small>게시판관리</small></td><td>></td>
+                    </tr>
+                    <tr>
+                    <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                    </tr>
+                </table>
+            </div> 
+    </div>
+    <div id="main_right">
+			<table id="main_top_table">
+				<tr>
+					<th colspan="2">주문정보</th>
+				</tr>
+				<tr>
+					<td>주문번호</td>
+					<td>1234556</td>
+				</tr>
+				<tr>
+					<td>주문금액</td>
+					<td>30,000원</td>
+				</tr>
+				<tr>
+					<td>배송주소</td>
+					<td>서울시 수유동</td>
+				</tr>
+				<tr>
+					<td>주문일자</td>
+					<td>2020.12.04</td>
+				</tr>
+				<tr>
+					<td>주문자</td>
+					<td>이정현</td>
+				</tr>
+				<tr>
+					<td>연락처</td>
+					<td>010-1111-2222</td>
+				</tr>
+				<tr>
+					<td>배송상태</td>
+					<td>주문확인중</td>
+				</tr>
+			</table>
+			<table id="main_bottom_table">
+				<tr>
+					<th colspan="5">결제정보</th>
+				</tr>
+				
+				<tr>
+					<td>상품번호</td>
+					<td>상품명</td>
+					<td>수량</td>
+					<td>가격</td>
+					<td>배송비</td>
+				</tr>
+				<tr>
+					<td>PD201704</td>
+					<td>사과</td>
+					<td>2</td>
+					<td>10,000원</td>
+					<td>2,500원</td>
+				</tr>
+				<tr>
+					<td>WA729426</td>
+					<td>딸기</td>
+					<td>3</td>
+					<td>15,000원</td>
+					<td>2,500원</td>
+				</tr>
+			</table>
+		
+    </div>
     <footer>
         <table id="footer_table">
             <tr>

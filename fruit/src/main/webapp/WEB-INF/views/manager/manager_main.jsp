@@ -171,7 +171,7 @@
 			height:40px;
 			background-color:#00af85;
 			color:white;
-			border:1px solid #00af85; 
+			border:1px solid #00af85;
 		}
 		#manager_profile #button2{/* admin관리자 로그아웃 버튼 */
 			width:100px;
@@ -246,7 +246,7 @@
             width: 1200px;
             text-align: center;
             margin: 0 auto;
-            color: rgb(101, 101, 101)
+            color: rgb(101, 101, 101);
         }
         #footer_table img{
             margin-left: 30px;
