@@ -426,8 +426,8 @@
                     <tr onClick="location.href='mypage_basket'"><td><small>장바 구니</small></td><td>></td></tr>
                     <tr onClick="location.href='mypage_update_check'"><td><small>내 정보</small></td><td>></td></tr>
                     
-                </table>
-            </div> 
+                </table> 
+            </div>  
 
             <div id="main_right">
                 <div id="content_box">

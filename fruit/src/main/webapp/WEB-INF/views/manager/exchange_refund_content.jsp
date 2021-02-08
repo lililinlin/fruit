@@ -451,7 +451,7 @@
                     </tr>
                     <tr>
                     	<td class="submenu2" onClick="location.href='goods_list'"><small>상품목록</small></td><td class="submenu2"></td>
-                    </tr>
+                    </tr> 
                     <tr>
                     	<td class="submenu2" onClick="location.href='goods_register'"><small>상품등록</small></td><td class="submenu2"></td>
                     </tr>

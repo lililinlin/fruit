@@ -434,7 +434,7 @@
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
                         <tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
                         <tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
-                    </tr>
+                    
                 </table>
             </div>
 
@@ -463,7 +463,7 @@
                            <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">과일이 썪어서 왔어요</td>
                            <td class="m_name">이정현</td>
                            <td class="m_date">20.02.08</td>
-                       </tr>
+                       </tr> 
                        <tr>
                             <td class="m_sort">교환</td>
                             <td class="m_line">기타</td>

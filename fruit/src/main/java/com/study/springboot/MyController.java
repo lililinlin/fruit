@@ -387,7 +387,7 @@ public class MyController {
 		public String manager_common_modify() throws Exception {
 			return "manager/manager_common_modify";
 		}
-		@RequestMapping("/notice_common_writeAction")
+		@RequestMapping("/notice_common_writeAction") 
 		public String notice_common_writeAction() throws Exception {
 			return "manager/manager_common_question";
 		}
