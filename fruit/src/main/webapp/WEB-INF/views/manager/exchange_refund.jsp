@@ -460,17 +460,21 @@
                        <tr>
                            <td class="m_sort">환불</td>
                            <td class="m_line">상품불량</td>
-                           <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">과일이 썪어서 왔어요</td>
+                           <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">과일이 썩어서 왔어요</td>
                            <td class="m_name">이정현</td>
                            <td class="m_date">20.02.08</td>
-                       </tr> 
+                       </tr>
+                       <%for(int i=0; i<8; i++){ %> 
                        <tr>
                             <td class="m_sort">교환</td>
                             <td class="m_line">기타</td>
-                            <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">배송온 과일이 사이트랑 달라요</td>
+                            <td class="m_title" onClick="location.href='exchange_refund_content'" style="cursor: pointer;">배송온 과일이 사이트랑 달라요<%=i %></td>
                             <td class="m_name">홍길동</td>
                             <td class="m_date">20.02.08</td>
                        </tr>
+                       <%
+                       		} 
+                       %>
                    </table>
                 </div>
             </div>
