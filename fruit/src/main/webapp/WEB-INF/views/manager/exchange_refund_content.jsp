@@ -231,7 +231,7 @@
         #textarea{
             height: 300px;
             width:500px;
-            padding : 10px;
+            padding : 25px;
         }
         #btn_box{
             padding-left: 120px;
@@ -424,7 +424,7 @@
 	            <td class="main_menu_td">
 	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
 	            </td> 
-            </tr>
+            </tr> 
         </table>
     </div>
     
@@ -473,6 +473,7 @@
                     <h4><b>문의 내역 보기</b></h4>
                  </div>
                 <div id="table_box">
+                <form name="form" method="post">
                    <table id="main_table">
                       <tr>
                           <td class="sort">분류</td>
@@ -498,8 +499,9 @@
                    </table>
                    <div id="btn_box">
                        <input type="button" value="이전으로" onClick="location.href='exchange_refund'">
-                       <input type="submit" value="쳐리완료">
+                       <input type="submit" value="쳐리완료" onclick='btn_click("submit");'>
                    </div>
+                   </form>
                 </div>
             </div>
             
@@ -526,4 +528,14 @@
         </table>
     </div>
 </body>
+<script>
+            function btn_click(str){                             
+                if(str=="submit"){   
+                    alert("교환/환불 처리됐습니다.");
+                    form.action="exchange_refund";      
+				}  else {
+                    //...
+                }
+            }
+        </script>
 </html>
