@@ -454,7 +454,7 @@
             
     </div>
     <div id="footer">
-        <table id="footer_table">
+        <table id="footer_table"> 
             <tr>
                 <td><img src="images/fruitcol.jpg"></td>
                 <td style="width: 300px;"><h3><b>고객센터</b></h3>

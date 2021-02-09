@@ -448,7 +448,7 @@
                     <input type="submit" value = "등록" onclick="location.href='notice_management_writeAction'"/>
                 </div>
                 </form>
-             
+              
             </div>
             </div>
             
