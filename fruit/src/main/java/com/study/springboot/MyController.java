@@ -141,6 +141,10 @@ public class MyController {
 		public String select_review() throws Exception {
 			return "board/select_review";
 		}
+		@RequestMapping("/payment")
+		public String payment() throws Exception {
+			return "board/payment";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	
