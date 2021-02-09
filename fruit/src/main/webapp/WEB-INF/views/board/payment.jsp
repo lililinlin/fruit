@@ -164,7 +164,7 @@
 		 #buttons{
 			text-align: center;
 		}
-		#button1{
+		#button1{ 
 			width:200px;
 			height:50px;
 			background-color:#00af85;
