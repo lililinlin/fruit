@@ -240,6 +240,10 @@
 			text-align: center;
 		}
 /* footer */
+		#footer{
+			width:1200px;
+			margin: 0 auto;
+		}
         #footer_table{
             width: 1200px;
             text-align: center;
@@ -449,7 +453,7 @@
             </div>
             
     </div>
-    <footer>
+    <div id="footer">
         <table id="footer_table">
             <tr>
                 <td><img src="images/fruitcol.jpg"></td>
@@ -469,6 +473,6 @@
                     주소 : 서울시 노원구 상계로로 971 개인정보관리책임자 : 강이린,이정현 <br>E-Mail : fruit@naver.com</b></h7></td>
             </tr>
         </table>
-    </footer>
+    </div>
 </body>
 </html>

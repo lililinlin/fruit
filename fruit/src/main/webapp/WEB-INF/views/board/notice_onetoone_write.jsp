@@ -401,10 +401,9 @@
 			                             <td>
 											<select name="option">
 												<option value="1">배송문의</option>
-												<option value="2">교환/환불문의</option>
-												<option value="3">상품문의</option>
-												<option value="4">주문/결제문의</option>
-												<option value="5">기타문의</option>
+												<option value="2">상품문의</option>
+												<option value="3">주문/결제문의</option>
+												<option value="4">기타문의</option>
 											</select>
 			                             </td>
 			                         </tr>
