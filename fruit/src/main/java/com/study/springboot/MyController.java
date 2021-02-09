@@ -145,6 +145,10 @@ public class MyController {
 		public String payment() throws Exception {
 			return "board/payment";
 		}
+		@RequestMapping("/address_edit")
+		public String address_edit() throws Exception {
+			return "board/address_edit";
+		}
 		
 //----------------------[  NAV  ]---------------------------------------
 	
