@@ -674,7 +674,7 @@
 	    				<tr>
 	    					<td colspan="2" id="payment_td2" class="payment_notice">※보안강화로 Internet Explorer8미만 사용 시 결제창이 뜨지 않을 수 있습니다.</td>
 	    				</tr>
-	    			</table>
+	    			</table> 
 	    		</div>
 	    		
     		</div> 

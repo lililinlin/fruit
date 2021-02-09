@@ -163,7 +163,7 @@
 		}
 		 #buttons{
 			text-align: center;
-		}
+		} 
 		#button1{ 
 			width:200px;
 			height:50px;
