@@ -678,7 +678,7 @@
 	    		</div>
 	    		
     		</div>
-    		<input type="submit" id="payment_button" value="결제하기">
+    		<input type="submit" id="payment_button" value="결제하기" onclick="location.href='payment'">
     	</div>
     	 
     </main>

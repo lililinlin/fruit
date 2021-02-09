@@ -13,7 +13,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>메인</title>
+    <title>주문서</title>
     <script>
         $(function() {
              var lnb = $("#nav_wrapper").offset().top;
@@ -147,22 +147,31 @@
             color: rgb(150, 147, 147);
             text-align: center;
         }
-		 #basket_img{
+         #basket_img{
         	height:35px;
         }
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
+/* main */
+		#main_wrapper{
+			width:1060px;
+			margin:0 auto;
+			margin-top:50px;
+			margin-bottom:100px;
 		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:30px;	
+		#payment_img{
+			height:300px;
+			margin-left:100px;
 		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
+		 #buttons{
 			text-align: center;
+		}
+		#button1{
+			width:200px;
+			height:50px;
+			background-color:#00af85;
+			color:white;
+			border:1px solid #00af85;
+			margin-right:60px;
+			margin-top:40px;
 		}
 /* footer */
         #footer_table{
@@ -185,6 +194,45 @@
         }
           
     </style>
+   <script type="text/javascript">
+   		var use_price;
+   		var amount;
+   		function init(){
+			use_price = document.coupon_form.sum.value;
+			amount = document.coupon_form.buy_price.value;
+		}
+
+		function use_all(){
+			init();
+			var checkbox = document.getElementById("all_chbox");
+			if(checkbox.checked == true){
+				document.coupon_form.sum.value =  parseInt(amount);
+			}
+			else{
+				document.coupon_form.sum.value = parseInt(0);
+			}
+		}
+		function printmoney(){
+			 var fmoney = 29400;
+			 var fs_money = 0;
+			 var money = document.getElementById('sum').value;
+		     document.getElementById('sale_money').innerHTML = money.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + "원";
+		     fs_money = fmoney - money;
+		     document.getElementById('final_money').innerHTML = fs_money + "원";
+		}
+   </script>
+   <script>
+    $(document).ready(function(){
+    $("#all_chbox").change(function(){
+        if($("#all_chbox").is(":checked")){
+            document.coupon_form.sum.value =  parseInt(amount);
+            printmoney();
+        }else{
+            printmoney();
+        }
+    });
+    });
+   </script>
    <script>
       $(function(){ 
          var $win = $(window); 
@@ -192,7 +240,7 @@
          /*사용자 설정 값 시작*/ 
          var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
          var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var $layer = $('.float_sidebar1'); // 레이어 셀렉팅 
          var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
          $layer.css('position', 'relative').css('z-index', '1'); 
          /*사용자 설정 값 끝*/ 
@@ -210,6 +258,7 @@
          }); 
       }); 
    </script>
+</head>
 </head>
 <body>
     <div id="head0"></div>
@@ -273,27 +322,19 @@
                         <a href="service_center" ><h5><b>고객센터</b></h5></a>
                     </td>
                     <td class="main_menu_td">
-                        <a href="event"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
+                        <a href="basket"><h5><img id="basket_img"src="images/basket_green.jpg"></h5></a>
                     </td> 
             </tr>
         </table>
     </div>
-    <div id ="side_img" class="float_sidebar">
-		<table id ="side_table">
-			<tr>
-				<td><img src="images/Advertising1.jpg"></td>
-			</tr>
-			<tr>
-				<td><p class="side_p" onclick="location.href='service_center'"style="cursor: pointer;">공지사항</p></td>
-			</tr> 
-			<tr>
-				<td><p class="side_p" onclick="location.href='basket'"style="cursor: pointer;">장바구니</p></td>
-			</tr>
-			<tr>
-				<td><p class="side_p">1600-1111</p></td>
-			</tr>
-		</table>
-	</div>
+    <main>
+    	<div id="main_wrapper">
+    		<img src="images/fruit_basket.jpg" id="payment_img">
+    		<div id="buttons">
+    			<input type="button" id="button1" value="메인으로" onclick="location.href='home'">
+    		</div>
+    	</div>
+    </main>
     <footer>
         <table id="footer_table">
             <tr>
@@ -315,5 +356,30 @@
             </tr>
         </table>
     </footer>
+     <script>
+      $(function(){ 
+         var $win = $(window); 
+         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+         /*사용자 설정 값 시작*/ 
+         var speed = 500; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+         $layer.css('position', 'relative').css('z-index', '1'); 
+         /*사용자 설정 값 끝*/ 
+         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+         if (top > 0 ) 
+            $win.scrollTop(layerTopOffset+top); 
+            else $win.scrollTop(0); 
+            //스크롤이벤트가 발생하면 
+            $(window).scroll(function(){ 
+               yPosition = $win.scrollTop() - 1550; //이부분을 조정해서 화면에 보이도록 맞추세요 
+               if (yPosition < 0) { 
+                  yPosition = 0; 
+               } 
+               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+         }); 
+      }); 
+   </script>
 </body>
 </html>
