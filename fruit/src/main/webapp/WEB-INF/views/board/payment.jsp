@@ -169,7 +169,7 @@
 			height:50px;
 			background-color:#00af85;
 			color:white;
-			border:1px solid #00af85;
+			border:1px solid #00af85; 
 			margin-right:60px;
 			margin-top:40px;
 		}
