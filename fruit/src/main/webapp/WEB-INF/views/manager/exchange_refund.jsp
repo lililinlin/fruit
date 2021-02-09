@@ -426,7 +426,7 @@
                      <tr onclick="location.href='order_management'">
                     	<td><small>주문관리</small></td><td>></td>
                     </tr>
-                    <tr id="mainmenu3">
+                    <tr id="mainmenu3"> 
                     	<td><small>게시판관리</small></td><td>></td>
                     </tr>
                     <tr>

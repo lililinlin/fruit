@@ -424,7 +424,7 @@
 	            <td class="main_menu_td">
 	            	<a href="notice_management" ><h5><b>게시판관리</b></h5></a>
 	            </td> 
-            </tr>
+            </tr> 
         </table>
     </div>
     

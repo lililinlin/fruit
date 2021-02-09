@@ -388,6 +388,8 @@
                    <tr><td class="submenu3" onClick="location.href='notice_management'"><small>공지사항</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_common_question'"><small>자주묻는질문</small></td><td class="submenu3"></td></tr>
                     	<tr><td class="submenu3" onClick="location.href='notice_onetoone_question'"><small>1:1문의</small></td><td class="submenu3"></td></tr>
+                    	<tr><td class="submenu3" onClick="location.href='exchange_refund'"><small>교환 / 환불</small></td><td class="submenu3"></td></tr>
+                    	
                     </tr>
                 </table>
             </div>
