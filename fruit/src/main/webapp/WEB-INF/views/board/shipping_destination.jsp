@@ -68,7 +68,7 @@
 			<p>배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
 		</div>
 		<div id="main_contents">
-			<form action="" method="post">
+			<!-- <form action="" method="post"> -->
 				<table id="contents_table">
 					<tr>
 						<th width="10%">선택</th>
@@ -78,10 +78,10 @@
 					<tr>
 						<td><input type="radio" checked></td>
 						<td>서울 강북구 도봉로 101길 53-8(한신빌라트)401호<br><h5>이정현 | 010-7777-4267</h5></td>
-						<td><input type="submit" value="수정"></td>
+						<td><input type="submit" value="수정" onclick="location.href='address_edit'"></td>
 					</tr>	
 				</table>
-			</form>
+			<!-- </form> -->
 		</div>
 		<div id="bottom">
 			<h3><a href="add_destination">새 배송지 추가</a></h3>
