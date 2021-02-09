@@ -440,7 +440,7 @@
                     <textarea id = "editor4" name = "editor4" ></textarea>
                 <script>
                     CKEDITOR.replace('editor4',{width:800,height:400,
-                    filebrowserUploadUrl:'/images/imageUpload.do'});
+                    filebrowserUploadUrl:'/images/imageUpload.do'}); 
                 </script>
                  <hr>
                  <div id = "btn_box">

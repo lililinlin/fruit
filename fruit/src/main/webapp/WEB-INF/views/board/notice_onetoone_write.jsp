@@ -390,7 +390,7 @@
 	    			</ul>
 	    		</div>
 	    		
-	    		<div id="content"> 
+	    		<div id="content">  
 	    			<h4><b>1:1 문의 하기 - 글작성</b></h4>
 	    			
 	    			<div id="main_content_box">
