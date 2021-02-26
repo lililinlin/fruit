@@ -284,8 +284,8 @@
     <main>
         <div id ="main_wrapper">
             <h2>로그인</h2>
-            <form action="" method="POST" id="login_form">
-                <input type="text" id="id" name="name" size="20" placeholder="아이디를 입력해주세요"><br>
+            <form action="MemberLoginAction" method="POST" id="login_form">
+                <input type="text" id="id" name="id" size="20" placeholder="아이디를 입력해주세요"><br>
                 <input type="password" id="password" name="password" size="20" placeholder="비밀번호를 입력해주세요"><br>
                 <div id="id_pw_search">
                     <a href="id_Search"><small>아이디 찾기</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="pw_Search">비밀번호 찾기</small></a>

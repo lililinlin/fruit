@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -306,7 +307,7 @@
         <div id ="main_wrapper">
             <h2><b>회원가입</b></h2>
             <div id="main_box">
-            <form action="" method="POST" id="join_us" name="userInfo" onsubmit="return checkValue()">
+            <form action="MemberJoinAction" method="POST" id="join_us" name="userInfo" onsubmit="return checkValue()">
                 <table>
                     <tr>
                         <td>아이디</td>
@@ -350,15 +351,15 @@
                             <input type="text" name="birth_year" size="10" placeholder="4자리" style="width:110px;">&nbsp;년&nbsp;
                             <select name="birth_month" id="birth_month_choice">
                                 <option value=""> </option>
-                                <option value="01" >1</option>
-                                <option value="02" >2</option>
-                                <option value="03" >3</option>
-                                <option value="04" >4</option>
-                                <option value="05" >5</option>
-                                <option value="06" >6</option>
-                                <option value="07" >7</option>
-                                <option value="08" >8</option>
-                                <option value="09" >9</option>
+                                <option value="1" >1</option>
+                                <option value="2" >2</option>
+                                <option value="3" >3</option>
+                                <option value="4" >4</option>
+                                <option value="5" >5</option>
+                                <option value="6" >6</option>
+                                <option value="7" >7</option>
+                                <option value="8" >8</option>
+                                <option value="9" >9</option>
                                 <option value="10" >10</option>
                                 <option value="11" >11</option>
                                 <option value="12" >12</option>
@@ -497,7 +498,7 @@
 				success : function(data) {
 					console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
 						
-					if (data == 1) {
+					if (data == "1") {
 						// 1 : 아이디가 중복되는 문구
 						alert("아이디가 중복됩니다.");
 						$('#check_hidden').val("no");

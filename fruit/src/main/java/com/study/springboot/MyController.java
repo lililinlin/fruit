@@ -1,11 +1,23 @@
 package com.study.springboot;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.study.springboot.service.IMemberService;
 
 @Controller
 public class MyController {
  
+	@Autowired
+	IMemberService member_service;
+	
 		@RequestMapping("/")
 		public String root1() throws Exception {
 			return "main";
@@ -39,9 +51,72 @@ public class MyController {
 			return "member/join";
 		}
 		@RequestMapping("MemberLogoutAction")
-		public String MemberLogoutAction() throws Exception {
-			return "main";
-		} 
+		public String MemberLogoutAction(HttpServletRequest req, Model model) throws Exception {
+			int nResult = member_service.logout();
+			
+			if(nResult > 0) {
+				System.out.println("로그아웃 성공");
+				HttpSession session = req.getSession();
+				session.invalidate();
+				model.addAttribute("msg","정상적으로 로그아웃하셨습니다");
+				model.addAttribute("url","/");
+			}
+			return "redirect";
+		}
+		
+		@RequestMapping(value = "/MemberJoinAction", method = RequestMethod.POST)
+		public String MemberJoinAction(HttpServletRequest req, Model model) throws Exception {
+			req.setCharacterEncoding("UTF-8");
+
+			int nResult = member_service.insertMember(req);
+			if (nResult <= 0) {
+				System.out.println("회원가입 실패");
+
+				model.addAttribute("msg", "회원가입 실패");
+				model.addAttribute("url", "/");
+			} else {
+				System.out.println("회원가입 성공");
+				model.addAttribute("msg", "회원가입 성공");
+				model.addAttribute("url", "/");
+			}
+			return "redirect";
+		}
+		@RequestMapping(value = "/IdCheckAction", method = RequestMethod.GET)
+		public @ResponseBody String IdCheckAction(HttpServletRequest req, Model model) {
+
+			int nResult = member_service.idCheck(req.getParameter("id"));
+
+			if (nResult <= 0) {
+				System.out.println("중복된 아이디 없음");
+			} else {
+				System.out.println("중복된 아이디 있음");
+			}
+
+			return String.valueOf(nResult);
+		}
+		@RequestMapping(value = "/MemberLoginAction", method = RequestMethod.POST)
+		public String MemberLoginAction(HttpServletRequest req, Model model) {
+			
+			String id = req.getParameter("id");
+			String pw = req.getParameter("password");
+
+			int nResult = member_service.loginCheck(id, pw);
+
+			if (nResult <= 0) {
+				System.out.println("로그인 실패");
+				model.addAttribute("msg","아이디 또는 비밀번호가 틀렸습니다.");
+				model.addAttribute("url","login");
+			}
+			else {
+				HttpSession session = req.getSession();
+				session.setAttribute("sessionID", id);
+				System.out.println(id);
+				System.out.println("로그인 성공");
+				model.addAttribute("msg","로그인 성공");
+				model.addAttribute("url","/");
+			}
+			return "redirect";
+		}
 	 
 //------------------------[  BOARD  ]----------------------------------
 		

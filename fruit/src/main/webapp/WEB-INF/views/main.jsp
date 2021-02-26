@@ -263,18 +263,22 @@
     <div id="head0"></div>
 
         <div id="wrapp">
-        
+        	<!-- 모든 jsp파일에 뿌려주도록한다. -->
             <div id="head1">
                 <%
 				if (session.getAttribute("sessionID") == null) {
 				%>
 					<td>
 						<a href="login">로그인<h> |&nbsp;</h></a>
-						<a href="join_agree">회원가입<h> |&nbsp;</h></a>
-						<a href="mypage">마이페이지<h> |&nbsp;</h></a>
-						<a href="manager_main">관리자메인</a> 
+						<a href="join_agree">회원가입<h>&nbsp;</h></a>
 					</td>
-				<%}else{ %>
+				<%}else if(session.getAttribute("sessionID").equals("admin")){%>
+					<td>
+						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
+						<a href="manager_main">관리자메인</a>
+					</td>
+				
+				<%}else if((!session.getAttribute("sessionID").equals("admin")) && session.getAttribute("sessionID") != null){ %>
 					<td>
 						<a href="MemberLogoutAction" >로그아웃<h> |</h></a>
 						<a href="mypage">&nbsp;마이페이지</a>
